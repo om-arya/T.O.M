@@ -1,4 +1,4 @@
-// let random= document.querySelector('tom-trigger');
+let random= document.querySelector('tom-trigger');
 let result= document.querySelector('h1');
 
 function getRandomNumber(min, max){
@@ -9,12 +9,7 @@ function getRandomNumber(min, max){
     return result;
 }
 
-// random.addEventListener('click', () => {
-//     let index = getRandomNumber(0, messages.length-1);
-//     result.innerText = messages[index];
-// })
-
-$('#tom-trigger').click(function(){
+random.addEventListener('click', () => {
     let index = getRandomNumber(0, messages.length-1);
     result.innerText = messages[index];
     testToSpeech(messages[index])
