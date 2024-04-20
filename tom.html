@@ -16,8 +16,16 @@
             </div>
         </nav>
         <section class="hero">
-            <a id="tom-trigger" class="button" href="#">Click Me</a>
-            <script src="script.js"></script>
+            <script>
+                function gentext(){
+                    var word= ['womp1', 'womp2', 'womp3'];
+                    var para= document.querySelector('p');
+                    para.innerHTML= word[Math.floor(Math.random()*word.length)];
+                }
+            </script>
+            
+            <p></p>
+            <button onclick="gentext();">Click Me</button>
         </section>
         
     </body>
