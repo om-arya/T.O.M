@@ -43,7 +43,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 75vh;
-    padding: 0rem calc((100vw - 1300px) / 2);
+    padding: 0rem calc((100vw - 1300px) /2);
 }
 
 .column-left {
