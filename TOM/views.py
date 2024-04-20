@@ -6,5 +6,5 @@ def tom_html_view(request):
     return render(request, 'tom.html')
 
 def say_hello_world(request):
-    text_to_speech('Hello world!')
+    text_to_speech("Reach for the stars with the tenacity of a cat scaling a tree!")
     return HttpResponse("Hello World")

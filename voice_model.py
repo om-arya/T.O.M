@@ -1,11 +1,11 @@
 # Import the required module for text 
 # to speech conversion
-import pyttsx3
+from gtts import gTTS
+import os
 def text_to_speech(text):
-    # init function to get an engine instance for the speech synthesis 
-    engine = pyttsx3.init('dummy')
-    # say method on the engine that passing input text to be spoken
-    engine.say(text)
+    speech = gTTS(text = text, tld = 'fr', lang = 'fr')
+    
+    speech_file = 'speech.mp3'
+    speech.save(speech_file)
 
-    # run and wait method, it processes the voice commands. 
-    engine.runAndWait()
+    os.system('afplay ' + speech_file)
