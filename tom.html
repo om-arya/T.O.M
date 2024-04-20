@@ -16,23 +16,16 @@
             </div>
         </nav>
         <section class="hero">
-            <div class="hero-container">
-                <div class="tom-speech">
-                    <script>
-                        function gentext(){
-                            var word= ['womp1', 'womp2', 'womp3'];
-                            var para= document.querySelector('h1');
-                            para.innerHTML= word[Math.floor(Math.random()*word.length)];
-                        }
-                    </script>
-                    <h1></h1>
-                </div>
-                <div class="column-left">
-                    <button onclick="gentext();"><img src= "https://i.ibb.co/vzJZ9rr/IMG-0319.png" border="0" alt="click on tom!" class="hero-image"/></button">
-                </div>
-                
-            </div>
+            <script>
+                function gentext(){
+                    var word= ['womp1', 'womp2', 'womp3'];
+                    var para= document.querySelector('h1');
+                    para.innerHTML= word[Math.floor(Math.random()*word.length)];
+                }
+            </script>
             
+            <p></p>
+            <button onclick="gentext();">Click Me</button>
         </section>
         
     </body>
