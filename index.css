@@ -46,9 +46,6 @@ nav {
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
-
-
-
 .column-left {
     display: flex;
     flex-direction: column;
@@ -87,16 +84,20 @@ nav {
     transform: scale(1.25);
 }
 
-.column-right {
+.tom-speech {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
     padding: 0rem 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
 .hero-image {
-   max-width: 350px;
-   max-height: 350px;
+   max-width: 400px;
+   max-height: 400px;
+   background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
@@ -112,6 +113,12 @@ nav {
     width: 50%; 
     color: #fff;
   }
+
+button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
 /* nav a {
     text-decoration: none;
     color: #000;
