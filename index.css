@@ -92,6 +92,7 @@ nav {
     color: #fff;
     padding: 0rem 2rem;
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 .tom-speech {
@@ -120,7 +121,6 @@ nav {
 
  .hero-image-tom:hover {
     transform: scale(1.1);
-    
  }
 
 @media screen and (max-width: 768px) {
