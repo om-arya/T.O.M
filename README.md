@@ -1,2 +1,2 @@
 # T.O.M.
-A talking cat that helps college students plan their days.
+A talking cat that encourages college students.
