@@ -76,6 +76,7 @@ nav {
     border-radius: 50px;
     transition: 0.25s;
     text-decoration: none;
+    align-items: center;
 }
 
 .tom-button:hover {
@@ -103,7 +104,6 @@ nav {
     padding: 0rem 2rem;
     margin-bottom: 2rem;
     font-size: 1.5rem;
-    
 }
 
 .hero-image {
