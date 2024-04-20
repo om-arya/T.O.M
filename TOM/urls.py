@@ -13,9 +13,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import tom_html_view, say_hello_world
+from .views import say_hello_world
 
 urlpatterns = [
-    path('', tom_html_view, name='tom_html'),
-    path('/hello', say_hello_world, name='hello_world'),
+    path('', say_hello_world, name='hello_world'),
 ]

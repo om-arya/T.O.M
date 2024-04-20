@@ -3,7 +3,7 @@
 from gtts import gTTS
 import os
 def text_to_speech(text):
-    speech = gTTS(text = text, lang = 'en')
+    speech = gTTS(text = text, tld = 'fr', lang = 'fr')
     
     speech_file = 'speech.mp3'
     speech.save(speech_file)
