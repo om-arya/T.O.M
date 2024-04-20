@@ -76,7 +76,7 @@
                     const synth = window.speechSynthesis;
                     const speakThis = new SpeechSynthesisUtterance(message);
                     speakThis.lang = 'en';
-                    speakThis.pitch = 1;
+                    speakThis.pitch = .8;
                     speakThis.rate = 1;
                     synth.speak(speakThis);
                 }
@@ -84,23 +84,15 @@
 
     <div class="hero-container">
         <div class="tom-speech">
-            <script>
-                function gentext(){
-                    var word= ['womp1', 'womp2', 'womp3'];
-                    var para= document.querySelector('h1');
-                    para.innerHTML= word[Math.floor(Math.random()*word.length)];
-                }
-            </script>
             <h1></h1>
         </div>
         <div class="column-left">
-            <button onclick="catClick();"><img src= "https://i.ibb.co/vzJZ9rr/IMG-0319.png" border="0" alt="click on tom!" class="hero-image"/></button">
+            <h2 class="tom-click-message">Click me to hear a message!</h2>
+            <button onclick="catClick();"><img src= "https://i.ibb.co/vzJZ9rr/IMG-0319.png" border="0" alt="click on tom!" class="hero-image-tom"/></button">
         </div>
         
     </div>
             
-            <p></p>
-            <button onclick="catClick();">Click Me</button>
         </section>
         
     </body>
