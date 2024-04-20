@@ -94,6 +94,14 @@ nav {
     }
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; 
+    color: #fff;
+    
+  }
 /* nav a {
     text-decoration: none;
     color: #000;
