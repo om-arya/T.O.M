@@ -92,8 +92,8 @@ nav {
 }
 
 .hero-image {
-    width: 20%;
-    height: 20%;
+   max-width: 350px;
+   max-height: 350px;
 }
 
 @media screen and (max-width: 768px) {
@@ -108,7 +108,6 @@ nav {
     margin-right: auto;
     width: 50%; 
     color: #fff;
-    
   }
 /* nav a {
     text-decoration: none;
