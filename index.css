@@ -39,6 +39,13 @@ nav {
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
+.hero-container2 {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    height: 95vh;
+    padding: 0rem calc((100vw - 1300px) / 2);
+}
+
 .column-left {
     display: flex;
     flex-direction: column;
