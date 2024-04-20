@@ -75,7 +75,9 @@
                 function textToSpeech(message) {
                     const synth = window.speechSynthesis;
                     const speakThis = new SpeechSynthesisUtterance(message);
-                    speakThis.lang = 'en-EN';
+                    speakThis.lang = 'en';
+                    speakThis.pitch = 1;
+                    speakThis.rate = 1;
                     synth.speak(speakThis);
                 }
             </script>
