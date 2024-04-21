@@ -71,8 +71,13 @@ nav {
 
 .wrapper .profile p {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
+}
+
+.wrapper .profile-p p {
+    color: white;
+    font-size: 1rem;
 }
 
 .column-left {
