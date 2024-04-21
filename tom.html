@@ -17,15 +17,12 @@
         </nav>
         <section class="hero">
             <script>
-                var message;
-   
-                function catClick() {
-                    const messages= ["Paws for thought; reflection brings clarity.",
+                const messages = ["Contentment is the greatest wealth.",
+                                    "Paws for thought; reflection brings clarity.",
                                     "Hardships only sharpen your claws.",
                                     "In the purr-suit of knowledge, curiosity is your whiskers.",
                                     "Keep your focus sharp, like a cat hunting its prey.",
                                     "Live every single meowment with purr-pose.",
-                                    "Comparison is the thief of purr-sonal growth.",
                                     "Chase your dreams like they're laser pointers.",
                                     "Like a cat with nine lives, you have countless opportunities for success!",
                                     "Resilience is your armor against the arrows of doubt.",
@@ -49,7 +46,6 @@
                                     "Be kind to yourself; you're doing better than you think.",
                                     "Every meowment is a chance to start anew.",
                                     "Celebrate progress, no meowter how small.",
-                                    "May your courage be boundless, leaping fearlessly into the unknown.",
                                     "Even the mightiest lion relies on its pride; don't be afraid to ask for help.",
                                     "Your purr-tential is limitless, like the expanse of the meowcean.",
                                     "Every setback is like a hairball; unpleasant, but it will pass.",
@@ -60,14 +56,11 @@
                                     "Strive for progress, not purrfection.",
                                     "Love for others what you love for meowself.",
                                     "Even the smallest feline is a masterpiece.",
-                                    "Contentment is the greatest wealth.",
                                     "You have the power to shape your destiny; wield it wisely.",
-                                    "Every challenge is a meow-portunity to grow stronger.",
                                     "Your potential meows no bounds; let your as-purr-ations soar.",
                                     "Opportunities are like yarn; grab them and weave your destiny.",
                                     "You're purrfectly capable of achieving your dreams!",
                                     "Don't let fear leash your potential; unleash it!",
-                                    "Even the fiercest lions need a catnap sometimes — remember to take care of yourself.",
                                     "Curiosity didn't kill the cat; it made me wiser.",
                                     "The best view comes after the hardest climb.",
                                     "Pounce on opportunities like they're catnip.",
@@ -78,11 +71,30 @@
                                     "Meowmentum is key; keep moving forward.",
                                     "When life gives you lemons, sharpen your claws and make lemeownade.",
                                     "Keep your tail high and your spirits higher!",
+                                    "Comparison is the thief of purr-sonal growth.",
+                                    "Every challenge is a meow-portunity to grow stronger.",
+                                    "May your courage be boundless, leaping fearlessly into the unknown.",
+                                    "Even the fiercest lions need a catnap sometimes — remember to take care of yourself.",
                                     "Meow is the time to invest in your future!"];
-                    var para= document.querySelector('h1');
-                    message = messages[Math.floor(Math.random()*messages.length)];
-                    para.innerHTML = message;
-                    textToSpeech(message);
+                var messageIndex = Math.floor(Math.random()*messages.length);
+                function catClick() {
+                    const random = Math.random();
+                    
+                    if (messageIndex >= messages.length - 1) {
+                        messageIndex = 0;
+                    } else if (random <= .25 || messageIndex >= messages.length - 2) {
+                        messageIndex++;
+                    } else if (random <= .5 || messageIndex >= messages.length - 3) {
+                        messageIndex += 2;
+                    } else if (random <= .75 || messageIndex >= messages.length - 4) {
+                        messageIndex += 3;
+                    } else {
+                        messageIndex += 4;
+                    }
+
+                    var para = document.querySelector('h1');
+                    para.innerHTML = messages[messageIndex];
+                    textToSpeech(messages[messageIndex]);
                 }
 
                 function textToSpeech(message) {
