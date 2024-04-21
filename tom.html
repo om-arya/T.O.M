@@ -37,6 +37,7 @@
                                     "Build the ladder of success one paw at a time.",
                                     "Love for others what you love for meowself.",
                                     "Claw your way through hardships; surely, victory awaits.",
+                                    "You're purrfectly capable of achieving your dreams!",
                                     "The only way to purr-dict the future is to create it.",
                                     "Don't let stress get your whiskers in a twist; you will get through it.",
                                     "Uncertainty is the spice that makes life exciting.",
@@ -69,7 +70,6 @@
                                     "Life's litter box may be messy, but you've got this.",
                                     "In the game of life, always land on your feet.",
                                     "Meowmentum is key; keep moving forward.",
-                                    "You're purrfectly capable of achieving your dreams!",
                                     "When life gives you lemons, sharpen your claws and make lemeownade.",
                                     "Keep your tail high and your spirits higher!",
                                     "Every challenge is a meow-portunity to grow stronger.",
@@ -81,7 +81,7 @@
                     const random = Math.random();
                     
                     if (messageIndex >= messages.length - 1) {
-                        messageIndex = (int)(random * 3);
+                        messageIndex = Math.floor(random * 3);
                     } else if (random <= .34 || messageIndex >= messages.length - 2) {
                         messageIndex++;
                     } else if (random <= .67 || messageIndex >= messages.length - 3) {
