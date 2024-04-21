@@ -87,6 +87,11 @@ nav {
     font-size: 1.2rem;
 }
 
+.mission-title {
+    margin-top: -7rem;
+    margin-left: 2rem;
+}
+
 .column-left {
     display: flex;
     flex-direction: column;
