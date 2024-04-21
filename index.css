@@ -54,7 +54,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 2;
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 .wrapper .profile {
