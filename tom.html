@@ -82,14 +82,12 @@
                     
                     if (messageIndex >= messages.length - 1) {
                         messageIndex = 0;
-                    } else if (random <= .25 || messageIndex >= messages.length - 2) {
+                    } else if (random <= .34 || messageIndex >= messages.length - 2) {
                         messageIndex++;
-                    } else if (random <= .5 || messageIndex >= messages.length - 3) {
+                    } else if (random <= .67 || messageIndex >= messages.length - 3) {
                         messageIndex += 2;
-                    } else if (random <= .75 || messageIndex >= messages.length - 4) {
-                        messageIndex += 3;
                     } else {
-                        messageIndex += 4;
+                        messageIndex += 3;
                     }
 
                     var para = document.querySelector('h1');
