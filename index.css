@@ -131,17 +131,6 @@ nav {
     transform: scale(1.25);
 }
 
-.tom-click-message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 0rem 2rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
 .tom-speech {
     display: flex;
     justify-content: center;
