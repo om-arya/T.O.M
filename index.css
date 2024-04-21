@@ -39,14 +39,14 @@ nav {
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 95vh;
+    height: 85vh;
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
 .hero-container2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 75vh;
+    height: 80vh;
     padding: 0rem calc((100vw - 1300px) /2);
 }
 
@@ -61,7 +61,7 @@ nav {
     flex: 1 1 16rem;
     text-align: center;
     background: #5b7961;
-    padding: 2.5rem 3rem;
+    padding: 3rem 3rem;
 }
 
 .wrapper .profile h1 {
