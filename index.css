@@ -50,11 +50,17 @@ nav {
     padding: 0rem calc((100vw - 1300px) /2);
 }
 
+.about-us-title {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 2;
-    margin-top: 4rem;
+    margin-top: .5rem;
 }
 
 .wrapper .profile {
@@ -65,19 +71,20 @@ nav {
 }
 
 .wrapper .profile h1 {
-    font-size: 3rem;
+    margin-top: .5rem;
+    font-size: 2rem;
     color: white;
 }
 
 .wrapper .profile p {
-    margin-top: 1rem;
-    font-size: 2rem;
+    margin-top: .5rem;
+    font-size: 1.5rem;
     color: white;
 }
 
 .wrapper .profile-p p {
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .column-left {
