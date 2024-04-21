@@ -81,7 +81,7 @@
                     const random = Math.random();
                     
                     if (messageIndex >= messages.length - 1) {
-                        messageIndex = random * 3;
+                        messageIndex = (int)(random * 3);
                     } else if (random <= .34 || messageIndex >= messages.length - 2) {
                         messageIndex++;
                     } else if (random <= .67 || messageIndex >= messages.length - 3) {
