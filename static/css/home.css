@@ -139,9 +139,10 @@ nav {
 }
 
 .hero-image {
-   max-width: 400px;
-   max-height: 400px;
-   background-color: transparent;
+    margin-left: 8rem;
+    max-width: 450px;
+    max-height: auto;
+    background-color: transparent;
 }
 
 .hero-image-tom {
