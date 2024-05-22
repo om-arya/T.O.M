@@ -1,6 +1,10 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
+<p align="center">
+  <img src="assets/TOM.PNG" alt="Technitudo" width="200">
+</p>
+<br />
 <div align="center">
   <a href="https://github.com/om-arya/T.O.M."></a>
 
