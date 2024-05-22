@@ -102,7 +102,12 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- ACKNOWLEDGMENTS -->
 <a id="acknowledgments"></a>
 ## Acknowledgments 💙
-Special thanks to those who have helped us along the way! (Stephen, Om, Hasan, Claire, Justin)
+Special thanks to our development team!
+- Stephen Wu
+- Om Arya
+- Hasan Ege
+- Claire Chen
+- Justin Glazer
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
