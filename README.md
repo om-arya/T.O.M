@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="TOM/templates/assets/TOM.png" alt="TOM" width="200">
+  <img src="templates/assets/TOM.png" alt="TOM" width="200">
 </p>
 <br />
 <div align="center">
