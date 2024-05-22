@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T.O.M. - Tabby Of Motivation</title>
-    <link href={% static 'css/index.css' %} rel="stylesheet" type="text/css">
+    <link href={% static 'css/home.css' %} rel="stylesheet" type="text/css">
 </head>
 <body>
     <nav>
         <div class="logo">Tabby Of Motivation | T.O.M.</div>
         <div class="nav-items">
-            <a href="index.html" class="top-menu">Home</a>
+            <a href="home.html" class="top-menu">Home</a>
             <a href="our-mission.html" class="top-menu">Our Mission</a>
             <a href="about-us.html" class="top-menu">About Us</a>
         </div>
@@ -111,7 +111,7 @@
                 <h1>Click T.O.M.!</h1>
             </div>
             <div class="column-left">
-                <button onclick="catClick();"><img src= "https://i.ibb.co/vzJZ9rr/IMG-0319.png" alt="click on tom!" class="hero-image-tom" id="cat"/></button">
+                <button onclick="catClick();"><img src = "{% static 'assets/TOM.png' %}" alt="TOM.png" class="hero-image-tom"/>
             </div> 
         </div>
     </section>

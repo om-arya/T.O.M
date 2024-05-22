@@ -19,13 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Keep the secret key used in production secret
 SECRET_KEY = 'django-insecure-hmxo1oxp+03*s96+n2vcdouice^doa4in2+$47--lm&_n#&)_m'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # Set to False in production; we set to True locally for CSS files to be served properly.
 
-ALLOWED_HOSTS = ['*'] # SECURITY WARNING: '*' allows all. CHANGE BEFORE DEPLOYMENT!!!
+ALLOWED_HOSTS = ['*'] # '*' allows all. Set to our domain in production.
 
 
 # Application definition
