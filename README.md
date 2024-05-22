@@ -47,11 +47,11 @@ As college students, it sometimes feels as if we are endlessly running around to
 
 <a id="built-with"></a>
 ### Built With ⚒️
+* [![Django][Django.com]][Django-url]
+* [![Python][Python.com]][Python-url]
 * [![JavaScript][JS.js]][JS-url]
 * [![HTML][HTML.com]][HTML-url]
 * [![CSS3][CSS.com]][CSS-url]
-* [![Python][Python.com]][Python-url]
-* [![Django][Django.com]][Django-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
