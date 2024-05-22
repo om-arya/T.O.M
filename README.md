@@ -77,10 +77,7 @@ To get a local copy up and running follow these simple example steps.
 <a id="roadmap"></a>
 ## Roadmap 🗺️
 - Brainstormed idea and implemented during a hackathon
-- Continued project afterwards with expanded team and features
-- Moved 
-
-See the [open issues](https://github.com/IreneL7/StudyTerp/issues) for a full list of proposed features (and known issues).
+- Continued project afterwards with expanded team and features!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
