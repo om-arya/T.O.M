@@ -16,5 +16,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.tom_html_view, name='tom')
+    path('', views.index_html_view, name='index')
 ]
