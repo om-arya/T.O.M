@@ -86,7 +86,7 @@ To get a local copy up and running follow these simple example steps.
 ## Contributing 🤚
 Contributions are always welcome and **greatly appreciated**. We would love to make T.O.M. best suited for the needs of our audiences. 
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. Or, you can contact us directly and submit ideas. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion that would make this better, please fork the repo and create a pull request. Or, you can contact us directly and submit ideas.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
