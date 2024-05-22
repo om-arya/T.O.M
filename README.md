@@ -4,7 +4,6 @@
 <p align="center">
   <img src="static/assets/TOM.png" alt="TOM" width="200">
 </p>
-<br />
 <div align="center">
   <a href="https://github.com/om-arya/T.O.M."></a>
 
