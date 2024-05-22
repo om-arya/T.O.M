@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="assets/TOM.PNG" alt="Technitudo" width="200">
+  <img src="assets/TOM.png" alt="TOM" width="200">
 </p>
 <br />
 <div align="center">
