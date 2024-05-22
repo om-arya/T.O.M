@@ -99,7 +99,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- ACKNOWLEDGMENTS -->
 <a id="acknowledgments"></a>
 ## Acknowledgments 💙
-Special thanks to our development team!
+Special thanks to our core development team!
 - Stephen Wu
 - Om Arya
 - Hasan Ege
