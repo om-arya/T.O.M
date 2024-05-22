@@ -50,6 +50,8 @@ As college students, it sometimes feels as if we are endlessly running around to
 * [![JavaScript][JS.js]][JS-url]
 * [![HTML][HTML.com]][HTML-url]
 * [![CSS3][CSS.com]][CSS-url]
+* [![Python][Python.com]][Python-url]
+* [![Django][Django.com]][Django-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,3 +113,7 @@ Special thanks to those who have helped us along the way! (Stephen, Om, Hasan, C
 [HTML-url]: https://html.com/
 [CSS.com]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white 
 [CSS-url]: https://www.w3.org/Style/CSS/Overview.en.html#
+[Python.com]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://www.python.org/
+[Django.com]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
+[Django-url]: https://www.djangoproject.com/
