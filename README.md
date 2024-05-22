@@ -40,7 +40,8 @@
 <!-- ABOUT THE PROJECT -->
 <a id="about-the-project"></a>
 ## About The Project 📘
-As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. A routine like this can leave us stressed out and frazzled, and having a way to motivate ourselves throughout the day is exactly what we needed. We created T.O.M. to give students like us an opportunity to boost their moods during their long days.
+As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. during a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby is now a capable companion built to elevate students' productivity.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
