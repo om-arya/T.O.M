@@ -38,7 +38,7 @@
 
 <!-- ABOUT THE PROJECT -->
 <a id="about-the-project"></a>
-## About T.O.M. 🐱📘
+## About T.O.M. 🐱
 As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. during a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon become a capable companion built to elevate students' productivity.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
