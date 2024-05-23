@@ -41,8 +41,6 @@
 ## About T.O.M. 🐱
 As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. for a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon become a capable companion built to elevate students' productivity.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <a id="built-with"></a>
 ### Built With ⚒️
 * [![Django][Django.com]][Django-url]
@@ -51,16 +49,12 @@ As college students, it sometimes feels as if we are endlessly running around to
 * [![HTML][HTML.com]][HTML-url]
 * [![CSS3][CSS.com]][CSS-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ROADMAP -->
 <a id="roadmap"></a>
 ## Roadmap 🗺️
 - Brainstormed idea and potential features
 - Implemented during the Bitcamp 2024 hackathon with JS/HTML/CSS
 - Continued project afterwards with Django and additional features!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FEATURES -->
 <a id="features"></a>
