@@ -53,7 +53,7 @@ As college students, it sometimes feels as if we are endlessly running around to
 <a id="roadmap"></a>
 ## Roadmap 🗺️
 - Brainstormed idea and potential features
-- Implemented during the Bitcamp 2024 hackathon with JS/HTML/CSS
+- Implemented during the [Bitcamp 2024 hackathon](https://devpost.com/software/t-o-m-tabby-of-motivation) with JS/HTML/CSS
 - Continued project afterwards with Django and additional features!
 
 <!-- FEATURES -->
