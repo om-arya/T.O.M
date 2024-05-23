@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="static/assets/TOM.png" alt="TOM" width="200">
+  <img src="static/assets/TOM.png" alt="TOM.png" width="200">
 </p>
 <div align="center">
   <a href="https://github.com/om-arya/T.O.M."></a>
@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 <a id="about-the-project"></a>
 ## About T.O.M. 🐱
-As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. for a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon become a capable companion built to elevate students' productivity.
+As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. for a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon be a capable companion built to elevate students' productivity.
 
 <a id="built-with"></a>
 ### Built With ⚒️
@@ -52,15 +52,15 @@ As college students, it sometimes feels as if we are endlessly running around to
 <!-- ROADMAP -->
 <a id="roadmap"></a>
 ## Roadmap 🗺️
-- Brainstormed idea and potential features
-- Implemented during the [Bitcamp 2024 hackathon](https://devpost.com/software/t-o-m-tabby-of-motivation) with JS/HTML/CSS
+- Brainstormed idea and potential features.
+- Implemented during the [Bitcamp 2024 hackathon](https://devpost.com/software/t-o-m-tabby-of-motivation) with JS/HTML/CSS.
 - Continued project afterwards with Django and additional features!
 
 <!-- FEATURES -->
 <a id="features"></a>
 ## Features 🏆
-- Click T.O.M. for motivational phrases
-- Text-to-speech
+- Click T.O.M. for motivational phrases.
+- Text-to-speech.
 - And more coming soon!
 
 <a id="contributing"></a>
@@ -77,7 +77,7 @@ Or, you can directly submit your own feature by doing the following:
 <!-- OUR TEAM -->
 <a id="our-team"></a>
 ## Our Team 🎉
-Special thanks to our core development team!
+Special thanks to our core development team!:
 - Stephen Wu [(heavens-potato)](https://github.com/heavens-potato)
 - Om Arya [(om-arya)](https://github.com/om-arya)
 - Hasan Ege [(hasane1)](https://github.com/hasane1)
