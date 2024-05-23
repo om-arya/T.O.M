@@ -20,7 +20,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About T.O.M.</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -54,7 +54,7 @@ As college students, it sometimes feels as if we are endlessly running around to
 ## Roadmap 🗺️
 - Brainstormed idea and potential features.
 - Implemented during the [Bitcamp 2024 hackathon](https://devpost.com/software/t-o-m-tabby-of-motivation) with JS/HTML/CSS.
-- Continued project afterwards with Django and additional features!
+- Continued project afterwards with Django, and currently adding additional features!
 
 <!-- FEATURES -->
 <a id="features"></a>
