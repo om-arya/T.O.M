@@ -38,7 +38,7 @@
 
 <!-- ABOUT THE PROJECT -->
 <a id="about-the-project"></a>
-## About The Project 📘
+## About T.O.M. 📘
 As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. during a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon become a capable companion built to elevate students' productivity.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -68,11 +68,8 @@ As college students, it sometimes feels as if we are endlessly running around to
 - Text-to-speech
 - And more coming soon!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 <a id="contributing"></a>
-## Contributing 🤚
+### Contributing 🤚
 If you have a suggestion that would make T.O.M. better, please feel free to contact us and submit ideas! We'd love to hear your feedback.
 
 Or, you can directly submit your own feature by doing the following:
