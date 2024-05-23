@@ -73,7 +73,7 @@ As college students, it sometimes feels as if we are endlessly running around to
 <!-- CONTRIBUTING -->
 <a id="contributing"></a>
 ## Contributing 🤚
-If you have a suggestion that would make T.O.M. better, please feel free to contact us and submit ideas!
+If you have a suggestion that would make T.O.M. better, please feel free to contact us and submit ideas! We'd love to hear your feedback.
 
 Or, you can directly submit your own feature by doing the following:
 1. Fork the Project
@@ -88,10 +88,10 @@ Or, you can directly submit your own feature by doing the following:
 <a id="our-team"></a>
 ## Our Team 💙
 Special thanks to our core development team!
-- Stephen Wu
-- Om Arya
-- Hasan Ege
-- Claire Chen
+- Stephen Wu [(heavens-potato)](https://github.com/heavens-potato)
+- Om Arya [(om-arya)](https://github.com/om-arya)
+- Hasan Ege [(hasane1)](https://github.com/hasane1)
+- Claire Chen [(cc13985)](https://github.com/cc13985)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
