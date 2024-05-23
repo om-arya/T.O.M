@@ -20,7 +20,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About T.O.M.</a>
+      <a href="#about-tom">About T.O.M.</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -37,7 +37,7 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
-<a id="about-the-project"></a>
+<a id="about-tom"></a>
 ## About T.O.M. 🐱
 As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. for a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon be a capable companion built to elevate students' productivity.
 
