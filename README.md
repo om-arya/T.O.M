@@ -74,8 +74,6 @@ Or, you can directly submit your own feature by doing the following:
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- OUR TEAM -->
 <a id="our-team"></a>
 ## Our Team 🎉
