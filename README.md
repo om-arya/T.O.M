@@ -28,7 +28,7 @@
     <li>
       <a href="#features">Features</a>
       <ul>
-        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#suggestions">Suggestions?</a></li>
       </ul>
     </li>
     <li><a href="#our-team">Our Team</a></li>
@@ -62,8 +62,8 @@ As college students, it sometimes feels as if we are endlessly running around to
 - Text-to-speech.
 - And more coming soon!
 
-<a id="contributing"></a>
-### Contributing 🤚
+<a id="suggestions"></a>
+### Suggestions? 💡
 If you have a suggestion that would make T.O.M. better, please feel free to contact us with ideas! We'd love to hear your feedback.
 
 Or, you can directly submit a request for your own feature by doing the following:
