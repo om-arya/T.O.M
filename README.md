@@ -5,7 +5,6 @@
   <img src="static/assets/TOM.png" alt="TOM.png" width="200">
 </p>
 <div align="center">
-  <a href="https://github.com/om-arya/T.O.M."></a>
 
 <h1 align="center" font-size=36px>T.O.M.</h1>
 
@@ -65,9 +64,9 @@ As college students, it sometimes feels as if we are endlessly running around to
 
 <a id="contributing"></a>
 ### Contributing 🤚
-If you have a suggestion that would make T.O.M. better, please feel free to contact us and submit ideas! We'd love to hear your feedback.
+If you have a suggestion that would make T.O.M. better, please feel free to contact us with ideas! We'd love to hear your feedback.
 
-Or, you can directly submit your own feature by doing the following:
+Or, you can directly submit a request for your own feature by doing the following:
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
