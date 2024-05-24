@@ -2,10 +2,9 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="static/assets/TOM.png" alt="TOM" width="200">
+  <img src="static/assets/TOM.png" alt="TOM.png" width="200">
 </p>
 <div align="center">
-  <a href="https://github.com/om-arya/T.O.M."></a>
 
 <h1 align="center" font-size=36px>T.O.M.</h1>
 
@@ -20,29 +19,26 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-tom">About T.O.M.</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#features">Features</a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#suggestions">Suggestions?</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#our-team">Our Team</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
-<a id="about-the-project"></a>
-## About The Project 📘
-As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. A routine like this can leave us stressed out and frazzled, and having a way to motivate ourselves throughout the day is exactly what we needed. We created T.O.M. to give students like us an opportunity to boost their moods during their long days.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<a id="about-tom"></a>
+## About T.O.M. 🐱
+As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. for a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon be a capable companion built to elevate students' productivity.
 
 <a id="built-with"></a>
 ### Built With ⚒️
@@ -52,58 +48,39 @@ As college students, it sometimes feels as if we are endlessly running around to
 * [![HTML][HTML.com]][HTML-url]
 * [![CSS3][CSS.com]][CSS-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-<a id="getting-started"></a>
-## Getting Started 🏆
-To get a local copy up and running follow these simple example steps.
-
-<a id="installation"></a>
-### Installation 💻
-1. Clone the repo
-   ```sh
-   git clone https://github.com/om-arya/T.O.M..git
-   ```
-2. Create a branch to work on
-   ```sh
-   git checkout -b my-feature
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ROADMAP -->
 <a id="roadmap"></a>
 ## Roadmap 🗺️
-- Brainstormed idea and implemented during a hackathon
-- Continued project afterwards with expanded team and features!
+- Brainstormed idea and potential features.
+- Implemented during the [Bitcamp 2024 hackathon](https://devpost.com/software/t-o-m-tabby-of-motivation) with JS/HTML/CSS.
+- Continued project afterwards with Django, and currently adding additional features!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- FEATURES -->
+<a id="features"></a>
+## Features 🏆
+- Click T.O.M. for motivational phrases.
+- Text-to-speech.
+- And more coming soon!
 
-<!-- CONTRIBUTING -->
-<a id="contributing"></a>
-## Contributing 🤚
-Contributions are always welcome and **greatly appreciated**. We would love to make T.O.M. best suited for the needs of our audiences. 
+<a id="suggestions"></a>
+### Suggestions? 💡
+If you have a suggestion that would make T.O.M. better, please feel free to contact us with ideas! We'd love to hear your feedback.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. Or, you can contact us directly and submit ideas.
-
+Or, you can directly submit a request for your own feature by doing the following:
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-<a id="acknowledgments"></a>
-## Acknowledgments 💙
-Special thanks to our core development team!
-- Stephen Wu
-- Om Arya
-- Hasan Ege
-- Claire Chen
-- Justin Glazer
+<!-- OUR TEAM -->
+<a id="our-team"></a>
+## Our Team 🎉
+Special thanks to our core development team!:
+- Stephen Wu [(heavens-potato)](https://github.com/heavens-potato)
+- Om Arya [(om-arya)](https://github.com/om-arya)
+- Hasan Ege [(hasane1)](https://github.com/hasane1)
+- Claire Chen [(cc13985)](https://github.com/cc13985)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
