@@ -56,7 +56,9 @@ const messages = ["Contentment is the greatest wealth.",
                                     "Take challenges as meow-portunities.",
                                     "Even the fiercest lions need a catnap sometimes — remember to take care of yourself.",
                                     "Meow is the time to invest in your future!"];
-function catClick() {
+
+const tomQuoteHead = document.getElementById('tom-quote-head');
+tomQuoteHead.addEventListener("click", function() {
     let messageIndex = Math.floor(Math.random()*messages.length);
     const random = Math.random();
                         
@@ -70,10 +72,10 @@ function catClick() {
         messageIndex += 3;
     }
 
-    var para = document.querySelector('h1');
+    const para = document.querySelector('h1');
     para.innerHTML = messages[messageIndex];
     textToSpeech(messages[messageIndex]);
-}
+});
 
 function textToSpeech(message) {
     const synth = window.speechSynthesis;

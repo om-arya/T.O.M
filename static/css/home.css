@@ -29,18 +29,18 @@ nav {
     padding: 0 1.25rem;
 }
 
-.hero {
+.tom {
     background-color: #5b7961;
 }
 
-.hero-container {
+.tom-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 85vh;
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
-.hero-container2 {
+.tom-container2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 80vh;
@@ -138,26 +138,26 @@ nav {
     font-size: 1.5rem;
 }
 
-.hero-image {
+.tom-image {
     margin-left: 8rem;
     max-width: 450px;
     max-height: auto;
     background-color: transparent;
 }
 
-.hero-image-tom {
+.tom-image2 {
     max-width: 550px;
     max-height: 550px;
     background-color: transparent;
     transition: 0.25s;
  }
 
- .hero-image-tom:hover {
+ .tom-image2:hover {
     transform: scale(1.1);
  }
 
 @media screen and (max-width: 768px) {
-    .hero-container {
+    .tom-container {
         grid-template-columns: 1fr;
     }
 }
