@@ -8,4 +8,5 @@ __pycache__/
 db.sqlite3
 db.sqlite3-journal
 
-# Gemini API key:
+# Gemini API key file:
+PUTKEYHERE.py
