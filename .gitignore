@@ -9,4 +9,4 @@ db.sqlite3
 db.sqlite3-journal
 
 # Gemini API key file:
-PUTKEYHERE.py
+googleapikey.py
