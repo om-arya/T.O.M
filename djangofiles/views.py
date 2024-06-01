@@ -18,8 +18,7 @@ def schedule_view(request):
 
 def submit_form(request):
     if request.method == 'GET':
-        events = request.GET.get('events')
-        additional_notes = request.GET.get('additionalNotes')
-        return HttpResponse(f"Events: {events}, Additional Notes: {additional_notes}")
+        EVENTS = request.GET.get('events')
+        ADDITIONAL_NOTES = request.GET.get('additionalNotes')
     else:
         return HttpResponse("Only GET method is allowed.")
