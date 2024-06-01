@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from schedule import *
+from djangofiles.schedule import generate_schedule
 
 def home_view(request):
     return render(request, 'home.html')
@@ -22,6 +22,6 @@ def submit_form(request):
         EVENTS = request.GET.get('events')
         ADDITIONAL_NOTES = request.GET.get('additionalNotes')
         result = generate_schedule(EVENTS, ADDITIONAL_NOTES)
-        return render(request, 'schedule.html', result)
+        return render(request, 'schedule.html', {'result': result.text})
     else:
         return HttpResponse("Only GET method is allowed.")
