@@ -5,8 +5,8 @@ from djangofiles.schedule import generate_schedule
 def home_view(request):
     return render(request, 'home.html')
 
-def tom_view(request):
-    return render(request, 'tom.html')
+def quotes_view(request):
+    return render(request, 'quotes.html')
 
 def about_us_view(request):
     return render(request, 'about-us.html')
