@@ -86,25 +86,3 @@ function textToSpeech(message) {
     speakThis.rate = 1;
     synth.speak(speakThis);
 }
-
-const eventInput = document.getElementById("events");
-const addEventButton = document.getElementById("addEvent");
-
-eventInput.addEventListener("click", function() {
-  // Enable the Add Event button on first click
-  addEventButton.disabled = false;
-});
-
-addEventButton.addEventListener("click", function() {
-  // Create a new text input element
-  const newTextInput = document.createElement("input");
-  newTextInput.type = "text";
-  newTextInput.classList.add("input"); 
-  // Consider adding a name or id for identification if needed
-
-  // Append the new input after the current event input
-  eventInput.parentNode.insertBefore(newTextInput, eventInput.nextSibling);
-
-  // Clear the Add Event button click after adding the new input
-  this.disabled = true;
-});

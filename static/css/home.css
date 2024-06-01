@@ -183,6 +183,13 @@ nav {
     text-align: left; 
 }
 
+#result {
+    padding: 1em 1.5rem 5rem 1.5rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
 .form {
     display: flex; 
     justify-content: center;
