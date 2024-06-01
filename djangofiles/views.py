@@ -12,3 +12,6 @@ def about_us_view(request):
 
 def our_mission_view(request):
     return render(request, 'our-mission.html')
+
+def schedule_view(request):
+    return render(request, 'schedule.html')
