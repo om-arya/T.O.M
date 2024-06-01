@@ -15,3 +15,11 @@ def our_mission_view(request):
 
 def schedule_view(request):
     return render(request, 'schedule.html')
+
+def submit_form(request):
+    if request.method == 'GET':
+        events = request.GET.get('events')
+        additional_notes = request.GET.get('additionalNotes')
+        return HttpResponse(f"Events: {events}, Additional Notes: {additional_notes}")
+    else:
+        return HttpResponse("Only GET method is allowed.")
