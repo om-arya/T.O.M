@@ -108,7 +108,7 @@ nav {
     font-size: 1.5rem;
 }
 
-.tom-button, .schedule-button {
+.tom-button {
     padding: 1rem 3rem;
     font-size: 1rem;
     font-weight: bold;
@@ -120,6 +120,24 @@ nav {
     transition: 0.25s;
     text-decoration: none;
     align-items: center;
+    max-width: 450px;
+    max-height: auto;
+}
+
+.schedule-button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    color: #5b7961;
+    background: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    align-items: center;
+    max-width: 300px;
+    max-height: auto;
 }
 
 .tom-button:hover {
