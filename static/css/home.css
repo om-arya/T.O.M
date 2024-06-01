@@ -124,6 +124,23 @@ nav {
     max-height: auto;
 }
 
+.add-button {
+    padding: 1rem 2.75rem 1rem 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    color: #ffffff;
+    background: #93BF8C;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    text-align: left; 
+    max-width: 0.75rem; 
+    max-height: auto;
+}
+
 .plus-button {
     padding: 1rem 1rem;
     font-size: 1rem;
@@ -146,19 +163,49 @@ nav {
     font-weight: bold;
     border: none;
     color: #5b7961;
-    background: #fff;
+    background: #f7f7f7;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 17px;
     transition: 0.25s;
     text-decoration: none;
     align-items: center;
-    max-width: 15rem;
+    width: 600px;
+    max-width: 300rem;
     max-height: auto;
+}
+
+.input-label {
+    margin-top: 1.2rem;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    display: flex;
+    justify-content: flex-start;
+    text-align: left; 
+}
+
+.form {
+    display: flex; 
+    justify-content: center;
+}
+
+.input-container {
+    margin: 3rem 1rem 2rem 5rem;
+    display: flex; 
+    flex-direction: column; 
+    margin-right: 1rem; 
+}
+
+.submit-container {
+    margin: 6.75rem 1rem 2rem 3rem;
+    display: flex; 
+    flex-direction: column; 
+    text-align: center;
+    margin-right: 1rem; 
 }
 
 .schedule-button {
     padding: 1rem 3rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     border: none;
     color: #5b7961;
@@ -175,6 +222,16 @@ nav {
 .tom-button:hover {
     background: #000;
     color: #fff;
+    transform: scale(1.25);
+}
+
+.add-button:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.schedule-button:hover {
     transform: scale(1.25);
 }
 
