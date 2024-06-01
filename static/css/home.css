@@ -47,9 +47,9 @@ nav {
     padding: 0rem calc((100vw - 1300px) /2);
 }
 
-.about-us-title {
+.about-us-title, .form {
     text-align: center;
-    font-size: 3rem;
+    font-size: 1rem;
     color: white;
 }
 
@@ -108,7 +108,7 @@ nav {
     font-size: 1.5rem;
 }
 
-.tom-button {
+.tom-button, .schedule-button {
     padding: 1rem 3rem;
     font-size: 1rem;
     font-weight: bold;
