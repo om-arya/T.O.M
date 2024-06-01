@@ -20,4 +20,4 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
                                   + "Events: " + EVENTS + "\n"
                                   + "Additional notes: " + ADDITIONAL_NOTES + "\n"
                                   + "Your output must be in schedule format, starting with the morning, followed by afternoon, followed by evening. You are talking to a single person who you will refer to as 'my friend', and you will not accompany this person with any tasks.")
-  return result
+  return result.text

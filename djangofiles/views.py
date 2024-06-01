@@ -22,6 +22,6 @@ def submit_form(request):
         EVENTS = request.GET.get('events')
         ADDITIONAL_NOTES = request.GET.get('additionalNotes')
         result = generate_schedule(EVENTS, ADDITIONAL_NOTES)
-        return render(request, 'schedule.html', {'result': result.text})
+        return render(request, 'schedule.html', {'result': result})
     else:
         return HttpResponse("Only GET method is allowed.")

@@ -58,6 +58,7 @@ const messages = ["Contentment is the greatest wealth.",
                                     "Meow is the time to invest in your future!"];
 
 const tomQuoteHead = document.getElementById('tom-quote-head');
+
 tomQuoteHead.addEventListener("click", function() {
     let messageIndex = Math.floor(Math.random()*messages.length);
     const random = Math.random();
