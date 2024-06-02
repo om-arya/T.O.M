@@ -208,7 +208,6 @@ nav {
     display: flex; 
     flex-direction: column; 
     text-align: center;
-    margin-right: 1rem; 
 }
 
 .schedule-button {
@@ -289,4 +288,28 @@ button {
     border: none;
     background-color: transparent;
     outline: none;
+}
+
+#time{
+    height:60px;
+    overflow-y:auto;
+    width:40px;
+    font-size: 1.5rem;
+}
+
+option {
+    overflow-y: scroll;
+}
+
+.input-select {
+    padding: 1rem 1rem;
+    font-size: 0.5rem;
+    border: none;
+    color: #5b7961;
+    background: #f7f7f7;
+    cursor: pointer;
+    border-radius: 17px;
+    text-decoration: none;
+    align-items: center;
+    max-height: auto;
 }
