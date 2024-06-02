@@ -125,36 +125,20 @@ nav {
 }
 
 .add-button {
-    padding: 1rem 2.75rem 1rem 2rem;
+    padding: .7rem 7.5rem .7rem 1.5rem;
     margin: .5rem 0 2rem 0;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border: none;
-    color: #ffffff;
-    background: #93BF8C;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    text-align: left; 
     max-width: 0.75rem; 
     max-height: auto;
-}
-
-.plus-button {
-    padding: 1rem 1rem;
-    font-size: 1rem;
-    font-weight: bold;
     border: none;
-    color: #5b7961;
-    background: #fff;
+    color: #ffffff;
     cursor: pointer;
     border-radius: 50px;
     transition: 0.25s;
     text-decoration: none;
-    align-items: center;
-    max-width: 450px;
-    max-height: auto;
+    background: #93BF8C;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .events-and-time-container {
@@ -255,7 +239,6 @@ nav {
 .add-button:hover {
     background: #000;
     color: #fff;
-    transform: scale(1.15);
 }
 
 .schedule-button:hover {
@@ -318,6 +301,7 @@ button {
 }
 
 option {
+    content: '15 min';
     overflow-y: scroll;
     width: 10rem;
     font-size: .5rem;
@@ -330,15 +314,16 @@ select {
 }
 
 .input-select {
-    padding: 1rem;
+    margin-bottom: .8rem;
+    padding: .7rem 0 .7rem 1rem;
     border: none;
     cursor: pointer;
     border-radius: 0px 17px 17px 0;
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    background-color: #4a4a4a;
+    color: #000000;
+    background-color: #a0a0a0;
 }
 
 .input-label2 {
