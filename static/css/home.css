@@ -163,7 +163,7 @@ nav {
     font-weight: bold;
     border: none;
     color: #5b7961;
-    background: #f7f7f7;
+    background-color: #f7f7f7;
     cursor: pointer;
     border-radius: 17px;
     transition: 0.25s;
@@ -301,6 +301,10 @@ option {
     overflow-y: scroll;
     color: #5b7961;
     background-color: #f7f7f7;
+}
+
+select {
+    background-color: #5b7961;
 }
 
 .input-select {
