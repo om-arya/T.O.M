@@ -1,29 +1,31 @@
-document.getElementById('addEvent').addEventListener('click', function() {
-    addEvent();
-});
+const eventsArray = [];
 
 window.onload = function() {
     addEvent();
 };
 
+document.getElementById('addEvent').addEventListener('click', function() {
+    addEvent();
+});
+
 const addEvent = () => {
-    var newEventContainer = document.createElement('div');
+    const newEventContainer = document.createElement('div');
     newEventContainer.className = 'events-and-time-container';
 
-    var newEventInput = document.createElement('input');
+    const newEventInput = document.createElement('input');
     newEventInput.type = 'text';
     newEventInput.name = 'events';
     newEventInput.className = 'input';
     newEventInput.required = true;
 
-    var br1 = document.createElement('br');
+    const br1 = document.createElement('br');
 
-    var newTimeSelect = document.createElement('select');
+    const newTimeSelect = document.createElement('select');
     newTimeSelect.name = 'time';
     newTimeSelect.className = 'input-select';
     newTimeSelect.required = true;
 
-    var options = [
+    const options = [
         { value: "0.25", text: "15 min" },
         { value: ".5", text: "30 min" },
         { value: ".75", text: "45 min" },
@@ -40,14 +42,14 @@ const addEvent = () => {
     ];
 
     options.forEach(function(option) {
-        var newOption = document.createElement('option');
+        const newOption = document.createElement('option');
         newOption.value = option.value;
         newOption.text = option.text;
         newTimeSelect.appendChild(newOption);
     });
 
-    var br2 = document.createElement('br');
-    var br3 = document.createElement('br');
+    const br2 = document.createElement('br');
+    const br3 = document.createElement('br');
 
     newEventContainer.appendChild(newEventInput);
     newEventContainer.appendChild(br1);
@@ -55,7 +57,16 @@ const addEvent = () => {
     newEventContainer.appendChild(br2);
     newEventContainer.appendChild(br3);
 
-    // Append the new container to the input container
-    var inputContainer = document.querySelector('.input-container');
+    // Append the event/time container to the input container
+    const inputContainer = document.querySelector('.input-container');
     inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
 }
+
+document.getElementById('scheduleForm').addEventListener('submit', function() {
+    const eventInputs = document.querySelectorAll('.input');
+    eventInputs.forEach(function(input) {
+        eventsArray.push(input.value);
+    });
+
+    console.log(eventsArray);
+});
