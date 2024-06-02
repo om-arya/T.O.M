@@ -299,6 +299,8 @@ button {
 
 option {
     overflow-y: scroll;
+    color: #5b7961;
+    background-color: #f7f7f7;
 }
 
 .input-select {
@@ -306,7 +308,7 @@ option {
     font-size: 0.5rem;
     border: none;
     color: #5b7961;
-    background: #f7f7f7;
+    background-color: #f7f7f7;
     cursor: pointer;
     border-radius: 17px;
     text-decoration: none;
