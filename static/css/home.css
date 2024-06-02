@@ -126,7 +126,7 @@ nav {
 
 .add-button {
     padding: 1rem 2.75rem 1rem 2rem;
-    margin-bottom: 2rem;
+    margin: .5rem 0 2rem 0;
     font-size: 1.3rem;
     font-weight: bold;
     border: none;
@@ -157,30 +157,50 @@ nav {
     max-height: auto;
 }
 
+.events-and-time-container {
+    display: flex;
+}
+
 .input {
+    display: flex;
     padding: 1rem 1rem;
     font-size: 1rem;
     font-weight: bold;
     border: none;
     color: #5b7961;
-    background: #f7f7f7;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border-radius: 17px 0 0 17px;
+    transition: 0.25s;
+    text-decoration: none;
+    align-items: center;
+    width: 40rem;
+    height: 2.5rem;
+}
+
+.input-label {
+    display: flex;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    justify-content: flex-start;
+    text-align: left; 
+}
+
+.notes {
+    display: flex;
+    padding: 1rem 1rem 0 0;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    color: #5b7961;
+    background-color: #f7f7f7;
     cursor: pointer;
     border-radius: 17px;
     transition: 0.25s;
     text-decoration: none;
     align-items: center;
-    width: 600px;
-    max-width: 300rem;
-    max-height: auto;
-}
-
-.input-label {
-    margin-top: 1.2rem;
-    font-size: 1.2rem; 
-    font-weight: bold; 
-    display: flex;
-    justify-content: flex-start;
-    text-align: left; 
+    width: 40rem;
+    height: 10rem;
 }
 
 #result {
@@ -208,7 +228,6 @@ nav {
     display: flex; 
     flex-direction: column; 
     text-align: center;
-    margin-right: 1rem; 
 }
 
 .schedule-button {
@@ -289,4 +308,48 @@ button {
     border: none;
     background-color: transparent;
     outline: none;
+}
+
+#time {
+    width: 3rem;
+    height: 2.5rem;
+    overflow-y: auto;
+    font-size: 1rem;
+}
+
+option {
+    overflow-y: scroll;
+    width: 10rem;
+    font-size: .5rem;
+    color: #5b7961;
+    background-color: #f7f7f7;
+}
+
+select {
+    background-color: #5b7961;
+}
+
+.input-select {
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 17px 17px 0;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #4a4a4a;
+}
+
+.input-label2 {
+    display: flex;
+    margin: 0 0 -.8rem 18.7rem;
+    justify-content: right;
+    align-items: last baseline;
+    font-size: 1rem;
+    text-align: right; 
+}
+
+.event-label-container {
+    display: flex;
 }

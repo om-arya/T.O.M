@@ -23,11 +23,32 @@
 
     <form id="scheduleForm" class="form" method="get" action="{% url 'submit_form' %}">
         <div class="input-container">
-            <label for="events" class="input-label">Events:</label><br>
-            <input type="text" id="events" class="input" name="events" required><br><br>
+            <div class="event-label-container">
+                <label for="events" class="input-label">What is the name of this task?</label>
+                <label for="time" class="input-label2">Est. time taken:</label>
+            </div><br>
+            <div class="events-and-time-container">
+                <input type="text" id="events" class="input" name="events" required><br>
+                <select class="input-select" name="time" id="time" required>
+                    <option value="0.25">15 min</option>
+                    <option value=".5">30 min</option>
+                    <option value=".75">45 min</option>
+                    <option value="1">1 hr</option>
+                    <option value="1.5">1 hr 30 min</option>
+                    <option value="2">2 hr</option>
+                    <option value="2.5">2 hr 30 min</option>
+                    <option value="3">3 hr</option>
+                    <option value="4">4 hr</option>
+                    <option value="5">5 hr</option>
+                    <option value="6">6 hr</option>
+                    <option value="7">7 hr</option>
+                    <option value="8+">8+ hr</option>
+                </select><br><br>
+            </div>
             <input value="+" type="button" id="addEvent" class="add-button">  
-            <label for="additionalNotes" class="input-label">Additional Notes:</label><br>
-            <input type="text" id="additionalNotes" class="input" name="additionalNotes"><br><br>
+            <label for="additionalNotes" class="input-label">Enter any additional notes or preferences here!</label><br>
+            <textarea name="additionalNotes" rows="10" cols="30" class="notes">
+            </textarea><br><br>
         </div>
         <div class="submit-container">
             <input type="image" class="schedule-button" src="{% static 'assets/TOM.png' %}" name="submit"><br>
