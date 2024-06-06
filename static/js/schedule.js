@@ -1,20 +1,21 @@
-const eventsArray = [];
-
-window.onload = function() {
+// Add a single event when the page loads
+window.onload = () => {
     addEvent();
 };
 
-document.getElementById('addEvent').addEventListener('click', function() {
+// Add additional events when the 'add event' button is clicked
+document.getElementById('addEvent').addEventListener('click', () => {
     addEvent();
 });
 
+// Create a new event container and insert it into the input container above the 'add event' button
 const addEvent = () => {
     const newEventContainer = document.createElement('div');
     newEventContainer.className = 'events-and-time-container';
 
     const newEventInput = document.createElement('input');
     newEventInput.type = 'text';
-    newEventInput.name = 'events';
+    newEventInput.name = 'event';
     newEventInput.className = 'input';
     newEventInput.required = true;
 
@@ -26,22 +27,22 @@ const addEvent = () => {
     newTimeSelect.required = true;
 
     const options = [
-        { value: "0.25", text: "15 min" },
-        { value: ".5", text: "30 min" },
-        { value: ".75", text: "45 min" },
-        { value: "1", text: "1 hr" },
-        { value: "1.5", text: "1 hr 30 min" },
-        { value: "2", text: "2 hr" },
-        { value: "2.5", text: "2 hr 30 min" },
-        { value: "3", text: "3 hr" },
-        { value: "4", text: "4 hr" },
-        { value: "5", text: "5 hr" },
-        { value: "6", text: "6 hr" },
-        { value: "7", text: "7 hr" },
-        { value: "8+", text: "8+ hr" }
+        { value: "15 minutes", text: "15 min" },
+        { value: "30 minutes", text: "30 min" },
+        { value: "45 minutes", text: "45 min" },
+        { value: "1 hour", text: "1 hr" },
+        { value: "1 hour and 30 minutes", text: "1 hr 30 min" },
+        { value: "2 hours", text: "2 hr" },
+        { value: "2 hours and 30 minutes", text: "2 hr 30 min" },
+        { value: "3 hours", text: "3 hr" },
+        { value: "4 hours", text: "4 hr" },
+        { value: "5 hours", text: "5 hr" },
+        { value: "6 hours", text: "6 hr" },
+        { value: "7 hours", text: "7 hr" },
+        { value: "8 hours or more", text: "8+ hr" }
     ];
 
-    options.forEach(function(option) {
+    options.forEach((option) => {
         const newOption = document.createElement('option');
         newOption.value = option.value;
         newOption.text = option.text;
@@ -57,16 +58,6 @@ const addEvent = () => {
     newEventContainer.appendChild(br2);
     newEventContainer.appendChild(br3);
 
-    // Append the event/time container to the input container
-    const inputContainer = document.querySelector('.input-container');
+    const inputContainer = document.getElementsByClassName('input-container')[0];
     inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
 }
-
-document.getElementById('scheduleForm').addEventListener('submit', function() {
-    const eventInputs = document.querySelectorAll('.input');
-    eventInputs.forEach(function(input) {
-        eventsArray.push(input.value);
-    });
-
-    console.log(eventsArray);
-});

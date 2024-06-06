@@ -18,10 +18,11 @@ def schedule_view(request):
     return render(request, 'schedule.html')
 
 def submit_form(request):
-    if request.method == 'GET':
-        EVENTS = request.GET.get('events')
-        ADDITIONAL_NOTES = request.GET.get('additionalNotes')
-        result = generate_schedule(EVENTS, ADDITIONAL_NOTES)
-        return render(request, 'schedule.html', {'result': result})
-    else:
-        return HttpResponse("Only GET method is allowed.")
+    event_names = request.GET.getlist('event')
+    event_times = request.GET.getlist('time')
+
+    EVENTS = dict(zip(event_names, event_times)) # map each event to its corresponding time
+    ADDITIONAL_NOTES = request.GET.get('additionalNotes')
+
+    # Return the result of the Google AI call with EVENTS and ADDITIONAL_NOTES
+    return render(request, 'schedule.html', {'result': generate_schedule(EVENTS, ADDITIONAL_NOTES)})
