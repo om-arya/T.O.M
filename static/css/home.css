@@ -201,6 +201,7 @@ nav {
 }
 
 .input-container {
+    padding: 0;
     margin: 3rem 1rem 2rem 5rem;
     display: flex; 
     flex-direction: column; 
@@ -212,6 +213,7 @@ nav {
     display: flex; 
     flex-direction: column; 
     text-align: center;
+    padding: 0;
 }
 
 .schedule-button {
