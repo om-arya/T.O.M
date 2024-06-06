@@ -1,3 +1,5 @@
+import textToSpeech from "./text-to-speech.js";
+
 const messages = ["Contentment is the greatest wealth.",
                                     "Paws for thought; reflection brings clarity.",
                                     "Hardships only sharpen your claws.",
@@ -77,12 +79,3 @@ tomQuoteHead.addEventListener("click", function() {
     para.innerHTML = messages[messageIndex];
     textToSpeech(messages[messageIndex]);
 });
-
-function textToSpeech(message) {
-    const synth = window.speechSynthesis;
-    const speakThis = new SpeechSynthesisUtterance(message);
-    speakThis.lang = 'en';
-    speakThis.pitch = .8;
-    speakThis.rate = 1;
-    synth.speak(speakThis);
-}

@@ -1,3 +1,5 @@
+import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of text from output
+
 // Add a single event when the page loads
 window.onload = () => {
     addEvent();
