@@ -3,6 +3,24 @@ import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of
 // Add a single event when the page loads
 window.onload = () => {
     addEvent();
+
+    // STEPHEN'S CODE
+    //get stored inputs using the key sessionStore
+    const storedInputs= JSON.parse(localStorage.getItem("sessionStore"));
+
+    //if stored inputs exist, load them back into the input forms
+    if(storedInputs){
+        const eventInputs= document.querySelectorAll('.input');
+        eventInputs.forEach(function(input){
+            input.value= storedInputs;
+        });
+        //idk the syntax for this:
+        // use a for each loop and loop through all values in the eventsArray. 
+        // Load them back onto the inputs on the page the same way they were loaded onto the eventsArray, just in ResizeObserverSize.
+        // eventInputs.forEach(function(input)){
+            
+        // }
+    }
 };
 
 // Add additional events when the 'add event' button is clicked
@@ -76,22 +94,3 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     //do we need new key/value pair for each user??
     localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
 });
-
-window.onload = () => {
-    //get stored inputs using the key sessionStore
-    const storedInputs= JSON.parse(localStorage.getItem("sessionStore"));
-
-    //if stored inputs exist, load them back into the input forms
-    if(storedInputs){
-        const eventInputs= document.querySelectorAll('.input');
-        eventInputs.forEach(function(input){
-            input.value= storedInputs;
-        });
-        //idk the syntax for this:
-        // use a for each loop and loop through all values in the eventsArray. 
-        // Load them back onto the inputs on the page the same way they were loaded onto the eventsArray, just in ResizeObserverSize.
-        // eventInputs.forEach(function(input)){
-            
-        // }
-    }
-}
