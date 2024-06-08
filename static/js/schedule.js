@@ -63,3 +63,35 @@ const addEvent = () => {
     const inputContainer = document.getElementsByClassName('input-container')[0];
     inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
 }
+
+document.getElementById('scheduleForm').addEventListener('submit', function() {
+    const eventInputs = document.querySelectorAll('.input');
+    eventInputs.forEach(function(input) {
+        eventsArray.push(input.value);
+    });
+
+    console.log(eventsArray);
+
+    //store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
+    //do we need new key/value pair for each user??
+    localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
+});
+
+window.onload = () => {
+    //get stored inputs using the key sessionStore
+    const storedInputs= JSON.parse(localStorage.getItem("sessionStore"));
+
+    //if stored inputs exist, load them back into the input forms
+    if(storedInputs){
+        const eventInputs= document.querySelectorAll('.input');
+        eventInputs.forEach(function(input){
+            input.value= storedInputs;
+        });
+        //idk the syntax for this:
+        // use a for each loop and loop through all values in the eventsArray. 
+        // Load them back onto the inputs on the page the same way they were loaded onto the eventsArray, just in ResizeObserverSize.
+        // eventInputs.forEach(function(input)){
+            
+        // }
+    }
+}
