@@ -148,6 +148,7 @@ nav {
 .input {
     display: flex;
     padding: 1rem 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1rem;
     font-weight: bold;
     border: none;
