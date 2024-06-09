@@ -8,8 +8,8 @@ window.onload = () => {
     const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes"));
 
     //if stored input boxes exist, load them back onto the page
-    if(storedInputs && storedTimes){
-
+    if(storedInputs.length > 0){
+        console.log("Theres inputs");
         for (let i = 0; i < storedInputs.length; i++) {
             addEvent();
             let event = document.getElementsByClassName("input")[i];
@@ -101,7 +101,7 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     console.log(eventTimesArray);
 
     //store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
-    localStorage.setItem("sessionStore", JSON.stringify(eventInputs));
+    localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
     localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
     localStorage.setItem("eventCount", JSON.stringify(eventCount));
 });
