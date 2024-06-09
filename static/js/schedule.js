@@ -1,8 +1,8 @@
 import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of text from output
+let eventCount = 1;
 
 // Add a single event when the page loads
 window.onload = () => {
-    let eventCount = 0;
 
     //get stored input boxes using the key sessionStore
     const storedInputs = JSON.parse(localStorage.getItem("sessionStore"));
@@ -10,10 +10,15 @@ window.onload = () => {
 
     //if stored input boxes exist, load them back onto the page
     if(storedInputs && storedTimes){
-        storedInputs.forEach(function(input){
-            addEvent();
-        })
+        console.log("eventCount " + eventCount);
 
+        for (let i = 0; i < eventCount; i++) {
+            addEvent();
+            let event = document.getElementsByClassName("input")[i];
+            event.value = storedInputs[i];
+            let time = document.querySelectorAll("option")[i]; 
+            time.value = storedTimes[i];
+        }
         
     } else {
         addEvent();
@@ -101,4 +106,5 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     //store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
     localStorage.setItem("sessionStore", JSON.stringify(eventInputs));
     localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
+    localStorage.setItem("eventCount", JSON.stringify(eventCount));
 });
