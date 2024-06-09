@@ -1,5 +1,4 @@
 import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of text from output
-let eventCount = 1;
 
 // Add a single event when the page loads
 window.onload = () => {
@@ -10,9 +9,8 @@ window.onload = () => {
 
     //if stored input boxes exist, load them back onto the page
     if(storedInputs && storedTimes){
-        console.log("eventCount " + eventCount);
 
-        for (let i = 0; i < eventCount; i++) {
+        for (let i = 0; i < storedInputs.length; i++) {
             addEvent();
             let event = document.getElementsByClassName("input")[i];
             event.value = storedInputs[i];
@@ -82,8 +80,6 @@ const addEvent = () => {
 
     const inputContainer = document.getElementsByClassName('input-container')[0];
     inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
-
-    eventCount += 1;
 }
 
 document.getElementById('scheduleForm').addEventListener('submit', function() {
