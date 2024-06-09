@@ -2,17 +2,21 @@ import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of
 
 // Add a single event when the page loads
 window.onload = () => {
-    addEvent();
+    let eventCount = 0;
 
-    // STEPHEN'S CODE
     //get stored input boxes using the key sessionStore
-    const storedInputs = localStorage.getItem("sessionStore");
-
-    // const eventInputsArray = Array.from(document.querySelectorAll('.input'));
+    const storedInputs = JSON.parse(localStorage.getItem("sessionStore"));
+    const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes"));
 
     //if stored input boxes exist, load them back onto the page
-    if(storedInputs){
+    if(storedInputs && storedTimes){
+        storedInputs.forEach(function(input){
+            addEvent();
+        })
+
         
+    } else {
+        addEvent();
     }
 };
 
@@ -73,16 +77,28 @@ const addEvent = () => {
 
     const inputContainer = document.getElementsByClassName('input-container')[0];
     inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
+
+    eventCount += 1;
 }
 
 document.getElementById('scheduleForm').addEventListener('submit', function() {
     const eventInputs = document.querySelectorAll('.input');
+    const eventTimes = document.querySelectorAll('.input-select');
+
     eventInputs.forEach(function(input) {
         eventsArray.push(input.value);
+
     });
 
+    const eventTimesArray = [];
+    eventTimes.forEach(function(time) {
+        eventTimesArray.push(time.value);
+    })
+
     console.log(eventsArray);
+    console.log(eventTimesArray);
 
     //store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
-    localStorage.setItem("sessionStore", eventInputs);
+    localStorage.setItem("sessionStore", JSON.stringify(eventInputs));
+    localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
 });
