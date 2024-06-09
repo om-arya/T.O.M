@@ -17,7 +17,6 @@ window.onload = () => {
 
             let time = document.querySelectorAll("option")[i]; 
             time.value = storedTimes[i];
-            time.text = storedTimes[i];
         }
         
     } else {
