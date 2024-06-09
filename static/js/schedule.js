@@ -1,24 +1,16 @@
-import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of text from output
+import textToSpeech from "./text-to-speech.js";
 
 window.onload = () => {
+    // Get stored input boxes using the key sessionStore
+    const storedInputs = JSON.parse(localStorage.getItem("sessionStore")) || [];
+    const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
 
-    //get stored input boxes using the key sessionStore
-    const storedInputs = JSON.parse(localStorage.getItem("sessionStore"));
-    const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes"));
-
-    //if stored input boxes exist, load them back onto the page
-    if(storedInputs.length > 0){
-        console.log("Theres inputs");
-        for (let i = 0; i < storedInputs.length; i++) {
-            addEvent();
-
-            let event = document.getElementsByClassName("input")[i];
-            event.value = storedInputs[i];
-
-            let time = document.querySelectorAll("option")[i]; 
-            time.value = storedTimes[i];
-        }
-        
+    // If stored input boxes exist, load them back onto the page
+    if (storedInputs.length > 0) {
+        console.log("There are inputs");
+        storedInputs.forEach((inputValue, index) => {
+            addEvent({ event: inputValue, time: storedTimes[index] });
+        });
     } else {
         addEvent();
     }
@@ -30,7 +22,7 @@ document.getElementById('addEvent').addEventListener('click', () => {
 });
 
 // Create a new event container and insert it into the input container above the 'add event' button
-const addEvent = () => {
+const addEvent = (eventData = {}) => {
     const newEventContainer = document.createElement('div');
     newEventContainer.className = 'events-and-time-container';
 
@@ -39,8 +31,7 @@ const addEvent = () => {
     newEventInput.name = 'event';
     newEventInput.className = 'input';
     newEventInput.required = true;
-
-    const br1 = document.createElement('br');
+    newEventInput.value = eventData.event || ''; // Set value from eventData
 
     const newTimeSelect = document.createElement('select');
     newTimeSelect.name = 'time';
@@ -70,6 +61,11 @@ const addEvent = () => {
         newTimeSelect.appendChild(newOption);
     });
 
+    if (eventData.time) {
+        newTimeSelect.value = eventData.time;
+    }
+
+    const br1 = document.createElement('br');
     const br2 = document.createElement('br');
     const br3 = document.createElement('br');
 
@@ -90,7 +86,6 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     const eventsArray = [];
     eventInputs.forEach(function(input) {
         eventsArray.push(input.value);
-
     });
 
     const eventTimesArray = [];
@@ -101,7 +96,7 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     console.log(eventsArray);
     console.log(eventTimesArray);
 
-    //store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
+    // Store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
     localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
     localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
     localStorage.setItem("eventCount", JSON.stringify(eventCount));
