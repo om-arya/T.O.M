@@ -1,6 +1,5 @@
 import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of text from output
 
-// Add a single event when the page loads
 window.onload = () => {
 
     //get stored input boxes using the key sessionStore
@@ -12,10 +11,13 @@ window.onload = () => {
         console.log("Theres inputs");
         for (let i = 0; i < storedInputs.length; i++) {
             addEvent();
+
             let event = document.getElementsByClassName("input")[i];
             event.value = storedInputs[i];
+
             let time = document.querySelectorAll("option")[i]; 
             time.value = storedTimes[i];
+            time.text = storedTimes[i];
         }
         
     } else {
