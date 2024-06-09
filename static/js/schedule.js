@@ -90,6 +90,7 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     const eventInputs = document.querySelectorAll('.input');
     const eventTimes = document.querySelectorAll('.input-select');
 
+    const eventsArray = [];
     eventInputs.forEach(function(input) {
         eventsArray.push(input.value);
 
