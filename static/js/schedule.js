@@ -3,6 +3,17 @@ import textToSpeech from "./text-to-speech.js"; // TODO: Speak last paragraph of
 // Add a single event when the page loads
 window.onload = () => {
     addEvent();
+
+    // STEPHEN'S CODE
+    //get stored input boxes using the key sessionStore
+    const storedInputs = localStorage.getItem("sessionStore");
+
+    // const eventInputsArray = Array.from(document.querySelectorAll('.input'));
+
+    //if stored input boxes exist, load them back onto the page
+    if(storedInputs){
+        
+    }
 };
 
 // Add additional events when the 'add event' button is clicked
@@ -63,3 +74,15 @@ const addEvent = () => {
     const inputContainer = document.getElementsByClassName('input-container')[0];
     inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
 }
+
+document.getElementById('scheduleForm').addEventListener('submit', function() {
+    const eventInputs = document.querySelectorAll('.input');
+    eventInputs.forEach(function(input) {
+        eventsArray.push(input.value);
+    });
+
+    console.log(eventsArray);
+
+    //store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
+    localStorage.setItem("sessionStore", eventInputs);
+});
