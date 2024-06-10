@@ -85,8 +85,11 @@ const addEvent = (eventData = {}) => {
 
 const deleteEvent = () => {
     const eventContainers = document.getElementsByClassName('events-and-time-container');
-    const lastEventContainer = eventContainers[eventContainers.length - 1];
-    lastEventContainer.remove();
+    console.log(eventContainers);
+    if (eventContainers.length > 1) {
+        const lastEventContainer = eventContainers[eventContainers.length - 1];
+        lastEventContainer.remove();
+    }
 }
 
 document.getElementById('scheduleForm').addEventListener('submit', function() {
