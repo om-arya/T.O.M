@@ -124,11 +124,16 @@ nav {
     max-height: auto;
 }
 
+.add-delete-container {
+    display: flex;
+    gap: 23.5rem;
+}
+
 .add-button {
-    padding: .7rem 7.5rem .7rem 1.5rem;
-    margin: .5rem 0 2rem 0;
-    max-width: 0.75rem; 
-    max-height: auto;
+    padding: .3rem 7.5rem .3rem 1.5rem;
+    margin: -.5rem 0 2rem 0;
+    width: 0.75rem; 
+    height: 2.5rem;
     border: none;
     color: #ffffff;
     cursor: pointer;
@@ -136,6 +141,23 @@ nav {
     transition: 0.25s;
     text-decoration: none;
     background: #93BF8C;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.delete-button {
+    padding: .3rem 5.8rem .3rem 1.5rem;
+    margin: -.5rem 0 2rem 0;
+    width: 0.75rem; 
+    height: 2.75rem;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    background: #d03030;
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
@@ -241,7 +263,10 @@ nav {
 
 .add-button:hover {
     background: #000;
-    color: #fff;
+}
+
+.delete-button:hover {
+    background: #000;
 }
 
 .schedule-button:hover {

@@ -21,6 +21,10 @@ document.getElementById('addEvent').addEventListener('click', () => {
     addEvent();
 });
 
+document.getElementById('deleteEvent').addEventListener('click', () => {
+    deleteEvent();
+});
+
 // Create a new event container and insert it into the input container above the 'add event' button
 const addEvent = (eventData = {}) => {
     const newEventContainer = document.createElement('div');
@@ -76,7 +80,13 @@ const addEvent = (eventData = {}) => {
     newEventContainer.appendChild(br3);
 
     const inputContainer = document.getElementsByClassName('input-container')[0];
-    inputContainer.insertBefore(newEventContainer, document.getElementById('addEvent'));
+    inputContainer.insertBefore(newEventContainer, document.getElementsByClassName('add-delete-container')[0]);
+}
+
+const deleteEvent = () => {
+    const eventContainers = document.getElementsByClassName('events-and-time-container');
+    const lastEventContainer = eventContainers[eventContainers.length - 1];
+    lastEventContainer.remove();
 }
 
 document.getElementById('scheduleForm').addEventListener('submit', function() {

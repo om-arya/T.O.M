@@ -1,16 +1,5 @@
-import pathlib
-import textwrap
-
 import google.generativeai as genai
-
-from IPython.display import display
-from IPython.display import Markdown
-
 from djangofiles.googleapikey import GOOGLE_API_KEY
-
-def to_markdown(text):
-  text = text.replace('•', '  *')
-  return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
@@ -24,7 +13,7 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
         f"Additional notes/preferences: {ADDITIONAL_NOTES}\n"
         "Your output must be in schedule format, starting with the morning, followed by afternoon, followed by evening.  You will end with a positive conclusion starting with the phrase 'Remember these words of advice' "
         "You must include every event. You are talking to just one person who you will refer to as 'my friend', and you will not accompany this person with any tasks. "
-        "Use some emojis for fun! Return the output in a JSON object to be parsed and iterated over."
+        "Use some emojis for fun!"
     )
   
   result = model.generate_content(prompt)
