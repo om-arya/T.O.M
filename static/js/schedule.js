@@ -100,4 +100,13 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
     localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
     localStorage.setItem("eventCount", JSON.stringify(eventCount));
+
+});
+
+const button = document.getElementsByClassName('submit-container')[0];
+button.addEventListener("click", function() {
+    const speech = document.getElementById('result'); //need to figure out how to make this a string
+    // const para = document.querySelector('pre');
+    // para.innerHTML = speech;
+    textToSpeech(speech);
 });
