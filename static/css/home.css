@@ -147,17 +147,13 @@ nav {
 }
 
 .delete-button {
-    padding: .3rem 5.8rem .3rem 1.5rem;
-    margin: -.5rem 0 2rem 0;
-    width: 0.75rem; 
+    width: 1rem; 
     height: 2.75rem;
     border: none;
     color: #ffffff;
     cursor: pointer;
-    border-radius: 50px;
     transition: 0.25s;
     text-decoration: none;
-    background: #d03030;
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
@@ -266,7 +262,7 @@ nav {
 }
 
 .delete-button:hover {
-    background: #000;
+    transform: scale(1.25);
 }
 
 .schedule-button:hover {
