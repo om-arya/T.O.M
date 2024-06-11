@@ -117,9 +117,19 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
 });
 
 const button = document.getElementsByClassName('submit-container')[0];
-button.addEventListener("click", function() {
-    const speech = document.getElementById('result'); //need to figure out how to make this a string
-    // const para = document.querySelector('pre');
-    // para.innerHTML = speech;
-    textToSpeech(speech);
-});
+button.addEventListener("click", speech()); 
+
+function speech(){
+    var speech = document.getElementById('result').innerHTML;
+    if(speech.length == 13){ //unitialized length of result
+        speech(); //recursively call until correct string is loaded
+    } else {
+        const index = speech.indexOf("Remember these words of advice");
+        if(index >= 0){
+            speech = speech.substring(index);
+        }
+        console.log(speech);
+        console.log(speech.length);
+        textToSpeech(speech);
+    }
+}
