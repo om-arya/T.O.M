@@ -1,4 +1,4 @@
-import textToSpeech from "./text-to-speech.js";
+import {textToSpeech} from "./text-to-speech.js";
 
 window.onload = () => {
     // Get stored input boxes using the key sessionStore
