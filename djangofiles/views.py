@@ -26,6 +26,6 @@ def submit_form(request):
 
     # Return the result of the Google AI call with EVENTS and ADDITIONAL_NOTES
     result = generate_schedule(EVENTS, ADDITIONAL_NOTES)
-    index = result.index("Remember these words of advice")
-    speech = result[index :]
+    # index = result.index("Remember these words of advice")
+    # speech = result[index :]
     return render(request, 'schedule.html', {'result' : result})
