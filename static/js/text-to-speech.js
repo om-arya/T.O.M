@@ -1,5 +1,5 @@
+const synth = window.speechSynthesis;
 function textToSpeech(message) {
-    const synth = window.speechSynthesis;
     const speakThis = new SpeechSynthesisUtterance(message);
     speakThis.lang = 'en';
     speakThis.pitch = .8;
@@ -7,4 +7,8 @@ function textToSpeech(message) {
     synth.speak(speakThis);
 }
 
-export default textToSpeech;
+function cancelTTS() {
+    synth.cancel();
+}
+
+export {textToSpeech, cancelTTS};

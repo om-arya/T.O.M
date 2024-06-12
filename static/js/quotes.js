@@ -1,4 +1,4 @@
-import textToSpeech from "./text-to-speech.js";
+import {textToSpeech, cancelTTS} from "./text-to-speech.js";
 
 const messages = ["Contentment is the greatest wealth.",
                                     "Paws for thought; reflection brings clarity.",
@@ -62,6 +62,8 @@ const messages = ["Contentment is the greatest wealth.",
 const tomQuoteHead = document.getElementById('tom-quote-head');
 
 tomQuoteHead.addEventListener("click", function() {
+    cancelTTS();
+
     let messageIndex = Math.floor(Math.random()*messages.length);
     const random = Math.random();
                         
