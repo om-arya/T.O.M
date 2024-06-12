@@ -11,8 +11,7 @@ window.onload = () => {
     newPre.type = 'text';
     newPre.name = 'schedule';
     newPre.required = true;
-    newPre.value =  aiResult || ""; // Set value from eventData
-    
+    newPre.value =  aiResult; // Set value from eventData
     
     // If stored input boxes exist, load them back onto the page
     if (storedInputs.length > 0) {
@@ -133,7 +132,7 @@ function speechAndStorage(){
     if(schedule.length == 13){ //unitialized length of result
         speechAndStorage(); //recursively call until correct string is loaded
     } else {
-        localStorage.setItem("schedule", schedule);
+        localStorage.setItem("schedule", JSON.stringify(schedule));
         const index = schedule.indexOf("Remember these words of advice");
         if(index >= 0){
             schedule = schedule.substring(index);
