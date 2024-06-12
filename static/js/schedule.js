@@ -4,15 +4,10 @@ window.onload = () => {
     // Get stored input boxes using the key sessionStore
     const storedInputs = JSON.parse(localStorage.getItem("sessionStore")) || [];
     const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
-    const aiResult = localStorage.getItem("schedule") || "";
-    
-    const newPre = document.createElement('pre');
+    var aiResult = localStorage.getItem("schedule");
+    console.log(aiResult);
+    document.getElementById('result').innerHTML = aiResult;
 
-    newPre.type = 'text';
-    newPre.name = 'schedule';
-    newPre.required = true;
-    newPre.value =  aiResult; // Set value from eventData
-    
     // If stored input boxes exist, load them back onto the page
     if (storedInputs.length > 0) {
         console.log("There are inputs");
@@ -132,7 +127,7 @@ function speechAndStorage(){
     if(schedule.length == 13){ //unitialized length of result
         speechAndStorage(); //recursively call until correct string is loaded
     } else {
-        localStorage.setItem("schedule", JSON.stringify(schedule));
+        localStorage.setItem("schedule", schedule);
         const index = schedule.indexOf("Remember these words of advice");
         if(index >= 0){
             schedule = schedule.substring(index);
