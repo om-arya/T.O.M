@@ -4,7 +4,16 @@ window.onload = () => {
     // Get stored input boxes using the key sessionStore
     const storedInputs = JSON.parse(localStorage.getItem("sessionStore")) || [];
     const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
+    const aiResult = localStorage.getItem("schedule") || "";
+    
+    const newPre = document.createElement('pre');
 
+    newPre.type = 'text';
+    newPre.name = 'schedule';
+    newPre.required = true;
+    newPre.value =  aiResult || ""; // Set value from eventData
+    
+    
     // If stored input boxes exist, load them back onto the page
     if (storedInputs.length > 0) {
         console.log("There are inputs");
@@ -117,19 +126,20 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
 });
 
 const button = document.getElementsByClassName('submit-container')[0];
-button.addEventListener("click", speech()); 
+button.addEventListener("click", speechAndStorage()); 
 
-function speech(){
-    var speech = document.getElementById('result').innerHTML;
-    if(speech.length == 13){ //unitialized length of result
-        speech(); //recursively call until correct string is loaded
+function speechAndStorage(){
+    var schedule = document.getElementById('result').innerHTML;
+    if(schedule.length == 13){ //unitialized length of result
+        speechAndStorage(); //recursively call until correct string is loaded
     } else {
-        const index = speech.indexOf("Remember these words of advice");
+        localStorage.setItem("schedule", schedule);
+        const index = schedule.indexOf("Remember these words of advice");
         if(index >= 0){
-            speech = speech.substring(index);
+            schedule = schedule.substring(index);
         }
-        console.log(speech);
-        console.log(speech.length);
-        textToSpeech(speech);
+        console.log(schedule);
+        console.log(schedule.length);
+        textToSpeech(schedule);
     }
 }
