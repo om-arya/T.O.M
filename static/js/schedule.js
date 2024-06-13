@@ -30,20 +30,31 @@ document.getElementById('deleteEvent').addEventListener('click', () => {
 
 // Create a new event container and insert it into the input container above the 'add event' button
 const addEvent = (eventData = {}) => {
-    const newEventContainer = document.createElement('div');
-    newEventContainer.className = 'events-and-time-container';
+    const eventContainer = document.createElement('div');
+    eventContainer.className = 'events-and-time-container';
 
-    const newEventInput = document.createElement('input');
-    newEventInput.type = 'text';
-    newEventInput.name = 'event';
-    newEventInput.className = 'input';
-    newEventInput.required = true;
-    newEventInput.value = eventData.event || ''; // Set value from eventData
+    const eventInput = document.createElement('input');
+    eventInput.type = 'text';
+    eventInput.name = 'event';
+    eventInput.className = 'input';
+    eventInput.required = true;
+    eventInput.value = eventData.event || '';
 
-    const newTimeSelect = document.createElement('select');
-    newTimeSelect.name = 'time';
-    newTimeSelect.className = 'input-select';
-    newTimeSelect.required = true;
+    const timeSelect = document.createElement('select');
+    timeSelect.name = 'time';
+    timeSelect.className = 'input-select';
+    timeSelect.required = true;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.name = 'delete';
+    deleteButton.type = 'button';
+    deleteButton.id = 'deleteEvent';
+    deleteButton.className = 'delete-button';
+    deleteButton.textContent = 'X';
+
+    deleteButton.addEventListener('click', () => {
+        eventContainer.remove();
+    });
 
     const options = [
         { value: "15 minutes", text: "15 min" },
@@ -65,34 +76,19 @@ const addEvent = (eventData = {}) => {
         const newOption = document.createElement('option');
         newOption.value = option.value;
         newOption.text = option.text;
-        newTimeSelect.appendChild(newOption);
+        timeSelect.appendChild(newOption);
     });
 
     if (eventData.time) {
-        newTimeSelect.value = eventData.time;
+        timeSelect.value = eventData.time;
     }
 
-    const br1 = document.createElement('br');
-    const br2 = document.createElement('br');
-    const br3 = document.createElement('br');
-
-    newEventContainer.appendChild(newEventInput);
-    newEventContainer.appendChild(br1);
-    newEventContainer.appendChild(newTimeSelect);
-    newEventContainer.appendChild(br2);
-    newEventContainer.appendChild(br3);
+    eventContainer.appendChild(eventInput);
+    eventContainer.appendChild(timeSelect);
+    eventContainer.appendChild(deleteButton);
 
     const inputContainer = document.getElementsByClassName('input-container')[0];
-    inputContainer.insertBefore(newEventContainer, document.getElementsByClassName('add-delete-container')[0]);
-}
-
-const deleteEvent = () => {
-    const eventContainers = document.getElementsByClassName('events-and-time-container');
-    console.log(eventContainers);
-    if (eventContainers.length > 1) {
-        const lastEventContainer = eventContainers[eventContainers.length - 1];
-        lastEventContainer.remove();
-    }
+    inputContainer.insertBefore(eventContainer, document.getElementsByClassName('add-delete-container')[0]);
 }
 
 document.getElementById('scheduleForm').addEventListener('submit', function() {
