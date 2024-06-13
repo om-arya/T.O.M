@@ -119,6 +119,8 @@ const addEvent = (eventData = {}) => {
 }
 
 document.getElementById('scheduleForm').addEventListener('submit', function() {
+    localStorage.clear();
+
     const eventInputs = document.querySelectorAll('.input');
     const eventTimes = document.querySelectorAll('.input-select');
 
