@@ -13,7 +13,7 @@ window.onload = () => {
         console.log("There are inputs");
         storedInputs.forEach((inputValue, index) => {
             addEvent({ event: inputValue, time: storedTimes[index] });
-        });
+        });l
     } else {
         addEvent();
     }
@@ -23,6 +23,28 @@ window.onload = () => {
 document.getElementById('addEvent').addEventListener('click', () => {
     addEvent();
 });
+
+document.getElementById('clearEvents').addEventListener('click', () => {
+    clearEvents();
+});
+
+function clearEvents() {
+    console.log('local storage cleared');
+
+    const allEvents = document.querySelectorAll('events-and-time-container');
+
+    if(allEvents) {
+        console.log('found events');
+
+        //why is this not removing
+        allEvents.forEach(event => {
+            event.remove();
+        });
+    }
+
+    localStorage.clear();
+    addEvent();
+}
 
 // Create a new event container and insert it into the input container above the 'add event' button
 const addEvent = (eventData = {}) => {
@@ -46,10 +68,18 @@ const addEvent = (eventData = {}) => {
     deleteButton.type = 'button';
     deleteButton.id = 'deleteEvent';
     deleteButton.className = 'delete-button';
-    deleteButton.textContent = 'Remove';
+    deleteButton.textContent = ' X ';
 
     deleteButton.addEventListener('click', () => {
         eventContainer.remove();
+
+        //remove item from local storage
+        const storedInputs = JSON.parse(localStorage.getItem("sessionStore"));
+        const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes"));
+
+        if(storedInputs && storedTimes) {
+            
+        }
     });
 
     const options = [

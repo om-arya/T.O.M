@@ -146,6 +146,23 @@ nav {
     text-align: center;
 }
 
+.clear-all-button {
+    padding: .3rem 7.5rem .3rem 1.5rem;
+    margin: -.5rem 0 2rem 0;
+    width: 0.75rem; 
+    height: 2.5rem;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    background: #93BF8C;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 .delete-button {
     width: 1rem; 
     height: 2.75rem;
@@ -319,4 +336,8 @@ button {
     height: 2.5rem;
     overflow-y: auto;
     font-size: 1rem;
+}
+
+.clear-all-button:hover {
+    background-color: #d71717;
 }
