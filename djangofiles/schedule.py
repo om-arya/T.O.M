@@ -1,8 +1,35 @@
 import google.generativeai as genai
 from djangofiles.googleapikey import GOOGLE_API_KEY
+import re
 
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
+
+def format(text):
+  new_text = "<h1>Your Purr-fect Schedule!</h1><p>"
+
+  i = 0
+  length = len(text)
+  while i < length - 1:
+    if (text[i] == '*' and text[i + 1] == ' ') or text[i] == '#': # skip bullet points and '#' characters
+      i += 1
+    elif text[i] == '*' and text[i + 1] == '*': # append bold text
+      i += 2
+      new_text += "<strong>"
+      while i < length - 1 and not text[i] == '*':
+        new_text += text[i]
+        i += 1
+      new_text += "</strong>"
+      i += 1
+    elif text[i] == '\n': # append <p> for a newline
+        new_text += "</p><p>"
+        i += 1
+    else:
+      new_text += text[i]
+    i += 1
+  new_text += text[i]
+  
+  return new_text
 
 def generate_schedule(EVENTS, ADDITIONAL_NOTES):
   prompt = (
@@ -16,5 +43,5 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
         "Use some emojis, but do not use emojis in your positive conclusion."
     )
   
-  result = model.generate_content(prompt)
-  return result.text
+  result = format(model.generate_content(prompt).text)
+  return result

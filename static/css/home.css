@@ -226,11 +226,31 @@ nav {
 }
 
 #result {
-    padding: 1em 1.5rem 5rem 1.5rem;
-    color: #ffffff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 20rem 5rem 20rem;
+    align-items: left;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+#result h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#result p {
+    padding: .8rem;
+    border: solid 1px white;
+    font-weight: 300;
+    background-color: #415a46;
+}
+
+#result strong {
+    background-color: #415a46;
+    font-weight: 600;
 }
 
 .form {

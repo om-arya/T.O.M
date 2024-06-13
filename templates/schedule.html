@@ -82,9 +82,9 @@
         </div>
     </form>
 
-    <pre id="result">
-        {{ result }}
-    </pre>
+    <div id="result">
+        {{ result|safe }}
+    </div>
     
     <script type="module" src="../static/js/schedule.js"></script>
 </body>
