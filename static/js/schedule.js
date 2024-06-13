@@ -50,7 +50,7 @@ const addEvent = (eventData = {}) => {
     deleteButton.type = 'button';
     deleteButton.id = 'deleteEvent';
     deleteButton.className = 'delete-button';
-    deleteButton.textContent = 'X';
+    deleteButton.textContent = 'Remove';
 
     deleteButton.addEventListener('click', () => {
         eventContainer.remove();
