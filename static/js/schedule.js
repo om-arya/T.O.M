@@ -73,14 +73,6 @@ const addEvent = (eventData = {}) => {
 
     deleteButton.addEventListener('click', () => {
         eventContainer.remove();
-
-        //remove item from local storage
-        const storedInputs = JSON.parse(localStorage.getItem("sessionStore"));
-        const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes"));
-
-        if(storedInputs && storedTimes) {
-            
-        }
     });
 
     const options = [
