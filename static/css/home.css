@@ -126,7 +126,7 @@ nav {
 
 .add-delete-container {
     display: flex;
-    gap: 23.5rem;
+    gap: 31rem;
 }
 
 .add-button {
@@ -147,7 +147,7 @@ nav {
 }
 
 .clear-all-button {
-    padding: .3rem 7.5rem .3rem 1.5rem;
+    padding: .3rem 6.5rem .3rem 1.5rem;
     margin: -.5rem 0 2rem 0;
     width: 0.75rem; 
     height: 2.5rem;
