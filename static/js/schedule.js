@@ -64,20 +64,7 @@ const addEvent = (eventData = {}) => {
     timeSelect.className = 'input-select';
     timeSelect.required = true;
 
-    const size = document.querySelectorAll('.events-and-time-container').length;
-    if(size > 1){
-        const deleteButton = document.createElement('button');
-        deleteButton.name = 'delete';
-        deleteButton.type = 'button';
-        deleteButton.id = 'deleteEvent';
-        deleteButton.className = 'delete-button';
-        deleteButton.textContent = ' X ';
-        eventContainer.appendChild(deleteButton);
-    }
 
-    deleteButton.addEventListener('click', () => {
-        eventContainer.remove();
-    });
 
     const options = [
         { value: "15 minutes", text: "15 min" },
@@ -108,6 +95,21 @@ const addEvent = (eventData = {}) => {
 
     eventContainer.appendChild(eventInput);
     eventContainer.appendChild(timeSelect);
+
+    const size = document.querySelectorAll('.events-and-time-container').length;
+    if(size > 0){
+        const deleteButton = document.createElement('button');
+        deleteButton.name = 'delete';
+        deleteButton.type = 'button';
+        deleteButton.id = 'deleteEvent';
+        deleteButton.className = 'delete-button';
+        deleteButton.textContent = ' X ';
+        eventContainer.appendChild(deleteButton);
+
+        deleteButton.addEventListener('click', () => {
+            eventContainer.remove();
+        });
+    }
 
     const inputContainer = document.getElementsByClassName('input-container')[0];
     inputContainer.insertBefore(eventContainer, document.getElementsByClassName('add-delete-container')[0]);
