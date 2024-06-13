@@ -190,7 +190,7 @@ nav {
     border: none;
     color: #5b7961;
     background-color: #f7f7f7;
-    cursor: pointer;
+    cursor: text;
     border-radius: 17px 0 0 17px;
     transition: 0.25s;
     text-decoration: none;
@@ -205,6 +205,7 @@ nav {
     font-weight: bold; 
     justify-content: flex-start;
     text-align: left; 
+
 }
 
 .notes {
@@ -215,7 +216,7 @@ nav {
     border: none;
     color: #5b7961;
     background-color: #f7f7f7;
-    cursor: pointer;
+    cursor: text;
     border-radius: 17px;
     transition: 0.25s;
     text-decoration: none;
@@ -345,4 +346,8 @@ button {
 
 .schedule-title {
     text-align: left;
+}
+
+.input-select {
+    cursor: pointer;
 }
