@@ -342,3 +342,7 @@ button {
 .clear-all-button:hover {
     background-color: #d71717;
 }
+
+.schedule-title {
+    text-align: left;
+}
