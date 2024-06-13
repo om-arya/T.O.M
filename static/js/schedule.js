@@ -64,8 +64,6 @@ const addEvent = (eventData = {}) => {
     timeSelect.className = 'input-select';
     timeSelect.required = true;
 
-
-
     const options = [
         { value: "15 minutes", text: "15 min" },
         { value: "30 minutes", text: "30 min" },
@@ -137,7 +135,6 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     // Store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
     localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
     localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
-    localStorage.setItem("eventCount", JSON.stringify(eventCount));
 
 });
 

@@ -25,17 +25,17 @@ def format(text):
   i = 0
   length = len(text)
   while i < length - 1:
-    if text[i] == '*' and text[i + 1] == ' ': # skip bullet points
+    if text[i:i + 2] == "* ": # skip bullet points
       i += 2
-    elif text[i] == '#': # skip '#' characters
+    elif text[i] == '#' or text[i] == '>': # skip '#'s, and '>'s to prevent script injection
       i += 1
-    elif text[i] == '\n': # append <p> for a newline
+    elif text[i] == '\n': # append <p>'s for each newline
       new_text += "</p><p>"
       i += 2
-    elif text[i] == '*' and text[i + 1] == '*': # append bold text
+    elif text[i:i + 2] == "**": # append bold text
       i += 2
       new_text += "<strong>"
-      while i < length - 1 and not text[i] == '*':
+      while i < length - 1 and text[i] != '*':
         new_text += text[i]
         i += 1
       new_text += "</strong>"
