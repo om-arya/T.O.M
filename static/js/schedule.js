@@ -13,7 +13,7 @@ window.onload = () => {
         console.log("There are inputs");
         storedInputs.forEach((inputValue, index) => {
             addEvent({ event: inputValue, time: storedTimes[index] });
-        });l
+        });
     } else {
         addEvent();
     }
@@ -24,25 +24,26 @@ document.getElementById('addEvent').addEventListener('click', () => {
     addEvent();
 });
 
+//delete all events when 'clear all' button is clicked
 document.getElementById('clearEvents').addEventListener('click', () => {
     clearEvents();
 });
 
 function clearEvents() {
-    console.log('local storage cleared');
-
+    //select all event boxes on the page
     const allEvents = document.querySelectorAll('events-and-time-container');
 
+    //if there are event boxes, delete them all with a for each loop
     if(allEvents) {
-        console.log('found events');
-
-        //why is this not removing
         allEvents.forEach(event => {
             event.remove();
         });
     }
 
+    //clear local storage of any inputs
     localStorage.clear();
+
+    //add a blank event back to the page
     addEvent();
 }
 
