@@ -31,7 +31,7 @@ document.getElementById('clearEvents').addEventListener('click', () => {
 
 function clearEvents() {
     //select all event boxes on the page
-    const allEvents = document.querySelectorAll('events-and-time-container');
+    const allEvents = document.querySelectorAll('.events-and-time-container');
 
     //if there are event boxes, delete them all with a for each loop
     if(allEvents) {
