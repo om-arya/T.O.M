@@ -65,7 +65,7 @@ const addEvent = (eventData = {}) => {
     timeSelect.required = true;
 
     const size = document.querySelectorAll('.events-and-time-container').length;
-    if(length > 1){
+    if(size > 1){
         const deleteButton = document.createElement('button');
         deleteButton.name = 'delete';
         deleteButton.type = 'button';
