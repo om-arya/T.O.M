@@ -262,10 +262,6 @@ nav {
     background: #000;
 }
 
-.delete-button:hover {
-    transform: scale(1.25);
-}
-
 .schedule-button:hover {
     transform: scale(1.25);
 }
