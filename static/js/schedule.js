@@ -24,10 +24,6 @@ document.getElementById('addEvent').addEventListener('click', () => {
     addEvent();
 });
 
-document.getElementById('deleteEvent').addEventListener('click', () => {
-    deleteEvent();
-});
-
 // Create a new event container and insert it into the input container above the 'add event' button
 const addEvent = (eventData = {}) => {
     const eventContainer = document.createElement('div');
