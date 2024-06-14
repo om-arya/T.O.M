@@ -2,35 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #5b7961;
+    background-color: var(--bg-main-color);
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --bg-main-color: #5b7961;
 }
 
 nav {
     height: 80px;
-    background: #5b7961;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0rem calc((100vw - 1300px) / 2);
+    background: var(--bg-main-color);
 }
 
 .logo {
-    color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
     font-style: italic;
     padding: 0 2rem;
+    color: white;
 }
 
-.top-menu{
-    text-decoration: none;
-    color: #fff;
+.top-menu {
     padding: 0 1.25rem;
-}
-
-.tom {
-    background-color: #5b7961;
+    color: white;
+    text-decoration: none;
 }
 
 .tom-container {
@@ -40,62 +40,13 @@ nav {
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
-.tom-container2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 80vh;
-    padding: 0rem calc((100vw - 1300px) /2);
-}
-
-.about-us-title, .form {
-    text-align: center;
-    font-size: 1rem;
-    color: white;
-}
-
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2;
-    margin-top: .5rem;
-}
-
-.wrapper .profile {
-    flex: 1 1 16rem;
-    text-align: center;
-    background: #5b7961;
-    padding: 3rem 3rem;
-}
-
-.wrapper .profile h1 {
-    margin-top: .5rem;
-    font-size: 2rem;
-    color: white;
-}
-
-.wrapper .profile p {
-    margin-top: .5rem;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.wrapper .profile-p p {
-    color: white;
-    font-size: 1.2rem;
-}
-
-.mission-title {
-    margin-top: -7rem;
-    margin-left: 2rem;
-}
-
 .column-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    color: #fff;
     padding: 0rem 2rem;
+    color: white;
 }
 
 .column-left h1 {
@@ -113,8 +64,6 @@ nav {
     font-size: 1rem;
     font-weight: bold;
     border: none;
-    color: #5b7961;
-    background: #fff;
     cursor: pointer;
     border-radius: 50px;
     transition: 0.25s;
@@ -122,197 +71,14 @@ nav {
     align-items: center;
     max-width: 450px;
     max-height: auto;
-}
-
-.add-delete-container {
-    display: flex;
-    gap: 31.2rem;
-}
-
-.add-button {
-    padding: .3rem 7.5rem .3rem 1.5rem;
-    margin: -.5rem 0 2rem 0;
-    width: 0.75rem; 
-    height: 2.5rem;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    background: #93BF8C;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.clear-all-button {
-    padding: .3rem 5.9rem .3rem 1.5rem;
-    margin: -.5rem 0 2rem 0;
-    width: 0.75rem; 
-    height: 2.5rem;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    background: #93BF8C;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.delete-button {
-    width: 1rem; 
-    height: 2.75rem;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    transition: 0.25s;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.events-and-time-container {
-    display: flex;
-}
-
-.input {
-    display: flex;
-    padding: 1rem 1rem;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    color: #5b7961;
-    background-color: #f7f7f7;
-    cursor: text;
-    border-radius: 17px 0 0 17px;
-    transition: 0.25s;
-    text-decoration: none;
-    align-items: center;
-    width: 40rem;
-    height: 2.5rem;
-}
-
-.input-label {
-    display: flex;
-    font-size: 1.2rem; 
-    font-weight: bold; 
-    justify-content: flex-start;
-    text-align: left; 
-
-}
-
-.notes {
-    display: flex;
-    padding: 1rem 1rem 0 0;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    color: #5b7961;
-    background-color: #f7f7f7;
-    cursor: text;
-    border-radius: 17px;
-    transition: 0.25s;
-    text-decoration: none;
-    align-items: center;
-    width: 40rem;
-    height: 10rem;
-}
-
-#result {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 0 20rem 5rem 20rem;
-    align-items: left;
-    font-size: 1.2rem;
-    color: #ffffff;
-}
-
-#result h1 {
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 1.8rem;
-}
-
-#result p {
-    padding: .8rem;
-    border: solid 1px white;
-    font-weight: 300;
-    background-color: #415a46;
-}
-
-#result strong {
-    background-color: #415a46;
-    font-weight: 600;
-}
-
-.form {
-    display: flex; 
-    justify-content: space-between;
-    padding: 0 5rem
-}
-
-.input-container {
-    padding: 0;
-    margin: 3rem 1rem 2rem 5rem;
-    display: flex; 
-    flex-direction: column; 
-    margin-right: 1rem; 
-}
-
-.submit-container {
-    margin: 6.75rem 1rem 2rem 3rem;
-    display: flex; 
-    flex-direction: column; 
-    text-align: center;
-    padding: 0;
-}
-
-.schedule-button {
-    padding: 1rem 3rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border: none;
-    color: #5b7961;
-    background: rgba(255, 255, 255, 0);
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    align-items: center;
-    max-width: 300px;
-    max-height: auto;
+    background: white;
+    color: var(--bg-main-color);
 }
 
 .tom-button:hover {
-    background: #000;
-    color: #fff;
+    background: black;
+    color: white;
     transform: scale(1.25);
-}
-
-.add-button:hover {
-    background: #000;
-}
-
-.schedule-button:hover {
-    transform: scale(1.25);
-}
-
-.tom-speech {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 0rem 2rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
 }
 
 .tom-image {
@@ -322,52 +88,8 @@ nav {
     background-color: transparent;
 }
 
-.tom-image2 {
-    max-width: 550px;
-    max-height: 550px;
-    background-color: transparent;
-    transition: 0.25s;
- }
-
- .tom-image2:hover {
-    transform: scale(1.1);
- }
-
 @media screen and (max-width: 768px) {
     .tom-container {
         grid-template-columns: 1fr;
     }
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%; 
-    color: #fff;
-  }
-
-button {
-    border: none;
-    background-color: transparent;
-    outline: none;
-}
-
-#time {
-    width: 3rem;
-    height: 2.5rem;
-    overflow-y: auto;
-    font-size: 1rem;
-}
-
-.clear-all-button:hover {
-    background-color: #d71717;
-}
-
-.schedule-title {
-    text-align: left;
-}
-
-.input-select {
-    cursor: pointer;
 }
