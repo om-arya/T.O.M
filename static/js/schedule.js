@@ -5,7 +5,10 @@ window.onload = () => {
     const storedInputs = JSON.parse(localStorage.getItem("sessionStore")) || [];
     const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
     var aiResult = localStorage.getItem("schedule");
+    const additionalNotes = localStorage.getItem("notes");
+
     console.log(aiResult);
+    document.querySelector('.notes').innerHTML = additionalNotes;
     document.getElementById('result').innerHTML = aiResult;
 
     // If stored input boxes exist, load them back onto the page
@@ -118,6 +121,8 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
 
     const eventInputs = document.querySelectorAll('.input');
     const eventTimes = document.querySelectorAll('.input-select');
+    const extraNotes = document.querySelector('.notes').innerHTML;
+    console.log(extraNotes);
 
     const eventsArray = [];
     eventInputs.forEach(function(input) {
@@ -135,7 +140,7 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     // Store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
     localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
     localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
-
+    localStorage.setItem("notes", extraNotes)
 });
 
 const button = document.getElementsByClassName('submit-container')[0];
