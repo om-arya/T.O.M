@@ -58,17 +58,17 @@ a {
 }
 
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2;
-    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem;
 }
 
-.wrapper .profile {
-    flex: 1 1 16rem;
-    text-align: center;
+.profile {
     background: #5b7961;
-    padding: 3rem 3rem;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
 }
 
 .wrapper .profile h1 {
