@@ -19,11 +19,6 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
   result = format(model.generate_content(prompt).text)
   return result
 
-def generate_pun(TASK):
-  prompt = TASK
-  pun = model.generate_content(prompt).text
-  return pun
-
 def format(text):
   new_text = "<h1>Your Purr-fect Schedule!</h1><p>"
 
