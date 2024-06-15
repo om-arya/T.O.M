@@ -1,12 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from djangofiles.schedule import generate_schedule
+from djangofiles.schedule import generate_pun
 
 def home_view(request):
     return render(request, 'home.html')
 
 def quotes_view(request):
-    return render(request, 'quotes.html')
+    TASK = "Make a one sentence motivational, cat-themed message. Feel free to use puns!"
+
+    pun = generate_pun(TASK)
+    return render(request, 'quotes.html', {'pun' : pun})
 
 def about_us_view(request):
     return render(request, 'about-us.html')
