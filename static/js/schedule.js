@@ -123,6 +123,8 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     const eventTimes = document.querySelectorAll('.input-select');
     const extraNotes = document.querySelector('.notes').value;
 
+    console.log(extraNotes);
+    
     const eventsArray = [];
     eventInputs.forEach(function(input) {
         eventsArray.push(input.value);
