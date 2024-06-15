@@ -22,27 +22,31 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
 def format(text):
   new_text = "<h1>Your Purr-fect Schedule!</h1><p>"
 
-  i = 0
-  length = len(text)
-  while i < length - 1:
-    if text[i:i + 2] == "* ": # skip bullet points
-      i += 2
-    elif text[i] == '#' or text[i] == '>': # skip '#'s, and '>'s to prevent script injection
-      i += 1
-    elif text[i] == '\n': # append <p>'s for each newline
+  char_index, length = 0, len(text)
+  while char_index < length - 1:
+    # Don't append bullet points
+    if text[char_index:char_index + 2] == "* ":
+      char_index += 2
+    # Don't append '#'s; don't append '<'s nor '>'s to prevent script injection
+    elif text[char_index] == '#' or text[char_index] == '<' or text[char_index] == '>':
+      char_index += 1
+    # Create enclosing <p>'s for each line
+    elif text[char_index] == '\n':
       new_text += "</p><p>"
-      i += 2
-    elif text[i:i + 2] == "**": # append bold text
-      i += 2
+      char_index += 2
+    # Append bold text with <strong>'s
+    elif text[char_index:char_index + 2] == "**":
+      char_index += 2
       new_text += "<strong>"
-      while i < length - 1 and text[i] != '*':
-        new_text += text[i]
-        i += 1
+      while char_index < length - 1 and text[char_index] != '*':
+        new_text += text[char_index]
+        char_index += 1
       new_text += "</strong>"
-      i += 2
+      char_index += 2
+    # Regular character, just append it
     else:
-      new_text += text[i]
-      i += 1
-  new_text += text[i]
+      new_text += text[char_index]
+      char_index += 1
+  new_text += text[char_index]
   
   return new_text
