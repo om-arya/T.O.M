@@ -21,7 +21,7 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
 
 def generate_pun(TASK):
   prompt = TASK
-  pun = model.generate_content(prompt).text
+  pun = format(model.generate_content(prompt).text)
   return pun
 
 def format(text):
