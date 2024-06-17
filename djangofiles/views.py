@@ -1,14 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from djangofiles.schedule import generate_schedule
-from djangofiles.quotes import generate_pun
+from djangofiles.quotes import generate_quotes
 
 def home_view(request):
     return render(request, 'home.html')
 
 def quotes_view(request):
-    pun = generate_pun()
-    return render(request, 'quotes.html', {'pun' : pun})
+    return render(request, 'quotes.html')
+
+def generate_ai_quotes(request):
+    quote_response = generate_quotes()
+    if quote_response.parts:
+        return render(request, 'quotes.html', {'ai_quotes' : quote_response.text})
+    else: # No response generated
+        return quotes_view(request)
 
 def about_us_view(request):
     return render(request, 'about-us.html')
@@ -28,6 +34,4 @@ def submit_form(request):
 
     # Return the result of the Google AI call with EVENTS and ADDITIONAL_NOTES
     result = generate_schedule(EVENTS, ADDITIONAL_NOTES)
-    # index = result.index("Remember these words of advice")
-    # speech = result[index :]
     return render(request, 'schedule.html', {'result' : result})

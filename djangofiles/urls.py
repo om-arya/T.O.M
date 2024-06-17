@@ -17,10 +17,11 @@ from . import views
 
 urlpatterns = [
     path('', views.home_view, name = 'home'),
-    path('home.html', views.home_view, name = 'homealt'),
-    path('quotes.html', views.quotes_view, name = 'quotes'),
-    path('about-us.html', views.about_us_view, name = 'aboutus'),
-    path('our-mission.html', views.our_mission_view, name = 'ourmission'),
-    path('schedule.html', views.schedule_view, name = 'schedule'),
+    path('home', views.home_view, name = 'homealt'),
+    path('quotes+generate_ai_quotes+False', views.quotes_view, name = 'quotes'),
+    path('about-us', views.about_us_view, name = 'aboutus'),
+    path('our-mission', views.our_mission_view, name = 'ourmission'),
+    path('schedule', views.schedule_view, name = 'schedule'),
     path('submit_form', views.submit_form, name='submit_form'),
+    path('quotes+generate_ai_quotes+True', views.generate_ai_quotes, name='generate_ai_quotes'),
 ]

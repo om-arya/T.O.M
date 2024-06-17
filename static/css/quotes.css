@@ -40,6 +40,16 @@ nav {
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 2rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: white;
+}
+
 .column-left {
     display: flex;
     flex-direction: column;
@@ -49,41 +59,22 @@ nav {
     color: white;
 }
 
-.column-left h1 {
-    margin-bottom: 1rem;
-    font-size: 3rem;
+.tom-quote-head {
+    border: none;
 }
 
-.column-left p {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+.ai-quotes-content {
+    display: none;
 }
 
-.tom-speech {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem 2rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.tom-image2 {
-    max-width: 550px;
-    max-height: 550px;
-    background-color: transparent;
+.get-quote-button {
+    width: 35rem;
+    height: auto;
     transition: 0.25s;
  }
 
-.tom-image2:hover {
+ .get-quote-button:hover {
     transform: scale(1.1);
-}
-
-button {
-    border: none;
-    background-color: transparent;
-    outline: none;
 }
 
 @media screen and (max-width: 768px) {
