@@ -1,6 +1,6 @@
 import {textToSpeech, cancelTTS} from "./text-to-speech.js";
 
-const premadeQuotes = ["Contentment is the greatest wealth.",
+const preMadeQuotes = ["Contentment is the greatest wealth.",
                                     "Paws for thought; reflection brings clarity.",
                                     "Hardships only sharpen your claws.",
                                     "In the purr-suit of knowledge, curiosity is your whiskers.",
@@ -67,11 +67,14 @@ const aiQuotesContent = quoteContainer.querySelector('.ai-quotes-content');
 // The page is reloaded whenever 'tomQuoteHead' is clicked
 // We store these in sessionStorage to maintain them through page reloads
 let quoteCount = parseInt(sessionStorage.getItem('quoteCount')) || 1;
+let quoteIndex = parseInt(sessionStorage.getItem('quoteIndex')) || Math.floor(Math.random() * preMadeQuotes.length);
 let aiQuoteStack = JSON.parse(sessionStorage.getItem('aiQuoteStack')) || [];
 
 /**
- * Clicking 'tomQuoteHead' always displays and reads a new quote, either from the
- * pre-made quotes, or an AI-generated quote from 'aiQuoteStack' if non-empty.
+ * Clicking 'tomQuoteHead' always displays and reads a new quote.
+ * 
+ * 50% chance for a pre-made quote, 50% chance for an AI-generated
+ * quote from 'aiQuoteStack' if non-empty.
  * 
  * It also generates a new Django view, reloading the page.
  */
@@ -87,7 +90,7 @@ tomQuoteHead.addEventListener('click', () => {
  *                 5 quotes via 'generate_ai_quotes'.
  */
 
-if (quoteCount % 5 === 0) {
+if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai_quotes+False') {
     /**
      * Set up the next click such that the invisible 'aiQuotesContent' div
      * will receive a new batch of AI-generated quotes via Django.
@@ -96,7 +99,7 @@ if (quoteCount % 5 === 0) {
     tomQuoteHead.setAttribute('onclick', "location.href='quotes+generate_ai_quotes+True'");
 } else {
     // Check for AI-generated quotes and reset the click link to the normal Django view
-    if (quoteCount % 5 === 1) { // AI-generated quotes were requested
+    if (aiQuoteStack.length < 2) { // AI-generated quotes were requested
         let newQuotes = aiQuotesContent.innerHTML;
         // Parse the 5 quotes in 'aiQuotesContent'
         // We filter out empty strings and '\n's
@@ -105,30 +108,59 @@ if (quoteCount % 5 === 0) {
         aiQuoteStack.push(...newQuotes);
         sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
     }
+
     tomQuoteHead.setAttribute('onclick', "location.href='quotes+generate_ai_quotes+False'");
 }
 
-// Use a pre-made quote, or an AI-generated quote if we have any stored
+// Use a pre-made quote, or potentially an AI-generated quote if we have any stored
 if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
 
-    const quoteIndex = Math.floor(Math.random() * premadeQuotes.length);
-
-    displayAndRead(premadeQuotes[quoteIndex]);
-} else { // AI-generated quote
+    usePreMadeQuote();
+} else { // pre-made quote or AI-generated quote
     cancelTTS();
 
-    displayAndRead(aiQuoteStack.pop());
-    sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
+    const randomHalf = Math.random();
+
+    if (randomHalf < .5) {
+        usePreMadeQuote();
+    } else {
+        useAIQuote();
+    }
 }
 
 /**
- * Called on each 'tomQuoteHead' click. Displays + reads either a pre-made
- * quote or an AI-generated quote.
- * 
- * @param {str} quote to display and read.
+ * Always called when 'aiQuoteStack' is empty; sometimes called when it is not.
  */
-function displayAndRead(quote) {
-    quoteContent.innerHTML = quote;
-    textToSpeech(quote);
+function usePreMadeQuote() {
+    const randomThird = Math.random();
+
+    // Increment 1, 2, or 3 quotes based on 'randomThird' value
+    if (quoteIndex >= preMadeQuotes.length - 1) {
+        quoteIndex = Math.floor(randomThird * 3);
+    } else if (randomThird <= .34 || quoteIndex >= preMadeQuotes.length - 2) {
+        quoteIndex++;
+    } else if (randomThird <= .67 || quoteIndex >= preMadeQuotes.length - 3) {
+        quoteIndex += 2;
+    } else {
+        quoteIndex += 3;
+    }
+    sessionStorage.setItem('quoteIndex', quoteIndex);
+
+    const currQuote = preMadeQuotes[quoteIndex];
+
+    quoteContent.innerHTML = currQuote;
+    textToSpeech(currQuote);
+}
+
+/**
+ * Sometimes called when 'aiQuoteStack' is not empty.
+ */
+function useAIQuote() {
+    const currQuote = aiQuoteStack.pop();
+
+    quoteContent.innerHTML = currQuote;
+    textToSpeech(currQuote);
+
+    sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
 }
