@@ -108,10 +108,11 @@ if (quoteCount % 5 === 0) {
     tomQuoteHead.setAttribute('onclick', "location.href='quotes+generate_ai_quotes+False'");
 }
 
-let quoteIndex = Math.floor(Math.random() * premadeQuotes.length);
 // Use a pre-made quote, or an AI-generated quote if we have any stored
 if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
+
+    const quoteIndex = Math.floor(Math.random() * premadeQuotes.length);
 
     displayAndRead(premadeQuotes[quoteIndex]);
 } else { // AI-generated quote
@@ -122,8 +123,8 @@ if (aiQuoteStack.length === 0) { // pre-made quote
 }
 
 /**
- * Called on each click. Displays + reads either a pre-made quote or
- * an AI-generated quote.
+ * Called on each 'tomQuoteHead' click. Displays + reads either a pre-made
+ * quote or an AI-generated quote.
  * 
  * @param {str} quote to display and read.
  */
