@@ -68,8 +68,6 @@ const aiQuotesContent = quoteContainer.querySelector('.ai-quotes-content');
 // We store these in sessionStorage to maintain them through page reloads
 let quoteCount = parseInt(sessionStorage.getItem('quoteCount')) || 1;
 let aiQuoteStack = JSON.parse(sessionStorage.getItem('aiQuoteStack')) || [];
-console.log(quoteCount);
-console.log(aiQuoteStack);
 
 /**
  * Clicking 'tomQuoteHead' always displays and reads a new quote, either from the
@@ -114,19 +112,6 @@ let quoteIndex = Math.floor(Math.random() * premadeQuotes.length);
 // Use a pre-made quote, or an AI-generated quote if we have any stored
 if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
-
-    const random = Math.random();
-            
-    // Increment 1, 2, or 3 quotes based on 'random' value
-    if (quoteIndex >= premadeQuotes.length - 1) {
-        quoteIndex = Math.floor(random * 3);
-    } else if (random <= .34 || quoteIndex >= premadeQuotes.length - 2) {
-        quoteIndex++;
-    } else if (random <= .67 || quoteIndex >= premadeQuotes.length - 3) {
-        quoteIndex += 2;
-    } else {
-        quoteIndex += 3;
-    }
 
     displayAndRead(premadeQuotes[quoteIndex]);
 } else { // AI-generated quote
