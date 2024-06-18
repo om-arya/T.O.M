@@ -66,7 +66,7 @@ const aiQuotesContent = quoteContainer.querySelector('.ai-quotes-content');
 
 // The page is reloaded whenever 'tomQuoteHead' is clicked
 // We store these in sessionStorage to maintain them through page reloads:
-let quoteCount = parseInt(sessionStorage.getItem('quoteCount')) || 1;
+let quoteCount = parseInt(sessionStorage.getItem('quoteCount')) || 0;
 let quoteIndex = parseInt(sessionStorage.getItem('quoteIndex')) || Math.floor(Math.random() * preMadeQuotes.length);
 let aiQuoteStack = JSON.parse(sessionStorage.getItem('aiQuoteStack')) || [];
 
@@ -113,7 +113,9 @@ if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai
 }
 
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
-if (aiQuoteStack.length === 0) { // pre-made quote
+if (quoteCount == 0) {
+    quoteContent.innerHTML = "Click me! -->"
+} else if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
 
     usePreMadeQuote();
