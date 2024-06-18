@@ -86,8 +86,8 @@ tomQuoteHead.addEventListener('click', () => {
 
 /**
  * See 'views.py': The 'onclick' of 'tomQuoteHead' usually just reloads 'quotes.html' via 'quotes_view';
- *                 Every 4 quotes, in addition to reloading the page, we also generate a new batch of
- *                 5 quotes via 'generate_ai_quotes'.
+ *                 When 'aiQuoteStack' reaches a length of 1, in addition to reloading the page, we also
+ *                 generate a new batch of 5 quotes via 'generate_ai_quotes'.
  */
 
 if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai_quotes+False') {
@@ -121,7 +121,6 @@ if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
 
     const randomHalf = Math.random();
-
     if (randomHalf < .5) {
         usePreMadeQuote();
     } else {
@@ -145,9 +144,10 @@ function usePreMadeQuote() {
     } else {
         quoteIndex += 3;
     }
-    sessionStorage.setItem('quoteIndex', quoteIndex);
 
     const currQuote = preMadeQuotes[quoteIndex];
+
+    sessionStorage.setItem('quoteIndex', quoteIndex);
 
     quoteContent.innerHTML = currQuote;
     textToSpeech(currQuote);

@@ -4,7 +4,7 @@ window.onload = () => {
     // Get stored input boxes using the key sessionStore
     const storedInputs = JSON.parse(localStorage.getItem("sessionStore")) || [];
     const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
-    var aiResult = localStorage.getItem("schedule");
+    const aiResult = localStorage.getItem("schedule");
     const additionalNotes = localStorage.getItem("notes");
 
     console.log(aiResult);
