@@ -111,7 +111,7 @@ if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai
         let newQuotes = aiQuotesContent.innerHTML;
         // Parse the 5 quotes in 'aiQuotesContent'
         // We filter out empty strings and '\n's
-        newQuotes = newQuotes.replaceAll("  ", "").split('*').filter(quote => quote.length > 2);
+        newQuotes = newQuotes.split('*').slice(1).filter(quote => quote.length > 2);
 
         aiQuoteStack.push(...newQuotes);
         sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
