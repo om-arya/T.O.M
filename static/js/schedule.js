@@ -7,7 +7,18 @@ window.onload = () => {
     const aiResult = localStorage.getItem("schedule");
     const additionalNotes = localStorage.getItem("notes");
 
-    console.log(aiResult);
+    const result = document.querySelector('#result');
+    if (result.innerHTML.length > 15) { // scroll to schedule result when it loads
+        setTimeout(() => {
+            window.scrollTo({
+                top: result.offsetTop - 20,
+                left: 0,
+                behavior: "smooth",
+            });
+        }, 0);
+    }
+
+    console.log(storedInputs);
     document.querySelector('.notes').innerHTML = additionalNotes;
     document.getElementById('result').innerHTML = aiResult;
 
