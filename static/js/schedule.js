@@ -6,10 +6,11 @@ window.onload = () => {
     const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
     const aiResult = localStorage.getItem("schedule");
     const additionalNotes = localStorage.getItem("notes");
+    console.log(aiResult);
 
     const result = document.querySelector('#result');
     if (result.innerHTML.length > 15) { // scroll to schedule result when it loads
-        setTimeout(() => {
+        setTimeout(() => { // wait for the DOM to update
             window.scrollTo({
                 top: result.offsetTop - 20,
                 left: 0,
@@ -18,13 +19,11 @@ window.onload = () => {
         }, 0);
     }
 
-    console.log(storedInputs);
     document.querySelector('.notes').innerHTML = additionalNotes;
     document.getElementById('result').innerHTML = aiResult;
 
     // If stored input boxes exist, load them back onto the page
     if (storedInputs.length > 0) {
-        console.log("There are inputs");
         storedInputs.forEach((inputValue, index) => {
             addEvent({ event: inputValue, time: storedTimes[index] });
         });
@@ -48,7 +47,7 @@ function clearEvents() {
     const allEvents = document.querySelectorAll('.events-and-time-container');
 
     //if there are event boxes, delete them all with a for each loop
-    if(allEvents) {
+    if (allEvents) {
         allEvents.forEach(event => {
             event.remove();
         });
@@ -133,8 +132,6 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     const eventInputs = document.querySelectorAll('.input');
     const eventTimes = document.querySelectorAll('.input-select');
     const extraNotes = document.querySelector('.notes').value;
-
-    console.log(extraNotes);
     
     const eventsArray = [];
     eventInputs.forEach(function(input) {
@@ -145,9 +142,6 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     eventTimes.forEach(function(time) {
         eventTimesArray.push(time.value);
     })
-
-    console.log(eventsArray);
-    console.log(eventTimesArray);
 
     // Store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
     localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
