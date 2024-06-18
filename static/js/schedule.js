@@ -162,6 +162,11 @@ function speechAndStorage(){
         if(index >= 0){
             schedule = schedule.substring(index);
         }
+        const end = schedule.indexOf("</p>");
+        console.log(end);
+        if(end >=0){
+            schedule = schedule.substring(0,end);
+        }
         console.log(schedule);
         console.log(schedule.length);
         textToSpeech(schedule);
