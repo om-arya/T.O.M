@@ -70,6 +70,14 @@ let quoteCount = parseInt(sessionStorage.getItem('quoteCount')) || 0;
 let quoteIndex = parseInt(sessionStorage.getItem('quoteIndex')) || Math.floor(Math.random() * preMadeQuotes.length);
 let aiQuoteStack = JSON.parse(sessionStorage.getItem('aiQuoteStack')) || [];
 
+// Reset sessionStorage when another tab is clicked
+const navLinks = document.querySelector('.nav-items').querySelectorAll('a');
+navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        sessionStorage.clear();
+    });
+});
+
 /**
  * Clicking 'tomQuoteHead' always displays and reads a new quote.
  * 
