@@ -174,8 +174,8 @@ async function speechAndStorage(){
 
     localStorage.setItem("schedule", schedule);
 
-    const adviceIndex = schedule.indexOf("Remember these words of advice");
-    if (adviceIndex >= 0) {
+    const index = schedule.indexOf("Remember these words of advice");
+    if (index >= 0) {
         // Read just the 'words of advice' substring with no tags
         schedule = schedule.substring(index);
         schedule = schedule.replaceAll("<p>", "").replaceAll("</p>", "").replaceAll("<strong>", "").replaceAll("</strong>", "");
