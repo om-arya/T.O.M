@@ -1,16 +1,19 @@
 import {textToSpeech} from "./text-to-speech.js";
 
 window.onload = () => {
-    // Get stored input boxes using the key sessionStore
-    const storedInputs = JSON.parse(localStorage.getItem("sessionStore")) || [];
-    const storedTimes = JSON.parse(localStorage.getItem("sessionStoreTimes")) || [];
-    const aiResult = localStorage.getItem("schedule");
-    const additionalNotes = localStorage.getItem("notes");
-    console.log(aiResult);
+    // We maintain these through reloads and session closes (exiting the tab keeps these)
+    const storedInputs = JSON.parse(localStorage.getItem("inputs")) || [];
+    const storedTimes = JSON.parse(localStorage.getItem("times")) || [];
+    const storedSchedule = localStorage.getItem("schedule");
+    const storedNotes = localStorage.getItem("notes");
 
+    const notes = document.querySelector('.notes');
     const result = document.querySelector('#result');
-    if (result.innerHTML.length > 15) { // scroll to schedule result when it loads
-        setTimeout(() => { // wait for the DOM to update
+
+    // Scroll to the schedule result when it loads
+    if (result.innerHTML.length > 15) {
+        // Wait for the DOM to update for the offset to be accurate
+        setTimeout(() => { 
             window.scrollTo({
                 top: result.offsetTop - 20,
                 left: 0,
@@ -19,9 +22,6 @@ window.onload = () => {
         }, 0);
     }
 
-    document.querySelector('.notes').innerHTML = additionalNotes;
-    document.getElementById('result').innerHTML = aiResult;
-
     // If stored input boxes exist, load them back onto the page
     if (storedInputs.length > 0) {
         storedInputs.forEach((inputValue, index) => {
@@ -29,6 +29,14 @@ window.onload = () => {
         });
     } else {
         addEvent();
+    }
+
+    // Load additional notes
+    notes.innerHTML = storedNotes;
+
+    // Load stored schedule if non-empty
+    if (storedSchedule.includes('Y')) {
+        result.innerHTML = storedSchedule;
     }
 };
 
@@ -108,7 +116,8 @@ const addEvent = (eventData = {}) => {
     eventContainer.appendChild(timeSelect);
 
     const size = document.querySelectorAll('.events-and-time-container').length;
-    if(size > 0){
+    // Start adding delete buttons after the first event
+    if(size > 0) {
         const deleteButton = document.createElement('button');
         deleteButton.name = 'delete';
         deleteButton.type = 'button';
@@ -126,12 +135,13 @@ const addEvent = (eventData = {}) => {
     inputContainer.insertBefore(eventContainer, document.getElementsByClassName('add-delete-container')[0]);
 }
 
+// Store inputs, times, and additional notes
 document.getElementById('scheduleForm').addEventListener('submit', function() {
     localStorage.clear();
 
     const eventInputs = document.querySelectorAll('.input');
     const eventTimes = document.querySelectorAll('.input-select');
-    const extraNotes = document.querySelector('.notes').value;
+    const additionalNotes = document.querySelector('.notes').value;
     
     const eventsArray = [];
     eventInputs.forEach(function(input) {
@@ -143,32 +153,32 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
         eventTimesArray.push(time.value);
     })
 
-    // Store eventsArray in localStorage using sessionStore as the key and the eventsArray as the value
-    localStorage.setItem("sessionStore", JSON.stringify(eventsArray));
-    localStorage.setItem("sessionStoreTimes", JSON.stringify(eventTimesArray));
-    localStorage.setItem("notes", extraNotes);
+    localStorage.setItem("inputs", JSON.stringify(eventsArray));
+    localStorage.setItem("times", JSON.stringify(eventTimesArray));
+    localStorage.setItem("notes", additionalNotes);
 });
 
-const button = document.getElementsByClassName('submit-container')[0];
-button.addEventListener("click", speechAndStorage()); 
+const sleep = ms => new Promise(res => setTimeout(res, ms)); // pause the program for 'ms' milliseconds
 
-function speechAndStorage(){
-    var schedule = document.getElementById('result').innerHTML;
-    if(schedule.length == 13){ //unitialized length of result
-        speechAndStorage(); //recursively call until correct string is loaded
-    } else {
-        localStorage.setItem("schedule", schedule);
-        const index = schedule.indexOf("Remember these words of advice");
-        if(index >= 0){
-            schedule = schedule.substring(index);
-        }
-        const end = schedule.indexOf("</p>");
-        console.log(end);
-        if(end >=0){
-            schedule = schedule.substring(0,end);
-        }
-        console.log(schedule);
-        console.log(schedule.length);
+const submitContainer = document.getElementsByClassName('submit-container')[0];
+submitContainer.addEventListener("click", speechAndStorage()); 
+
+// Store the full schedule in local storage and speak just the 'words of advice'
+async function speechAndStorage(){
+    let schedule = document.getElementById('result').innerHTML;
+
+    // Wait for the schedule to load
+    while (!schedule.includes('Y')) {
+        await sleep(200);
+    }
+
+    localStorage.setItem("schedule", schedule);
+
+    const adviceIndex = schedule.indexOf("Remember these words of advice");
+    if (adviceIndex >= 0) {
+        // Read just the 'words of advice' substring with no tags
+        schedule = schedule.substring(index);
+        schedule = schedule.replaceAll("<p>", "").replaceAll("</p>", "").replaceAll("<strong>", "").replaceAll("</strong>", "");
         textToSpeech(schedule);
     }
 }
