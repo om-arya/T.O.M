@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-main-color);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --bg-main-color: #5b7961;
+}
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2);
+    background: var(--bg-main-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+    color: white;
+}
+
+.top-menu {
+    padding: 0 1.25rem;
+    color: white;
+    text-decoration: none;
+}
+
+.tom-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 85vh;
+    padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0rem 2rem;
+    color: white;
+}
+
+.column-left h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.column-left p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.tom-button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    align-items: center;
+    max-width: 450px;
+    max-height: auto;
+    background: white;
+    color: var(--bg-main-color);
+}
+
+.tom-button:hover {
+    background: black;
+    color: white;
+    transform: scale(1.25);
+}
+
+.tom-image {
+    margin-left: 8rem;
+    max-width: 450px;
+    max-height: auto;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .tom-container {
+        grid-template-columns: 1fr;
+    }
+}

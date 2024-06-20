@@ -25,6 +25,9 @@ def our_mission_view(request):
 def schedule_view(request):
     return render(request, 'schedule.html')
 
+def tomodoro_view(request):
+    return render(request, 'tomodoro.html')
+
 def submit_form(request):
     event_names = request.GET.getlist('event')
     event_times = request.GET.getlist('time')

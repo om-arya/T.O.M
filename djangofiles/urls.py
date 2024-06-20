@@ -22,6 +22,7 @@ urlpatterns = [
     path('about-us', views.about_us_view, name = 'aboutus'),
     path('our-mission', views.our_mission_view, name = 'ourmission'),
     path('schedule', views.schedule_view, name = 'schedule'),
+    path('tomodoro', views.tomodoro_view, name = 'tomodoro'),
     path('submit_form', views.submit_form, name='submit_form'),
     path('quotes+generate_ai_quotes+True', views.generate_ai_quotes, name='generate_ai_quotes'),
 ]
