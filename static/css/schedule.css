@@ -42,6 +42,7 @@ nav {
 .event-label-container {
     display: flex;
     flex-direction: row;
+    margin-bottom: -1.4rem;
 }
 
 .form {
@@ -81,15 +82,15 @@ nav {
 
 .input-label {
     display: flex;
-    font-size: 1.2rem; 
-    font-weight: bold; 
     justify-content: flex-start;
-    text-align: left; 
+    text-align: left;
+    font-size: 1.2rem; 
+    font-weight: bold;
 }
 
 .input-label2 {
     display: flex;
-    margin: 0 0 -.8rem 15.5rem;
+    margin: 0 0 .7rem 15.5rem;
     justify-content: right;
     align-items: last baseline;
     font-size: 1rem;
@@ -98,7 +99,7 @@ nav {
 
 .notes {
     display: flex;
-    padding: 1rem 1rem 0 0;
+    padding: 1rem;
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -204,26 +205,32 @@ option {
 }
 
 .submit-container {
-    margin: 6.75rem 1rem 2rem 3rem;
-    display: flex; 
-    flex-direction: column; 
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    margin: 4rem 5rem 0 1rem;
     padding: 0;
+    width: 15rem;
+    text-align: center;
+}
+
+.submit-container p {
+    margin: -1.5rem -.5rem 0 0;
+    text-wrap: wrap;
+    font-size: 1.3rem;
 }
 
 .schedule-button {
     padding: 1rem 3rem;
-    font-size: 1.5rem;
     font-weight: bold;
     border: none;
     background: rgba(255, 255, 255, 0);
     cursor: pointer;
-    border-radius: 50px;
     transition: 0.25s;
     text-decoration: none;
     align-items: center;
-    max-width: 300px;
-    max-height: auto;
+    width: 23rem;
     color: var(--bg-main-color);
 }
 
