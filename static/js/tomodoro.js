@@ -1,127 +1,60 @@
+import {setStartTime, runTimer, stopTimer} from "./timer.js";
+
 const timer = document.querySelector('.timer');
 const startButton = document.querySelector('#start-timer');
-const restartButton = document.querySelector('#restart-button');
+const tomodoroTab = document.querySelector('.tomodoro');
+const shortBreakTab = document.querySelector('.short-break');
+const longBreakTab = document.querySelector('.long-break');
 
-let startTime = timer.innerHTML; // when the timer is stopped, we set it back to this
-let interval; // stores the reference to our 'setInterval()' function for use in 'clearInterval()' call
-
-startButton.addEventListener('click', runTimer)
-
-/**
- * Turn the start button into a pause button, enable the
- * restart button, and decrement the timer every second.
- */
-function runTimer() {
-    startButton.removeEventListener('click', runTimer);
-    startButton.addEventListener('click', pauseTimer);
-
-    restartButton.addEventListener('click', stopTimer);
-
-    startButton.style.background = "#d71717";
-    startButton.setAttribute('value', "Pause");
-
-    timer.innerHTML = startTime;
-
-    interval = setInterval(decrementSecond, 1000);
-}
+startButton.addEventListener('click', runTimer);
+tomodoroTab.addEventListener('click', switchToTomodoro);
+shortBreakTab.addEventListener('click', switchToShortBreak);
+longBreakTab.addEventListener('click', switchToLongBreak);
 
 /**
- * Get the current values of the hours, minutes, and seconds,
- * and update the display with the time decremented by 1 second.
- * 
- * Stop decrementing when the time reaches 00:00.
- * 
- * If the hours are 0, we do not display them, but we always
- * display the minutes and seconds.
+ * Switch to the Tomodoro tab if not already active.
  */
-function decrementSecond() {
-    let currTime = timer.innerHTML;
-    if (currTime === "00:00") {
-        startButton.addEventListener('click', runTimer)
-        clearInterval(interval);
-        return;
-    }
+function switchToTomodoro() {
+    if (!tomodoroTab.classList.contains('selected')) {
+        stopTimer();
 
-    const timeParts = currTime.split(':');
-    let hours = 0, minutes = 0, seconds = 0;
+        shortBreakTab.classList.remove('selected');
+        longBreakTab.classList.remove('selected');
+        tomodoroTab.classList.add('selected');
 
-    if (timeParts.length >= 3) {
-        hours = parseInt(timeParts[0]);
-        minutes = parseInt(timeParts[1]);
-        seconds = parseInt(timeParts[2]);
-    } else {
-        minutes = parseInt(timeParts[0]);
-        seconds = parseInt(timeParts[1]);
-    }
-    
-    if (seconds > 0) {
-        seconds -= 1;
-    } else {
-        if (minutes > 0) {
-            seconds = 59;
-            minutes -= 1;
-        } else if (minutes === 0 && hours > 0) {
-                minutes = 59;
-                hours -= 1;
-        }
-    }
-
-    let hours_str = hours > 0 ? (hours < 10 ? `0${hours}:` : `${hours}:`) : '';
-    let minutes_str = minutes < 10 ? `0${minutes}:` : `${minutes}:`;
-    let seconds_str = seconds < 10 ? `0${seconds}` : `${seconds}`;
-
-    timer.innerHTML = hours_str + minutes_str + seconds_str;
-}
-
-/**
- * Temporarily stop the timer and turn the pause button into
- * an unpause button.
- */
-function pauseTimer() {
-    if (startButton.getAttribute('value') === "Pause") {
-        startButton.removeEventListener('click', pauseTimer);
-        startButton.addEventListener('click', unpauseTimer);
-
-        clearInterval(interval);
-
-        startButton.style.background = "#93bf8c";
-        startButton.setAttribute('value', "Continue");
+        timer.innerHTML = "25:00";
+        setStartTime(timer.innerHTML);
     }
 }
 
 /**
- * Unpause the timer and turn the unpause button into
- * a pause button.
+ * Switch to the Short Break tab if not already active.
  */
-function unpauseTimer() {
-    if (startButton.getAttribute('value') === "Continue") {
-        startButton.removeEventListener('click', unpauseTimer);
-        startButton.addEventListener('click', pauseTimer);
+function switchToShortBreak() {
+    if (!shortBreakTab.classList.contains('selected')) {
+        stopTimer();
 
-        clearInterval(interval);
-        interval = setInterval(decrementSecond, 1000);
+        tomodoroTab.classList.remove('selected');
+        longBreakTab.classList.remove('selected');
+        shortBreakTab.classList.add('selected');
 
-        startButton.style.background = "#d71717";
-        startButton.setAttribute('value', "Pause");
+        timer.innerHTML = "05:00";
+        setStartTime(timer.innerHTML);
     }
 }
 
 /**
- * Stop the timer completely, resetting the time to what it
- * was initially. Revert the start button back to normal
- * and disable the restart button.
+ * Switch to the Long Break tab if not already active.
  */
-function stopTimer() {
-    restartButton.removeEventListener('click', stopTimer);
+function switchToLongBreak() {
+    if (!longBreakTab.classList.contains('selected')) {
+        stopTimer();
 
-    startButton.removeEventListener('click', pauseTimer);
-    startButton.removeEventListener('click', unpauseTimer);
-    startButton.addEventListener('click', runTimer);
+        tomodoroTab.classList.remove('selected');
+        shortBreakTab.classList.remove('selected');
+        longBreakTab.classList.add('selected');
 
-    startButton.style.background = "#93bf8c";
-    startButton.setAttribute('value', "Start Timer");
-
-    clearInterval(interval);
-
-    timer.innerHTML = startTime;
+        timer.innerHTML = "15:00";
+        setStartTime(timer.innerHTML);
+    }
 }
