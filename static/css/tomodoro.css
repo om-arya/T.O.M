@@ -141,7 +141,7 @@ nav {
 }
 
 #start-timer.pause-mode {
-    background: #d71717;
+    background: black;
 }
 
 #start-timer.start-mode:hover {
