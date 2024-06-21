@@ -60,11 +60,6 @@ function clearEvents() {
             event.remove();
         });
     }
-
-    //clear local storage of any inputs
-    localStorage.clear();
-
-    //add a blank event back to the page
     addEvent();
 }
 
