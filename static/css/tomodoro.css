@@ -59,26 +59,10 @@ nav {
     font-size: 1.5rem;
 }
 
-.tom-button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    align-items: center;
-    max-width: 450px;
-    max-height: auto;
-    background: white;
-    color: var(--bg-main-color);
-}
-
 .tom-button:hover {
     background: black;
     color: white;
-    transform: scale(1.25);
+    transform: scale(1.15);
 }
 
 .tom-image {
@@ -95,10 +79,8 @@ nav {
 }
 
 .tom-button {
-    padding: .3rem 7.5rem .3rem 1.5rem;
-    margin: -.5rem 5rem 6rem 5rem;
-    width: 0.75rem; 
-    height: 2.5rem;
+    padding: 0.75rem;
+    width: 150px;
     border: none;
     cursor: pointer;
     border-radius: 50px;
@@ -110,11 +92,77 @@ nav {
     background:#93bf8c;
     color: #ffffff;
 }
-/* 
-.top-buttons{
-    padding: .3rem 5rem .3rem 20rem;
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.bottom-buttons{
-    padding: .3rem 5rem .3rem 20rem;
-} */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-buttons, .bottom-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 3rem;
+}
+
+.top-buttons {
+    margin-top: 3rem;
+}
+
+.timer {
+    text-decoration: none;
+    font-size: 15rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#start-timer {
+    padding: 1.25rem 3.25rem;
+    font-size: 2rem;
+    width: 272px;
+}
+
+#start-timer:hover {
+    transform: scale(1.05);
+}
+
+#restart-button {
+    width: 3rem;
+    height: 3rem;
+    transition: 0.25s;
+    background-image: url('/static/assets/restart-white.png');
+}
+
+#settings-button {
+    width: 3rem;
+    height: 3rem;
+    transition: 0.25s;
+    background-image: url('/static/assets/gear-white.png');
+}
+
+#restart-button:hover {
+    transform: scale(1.25);
+    background-image: url('/static/assets/restart-black.png');
+}
+
+#settings-button:hover {
+    transform: scale(1.25);
+    background-image: url('/static/assets/gear-black.png');
+}
+
+.no-button {
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    margin: 1rem;
+}
