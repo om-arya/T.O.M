@@ -93,3 +93,20 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+
+.tom-button {
+    padding: .3rem 7.5rem .3rem 1.5rem;
+    margin: -.5rem 0 2rem 0;
+    width: 0.75rem; 
+    height: 2.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    background:#93bf8c;
+    color: #000000;
+}
