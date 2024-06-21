@@ -1,9 +1,13 @@
 const timer = document.querySelector('.timer');
 const startButton = document.querySelector('#start-timer');
 const restartButton = document.querySelector('#restart-button');
+const root = document.querySelector(':root');
+const catSound = new Audio("static/assets/cat-sound.mp3");
 
 let startTime = timer.innerHTML; // when the timer is stopped, we set it back to this
 let interval; // stores the reference to our 'setInterval()' function for use in 'clearInterval()' call
+
+const sleep = ms => new Promise(res => setTimeout(res, ms));
 
 /**
  * Used when switching tabs to update the initial time.
@@ -44,7 +48,12 @@ function runTimer() {
 function decrementSecond() {
     let currTime = timer.innerHTML;
     if (currTime === "00:00") {
-        startButton.addEventListener('click', runTimer)
+        root.style.setProperty("--bg-main-color", "#d71717");
+        playAlarm();
+
+        startButton.addEventListener('click', stopTimer);
+        startButton.setAttribute('value', "Restart");
+
         clearInterval(interval);
         return;
     }
@@ -123,6 +132,8 @@ function unpauseTimer() {
 function stopTimer() {
     restartButton.removeEventListener('click', stopTimer);
 
+    root.style.setProperty("--bg-main-color", "#5b7961");
+
     startButton.removeEventListener('click', pauseTimer);
     startButton.removeEventListener('click', unpauseTimer);
     startButton.addEventListener('click', runTimer);
@@ -134,6 +145,39 @@ function stopTimer() {
     clearInterval(interval);
 
     timer.innerHTML = startTime;
+}
+
+/**
+ * Meow meow, meow, meow, meow, meow
+ */
+async function playAlarm() {
+    const BPM = 163;
+    const quarterNoteDuration = (60 / BPM) * 1000;
+    const halfNoteDuration = quarterNoteDuration * 2;
+
+    while (timer.innerHTML == "00:00") {
+        catSound.volume = 1;
+        catSound.currentTime = 0;
+        catSound.play();
+        await sleep(quarterNoteDuration);
+        catSound.volume -= .1;
+
+        catSound.currentTime = 0;
+        catSound.play();
+        await sleep(halfNoteDuration);
+        catSound.volume -= .4;
+
+        for (let i = 0; i < 3 && timer.innerHTML == "00:00"; i++) {
+            catSound.currentTime = 0;
+            catSound.play();
+            await sleep(halfNoteDuration);
+            catSound.volume -= .16;
+        }
+
+        catSound.currentTime = 0;
+        catSound.play();
+        await sleep(quarterNoteDuration);
+    }
 }
 
 export {setStartTime, runTimer, stopTimer};

@@ -38,7 +38,7 @@ function switchToShortBreak() {
         longBreakTab.classList.remove('selected');
         shortBreakTab.classList.add('selected');
 
-        timer.innerHTML = "05:00";
+        timer.innerHTML = "00:01";
         setStartTime(timer.innerHTML);
     }
 }
