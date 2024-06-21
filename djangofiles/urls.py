@@ -14,6 +14,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home_view, name = 'home'),
@@ -26,3 +28,6 @@ urlpatterns = [
     path('submit_form', views.submit_form, name='submit_form'),
     path('quotes+generate_ai_quotes+True', views.generate_ai_quotes, name='generate_ai_quotes'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
