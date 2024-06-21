@@ -162,16 +162,11 @@ async function playAlarm() {
         await sleep(quarterNoteDuration);
         catSound.volume -= .1;
 
-        catSound.currentTime = 0;
-        catSound.play();
-        await sleep(halfNoteDuration);
-        catSound.volume -= .4;
-
-        for (let i = 0; i < 3 && timer.innerHTML == "00:00"; i++) {
+        for (let i = 0; i < 4 && timer.innerHTML == "00:00"; i++) {
             catSound.currentTime = 0;
             catSound.play();
             await sleep(halfNoteDuration);
-            catSound.volume -= .16;
+            catSound.volume -= catSound.volume / 1.5;
         }
 
         catSound.currentTime = 0;
