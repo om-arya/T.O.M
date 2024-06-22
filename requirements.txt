@@ -7,7 +7,7 @@ Django==4.2.13
 google-ai-generativelanguage==0.6.4
 google-api-core==2.19.0
 google-api-python-client==2.131.0
-google-generativeai==0.5.4
+google-generativeai==0.1.0rc2
 googleapis-common-protos==1.63.0
 grpcio==1.64.0
 grpcio-status==1.62.2

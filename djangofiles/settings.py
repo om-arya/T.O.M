@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Keep the secret key used in production secret
 SECRET_KEY = 'django-insecure-hmxo1oxp+03*s96+n2vcdouice^doa4in2+$47--lm&_n#&)_m'
 
-DEBUG = False # Set to False in production; we set to True locally for CSS files to be served properly.
+DEBUG = True # Set to False in production; we set to True locally for CSS files to be served properly.
 
 ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1'] # '*' allows all. Set to our domain in production.
 
