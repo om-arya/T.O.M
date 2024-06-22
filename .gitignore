@@ -4,9 +4,12 @@ __pycache__/
 *$py.class
 
 # Django stuff:
+.venv/
 *.log
 db.sqlite3
 db.sqlite3-journal
 
 # Gemini API key file:
 googleapikey.py
+
+.vscode/

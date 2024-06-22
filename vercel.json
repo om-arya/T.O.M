@@ -23,10 +23,5 @@
         "src": "/(.*)",
         "dest": "djangofiles/wsgi.py"
       }
-    ],
-    "functions": {
-      "djangofiles/**": {
-        "excludeFiles": ".venv/**"
-      }
-    }
+    ]
   }
