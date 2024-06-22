@@ -26,12 +26,7 @@
     ],
     "functions": {
       "djangofiles/**": {
-        "excludeFiles": ["media/**",
-                        "static/**/*.css",
-                        "__pycache/**",
-                        ".vscode/**",
-                        ".venv/**",
-                        "db.sqlite3"]
+        "excludeFiles": ".venv/**"
       }
     }
   }
