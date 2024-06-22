@@ -6,6 +6,10 @@ const tomodoroTab = document.querySelector('.tomodoro');
 const shortBreakTab = document.querySelector('.short-break');
 const longBreakTab = document.querySelector('.long-break');
 
+const tomodoroDuration = "25:00";
+const shortBreakDuration = "00:01";
+const longBreakDuration = "15:00";
+
 startButton.addEventListener('click', runTimer);
 tomodoroTab.addEventListener('click', switchToTomodoro);
 shortBreakTab.addEventListener('click', switchToShortBreak);
@@ -22,8 +26,8 @@ function switchToTomodoro() {
         longBreakTab.classList.remove('selected');
         tomodoroTab.classList.add('selected');
 
-        timer.innerHTML = "25:00";
-        setStartTime(timer.innerHTML);
+        timer.innerHTML = tomodoroDuration;
+        setStartTime(tomodoroDuration);
     }
 }
 
@@ -38,8 +42,8 @@ function switchToShortBreak() {
         longBreakTab.classList.remove('selected');
         shortBreakTab.classList.add('selected');
 
-        timer.innerHTML = "00:01";
-        setStartTime(timer.innerHTML);
+        timer.innerHTML = shortBreakDuration;
+        setStartTime(shortBreakDuration);
     }
 }
 
@@ -54,7 +58,7 @@ function switchToLongBreak() {
         shortBreakTab.classList.remove('selected');
         longBreakTab.classList.add('selected');
 
-        timer.innerHTML = "15:00";
-        setStartTime(timer.innerHTML);
+        timer.innerHTML = longBreakDuration;
+        setStartTime(longBreakDuration);
     }
 }

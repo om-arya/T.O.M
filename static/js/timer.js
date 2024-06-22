@@ -48,6 +48,8 @@ function runTimer() {
 function decrementSecond() {
     let currTime = timer.innerHTML;
     if (currTime === "00:00") {
+        // Change screen color and play alarm until either
+        // the restart button or the start button is clicked.
         root.style.setProperty("--bg-main-color", "#d71717");
         playAlarm();
 
@@ -128,9 +130,13 @@ function unpauseTimer() {
  * Stop the timer completely, resetting the time to what it
  * was initially. Revert the start button back to normal
  * and disable the restart button.
+ * 
+ * Can be called by the restart button, or the start button
+ * when the time is at 00:00.
  */
 function stopTimer() {
     restartButton.removeEventListener('click', stopTimer);
+    startButton.removeEventListener('click', stopTimer);
 
     root.style.setProperty("--bg-main-color", "#5b7961");
 
