@@ -1,6 +1,6 @@
 # Create and activate a virtual environment
 python3.9 -m venv venv
-source .venv/bin/activate
+source venv/bin/activate
 
 # Install dependencies
 pip install --upgrade pip
