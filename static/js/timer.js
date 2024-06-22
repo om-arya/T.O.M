@@ -2,7 +2,7 @@ const timer = document.querySelector('.timer');
 const startButton = document.querySelector('#start-timer');
 const restartButton = document.querySelector('#restart-button');
 const root = document.querySelector(':root');
-const catSound = new Audio("static/assets/cat-sound.mp3");
+const catSound = new Audio("media/cat-sound.mp3");
 
 let startTime = timer.innerHTML; // when the timer is stopped, we set it back to this
 let interval; // stores the reference to our 'setInterval()' function for use in 'clearInterval()' call

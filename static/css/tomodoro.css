@@ -159,24 +159,24 @@ nav {
     width: 3rem;
     height: 3rem;
     transition: 0.25s;
-    background-image: url('/static/assets/restart-white.png');
+    background-image: url('../../media/restart-white.png');
 }
 
 #settings-button {
     width: 3rem;
     height: 3rem;
     transition: 0.25s;
-    background-image: url('/static/assets/gear-white.png');
+    background-image: url('../../media/gear-white.png');
 }
 
 #restart-button:hover {
     transform: scale(1.25);
-    background-image: url('/static/assets/restart-black.png');
+    background-image: url('../../media/restart-black.png');
 }
 
 #settings-button:hover {
     transform: scale(1.25);
-    background-image: url('/static/assets/gear-black.png');
+    background-image: url('../../media/gear-black.png');
 }
 
 .no-button {
