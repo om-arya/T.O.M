@@ -119,7 +119,8 @@ nav {
 }
 
 .top-buttons > *.selected {
-    background: black;
+    background: rgb(245, 247, 143);
+    color: black;
 }
 
 .timer {
