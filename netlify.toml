@@ -1,0 +1,2 @@
+[build]
+command = "python3 manage.py collectstatic --noinput" publish = "static"
