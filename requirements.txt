@@ -3,7 +3,7 @@ asgiref==3.8.1
 cachetools==5.3.3
 certifi==2024.6.2
 charset-normalizer==3.3.2
-Django==5.0.6
+Django==4.2.13
 google-ai-generativelanguage==0.6.5
 google-api-core==2.19.0
 google-api-python-client==2.134.0
