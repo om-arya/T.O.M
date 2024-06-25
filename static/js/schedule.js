@@ -60,6 +60,9 @@ function clearEvents() {
             event.remove();
         });
     }
+    
+    localStorage.clear();
+
     addEvent();
 }
 
