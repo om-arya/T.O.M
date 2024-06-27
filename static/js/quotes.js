@@ -122,7 +122,7 @@ if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai
 
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
 if (quoteCount == 0) {
-    quoteContent.innerHTML = "Click me -->"
+    quoteContent.innerHTML = "Click T.O.M.!"
 } else if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
 
@@ -157,7 +157,7 @@ function usePreMadeQuote() {
 
     const currQuote = preMadeQuotes[quoteIndex];
 
-    quoteContent.innerHTML = currQuote;
+    typingEffect(quoteContent, currQuote);
     textToSpeech(currQuote);
 
     sessionStorage.setItem('quoteIndex', quoteIndex);
@@ -169,8 +169,18 @@ function usePreMadeQuote() {
 function useAIQuote() {
     const currQuote = aiQuoteStack.pop();
 
-    quoteContent.innerHTML = currQuote;
+    typingEffect(quoteContent, currQuote);
     textToSpeech(currQuote);
 
     sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
+}
+
+function typingEffect(element, text, i = 0) {
+    if (i === 0) {
+        element.textContent = "";
+    }
+    if (i < text.length) {
+        element.textContent += text.charAt(i);
+        setTimeout(() => typingEffect(element, text, i + 1), 50);
+    }
 }
