@@ -34,11 +34,31 @@ img {
 }
 
 .top-menu {
-    padding: 0 1.25rem;
+    position: relative;
+    display: inline-block;
+    margin: 0 1.25rem;
     color: white;
     text-decoration: none;
 }
 
+.top-menu::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.35s ease-out;
+}
+
+.top-menu:hover::after, 
+.top-menu:focus::after,
+.top-menu.active::after {
+    transform: scaleX(1);
+}
 .about-us-title {
     text-align: center;
     font-size: 3rem;
