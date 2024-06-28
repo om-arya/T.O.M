@@ -93,13 +93,52 @@ nav {
     max-width: 450px;
     max-height: auto;
     background: white;
-    color: var(--bg-main-color);
+    color: black;
+    --offset: 3px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .tom-button:hover {
     background: black;
     color: white;
-    transform: scale(1.25);
+    z-index: 1;
+}
+
+/* Conic gradient */
+.tom-button::before { 
+    content: '';
+    background: conic-gradient(transparent 270deg, white, transparent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1); 
+    width: 200%;
+    height: 200%; 
+    border-radius: 50%;
+    animation: rotate 1.3s linear infinite;
+    z-index: -2; 
+}
+
+/* Overlay */
+.tom-button::after {
+    content: '';
+    background: inherit;
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset);
+    z-index: -2;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) scale(1.1) rotate(0turn);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.1) rotate(1turn);
+    }
 }
 
 .tom-image {
