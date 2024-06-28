@@ -5,6 +5,7 @@ const startButton = document.querySelector('#start-timer');
 const tomodoroTab = document.querySelector('.tomodoro');
 const shortBreakTab = document.querySelector('.short-break');
 const longBreakTab = document.querySelector('.long-break');
+const popUp = document.querySelector('#settings-button');
 
 const tomodoroDuration = "25:00";
 const shortBreakDuration = "00:01";
@@ -14,6 +15,15 @@ startButton.addEventListener('click', runTimer);
 tomodoroTab.addEventListener('click', switchToTomodoro);
 shortBreakTab.addEventListener('click', switchToShortBreak);
 longBreakTab.addEventListener('click', switchToLongBreak);
+popUp.addEventListener('click', createPopUp());
+
+
+/**
+ * Create Pop Up
+ */
+function createPopUp() {
+    
+}
 
 /**
  * Switch to the Tomodoro tab if not already active.
