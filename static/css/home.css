@@ -17,13 +17,40 @@ nav {
     align-items: center;
     padding: 0rem calc((100vw - 1300px) / 2);
     background: var(--bg-main-color);
+    margin: 1rem;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.effect:nth-child(2) {
+    transition-delay: 360ms;
+}
+
+.icon {
+    display: none;
+    color: white;
+    transition: 0.25s;
+}
+
+.icon:hover {
+    color: black;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     font-style: italic;
-    padding: 0 2rem;
     color: white;
 }
 
@@ -33,6 +60,7 @@ nav {
     margin: 0 1.25rem;
     color: white;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .top-menu::after {
@@ -148,8 +176,69 @@ nav {
     background-color: transparent;
 }
 
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .tom-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 1182px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .top-menu {
+        display: none; 
+    }
+
+    .icon {
+        display: block;
+        float: right;
+        padding: 14px 16px;
+    }
+
+    .nav-items.responsive .top-menu {
+        display: block;
+        background-color: hsl(56, 82%, 57%);
+        margin: 1rem;
+    }
+
+    .nav-items.responsive {
+        position: relative;
+        background-color: hsl(56, 82%, 57%);
+        color: white;
+        z-index: 1;
+        border-radius: 15px;
+        box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
+        position: absolute; /* Change to absolute positioning */
+        right: 0; /* Align to the right side */
+        top: 60px; /* Adjust top position to avoid overlap with nav */
+        width: auto; /* Optional: Adjust width to fit content */
+    }
+
+    .nav-items.responsive a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .nav-items.responsive a:hover {
+        background-color: #8d9115;
+        color: white;
+    }
+
+    .nav-items.responsive {
+        display: block;
     }
 }

@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href='../media/TOM.png'>
     <link rel="stylesheet" href={% static 'css/home.css' %} type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Meet T.O.M.</title>
 </head>
 
 <body>
     <nav>
         <div class="logo">Tabby Of Motivation | T.O.M.</div>
-        <div class="nav-items">
+        <div class="nav-items" id="navbar">
             <a href="home" class="top-menu active">Home</a>
             <a href="quotes+generate_ai_quotes+True" class="top-menu">Quotes</a>
             <a href="schedule" class="top-menu">Schedule</a>
@@ -22,12 +23,15 @@
             <a href="our-mission" class="top-menu">Our Mission</a>
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
     <section class="tom">
         <div class="tom-container">
             <div class="column-left">
-                <h1>Meet T.O.M.</h1>
-                <p>
+                <h1 class="effect hidden">Meet T.O.M.</h1>
+                <p class="effect hidden">
                     Stressed about studies? This cat's got your back!
                 </p>
                 <a href="quotes+generate_ai_quotes+True" class="tom-button">Hear T.O.M.'s Wisdom</a>
@@ -41,5 +45,6 @@
             </div>
         </div>
     </section>
+    <script type="module" src="../static/js/home.js"></script>
 </body>
 </html>
