@@ -5,7 +5,10 @@ const startButton = document.querySelector('#start-timer');
 const tomodoroTab = document.querySelector('.tomodoro');
 const shortBreakTab = document.querySelector('.short-break');
 const longBreakTab = document.querySelector('.long-break');
-const popUp = document.querySelector('#settings-button');
+
+const openPop = document.querySelector('#settings-button');
+const closePop = document.querySelector('#closePop');
+const popUp = document.querySelector('#popup');
 
 const tomodoroDuration = "25:00";
 const shortBreakDuration = "00:01";
@@ -15,14 +18,31 @@ startButton.addEventListener('click', runTimer);
 tomodoroTab.addEventListener('click', switchToTomodoro);
 shortBreakTab.addEventListener('click', switchToShortBreak);
 longBreakTab.addEventListener('click', switchToLongBreak);
-popUp.addEventListener('click', createPopUp());
 
+/**
+ * Create pop up
+ */
+openPop.addEventListener('click', () => {
+    popUp.classList.add("open");
+});
+
+/**
+ * close pop up
+ */
+closePop.addEventListener('click', () => {
+    popUp.classList.remove("open");
+});
 
 /**
  * Create Pop Up
  */
-function createPopUp() {
-    
+// function createPopUp() {
+//     console.log("killme");
+//     popUp.classList.add('.open');
+// }
+
+function closePopUp() {
+    popUp.classList.remove('.open');
 }
 
 /**

@@ -191,6 +191,13 @@ nav {
     background-image: url('../../media/gear-white.png');
 }
 
+#closePop {
+    width: 3rem;
+    height: 3rem;
+    transition: 0.25s;
+    background-color: black; 
+}
+
 #restart-button:hover {
     transform: scale(1.25);
     background-image: url('../../media/restart-black.png');
@@ -207,4 +214,27 @@ nav {
     border: none;
     cursor: pointer;
     margin: 1rem;
+}
+
+.popup {
+    background:#93bf8c;
+    opacity: 0;
+    position: fixed;
+    top: 1;
+    right: 1;
+    left: 1;
+    bottom: 1;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+}
+
+.popup.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+.popup-inner h1 {
+    color: red;
 }
