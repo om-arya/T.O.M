@@ -255,7 +255,19 @@ nav {
 }
 
 .popup-inner h1 {
-    position: relative;
+    position: fixed;
     color: white;
     background-color:#3a4f40;
+    left: 14.5rem;
+    top: 7rem;
+}
+
+.popup-inner h2 {
+    position: fixed;
+    color: white;
+    background-color:#3a4f40;
+    left: 14.5rem;
+    top: 11rem;
+    font-size: large;
+    font-style: bold;
 }
