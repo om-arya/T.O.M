@@ -239,17 +239,7 @@ nav {
     z-index: 999;
 }
 
-.popup h1 {
-    color: white;
-    background-color:#3a4f40;
-}
-
-.popup h2 {
-    color: white;
-    background-color:#3a4f40;
-}
-
-.popup h5 {
+.popup h1, h2, h5 {
     color: white;
     background-color:#3a4f40;
 }
@@ -262,7 +252,6 @@ nav {
 
 .popup textarea {
     background-color:#3a4f40;
-
 }
 
 #closePop {
