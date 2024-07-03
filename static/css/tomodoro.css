@@ -191,23 +191,6 @@ nav {
     background-image: url('../../media/gear-white.png');
 }
 
-#closePop {
-    padding: 0.75rem;
-    width: 150px;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    background:white;
-    position: fixed;
-    bottom: 5rem;
-    left: 42rem
-}
-
 #restart-button:hover {
     transform: scale(1.25);
     background-image: url('../../media/restart-black.png');
@@ -236,6 +219,8 @@ nav {
     left: 12rem;
     bottom: 4rem;
     border-radius: 50px;
+    display: flex;
+    flex-direction: column;
 
 
     /* top: 1;
@@ -246,7 +231,7 @@ nav {
     z-index: -1;
 
     display: flex;
-    align-items: center;
+    align-items: left;
 }
 
 .popup.open {
@@ -254,20 +239,67 @@ nav {
     z-index: 999;
 }
 
-.popup-inner h1 {
-    position: fixed;
+.popup h1 {
     color: white;
     background-color:#3a4f40;
-    left: 14.5rem;
-    top: 7rem;
 }
 
-.popup-inner h2 {
-    position: fixed;
+.popup h2 {
     color: white;
     background-color:#3a4f40;
-    left: 14.5rem;
-    top: 11rem;
-    font-size: large;
-    font-style: bold;
+}
+
+.popup h5 {
+    color: white;
+    background-color:#3a4f40;
+}
+
+.popup label{
+    color: white;
+    background-color:#3a4f40;
+    font-weight: bold;
+}
+
+.popup textarea {
+    background-color:#3a4f40;
+
+}
+
+#closePop {
+    padding: 0.75rem;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    background:white;
+    /* position: fixed;
+    bottom: 5rem;
+    left: 42rem */
+}
+
+#pick-colors {
+    padding: 0.75rem;
+    width: 250px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.25s;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    background:white;
+    /* position: fixed;
+    bottom: 5rem;
+    left: 42rem */
+}
+
+.dropdown {
+    background-color:white;
+    font-size: 1.1rem;
 }
