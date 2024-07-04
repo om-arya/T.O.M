@@ -220,9 +220,10 @@ nav {
     bottom: 4rem;
     border-radius: 50px;
     display: flex;
-    flex-direction: column;
-
-
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
     /* top: 1;
     right: 0;
     left: 0;
@@ -230,8 +231,6 @@ nav {
     height: 10rem; */
     z-index: -1;
 
-    display: flex;
-    align-items: left;
 }
 
 .popup.open {
@@ -240,14 +239,27 @@ nav {
 }
 
 .popup h1, h2, h5 {
+    margin-left: 2rem;
     color: white;
     background-color:#3a4f40;
+}
+
+.popup h1 {
+    margin-top: 2rem;
+    margin-right: 30rem;
+}
+
+.popup h2 {
+    margin-right: 60rem;
 }
 
 .popup label{
     color: white;
     background-color:#3a4f40;
     font-weight: bold;
+    margin-left: 2rem;
+    margin-right: 8rem;
+
 }
 
 .popup textarea {
