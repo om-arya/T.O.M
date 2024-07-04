@@ -258,12 +258,41 @@ nav {
     background-color:#3a4f40;
     font-weight: bold;
     margin-left: 2rem;
-    margin-right: 8rem;
-
 }
 
-.popup textarea {
+#background {
+    margin-right: 1rem;
+}
+
+#buttons {
+    margin-right: 2.95rem;
+}
+
+#text {
+    margin-right: 4.6rem;
+}
+
+.input-label {
+    margin-right: 8rem;
     background-color:#3a4f40;
+}
+
+#long-break {
+    margin-right: 30rem;
+}
+
+.notes {
+    margin-left: 2rem;
+    margin-right: -1.5rem;
+    background-color:white;
+}
+
+.min-label {
+    margin-right: 5.5rem;
+}
+
+#message {
+    margin-right: 60rem;
 }
 
 #closePop {
@@ -278,6 +307,9 @@ nav {
     font-weight: bold;
     text-align: center;
     background:white;
+    display: flex;
+    align-self: flex-end;
+    margin-left: 31rem;
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
@@ -295,6 +327,7 @@ nav {
     font-weight: bold;
     text-align: center;
     background:white;
+    margin-right: 50rem;
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
@@ -303,4 +336,5 @@ nav {
 .dropdown {
     background-color:white;
     font-size: 1.1rem;
+    margin-right: 55rem;
 }
