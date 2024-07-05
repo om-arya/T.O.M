@@ -285,11 +285,11 @@ nav {
     margin-left: 2rem;
     margin-right: -1.5rem;
     padding: .3rem;
-    width: 5rem;
+    width: 6rem;
     text-align: left;
     font-size: 1.3rem;
     font-weight: 600;
-    background-color: white;
+    background: white;
 }
 
 .min-label {

@@ -19,6 +19,11 @@ tomodoroTab.addEventListener('click', switchToTomodoro);
 shortBreakTab.addEventListener('click', switchToShortBreak);
 longBreakTab.addEventListener('click', switchToLongBreak);
 
+// Create the settings pop-up.
+openPop.addEventListener('click', () => {
+    popUp.classList.add("open");
+});
+
 const timeInputs = document.querySelectorAll('.time-input');
 timeInputs.forEach((timeInput) => {
     timeInput.addEventListener('keyup', () => {
@@ -27,24 +32,39 @@ timeInputs.forEach((timeInput) => {
     })
 })
 
-// Create the settings pop-up.
-openPop.addEventListener('click', () => {
-    popUp.classList.add("open");
-});
-
-// Close the settings pop-up and execute changes.
+// Execute time changes and close the settings pop-up.
 closePop.addEventListener('click', () => {
     let tomodoroTimeInput = document.querySelector(".tomodoro-time-input").value;
     let shortBreakTimeInput = document.querySelector(".short-break-time-input").value;
     let longBreakTimeInput = document.querySelector(".long-break-time-input").value;
 
-    tomodoroDuration = (tomodoroTimeInput < 10 ? "0" : "") + tomodoroTimeInput + ":00";
-    shortBreakDuration = (shortBreakTimeInput < 10 ? "0" : "") + shortBreakTimeInput + ":00";
-    longBreakDuration = (longBreakTimeInput < 10 ? "0" : "") + longBreakTimeInput + ":00";
+    if (shortBreakTimeInput > longBreakTimeInput) {
+        alert("Your short break cannot be longer than your long break!");
+        return;
+    }
 
-    switchToTomodoro();
-    timer.innerHTML = tomodoroDuration;
-    setStartTime(tomodoroDuration);
+    let tomodoroHours = Math.floor(tomodoroTimeInput / 60);
+    let tomodoroMinutes = tomodoroTimeInput % 60;
+    let shortBreakHours = Math.floor(shortBreakTimeInput / 60);
+    let shortBreakMinutes = shortBreakTimeInput % 60;
+    let longBreakHours = Math.floor(longBreakTimeInput / 60);
+    let longBreakMinutes = longBreakTimeInput % 60;
+
+    // Concatenate the times together. Hours are excluded if they are 0,
+    // and we pad a '0' in front of values < 10.
+    tomodoroDuration = (tomodoroHours > 0 ? ((tomodoroHours < 10 ? "0" : "") + tomodoroHours + ":") : "")
+                       + (tomodoroMinutes < 10 ? "0" : "") + tomodoroMinutes + ":00";
+    shortBreakDuration = (shortBreakHours > 0 ? ((shortBreakHours < 10 ? "0" : "") + shortBreakHours + ":") : "")
+                         + (shortBreakMinutes < 10 ? "0" : "") + shortBreakMinutes + ":00";
+    longBreakDuration = (longBreakHours > 0 ? ((longBreakHours < 10 ? "0" : "") + longBreakHours + ":") : "")
+                        + (longBreakMinutes < 10 ? "0" : "") + longBreakMinutes + ":00";
+
+    if (tomodoroTab.classList.contains('selected')) {                    
+        timer.innerHTML = tomodoroDuration;
+        setStartTime(tomodoroDuration);
+    } else {
+        switchToTomodoro();
+    }
 
     popUp.classList.remove("open");
 });
