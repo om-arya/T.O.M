@@ -12,6 +12,8 @@
     --angle: 90deg;
     --gradX: 100%;
     --gradY: 50%;
+    --nav-bar-color: rgb(31, 30, 30);
+    --foot-color: rgb(71, 71, 71);
 }
 
 nav {
@@ -20,10 +22,19 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0rem calc((100vw - 1300px) / 2);
-    background: var(--bg-main-color);
-    margin: 1rem;
+    background: var(--nav-bar-color);
 }
 
+#navbar {
+    background: var(--nav-bar-color);
+}
+
+footer {
+    background-color: var(--foot-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -45,10 +56,12 @@ nav {
     display: none;
     color: white;
     transition: 0.25s;
+    background: var(--nav-bar-color);
 }
 
 .icon:hover {
     color: black;
+    background: var(--nav-bar-color);
 }
 
 .logo {
@@ -56,7 +69,39 @@ nav {
     font-weight: bold;
     font-style: italic;
     color: white;
+    background: var(--nav-bar-color);
 }
+
+footer h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    margin: 0;
+    background: var(--foot-color);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    background-color: var(--foot-color);
+}
+
+footer p {
+    font-size: 0.75rem;
+    margin: 0;
+    background-color: var(--foot-color);
+}
+
+.github {
+    width: 2rem;
+    height: 2rem;
+    transition: 0.25s;
+    background: var(--foot-color);
+}
+
 
 .top-menu {
     position: relative;
@@ -64,6 +109,7 @@ nav {
     margin: 0 1.25rem;
     color: white;
     text-decoration: none;
+    background: var(--nav-bar-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -208,7 +254,11 @@ nav {
     nav {
         flex-direction: row;
         align-items: flex-start;
-        padding: 0;
+        background: var(--nav-bar-color);
+    }
+
+    .logo {
+        margin: 1.5rem 0rem 0rem 1rem;
     }
 
     .top-menu {
@@ -219,6 +269,7 @@ nav {
         display: block;
         float: right;
         padding: 14px 16px;
+        background: var(--nav-bar-color);
     }
 
     .nav-items.responsive .top-menu {
