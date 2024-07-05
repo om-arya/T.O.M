@@ -22,8 +22,8 @@ longBreakTab.addEventListener('click', switchToLongBreak);
 const timeInputs = document.querySelectorAll('.time-input');
 timeInputs.forEach((timeInput) => {
     timeInput.addEventListener('keyup', () => {
-        // Auto-delete non-numeric characters and characters past 4 digits.
-        timeInput.value = timeInput.value.replace(/[^\d]/,'').slice(0, 4);
+        // Auto-delete characters past 4 digits.
+        timeInput.value = timeInput.value.slice(0, 4);
     })
 })
 
