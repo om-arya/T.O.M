@@ -10,44 +10,46 @@ const openPop = document.querySelector('#settings-button');
 const closePop = document.querySelector('#closePop');
 const popUp = document.querySelector('#popup');
 
-const tomodoroDuration = "25:00";
-const shortBreakDuration = "00:01";
-const longBreakDuration = "15:00";
+let tomodoroDuration = "25:00";
+let shortBreakDuration = "05:00";
+let longBreakDuration = "15:00";
 
 startButton.addEventListener('click', runTimer);
 tomodoroTab.addEventListener('click', switchToTomodoro);
 shortBreakTab.addEventListener('click', switchToShortBreak);
 longBreakTab.addEventListener('click', switchToLongBreak);
 
-/**
- * Create pop up
- */
+const timeInputs = document.querySelectorAll('.time-input');
+timeInputs.forEach((timeInput) => {
+    timeInput.addEventListener('keyup', () => {
+        // Auto-delete non-numeric characters and characters past 4 digits.
+        timeInput.value = timeInput.value.replace(/[^\d]/,'').slice(0, 4);
+    })
+})
+
+// Create the settings pop-up.
 openPop.addEventListener('click', () => {
     popUp.classList.add("open");
 });
 
-/**
- * close pop up
- */
+// Close the settings pop-up and execute changes.
 closePop.addEventListener('click', () => {
+    let tomodoroTimeInput = document.querySelector(".tomodoro-time-input").value;
+    let shortBreakTimeInput = document.querySelector(".short-break-time-input").value;
+    let longBreakTimeInput = document.querySelector(".long-break-time-input").value;
+
+    tomodoroDuration = (tomodoroTimeInput < 10 ? "0" : "") + tomodoroTimeInput + ":00";
+    shortBreakDuration = (shortBreakTimeInput < 10 ? "0" : "") + shortBreakTimeInput + ":00";
+    longBreakDuration = (longBreakTimeInput < 10 ? "0" : "") + longBreakTimeInput + ":00";
+
+    switchToTomodoro();
+    timer.innerHTML = tomodoroDuration;
+    setStartTime(tomodoroDuration);
+
     popUp.classList.remove("open");
 });
 
-/**
- * Create Pop Up
- */
-// function createPopUp() {
-//     console.log("killme");
-//     popUp.classList.add('.open');
-// }
-
-function closePopUp() {
-    popUp.classList.remove('.open');
-}
-
-/**
- * Switch to the Tomodoro tab if not already active.
- */
+// Switch to the Tomodoro tab if not already active.
 function switchToTomodoro() {
     if (!tomodoroTab.classList.contains('selected')) {
         stopTimer();
@@ -61,9 +63,7 @@ function switchToTomodoro() {
     }
 }
 
-/**
- * Switch to the Short Break tab if not already active.
- */
+// Switch to the Short Break tab if not already active.
 function switchToShortBreak() {
     if (!shortBreakTab.classList.contains('selected')) {
         stopTimer();
@@ -77,9 +77,7 @@ function switchToShortBreak() {
     }
 }
 
-/**
- * Switch to the Long Break tab if not already active.
- */
+// Switch to the Long Break tab if not already active.
 function switchToLongBreak() {
     if (!longBreakTab.classList.contains('selected')) {
         stopTimer();

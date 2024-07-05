@@ -281,10 +281,15 @@ nav {
     margin-right: 30rem;
 }
 
-.notes {
+.time-input {
     margin-left: 2rem;
     margin-right: -1.5rem;
-    background-color:white;
+    padding: .3rem;
+    width: 5rem;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: white;
 }
 
 .min-label {
