@@ -38,7 +38,7 @@ closePop.addEventListener('click', () => {
     let shortBreakTimeInput = document.querySelector(".short-break-time-input").value;
     let longBreakTimeInput = document.querySelector(".long-break-time-input").value;
 
-    if (shortBreakTimeInput > longBreakTimeInput) {
+    if (parseInt(shortBreakTimeInput) > parseInt(longBreakTimeInput)) {
         alert("Your short break cannot be longer than your long break!");
         return;
     }
