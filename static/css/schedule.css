@@ -60,6 +60,24 @@ nav {
     display: flex;
 }
 
+/*hidden classlist that event containers are first added to*/
+.events-and-time-container.hidden {
+    opacity: 0;
+}
+
+/*visible classlist that event containers are moved to with the transition of pop-in.*/
+.events-and-time-container.visible {
+    opacity: 1;
+    transform: scale(1);
+    animation: pop-in 0.25s ease-in-out;
+}
+
+/*Sets the change in opacity while transitioning between hidden and visible*/
+@keyframes pop-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); } 
+}
+
 .event-label-container {
     display: flex;
     flex-direction: row;
@@ -98,7 +116,7 @@ nav {
     width: 40rem;
     height: 2.5rem;
     background-color: #f7f7f7;
-    color: var(--bg-main-color);
+    /* color: var(--bg-main-color); */
 }
 
 .input-label {
@@ -190,9 +208,72 @@ option {
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background: var(--button-color);
+    background: #93bf8c;
+    /* var(--button-color); */
     color: white;
+    --offset: 30px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
+
+.add-button:hover {
+    background: black;
+    z-index: 1;
+}
+
+/* Testing gradient
+.add-button::before { 
+    content: '';
+    background: conic-gradient(transparent 270deg, #6de3a6, transparent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); 
+    width: 200%;
+    height: 200%; 
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.25s;
+}  
+
+.add-button:hover::before {
+    opacity: 1;
+} 
+ 
+.add-button::after {
+    content: '';
+    background: inherit;
+    border-radius: inherit;
+    position: absolute;
+    inset: 3px;
+    z-index: -2;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) scale(1.9) rotate(0turn);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.9) rotate(1turn);
+    }
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tom-container {
+        grid-template-columns: 1fr;
+    }
+} */
+
 
 .clear-all-button {
     padding: .3rem 5.9rem .3rem 1.5rem;
@@ -209,6 +290,12 @@ option {
     text-align: center;
     background: var(--button-color);
     color: white;
+    position: relative;
+}
+
+.clear-all-button:hover {
+    background-color: #d71717;
+    z-index: 1;
 }
 
 .delete-button {
@@ -223,6 +310,11 @@ option {
     text-align: center;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     color: white;
+}
+
+.delete-button:hover {
+   color: #d71717;
+   transform: scale(1.15);
 }
 
 .submit-container {
@@ -285,17 +377,4 @@ option {
 
 .schedule-button:hover {
     transform: scale(1.25);
-}
-
-.add-button:hover {
-    background: #000;
-}
-
-.delete-button:hover {
-    color: #d71717;
-    transform: scale(1.25);
-}
-
-.clear-all-button:hover {
-    background-color: #d71717;
 }

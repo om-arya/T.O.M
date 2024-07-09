@@ -69,6 +69,8 @@ function clearEvents() {
 // Create a new event container and insert it into the input container above the 'add event' button
 const addEvent = (eventData = {}) => {
     const eventContainer = document.createElement('div');
+    //add the new eventContainer to the hidden class in order to have it be animated when added to the screen
+    eventContainer.classList.add('events-and-time-container', 'hidden');
     eventContainer.className = 'events-and-time-container';
 
     const eventInput = document.createElement('input');
@@ -116,6 +118,15 @@ const addEvent = (eventData = {}) => {
     const size = document.querySelectorAll('.events-and-time-container').length;
     // Start adding delete buttons after the first event
     if(size > 0) {
+
+        //code for event container animation
+        setTimeout(() => {
+            /*add the eventContainer to the class list named visible after removing it from the class list named hidden. 
+            There is an animation for transitioning between the two classes that allows the element to show up on screen with a transtion.*/
+            eventContainer.classList.remove('hidden');
+            eventContainer.classList.add('visible');
+          });
+
         const deleteButton = document.createElement('button');
         deleteButton.name = 'delete';
         deleteButton.type = 'button';
