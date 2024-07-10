@@ -272,7 +272,6 @@ option {
     z-index: 1;
 }
 
-/* Testing gradient
 .add-button::before { 
     content: '';
     background: conic-gradient(transparent 270deg, #6de3a6, transparent);
@@ -322,7 +321,7 @@ option {
     .tom-container {
         grid-template-columns: 1fr;
     }
-} */
+} 
 
 
 .clear-all-button {

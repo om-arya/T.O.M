@@ -30,7 +30,7 @@ window.onload = () => {
 
         /*If a schedule exists in local storage (concurrently happens to stored input boxes existing, and implying that the user has already created a schedule), 
         load in text that prompts user to click Tom again to make a new schedule.*/
-        const textElement= document.getElementById('press-me-text');
+        const textElement = document.getElementById('press-me-text');
         const newTextContent = 'Click me again to make a new schedule!';
 
         //Call typingEffect() on the new text to display it on the page.
@@ -55,7 +55,6 @@ window.onload = () => {
     if (storedSchedule.includes('Y')) {
         result.innerHTML = storedSchedule;
     }
-
 
     typingEffect()
 };
