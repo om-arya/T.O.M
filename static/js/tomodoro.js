@@ -7,6 +7,7 @@ const shortBreakTab = document.querySelector('.short-break');
 const longBreakTab = document.querySelector('.long-break');
 
 const openPop = document.querySelector('#settings-button');
+const pickColors = document.querySelector('#pick-colors');
 const closePop = document.querySelector('#closePop');
 const popUp = document.querySelector('#popup');
 
@@ -30,6 +31,26 @@ timeInputs.forEach((timeInput) => {
         // Auto-delete characters past 4 digits.
         timeInput.value = timeInput.value.slice(0, 4);
     })
+})
+
+const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+// Set the background, buttons, and text colors to the AI-generated hexcodes.
+pickColors.addEventListener('click', async () => {
+    const root = document.querySelector(':root');
+
+    const backgroundColorDiv = document.querySelector('#background-color');
+    const buttonsColorDiv = document.querySelector('#buttons-color');
+    const textColorDiv = document.querySelector('#text-color');
+
+    // Wait for the hexcodes to load into the HTML.
+    while (backgroundColorDiv.innerHTML.length === 0) {
+        await sleep(200);
+    }
+
+    root.setProperty(--bg-gradient-color, backgroundColorDiv.innerHTML);
+    root.setProperty(--buttons-color, buttonsColorDiv.innerHTML);
+    root.setProperty(--text-color, textColorDiv.innerHTML);
 })
 
 // Execute time changes and close the settings pop-up.

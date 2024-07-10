@@ -1,5 +1,5 @@
 import google.generativeai as genai
-from googleapikey import GOOGLE_API_KEY
+from djangofiles.googleapikey import GOOGLE_API_KEY
 
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')

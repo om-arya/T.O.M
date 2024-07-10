@@ -6,13 +6,17 @@
 }
 
 :root {
+    --bg-gradient-color: #9158d6;
+    --buttons-color: #93bf8c;
+    --text-color: white;
+
     --bg-profile-color: #3b5140;
     --nav-bar-color: rgb(31, 30, 30);
     --foot-color: rgb(71, 71, 71);
 }
 
 body {
-    background: linear-gradient(#5b7961, #9158d6);
+    background: linear-gradient(#5b7961, var(--bg-gradient-color));
 }
 
 nav {
@@ -81,7 +85,7 @@ footer p {
     position: relative;
     display: inline-block;
     margin: 0 1.25rem;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     background: var(--nav-bar-color);
     transition: background-color 0.3s, color 0.3s;
@@ -119,7 +123,7 @@ footer p {
     justify-content: center;
     align-items: flex-start;
     padding: 0rem 2rem;
-    color: white;
+    color: var(--text-color);;
 }
 
 .column-left h1 {
@@ -162,8 +166,8 @@ footer p {
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background:#93bf8c;
-    color: #ffffff;
+    background: var(--buttons-color);
+    color: var(--text-color);
 }
 
 .timer-div {
@@ -209,7 +213,7 @@ footer p {
     font-size: 15rem;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: var(--text-color);
 }
 
 #start-timer {
@@ -219,7 +223,7 @@ footer p {
 }
 
 #start-timer.start-mode {
-    background: #93bf8c;
+    background: var(--buttons-color);
 }
 
 #start-timer.pause-mode {
