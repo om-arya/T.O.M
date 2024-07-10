@@ -167,7 +167,8 @@ footer p {
 }
 
 .timer-div {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     flex-direction: row;
     justify-content: center;
     margin-top: 2rem;
