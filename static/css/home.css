@@ -37,6 +37,37 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
+
+footer h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    margin: 0;
+    background: var(--foot-color);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    background-color: var(--foot-color);
+}
+
+footer p {
+    font-size: 0.75rem;
+    margin: 0;
+    background-color: var(--foot-color);
+}
+
+.github {
+    width: 2rem;
+    height: 2rem;
+    transition: 0.25s;
+    background: var(--foot-color);
+}
+
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -73,37 +104,6 @@ footer {
     color: white;
     background: var(--nav-bar-color);
 }
-
-footer h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    color: white;
-    margin: 0;
-    background: var(--foot-color);
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    background-color: var(--foot-color);
-}
-
-footer p {
-    font-size: 0.75rem;
-    margin: 0;
-    background-color: var(--foot-color);
-}
-
-.github {
-    width: 2rem;
-    height: 2rem;
-    transition: 0.25s;
-    background: var(--foot-color);
-}
-
 
 .top-menu {
     position: relative;
@@ -186,7 +186,6 @@ footer p {
     z-index: 1;
 }
 
-/* Conic gradient */
 .tom-button::before { 
     content: '';
     background: conic-gradient(transparent 270deg, #6de3a6, transparent);
@@ -199,15 +198,15 @@ footer p {
     border-radius: 50%;
     animation: rotate 2s linear infinite;
     z-index: -2;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
     transition: opacity 0.25s;
 }
 
 .tom-button:hover::before {
-    opacity: 1; /* Show on hover */
+    opacity: 1;
 }
 
-/* Overlay */
+
 .tom-button::after {
     content: '';
     background: inherit;
@@ -287,10 +286,10 @@ footer p {
         z-index: 1;
         border-radius: 15px;
         box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
-        position: absolute; /* Change to absolute positioning */
-        right: 0; /* Align to the right side */
-        top: 60px; /* Adjust top position to avoid overlap with nav */
-        width: auto; /* Optional: Adjust width to fit content */
+        position: absolute;
+        right: 0; 
+        top: 60px; 
+        width: auto;
     }
 
     .nav-items.responsive a {

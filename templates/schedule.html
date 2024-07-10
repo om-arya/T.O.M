@@ -13,7 +13,7 @@
 <body>
     <nav>
         <div class="logo">Tabby Of Motivation | T.O.M.</div>
-        <div class="nav-items">
+        <div class="nav-items" id="navbar">
             <a href="home" class="top-menu">Home</a>
             <a href="quotes+generate_ai_quotes+True" class="top-menu">Quotes</a>
             <a href="schedule" class="top-menu active">Schedule</a>
@@ -47,7 +47,11 @@
     <div id="result">
         {{ result|safe }}
     </div>
-    
+    <footer>
+        <h1>Tabby of Motivation | T.O.M.</h1>
+        <a href="https://github.com/om-arya/T.O.M" target="_blank"><img id="github" src="../media/github-gray.png" onmouseover="this.src='../media/github-black.png'" onmouseout="this.src='../media/github-gray.png'"></a>
+        <p>&copy; 2024 Tabby of Motivation | T.O.M.</p>
+    </footer>
     <script type="module" src="../static/js/schedule.js"></script>
 </body>
 </html>
