@@ -281,6 +281,17 @@ nav {
     margin-right: 30rem;
 }
 
+#color-prompt {
+    background-color: white;
+    border-radius: 50px;
+    height: 150px;
+    width: 490px;
+}
+
+#drop-1 {
+    margin-right: 25rem;
+}
+
 .time-input {
     margin-left: 2rem;
     margin-right: -1.5rem;
@@ -297,7 +308,11 @@ nav {
 }
 
 #message {
-    margin-right: 60rem;
+    margin-right: 25rem;
+}
+
+#ai-message {
+    margin-right: 20rem;
 }
 
 #closePop {

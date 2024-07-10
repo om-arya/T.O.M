@@ -52,14 +52,16 @@
                 <h5 class="min-label">Min</h5>
 
                 <h2> Page Theme</h2>
-
+                
                 <h5 id="message">Pick Your Favorite Colors!</h5>
+                <h5 id="ai-message">Choose Your Colors With AI!</h5>
                 <label for="background" id="background">Background</label>
-                <select name="colors" class="dropdown">
+                <select name="colors" class="dropdown" id="drop-1">
                     <option value="choice-1">Sample 1</option>
                     <option value="choice-2">Sample 2</option>
                     <option value="choice-3">Sample 3</option>
                 </select>
+                <textarea id="color-prompt">What's the mood?</textarea>
                 <label for="buttons" id="buttons">Buttons</label>
                 <select name="colors" class="dropdown">
                     <option value="choice-1">Sample 1</option>
@@ -72,8 +74,9 @@
                     <option value="choice-2">Sample 2</option>
                     <option value="choice-3">Sample 3</option>
                 </select>
+
                 
-                <input value="Pick Colors With AI" type="button" class = "no-button" id = "pick-colors">
+                <input value="Pick Colors" type="button" class = "no-button" id = "pick-colors">
                 <input value="Done" type="button" class = "no-button" id = "closePop">
             </div>
         </div>
