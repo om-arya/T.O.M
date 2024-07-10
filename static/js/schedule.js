@@ -27,10 +27,27 @@ window.onload = () => {
         storedInputs.forEach((inputValue, index) => {
             addEvent({ event: inputValue, time: storedTimes[index] });
         });
+
+        /*If a schedule exists in local storage (concurrently happens to stored input boxes existing, and implying that the user has already created a schedule), 
+        load in text that prompts user to click Tom again to make a new schedule.*/
+        const textElement= document.getElementById('press-me-text');
+        const newTextContent = 'Click me again to make a new schedule!';
+
+        //Call typingEffect() on the new text to display it on the page.
+        typingEffect(textElement, newTextContent);
     } else {
         addEvent();
+
+        /*If no schedule exists in local storage (implying the user has yet to make their first schedule), 
+        load in the default text from the HTML that prompts user to click on Tom to make their first schedule. */
+        const textElement= document.getElementById('press-me-text');
+        const newTextContent = textElement.textContent;
+
+        //Call typingEffect() on the text to display it on the page.
+        typingEffect(textElement, newTextContent);
     }
 
+    
     // Load additional notes
     notes.innerHTML = storedNotes;
 
@@ -38,6 +55,9 @@ window.onload = () => {
     if (storedSchedule.includes('Y')) {
         result.innerHTML = storedSchedule;
     }
+
+
+    typingEffect()
 };
 
 // Add additional events when the 'add event' button is clicked
@@ -47,7 +67,16 @@ document.getElementById('addEvent').addEventListener('click', () => {
 
 //delete all events when 'clear all' button is clicked
 document.getElementById('clearEvents').addEventListener('click', () => {
+    //remove all individual events from the page
     clearEvents();
+
+    //remove all additional notes from the page
+    const additionalNotes = document.querySelectorAll('.notes');
+    additionalNotes.textContent = '';
+
+    //remove the old existing schedule from the page
+    const existingSchedule = document.getElementById('result');
+    existingSchedule.textContent = '';
 });
 
 function clearEvents() {
@@ -61,6 +90,9 @@ function clearEvents() {
         });
     }
     
+    const additionalNotes = document.querySelectorAll('.notes');
+    additionalNotes.textContent = '';
+
     localStorage.clear();
 
     addEvent();
@@ -165,6 +197,14 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     localStorage.setItem("inputs", JSON.stringify(eventsArray));
     localStorage.setItem("times", JSON.stringify(eventTimesArray));
     localStorage.setItem("notes", additionalNotes);
+
+    /*Between when the user has clicked the button and before the schedule is loaded onto the page (marked by a reload of the page), 
+    change the text under Tom to be loading text.*/
+    const textElement= document.getElementById('press-me-text');
+    const newTextContent = 'Meow! Planning your day out...';
+
+    //Call typingEffect() on the new text to display it on the page.
+    typingEffect(textElement, newTextContent);
 });
 
 const sleep = ms => new Promise(res => setTimeout(res, ms)); // pause the program for 'ms' milliseconds
@@ -189,5 +229,16 @@ async function speechAndStorage(){
         schedule = schedule.substring(index);
         schedule = schedule.replaceAll("<p>", "").replaceAll("</p>", "").replaceAll("<strong>", "").replaceAll("</strong>", "");
         textToSpeech(schedule);
+    }
+}
+
+//typing effect function, identical to the one in quotes
+function typingEffect(element, text, i = 0){
+    if (i === 0) {
+        element.textContent = "";
+    }
+    if (i < text.length) {
+        element.textContent += text.charAt(i);
+        setTimeout(() => typingEffect(element, text, i + 1), 50);
     }
 }
