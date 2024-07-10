@@ -79,9 +79,9 @@ Or, you can directly submit a request for your own feature by doing the followin
 Special thanks to our core development team!:
 - Stephen Wu [(heavens-potato)](https://github.com/heavens-potato)
 - Om Arya [(om-arya)](https://github.com/om-arya)
-- Hasan Ege [(hasane1)](https://github.com/hasane1)
 - Claire Chen [(cc13985)](https://github.com/cc13985)
 - Justin Glazer [(justin-glazer)](https://github.com/justin-glazer)
+- Hasan Ege [(hasane1)](https://github.com/hasane1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
