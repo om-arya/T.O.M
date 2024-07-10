@@ -240,6 +240,7 @@ footer p {
     height: 3rem;
     transition: 0.25s;
     background-image: url('../../media/restart-white.png');
+    background-color: transparent;
 }
 
 #settings-button {
@@ -247,16 +248,19 @@ footer p {
     height: 3rem;
     transition: 0.25s;
     background-image: url('../../media/gear-white.png');
+    background-color: transparent;
 }
 
 #restart-button:hover {
     transform: scale(1.25);
     background-image: url('../../media/restart-black.png');
+    background-color: transparent;
 }
 
 #settings-button:hover {
     transform: scale(1.25);
     background-image: url('../../media/gear-black.png');
+    background-color: transparent;
 }
 
 .no-button {
