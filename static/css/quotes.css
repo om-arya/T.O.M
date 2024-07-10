@@ -58,7 +58,7 @@ footer p {
     background-color: var(--foot-color);
 }
 
-.github {
+#github {
     width: 2rem;
     height: 2rem;
     transition: 0.25s;
