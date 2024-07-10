@@ -338,7 +338,7 @@ option {
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background: var(--button-color);
+    background: #93bf8c;
     color: white;
     position: relative;
 }
