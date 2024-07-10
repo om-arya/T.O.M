@@ -122,7 +122,9 @@ if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai
 
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
 if (quoteCount == 0) {
-    quoteContent.innerHTML = "Click me to hear some wisdom!"
+    quoteContent.textContent = "Click me to hear some wisdom!"
+    typingEffect(quoteContent, quoteContent.textContent);
+
 } else if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();
 
