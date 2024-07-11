@@ -263,7 +263,6 @@ option {
     font-weight: bold;
     text-align: center;
     background: #93bf8c;
-    /* var(--button-color); */
     color: white;
     --offset: 30px;
     overflow: hidden;
@@ -429,4 +428,8 @@ option {
 
 .schedule-button:hover {
     transform: scale(1.25);
+}
+
+.press-me-text {
+    font-weight: bold;
 }
