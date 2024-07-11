@@ -32,7 +32,7 @@ nav {
 }
 
 footer {
-    background-color: var(--foot-color);
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -44,7 +44,7 @@ footer h1 {
     font-style: italic;
     color: white;
     margin: 0;
-    background: var(--foot-color);
+    background: transparent;
 }
 
 footer a {
@@ -52,20 +52,20 @@ footer a {
     text-decoration: none;
     font-size: 1rem;
     display: block;
-    background-color: var(--foot-color);
+    background-color: transparent;
 }
 
 footer p {
     font-size: 0.75rem;
     margin: 0;
-    background-color: var(--foot-color);
+    background-color: transparent;
 }
 
 .github {
     width: 2rem;
     height: 2rem;
     transition: 0.25s;
-    background: var(--foot-color);
+    background: transparent;
 }
 
 .hidden {

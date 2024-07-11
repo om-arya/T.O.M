@@ -7,10 +7,14 @@
 }
 
 :root {
-    --bg-main-color: #5b7961;
     --bg-profile-color: #3b5140;
     --nav-bar-color: rgb(31, 30, 30);
     --foot-color: rgb(71, 71, 71);
+}
+
+body {
+    background: linear-gradient(#5b7961, #e79703);
+    min-height: 100vh;
 }
 
 nav {
@@ -29,7 +33,7 @@ nav {
 }
 
 footer {
-    background-color: var(--foot-color);
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -41,7 +45,7 @@ footer h1 {
     font-style: italic;
     color: white;
     margin: 0;
-    background: var(--foot-color);
+    background: transparent;
 }
 
 footer a {
@@ -49,13 +53,13 @@ footer a {
     text-decoration: none;
     font-size: 1rem;
     display: block;
-    background-color: var(--foot-color);
+    background-color: transparent;
 }
 
 footer p {
     font-size: 0.75rem;
     margin: 0;
-    background-color: var(--foot-color);
+    background-color: transparent;
 }
 
 #github {
@@ -63,7 +67,7 @@ footer p {
     height: 2rem;
     transition: 0.25s;
     border: none;
-    background: var(--foot-color);
+    background: transparent;
 }
 
 .logo {

@@ -102,6 +102,8 @@ function switchToTomodoro() {
         timer.innerHTML = tomodoroDuration;
         setStartTime(tomodoroDuration);
     }
+
+    typingEffect(timer, timer.innerHTML);
 }
 
 // Switch to the Short Break tab if not already active.
@@ -115,6 +117,8 @@ function switchToShortBreak() {
 
         timer.innerHTML = shortBreakDuration;
         setStartTime(shortBreakDuration);
+
+        typingEffect(timer, timer.innerHTML);
     }
 }
 
@@ -129,5 +133,22 @@ function switchToLongBreak() {
 
         timer.innerHTML = longBreakDuration;
         setStartTime(longBreakDuration);
+
+        typingEffect(timer, timer.innerHTML);
     }
+}
+
+function typingEffect(element, text, i = 0) {
+    if (i === 0) {
+        element.textContent = "";
+    }
+    if (i < text.length) {
+        element.textContent += text.charAt(i);
+        setTimeout(() => typingEffect(element, text, i + 1), 200);
+    }
+}
+
+window.onload = () => {
+    const timerElement = document.querySelector('.timer');
+    typingEffect(timerElement, timerElement.innerHTML);
 }

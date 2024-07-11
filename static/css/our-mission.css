@@ -7,10 +7,14 @@
 }
 
 :root {
-    --bg-main-color: #5b7961;
     --bg-profile-color: #3b5140;
     --nav-bar-color: rgb(31, 30, 30);
     --foot-color: rgb(71, 71, 71);
+}
+
+body {
+    background: linear-gradient(#5b7961, #cbcb87);
+    min-height: 100vh;
 }
 
 nav {
