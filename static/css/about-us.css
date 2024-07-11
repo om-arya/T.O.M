@@ -7,10 +7,13 @@
 }
 
 :root {
-    --bg-main-color: #5b7961;
     --bg-profile-color: #3b5140;
     --nav-bar-color: #5b7961;
     --foot-color: transparent;
+}
+
+body {
+    background: linear-gradient(#5b7961, #d69797);
 }
 
 nav {
