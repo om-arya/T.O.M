@@ -8,8 +8,7 @@
 
 :root {
     --bg-profile-color: #3b5140;
-    --nav-bar-color: rgb(31, 30, 30);
-    --foot-color: rgb(71, 71, 71);
+    --nav-bar-color: #5b7961;
 }
 
 body {
@@ -31,12 +30,10 @@ nav {
 
 #navbar {
     background: var(--nav-bar-color);
-    
     z-index: 1;
 }
 
 footer {
-    /* background-color: var(--foot-color); */
     background-color: transparent;
     color: white;
     text-align: center;
@@ -49,8 +46,6 @@ footer h1 {
     font-style: italic;
     color: white;
     margin: 0;
-    /* background: var(--foot-color); */
-    
     background: transparent;
 }
 
@@ -59,14 +54,12 @@ footer a {
     text-decoration: none;
     font-size: 1rem;
     display: block;
-    /* background-color: var(--foot-color); */
     background-color: transparent;
 }
 
 footer p {
     font-size: 0.75rem;
     margin: 0;
-    /* background-color: var(--foot-color); */
     background-color: transparent;
 }
 
