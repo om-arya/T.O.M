@@ -305,47 +305,28 @@ footer p {
     z-index: 999;
 }
 
-.popup h1, h2, h5 {
-    margin-left: 2rem;
+.popup h1, h2, h5, label {
     color: white;
     background-color:#3a4f40;
+} 
+
+.timer-boxes {
+    display: block;
 }
 
-.popup h1 {
-    margin-top: 2rem;
-    margin-right: 30rem;
+.labels {
+    display: flex;
+    flex-direction: row;
 }
 
-.popup h2 {
-    margin-right: 60rem;
+.input-boxes {
+    display: flex;
+    flex-direction: row;
 }
 
-.popup label{
-    color: white;
-    background-color:#3a4f40;
-    font-weight: bold;
-    margin-left: 2rem;
-}
-
-#background {
-    margin-right: 1rem;
-}
-
-#buttons {
-    margin-right: 2.95rem;
-}
-
-#text {
-    margin-right: 4.6rem;
-}
-
-.input-label {
-    margin-right: 8rem;
-    background-color:#3a4f40;
-}
-
-#long-break {
-    margin-right: 30rem;
+.bottom-half {
+    display: flex;
+    flex-direction: row;
 }
 
 #color-prompt {
@@ -353,33 +334,16 @@ footer p {
     border-radius: 50px;
     height: 150px;
     width: 490px;
-}
-
-#drop-1 {
-    margin-right: 25rem;
+    resize: none;
 }
 
 .time-input {
-    margin-left: 2rem;
-    margin-right: -1.5rem;
     padding: .3rem;
     width: 6rem;
     text-align: left;
     font-size: 1.3rem;
     font-weight: 600;
     background: white;
-}
-
-.min-label {
-    margin-right: 5.5rem;
-}
-
-#message {
-    margin-right: 25rem;
-}
-
-#ai-message {
-    margin-right: 20rem;
 }
 
 #closePop {
@@ -396,7 +360,6 @@ footer p {
     background:white;
     display: flex;
     align-self: flex-end;
-    margin-left: 31rem;
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
@@ -414,7 +377,6 @@ footer p {
     font-weight: bold;
     text-align: center;
     background:white;
-    margin-right: 50rem;
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
@@ -423,5 +385,4 @@ footer p {
 .dropdown {
     background-color:white;
     font-size: 1.1rem;
-    margin-right: 55rem;
 }

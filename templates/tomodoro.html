@@ -40,47 +40,80 @@
                 
                 <input type="button" class="no-button" id="settings-button">
                 <div class="popup" id="popup">
-                    <h1>Make This Study Timer Your Own!</h1>
-                    <h2>Time Lengths</h2>
                     
-                    <label for="study" class="input-label">Study Time</label>
-                    <label for="short" class="input-label">Short Break</label>
-                    <label for="long" class="input-label" id="long-break">Long Break</label>
+                    <div class="main-area">
+                        <div class="title">
+                            <h1>Make This Study Timer Your Own!</h1>
+                        </div>
+                        <div class="top-half">
+                            <div class="box-title">
+                                <h2>Time Lengths</h2>
+                            </div>
+                            <div class="timer-boxes">
+                                <div class="labels">
+                                    <label for="study" class="input-label">Study Time</label>
+                                    <label for="short" class="input-label">Short Break</label>
+                                    <label for="long" class="input-label" id="long-break">Long Break</label>
+                                </div>
+                                <div class="input-boxes">
+                                    <input type="number" min="0" max="9999" name="study" value="30" class="time-input tomodoro-time-input" />
+                                    <h5 class="min-label">Min</h5>
+                                    <input type="number" min="0" max="9999" name="short" value="5" class="time-input short-break-time-input" />
+                                    <h5 class="min-label">Min</h5>
+                                    <input type="number" min="0" max="9999" name="long" value="15" class="time-input long-break-time-input" />
+                                    <h5 class="min-label">Min</h5>
+                                </div>
     
-                    <input type="number" min="0" max="9999" name="study" value="30" class="time-input tomodoro-time-input" />
-                    <h5 class="min-label">Min</h5>
-                    <input type="number" min="0" max="9999" name="short" value="5" class="time-input short-break-time-input" />
-                    <h5 class="min-label">Min</h5>
-                    <input type="number" min="0" max="9999" name="long" value="15" class="time-input long-break-time-input" />
-                    <h5 class="min-label">Min</h5>
-    
-                    <h2> Page Theme</h2>
-                    
-                    <h5 id="message">Pick Your Favorite Colors!</h5>
-                    <h5 id="ai-message">Choose Your Colors With AI!</h5>
-                    <label for="background" id="background">Background</label>
-                    <select name="colors" class="dropdown" id="drop-1">
-                        <option value="choice-1">Sample 1</option>
-                        <option value="choice-2">Sample 2</option>
-                        <option value="choice-3">Sample 3</option>
-                    </select>
-                    <textarea id="color-prompt">What's the mood?</textarea>
-                    <label for="buttons" id="buttons">Buttons</label>
-                    <select name="colors" class="dropdown">
-                        <option value="choice-1">Sample 1</option>
-                        <option value="choice-2">Sample 2</option>
-                        <option value="choice-3">Sample 3</option>
-                    </select>
-                    <label for="Text" id="text">Text</label>
-                    <select name="colors" class="dropdown">
-                        <option value="choice-1">Sample 1</option>
-                        <option value="choice-2">Sample 2</option>
-                        <option value="choice-3">Sample 3</option>
-                    </select>
-    
-                    
-                    <input value="Pick Colors" type="button" class = "no-button" id = "pick-colors">
-                    <input value="Done" type="button" class = "no-button" id = "closePop">
+                            </div>
+                        </div>                    
+                        
+                        <div class="bottom-half">
+                            <div class="left-side">
+                                <h2> Page Theme</h2>
+                                <h5 id="message">Pick Your Favorite Colors!</h5>
+                                <div class="dropdowns">
+                                    <div class="dropdown-1">
+                                        <label for="background" id="background">Background</label>
+                                        <select name="colors" class="dropdown">
+                                            <option value="choice-1">Sample 1</option>
+                                            <option value="choice-2">Sample 2</option>
+                                            <option value="choice-3">Sample 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="dropdown-2">
+                                        <label for="buttons" id="buttons">Buttons</label>
+                                        <select name="colors" class="dropdown">
+                                            <option value="choice-1">Sample 1</option>
+                                            <option value="choice-2">Sample 2</option>
+                                            <option value="choice-3">Sample 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="dropdown-3">
+                                        <label for="Text" id="text">Text</label>
+                                        <select name="colors" class="dropdown">
+                                            <option value="choice-1">Sample 1</option>
+                                            <option value="choice-2">Sample 2</option>
+                                            <option value="choice-3">Sample 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="right-side">
+                                <h5 id="ai-message">Choose Your Colors With AI!</h5>
+                                <div class="textbox">
+                                    <textarea id="color-prompt">What's the mood?</textarea>
+                                </div>
+                                <div class="send">
+                                    <input value="Pick Colors" type="button" class = "no-button" id = "pick-colors">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="finish">
+                            <input value="Done" type="button" class = "no-button" id = "closePop">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
