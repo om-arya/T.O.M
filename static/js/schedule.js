@@ -57,7 +57,37 @@ window.onload = () => {
     }
 
     typingEffect()
+    
 };
+
+//one observer to create animations for the text boxes to come in from the bottom
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+})
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+//second observer to create animations for Tom which is to come in from the right
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show2');
+        } else {
+            entry.target.classList.remove('show2');
+        }
+    });
+})
+
+const hiddenElements2 = document.querySelectorAll(".hidden2");
+hiddenElements2.forEach((el) => observer2.observe(el));
 
 // Add additional events when the 'add event' button is clicked
 document.getElementById('addEvent').addEventListener('click', () => {

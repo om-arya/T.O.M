@@ -16,6 +16,10 @@
     --foot-color: rgb(71, 71, 71);
 }
 
+body {
+    min-height: 100vh;
+}
+
 nav {
     height: 80px;
     display: flex;

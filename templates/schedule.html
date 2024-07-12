@@ -17,13 +17,13 @@
             <a href="home" class="top-menu">Home</a>
             <a href="quotes+generate_ai_quotes+True" class="top-menu">Hear T.O.M.'s Wisdom</a>
             <a href="schedule" class="top-menu active">Schedule Builder</a>
-            <a href="tomodoro" class="top-menu">Tomodoro Timer</a>
+            <a href="tomodoro" class="top-menu">Study with T.O.M.</a>
             <a href="our-mission" class="top-menu">About T.O.M.</a>
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
     </nav>
     <form id="scheduleForm" class="form" method="get" action="{% url 'submit_form' %}">
-        <div class="input-container">
+        <div class="input-container hidden">
             <div class="event-label-container">
                 <label for="events" class="input-label">Add your tasks and events for the day here:</label>
                 <label for="time" class="input-label2">Est. time taken:</label>
@@ -37,7 +37,7 @@
             <textarea name="additionalNotes" rows="10" cols="30" class="notes">
             </textarea><br><br>
         </div>
-        <div class="submit-container">
+        <div class="submit-container hidden2">
             <input type="image" class="schedule-button" src='../media/TOM.png' name="submit">
             <p id="press-me-text" style="font-weight: bold">Click me to make your schedule!</p> 
         </div>

@@ -181,6 +181,42 @@ footer p {
     font-weight: bold;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.hidden2 {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.show2 {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+
+    .hidden2 {
+        transition: none;
+    }
+}
+
 .input-label2 {
     display: flex;
     margin: 0 0 .7rem 15.5rem;
@@ -204,7 +240,7 @@ footer p {
     width: 40rem;
     height: 10rem;
     background-color: #f7f7f7;
-    color: var(--bg-main-color);
+    color: #000;
 }
 
 textarea {
