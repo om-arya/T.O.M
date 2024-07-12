@@ -329,7 +329,7 @@ footer p {
     flex-direction: row;
 }
 
-#color-prompt {
+#mood-prompt {
     background-color: white;
     border-radius: 50px;
     height: 150px;
@@ -380,6 +380,10 @@ footer p {
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
+}
+
+.hexcodes {
+    display: none;
 }
 
 .dropdown {

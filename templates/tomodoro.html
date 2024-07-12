@@ -99,15 +99,15 @@
                                 </div>
                             </div>
         
-                            <div class="right-side">
+                            <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
                                 <h5 id="ai-message">Choose Your Colors With AI!</h5>
                                 <div class="textbox">
-                                    <textarea id="color-prompt">What's the mood?</textarea>
+                                    <textarea id="mood-prompt" name="mood-prompt">What's the mood?</textarea>
                                 </div>
                                 <div class="send">
-                                    <input value="Pick Colors" type="button" class = "no-button" id = "pick-colors">
+                                    <input value="Pick Colors" type="submit" class = "no-button" id = "pick-colors">
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         
                         <div class="finish">
