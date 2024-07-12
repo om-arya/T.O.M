@@ -188,7 +188,7 @@ footer p {
     transition: all 1s;
 }
 
-.show {
+.show-input {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
@@ -201,7 +201,7 @@ footer p {
     transition: all 1s;
 }
 
-.show2 {
+.show-tom {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);

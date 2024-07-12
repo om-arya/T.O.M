@@ -141,7 +141,45 @@ function typingEffect(element, text, i = 0) {
     }
 }
 
+//typing effect for whatever number is on screen when it loads
 window.onload = () => {
     const timerElement = document.querySelector('.timer');
     typingEffect(timerElement, timerElement.innerHTML);
 }
+
+//one observer to create animations for the timer and its buttons to come in from the bottom
+const observerInput = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-timer-buttons');
+            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+            observerInput.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('show-timer-buttons');
+            observerInput.unobserve(entry.target);
+        }
+    });
+})
+
+//observer for tom
+const hiddenTimerElements = document.querySelectorAll(".hidden-timer-buttons");
+hiddenTimerElements.forEach((el) => observerInput.observe(el));
+
+
+//second observer to create animations for Tom which is to come in from the right
+const observerTom = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-tom');
+            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+            observerTom.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('show-tom');
+            observerTom.unobserve(entry.target);
+        }
+    });
+})
+
+//observer for timer buttons and text
+const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
+hiddenElementsTom.forEach((el) => observerTom.observe(el));

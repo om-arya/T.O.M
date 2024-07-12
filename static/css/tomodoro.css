@@ -17,6 +17,7 @@
 
 body {
     background: linear-gradient(#5b7961, var(--bg-gradient-color));
+    min-height: 100vh;
 }
 
 nav {
@@ -147,6 +148,32 @@ footer p {
     max-width: 450px;
     max-height: auto;
     background-color: transparent;
+}
+
+.hidden-tom {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show-tom {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hidden-timer-buttons {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 1s;
+}
+
+.show-timer-buttons {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
 }
 
 @media screen and (max-width: 768px) {

@@ -64,29 +64,29 @@ window.onload = () => {
 const observerInput = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            entry.target.classList.add('show-input');
             //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
             observerInput.unobserve(entry.target);
         } else {
-            entry.target.classList.remove('show');
+            entry.target.classList.remove('show-input');
             observerInput.unobserve(entry.target);
         }
     });
 })
 
-const hiddenElements = document.querySelectorAll(".hidden-input");
-hiddenElements.forEach((el) => observerInput.observe(el));
+const hiddenElementsInput = document.querySelectorAll(".hidden-input");
+hiddenElementsInput.forEach((el) => observerInput.observe(el));
 
 
 //second observer to create animations for Tom which is to come in from the right
 const observerTom = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show2');
+            entry.target.classList.add('show-tom');
             //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
             observerTom.unobserve(entry.target);
         } else {
-            entry.target.classList.remove('show2');
+            entry.target.classList.remove('show-tom');
             observerTom.unobserve(entry.target);
         }
     });
@@ -94,6 +94,7 @@ const observerTom = new IntersectionObserver((entries) => {
 
 const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
 hiddenElementsTom.forEach((el) => observerTom.observe(el));
+
 
 // Add additional events when the 'add event' button is clicked
 document.getElementById('addEvent').addEventListener('click', () => {
@@ -126,7 +127,7 @@ function clearEvents() {
     }
     
     const additionalNotes = document.querySelectorAll('.notes');
-    additionalNotes.textContent = '';
+    additionalNotes.value = '';
 
     localStorage.clear();
 
