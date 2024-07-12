@@ -27,7 +27,7 @@ urlpatterns = [
     path('tomodoro', views.tomodoro_view, name = 'tomodoro'),
     path('submit_form', views.submit_form, name='submit_form'),
     path('quotes+generate_ai_quotes+True', views.generate_ai_quotes, name='generate_ai_quotes'),
-    path('tomodoro+generate_ai_colors', views.generate_ai_colors, name='generate_ai_colors'),
+    path('generate_ai_colors', views.generate_ai_colors, name='generate_ai_colors'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

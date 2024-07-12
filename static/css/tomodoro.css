@@ -382,6 +382,10 @@ footer p {
     left: 42rem */
 }
 
+.hexcodes {
+    display: none;
+}
+
 .dropdown {
     background-color:white;
     font-size: 1.1rem;

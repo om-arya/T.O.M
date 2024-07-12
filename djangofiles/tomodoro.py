@@ -19,5 +19,5 @@ def generate_colors(mood: str):
   for hex in hexcodes:
     if not (hex[0] == "#" and len(hex) == 7):
       return ["ERROR"]
-    
+  
   return hexcodes
