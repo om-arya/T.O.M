@@ -115,6 +115,36 @@ document.getElementById('clearEvents').addEventListener('click', () => {
     existingSchedule.textContent = '';
 });
 
+/**
+ * EXIT ANIMATION CODE: We first select all the a href tags on the page- these are only used to lead away from the page itself
+ * so page functionality isn't impacted. We then add an event listener for these links, and if any of them is clicked, we call 
+ * preventDefault() to prevent them from directly sending the user to the next page. We then put all the elements we want to have disappear 
+ * (in this case everything but the menu bar and footer) on the exit-animation classlist, which makes them fade into opacity 0. After that, 
+ * the link directs the user to the page containing the link.
+ */
+const allLinks = document.querySelectorAll('a');
+
+allLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+    
+        //stops link from just sending the user to the next page.
+        event.preventDefault();
+  
+        // const tomToHide = document.querySelectorAll('show-tom');
+        // tomToHide.classList.remove('show-tom');
+        // tomToHide.classList.add('hidden-tom');
+
+        //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
+        const formElements = document.getElementById('scheduleForm');
+        formElements.classList.add('exit');
+  
+        //delay after animation and send the user to the link
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 500);
+    });
+  });
+
 function clearEvents() {
     //select all event boxes on the page
     const allEvents = document.querySelectorAll('.events-and-time-container');

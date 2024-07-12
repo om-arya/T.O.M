@@ -207,6 +207,14 @@ footer p {
     transform: translateX(0);
 }
 
+/* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
+.exit {
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out
+}
+
 @media(prefers-reduced-motion) {
     .hidden {
         transition: none;
