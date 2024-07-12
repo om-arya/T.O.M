@@ -61,33 +61,39 @@ window.onload = () => {
 };
 
 //one observer to create animations for the text boxes to come in from the bottom
-const observer = new IntersectionObserver((entries) => {
+const observerInput = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
+            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+            observerInput.unobserve(entry.target);
         } else {
             entry.target.classList.remove('show');
+            observerInput.unobserve(entry.target);
         }
     });
 })
 
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach((el) => observer.observe(el));
+const hiddenElements = document.querySelectorAll(".hidden-input");
+hiddenElements.forEach((el) => observerInput.observe(el));
 
 
 //second observer to create animations for Tom which is to come in from the right
-const observer2 = new IntersectionObserver((entries) => {
+const observerTom = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show2');
+            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+            observerTom.unobserve(entry.target);
         } else {
             entry.target.classList.remove('show2');
+            observerTom.unobserve(entry.target);
         }
     });
 })
 
-const hiddenElements2 = document.querySelectorAll(".hidden2");
-hiddenElements2.forEach((el) => observer2.observe(el));
+const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
+hiddenElementsTom.forEach((el) => observerTom.observe(el));
 
 // Add additional events when the 'add event' button is clicked
 document.getElementById('addEvent').addEventListener('click', () => {

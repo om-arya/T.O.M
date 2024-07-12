@@ -181,7 +181,7 @@ footer p {
     font-weight: bold;
 }
 
-.hidden {
+.hidden-input {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(100%);
@@ -194,7 +194,7 @@ footer p {
     transform: translateY(0);
 }
 
-.hidden2 {
+.hidden-tom {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(100%);
