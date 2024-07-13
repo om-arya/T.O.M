@@ -84,7 +84,7 @@ footer p {
 .top-menu {
     position: relative;
     display: inline-block;
-    margin: 0 1.25rem;
+    margin: 0 1rem;
     color: var(--text-color);
     text-decoration: none;
     background: var(--nav-bar-color);
