@@ -20,8 +20,8 @@ def generate_ai_quotes(request):
 def about_us_view(request):
     return render(request, 'about-us.html')
 
-def our_mission_view(request):
-    return render(request, 'our-mission.html')
+def about_tom_view(request):
+    return render(request, 'about-tom.html')
 
 def schedule_view(request):
     return render(request, 'schedule.html')

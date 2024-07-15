@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href='../media/TOM.png'>
+    <link rel="stylesheet" href={% static 'css/about-tom.css' %} type="text/css">
+    <title>Our Mission</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Tabby Of Motivation | T.O.M.</div>
+        <div class="nav-items" id="navbar">
+            <a href="home" class="top-menu">Home</a>
+            <a href="quotes+generate_ai_quotes+True" class="top-menu">Hear T.O.M.'s Wisdom</a>
+            <a href="schedule" class="top-menu">Schedule Builder</a>
+            <a href="tomodoro" class="top-menu">Study with T.O.M.</a>
+            <a href="about-tom" class="top-menu active">About T.O.M.</a>
+            <a href="about-us" class="top-menu">Meet The Team</a>
+        </div>
+    </nav>
+    <h1 class="title">An AI-Powered Academic Ally Created <br> By College Students, For College Students</h1>
+    <section class="meet-tom">
+            <div class="meet-description">
+                <h1>Meet T.O.M.</h1>
+                <p>Powered by Google’s Gemini API through the Google AI Studio, the Tabby of Motivation or T.O.M., is an AI-powered web app 
+                    that provides helpful support and encouragement to college students (like you!) as they navigate the stressful ins and 
+                    outs of managing their academic lives.</p>
+            </div>
+            <div class="meet-image">
+                <img id="tom-home" src="../media/tom_home.png" alt="T.O.M.">
+            </div>
+        </div>
+    </section>
+    <section class="three-features">
+        <div class="card">
+            <h1>Hear His Wisdom</h1>
+            <div class="feature">
+                <p>Having been around for a long time (cats have nine lives after all), T.O.M. has quite the wisdom to share! On each click, T.O.M. will share a spontaneous 
+                    piece of his unique insight into the art of pursuing your dreams and never giving up to keep your claws sharp.</p>
+                <img src="../media/philosopher-tom.PNG" alt="quotes">
+            </div>
+        </div>
+        <div class="card-right">
+            <h1>Plan Your Day Out</h1>
+            <div class="feature">
+                <img src="../media/construction-tom.PNG" alt="quotes">
+                <p>Burdened by too many things to get done in one day, and not knowing where to get started? Share your worries with T.O.M., 
+                    and receive a personalized schedule to get your work done. If you want a new schedule, simply ask T.O.M. again!</p>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Study With T.O.M.</h1>
+            <div class="feature">
+                <p>Struggling to focus on your studies for a big exam tomorrow? Time your studies and accompanying breaks with 
+                    this customizable study timer, featuring plenty of color combinations for a brand new look every time. You can even ask T.O.M. 
+                    to make you a theme for your mood at the moment!</p>
+                <img src="../media/coder-tom.PNG" alt="quotes">
+            </div>
+        </div>
+    </section>
+    <section class="contact-us">
+        <h1>Something to Tell Us? We're Listening!</h1>
+        <p>Whether it’s wanting a new way to hang out with T.O.M. or finding a hairball that’s causing him to act like a grumpy cat, we’re here to address any concerns you may have! 
+            Contact us below and we will unwind any yarn balls tangled T.O.M. may be caught in to get him working again.</p>
+    </section>
+    <section class="form">
+        <div class="form-container">
+            <div class="form-content">
+                <div class="left">
+                    <label for="help">What Can We Help You With?</label>
+                    <input type="text" id="help" name="help" placeholder="Bug Report" maxlength="20">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Stephen Wu" maxlength="20">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="poopfart1@gmail.com" maxlength="20">
+                </div>
+                <div class="right">
+                    <label for="message">Message</label>
+                    <input type="text" id="message" name="message" placeholder="Message here..." maxlength="20">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h1>Tabby of Motivation | T.O.M.</h1>
+        <a href="https://github.com/om-arya/T.O.M" target="_blank"><img class="github" src="../media/github-gray.png" onmouseover="this.src='../media/github-black.png'" onmouseout="this.src='../media/github-gray.png'"></a>
+        <p>&copy; 2024 Tabby of Motivation | T.O.M.</p>
+    </footer>
+</body>
+</html>
