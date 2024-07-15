@@ -23,8 +23,8 @@
         </div>
     </nav>
     <section class="tom">
-        <div class="tom-container">
-            <h1 class="quote-container">
+        <div class="tom-container" id="tom-container">
+            <h1 class="quote-container hidden-quotes">
                 <div class="quote-content">
                     
                 </div>
@@ -32,7 +32,7 @@
                     {{ ai_quotes }}
                 </div>
             </h1>
-            <div class="column-left">
+            <div class="column-left hidden-tom">
                 <button class='tom-quote-head' type="submit" onclick="location.href='quotes+generate_ai_quotes+False'">
                     <img class="get-quote-button" src='../media/TOM.png' name="submit">
                 </button>

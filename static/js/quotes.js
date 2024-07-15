@@ -186,3 +186,67 @@ function typingEffect(element, text, i = 0) {
         setTimeout(() => typingEffect(element, text, i + 1), 50);
     }
 }
+
+//one observer to create animations for the quote container to come in from the bottom
+const observerInput = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-quotes');
+            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+            observerInput.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('show-quotes');
+            observerInput.unobserve(entry.target);
+        }
+    });
+})
+
+const hiddenElementsInput = document.querySelectorAll(".hidden-quotes");
+hiddenElementsInput.forEach((el) => observerInput.observe(el));
+
+//second observer to create animations for Tom which is to come in from the right
+const observerTom = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-tom');
+            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+            observerTom.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('show-tom');
+            observerTom.unobserve(entry.target);
+        }
+    });
+})
+
+const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
+hiddenElementsTom.forEach((el) => observerTom.observe(el));
+
+/**
+ * EXIT ANIMATION CODE: We first select all the a href tags on the page- these are only used to lead away from the page itself
+ * so page functionality isn't impacted. We then add an event listener for these links, and if any of them is clicked, we call 
+ * preventDefault() to prevent them from directly sending the user to the next page. We then put all the elements we want to have disappear 
+ * (in this case everything but the menu bar and footer) on the exit-animation classlist, which makes them fade into opacity 0. After that, 
+ * the link directs the user to the page containing the link.
+ */
+const allLinks = document.querySelectorAll('a');
+
+allLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+    
+        //stops link from just sending the user to the next page.
+        event.preventDefault();
+  
+        // const tomToHide = document.querySelectorAll('show-tom');
+        // tomToHide.classList.remove('show-tom');
+        // tomToHide.classList.add('hidden-tom');
+
+        //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
+        const formElements = document.getElementById('tom-container');
+        formElements.classList.add('exit');
+  
+        //delay after animation and send the user to the link
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 500);
+    });
+  });

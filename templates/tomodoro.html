@@ -23,7 +23,7 @@
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
     </nav>
-    <div class="timer-div">
+    <div class="timer-div" id="timer-div">
         <div class="tom-image hidden-tom">
             <img src="../media/coder-tom.PNG" alt="Coding T.O.M.">
         </div>
@@ -99,6 +99,7 @@
                                 </div>
                             </div>
         
+                            <!-- <div class="right-side"> -->
                             <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
                                 <h5 id="ai-message">Choose Your Colors With AI!</h5>
                                 <div class="textbox">
@@ -108,6 +109,7 @@
                                     <input value="Pick Colors" type="submit" class = "no-button" id = "pick-colors">
                                 </div>
                             </form>
+                            <!-- </div> -->
                         </div>
                         
                         <div class="finish">
