@@ -208,7 +208,7 @@ footer p {
 .form-container {
     background-color: #3B5140;
     border-radius: 35px;
-    max-width: 100rem; 
+    max-width: 70rem; 
     padding: 2rem;
     color: white;
 }
@@ -221,9 +221,48 @@ footer p {
     display: block;
 }
 
+.left input, .right input {
+    background: #F4F3EA;
+    border-radius: 20px;
+    color: black;
+    height: 2.5rem;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
 .left, .right {
     flex: 1;
-    max-width: 50%;
+    max-width: 70%;
+}
+
+#message {
+    height: 10rem;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    background: #F4F3EA;
+    border-radius: 20px;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 8rem;
+    height: 2.5rem;
+    border: none;
+    transition: 0.35s;
+    align-self: flex-end;
+    z-index: 1;
+}
+
+button:hover {
+    background: black;
+    color: #F4F3EA;
 }
 
 @media screen and (max-width: 768px) {
