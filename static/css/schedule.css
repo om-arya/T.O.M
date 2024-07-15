@@ -122,7 +122,7 @@ footer p {
 .events-and-time-container.visible {
     opacity: 1;
     transform: scale(1);
-    animation: pop-in 0.25s ease-in-out;
+    animation: pop-in 0.5s ease-out;
 }
 
 /*Sets the change in opacity while transitioning between hidden and visible*/
@@ -183,7 +183,7 @@ footer p {
 .hidden-input {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(100%);
+    transform: translateY(-100%);
     transition: all 1s;
 }
 
