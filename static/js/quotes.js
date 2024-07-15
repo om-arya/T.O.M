@@ -235,10 +235,6 @@ allLinks.forEach(link => {
     
         //stops link from just sending the user to the next page.
         event.preventDefault();
-  
-        // const tomToHide = document.querySelectorAll('show-tom');
-        // tomToHide.classList.remove('show-tom');
-        // tomToHide.classList.add('hidden-tom');
 
         //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
         const formElements = document.getElementById('tom-container');
