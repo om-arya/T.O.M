@@ -178,6 +178,11 @@ img {
     color: white;
 }
 
+.profile:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+}
+
 .tom-button {
     padding: 1rem 3rem;
     font-size: 1rem;
