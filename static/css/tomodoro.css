@@ -310,13 +310,9 @@ footer p {
     bottom: 6rem;
     right: 12rem;
     left: 12rem;
-    bottom: 4rem;
     border-radius: 50px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 0;
     /* top: 1;
     right: 0;
     left: 0;
@@ -331,10 +327,27 @@ footer p {
     z-index: 999;
 }
 
+.main-area { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .popup h1, h2, h5, label {
     color: white;
     background-color:#3a4f40;
 } 
+
+.title {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top-half{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
 .timer-boxes {
     display: block;
@@ -353,6 +366,7 @@ footer p {
 .bottom-half {
     display: flex;
     flex-direction: row;
+    justify-items: space-evenly;
 }
 
 #mood-prompt {
@@ -385,7 +399,6 @@ footer p {
     text-align: center;
     background:white;
     display: flex;
-    align-self: flex-end;
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
@@ -415,6 +428,12 @@ footer p {
 .dropdown {
     background-color:white;
     font-size: 1.1rem;
+}
+
+.finish {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 /* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
