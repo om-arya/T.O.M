@@ -153,7 +153,7 @@ footer p {
 }
 
 .title p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 
@@ -170,29 +170,35 @@ footer p {
 }
 
 .meet-description, .contact-us {
+    margin: 0.75rem;
     text-align: center;
     color: var(--text-main-color);
-    margin: 0.75rem;
 }
 
 .contact-us {
     margin: 2.5rem;
 }
 
-.meet-description h1, .contact-us h1 {
-    font-size: 1.75rem;
+.meet-description h1,
+.contact-us h1 {
     margin: 0.75rem;
+    font-size: 2rem;
 }
 
-.meet-description p, .contact-us p {
-    font-size: 1.15rem;
-    text-align: center;
-    max-width: 35rem;
+.meet-description p,
+.contact-us p {
     margin: 0 auto;
+    max-width: 35rem;
+    font-size: 1.3rem;
+}
+
+.meet-description p {
+    text-align: left;
 }
 
 .contact-us p {
     max-width: 45rem;;
+    text-align: center;
 }
 
 #tom-home {
@@ -240,7 +246,6 @@ footer p {
 .card h1, 
 .card-right h1 {
     font-size: 1.75rem;
-    margin-bottom: 1rem;
 }
 
 .card span,
@@ -250,14 +255,15 @@ footer p {
 
 .feature {
     display: flex;
-    align-items: center;
+    align-items: top;
+    justify-content: center;
     gap: 2rem;
 }
 
 .feature p {
-    font-size: 1.4rem;
+    padding-top: 2rem;
+    font-size: 1.3rem;
     max-width: 25rem;
-    flex: 1;
 }
 
 .feature img {
@@ -317,7 +323,7 @@ footer p {
 }
 
 #message {
-    padding: 1rem 1rem 12rem;
+    padding: 1.2rem 1rem 12rem;
     font-size: 1rem;
 }
 
