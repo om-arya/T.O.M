@@ -87,7 +87,14 @@ footer p {
 .logo {
     font-size: 1.5rem;
     font-weight: 500;
-    color: black;
+    color: var(--text-main-color);
+    text-decoration: none;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.logo:hover {
+    color: var(--custom-green);
 }
 
 .top-menu {

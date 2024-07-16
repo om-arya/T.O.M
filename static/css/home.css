@@ -114,7 +114,13 @@ footer p {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-main-color);
+    text-decoration: none;
+    transition: .2s ease;
     user-select: none;
+}
+
+.logo:hover {
+    color: var(--custom-green);
 }
 
 .top-menu {
