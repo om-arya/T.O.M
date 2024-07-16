@@ -39,84 +39,85 @@
                 <input value="Start Timer" type="button" class="tom-button start-mode" id="start-timer">
                 
                 <input type="button" class="no-button" id="settings-button">
-                <div class="popup" id="popup">
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
                     
-                    <div class="main-area">
-                        <div class="title">
-                            <h1>Make This Study Timer Your Own!</h1>
+        <div class="main-area">
+            <div class="title">
+                <h1>Make This Study Timer Your Own!</h1>
+            </div>
+            <div class="top-half">
+                <div class="box-title">
+                    <h2>Time Lengths</h2>
+                </div>
+                <div class="timer-boxes">
+                    <div class="labels">
+                        <label for="study" class="input-label">Study Time</label>
+                        <label for="short" class="input-label">Short Break</label>
+                        <label for="long" class="input-label" id="long-break">Long Break</label>
+                    </div>
+                    <div class="input-boxes">
+                        <input type="number" min="0" max="9999" name="study" value="30" class="time-input tomodoro-time-input" />
+                        <h5 class="min-label">Min</h5>
+                        <input type="number" min="0" max="9999" name="short" value="5" class="time-input short-break-time-input" />
+                        <h5 class="min-label">Min</h5>
+                        <input type="number" min="0" max="9999" name="long" value="15" class="time-input long-break-time-input" />
+                        <h5 class="min-label">Min</h5>
+                    </div>
+
+                </div>
+            </div>                    
+            
+            <div class="bottom-half">
+                <div class="left-side">
+                    <h2> Page Theme</h2>
+                    <h5 id="message">Pick Your Favorite Colors!</h5>
+                    <div class="dropdowns">
+                        <div class="dropdown-1">
+                            <label for="background" id="background">Background</label>
+                            <select name="colors" class="dropdown">
+                                <option value="choice-1">Sample 1</option>
+                                <option value="choice-2">Sample 2</option>
+                                <option value="choice-3">Sample 3</option>
+                            </select>
                         </div>
-                        <div class="top-half">
-                            <div class="box-title">
-                                <h2>Time Lengths</h2>
-                            </div>
-                            <div class="timer-boxes">
-                                <div class="labels">
-                                    <label for="study" class="input-label">Study Time</label>
-                                    <label for="short" class="input-label">Short Break</label>
-                                    <label for="long" class="input-label" id="long-break">Long Break</label>
-                                </div>
-                                <div class="input-boxes">
-                                    <input type="number" min="0" max="9999" name="study" value="30" class="time-input tomodoro-time-input" />
-                                    <h5 class="min-label">Min</h5>
-                                    <input type="number" min="0" max="9999" name="short" value="5" class="time-input short-break-time-input" />
-                                    <h5 class="min-label">Min</h5>
-                                    <input type="number" min="0" max="9999" name="long" value="15" class="time-input long-break-time-input" />
-                                    <h5 class="min-label">Min</h5>
-                                </div>
-    
-                            </div>
-                        </div>                    
-                        
-                        <div class="bottom-half">
-                            <div class="left-side">
-                                <h2> Page Theme</h2>
-                                <h5 id="message">Pick Your Favorite Colors!</h5>
-                                <div class="dropdowns">
-                                    <div class="dropdown-1">
-                                        <label for="background" id="background">Background</label>
-                                        <select name="colors" class="dropdown">
-                                            <option value="choice-1">Sample 1</option>
-                                            <option value="choice-2">Sample 2</option>
-                                            <option value="choice-3">Sample 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="dropdown-2">
-                                        <label for="buttons" id="buttons">Buttons</label>
-                                        <select name="colors" class="dropdown">
-                                            <option value="choice-1">Sample 1</option>
-                                            <option value="choice-2">Sample 2</option>
-                                            <option value="choice-3">Sample 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="dropdown-3">
-                                        <label for="Text" id="text">Text</label>
-                                        <select name="colors" class="dropdown">
-                                            <option value="choice-1">Sample 1</option>
-                                            <option value="choice-2">Sample 2</option>
-                                            <option value="choice-3">Sample 3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <!-- <div class="right-side"> -->
-                            <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
-                                <h5 id="ai-message">Choose Your Colors With AI!</h5>
-                                <div class="textbox">
-                                    <textarea id="mood-prompt" name="mood-prompt">What's the mood?</textarea>
-                                </div>
-                                <div class="send">
-                                    <input value="Pick Colors" type="submit" class = "no-button" id = "pick-colors">
-                                </div>
-                            </form>
-                            <!-- </div> -->
+                        <div class="dropdown-2">
+                            <label for="buttons" id="buttons">Buttons</label>
+                            <select name="colors" class="dropdown">
+                                <option value="choice-1">Sample 1</option>
+                                <option value="choice-2">Sample 2</option>
+                                <option value="choice-3">Sample 3</option>
+                            </select>
                         </div>
-                        
-                        <div class="finish">
-                            <input value="Done" type="button" class = "no-button" id = "closePop">
+                        <div class="dropdown-3">
+                            <label for="Text" id="text">Text</label>
+                            <select name="colors" class="dropdown">
+                                <option value="choice-1">Sample 1</option>
+                                <option value="choice-2">Sample 2</option>
+                                <option value="choice-3">Sample 3</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+
+                <div class="right-side">
+                    <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
+                        <h5 id="ai-message">Choose Your Colors With AI!</h5>
+                        <div class="textbox">
+                            <textarea id="mood-prompt" name="mood-prompt">What's the mood?</textarea>
+                        </div>
+                        <div class="send">
+                            <input value="Pick Colors" type="submit" class = "no-button" id = "pick-colors">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="finish">
+                <input value="Done" type="button" class = "no-button" id = "closePop">
             </div>
         </div>
     </div>
