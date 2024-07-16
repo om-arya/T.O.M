@@ -171,7 +171,7 @@ footer p {
 .column-left {
     display: flex;
     flex-direction: column;
-    padding: 0 5rem;
+    padding-left: 5rem;
     height: 49rem;
     align-items: flex-start;
     justify-content: center;
@@ -194,7 +194,7 @@ footer p {
 .column-right {
     display: flex;
     flex-direction: column;
-    padding: 0 5rem;
+    padding-right: 5rem;
     height: 53rem;
     align-items: flex-start;
     justify-content: center;
