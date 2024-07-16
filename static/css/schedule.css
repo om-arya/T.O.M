@@ -261,7 +261,7 @@ footer p {
 
 .input-label2 {
     display: flex;
-    margin-left: 15rem;
+    margin: 0 0 -1rem 15rem;
     justify-content: right;
     align-items: last baseline;
     font-size: 1rem;
@@ -271,18 +271,17 @@ footer p {
 .notes {
     display: flex;
     padding: 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: text;
-    border-radius: 17px;
-    border: solid 1px rgba(0, 0, 0, 0.5);
-    transition: 0.25s;
-    text-decoration: none;
-    align-items: center;
     width: 40rem;
     height: 10rem;
-    background-color: #f7f7f7;
+    align-items: center;
+    border-radius: 17px;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: #f7f7f7;
     color: #000;
+    cursor: text;
 }
 
 textarea {
@@ -295,6 +294,7 @@ textarea {
 }
 
 .input-select {
+    padding-left: .5rem;
     cursor: pointer;
 }
 
@@ -335,7 +335,7 @@ option {
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    transition: 0.25s;
+    transition: 0.2s;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
@@ -414,7 +414,7 @@ option {
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    transition: 0.25s;
+    transition: 0.2s;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
@@ -525,7 +525,7 @@ option {
 }
 
 .schedule-button:hover {
-    transform: scale(1.25);
+    transform: scale(1.1);
 }
 
 #press-me-text {
