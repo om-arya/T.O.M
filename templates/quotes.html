@@ -12,7 +12,7 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Tabby Of Motivation | T.O.M.</div>
+        <div class="logo">T.O.M. | Tabby Of Motivation</div>
         <div class="nav-items" id="navbar">
             <a href="home" class="top-menu">Home</a>
             <a href="quotes+generate_ai_quotes+True" class="top-menu active">T.O.M.'s Inspiration</a>
@@ -32,7 +32,7 @@
                     {{ ai_quotes }}
                 </div>
             </h1>
-            <div class="column-left hidden-tom">
+            <div class="column-right hidden-tom">
                 <button class='tom-quote-head' type="submit" onclick="location.href='quotes+generate_ai_quotes+False'">
                     <img class="get-quote-button" src='../media/TOM.png' name="submit">
                 </button>
@@ -40,10 +40,13 @@
         </div>
     </section>
     <footer>
-        <h1>Tabby of Motivation | T.O.M.</h1>
-        <a href="https://github.com/om-arya/T.O.M" target="_blank"><img id="github" src="../media/github-gray.png" onmouseover="this.src='../media/github-black.png'" onmouseout="this.src='../media/github-gray.png'"></a>
-        <p>&copy; 2024 Tabby of Motivation | T.O.M.</p>
+        <a href="https://github.com/om-arya/T.O.M" target="_blank">
+            <box-icon type="logo" name="github" class="github"></box-icon>
+        </a>
+        <p>&copy; 2024 T.O.M. | Tabby of Motivation</p>
     </footer>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script type="module" src="../static/js/quotes.js"></script>
 </body>
 </html>
