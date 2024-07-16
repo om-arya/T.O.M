@@ -191,7 +191,7 @@ footer p {
     color: var(--custom-green);
 }
 
-.column-left p {
+.column-left .caption {
     margin-bottom: 2rem;
     font-size: 1.4rem;
     color: var(--text-main-color);
@@ -209,16 +209,17 @@ footer p {
 
 .tom-button {
     position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
     padding: 1rem 2rem;
-    border-radius: 50px;
+    width: 22rem;
+    height: 4rem;
     align-items: center;
-    font-size: 1.2rem;
-    font-weight: 500;
+    justify-content: center;
+    border-radius: 50px;
     border: none;
     box-shadow: 0 0 .5rem var(--custom-green);
     background: var(--custom-green);
-    color: var(--bg-main-color);
     text-decoration: none;
     --offset: 30px;
     overflow: hidden;
@@ -260,6 +261,22 @@ footer p {
     position: absolute;
     inset: 3px;
     z-index: -2;
+}
+
+.tom-button-icon {
+    position: absolute;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    fill: var(--bg-main-color);
+}
+
+.tom-button p {
+    position: absolute;
+    left: 3.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--bg-main-color);
 }
 
 .tom-image {
