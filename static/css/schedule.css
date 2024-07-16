@@ -189,6 +189,13 @@ footer p {
     box-shadow: 0 0 .4rem rgba(0, 0, 0, .5);
 }
 
+.input-container p {
+    margin: 1rem 0 0 .5rem;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
 .input {
     display: flex;
     padding: 1rem 1rem;
