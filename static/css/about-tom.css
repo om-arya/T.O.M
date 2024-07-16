@@ -299,14 +299,16 @@ footer p {
     display: block;
 }
 
-.left input, .right input {
-    background: #F4F3EA;
-    border-radius: 20px;
-    color: black;
-    height: 2.5rem;
+.left input,
+.right input {
+    margin-bottom: 1rem;
     padding: 1rem;
     width: 100%;
-    margin-bottom: 1rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    background: #F4F3EA;
+    color: black;
 }
 
 .left, .right {
@@ -316,6 +318,7 @@ footer p {
 
 #message {
     padding: 1rem 1rem 12rem;
+    font-size: 1rem;
 }
 
 .right {
