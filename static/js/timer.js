@@ -2,6 +2,7 @@ const timer = document.querySelector('.timer');
 const startButton = document.querySelector('#start-timer');
 const restartButton = document.querySelector('#restart-button');
 const root = document.querySelector(':root');
+const body = document.querySelector('body');
 const catSound = new Audio("media/cat-sound.mp3");
 
 let startTime = timer.innerHTML; // when the timer is stopped, we set it back to this
@@ -50,7 +51,7 @@ function decrementSecond() {
     if (currTime === "00:00") {
         // Change screen color and play alarm until either
         // the restart button or the start button is clicked.
-        root.style.setProperty("--bg-main-color", "#d71717");
+        body.style["background"] = "linear-gradient(white, red)";
         playAlarm();
 
         startButton.addEventListener('click', stopTimer);
@@ -138,7 +139,7 @@ function stopTimer() {
     restartButton.removeEventListener('click', stopTimer);
     startButton.removeEventListener('click', stopTimer);
 
-    root.style.setProperty("--bg-main-color", "#5b7961");
+    body.style["background"] = "linear-gradient(white, var(--bg-gradient-color))";
 
     startButton.removeEventListener('click', pauseTimer);
     startButton.removeEventListener('click', unpauseTimer);
