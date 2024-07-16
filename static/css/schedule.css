@@ -1,93 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: var(--bg-main-color);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 :root {
-    --bg-profile-color: #3b5140;
-    --nav-bar-color: #5b7961;
+    --bg-main-color: white;
+    --text-main-color: black;
+    --footer-color: black;
+    --custom-green: #5d9c69;
+    --schedule-color: #3b5440;
+    
+    --bg-gradient-color: #c99755;
 }
 
 body {
-    background: linear-gradient(#5b7961, rgb(0, 183, 233));
+    background: linear-gradient(var(--bg-main-color) 0, var(--bg-gradient-color) 60rem);
     min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 nav {
-    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
     display: flex;
+    width: 100%;
+    height: 5rem;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem calc((100vw - 1300px) / 2);
-    background: var(--nav-bar-color);
-    top: 0;
-    z-index: 1;
-}
-
-#navbar {
-    background: var(--nav-bar-color);
-    z-index: 1;
+    padding: 1rem calc((100vw - 1300px) / 2);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    user-select: none;
 }
 
 footer {
-    background-color: transparent;
-    color: white;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .4rem 0 .6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1rem 0;
-}
-
-footer h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    color: white;
-    margin: 0;
-    background: transparent;
+    background-color: var(--footer-color);
+    color: var(--bg-main-color);
+    user-select: none;
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
+    display: flex;
+    margin-bottom: .2rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
-    display: block;
-    background-color: transparent;
+    color: var(--bg-main-color);
+    text-decoration: none;
+}
+
+footer .github {
+    width: 3rem;
+    height: 3rem;
+    fill: white;
+    transition: 0.1s;
+}
+
+footer .github:hover {
+    fill: var(--custom-green);
 }
 
 footer p {
     font-size: 0.75rem;
-    margin: 0;
-    background-color: transparent;
-}
-
-#github {
-    width: 2rem;
-    height: 2rem;
-    transition: 0.25s;
-    border: none;
-    /* background: var(--foot-color); */
-    background: transparent;
+    color: white;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    padding: 0 2rem;
-    color: white;
-    background: var(--nav-bar-color);
+    font-weight: 500;
+    color: var(--text-main-color);
+    text-decoration: none;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.logo:hover {
+    color: var(--custom-green);
 }
 
 .top-menu {
     position: relative;
-    display: inline-block;
-    margin: 0 1rem;
-    color: white;
+    margin: 0 .4rem;
+    padding: .6rem .9rem;
+    border-radius: 20px;
+    font-weight: 500;
+    color: black;
     text-decoration: none;
-    background: var(--nav-bar-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s ease, color 0.3s;
+    user-select: none;
+}
+
+.top-menu:hover {
+    background-color: rgb(229, 228, 228);
 }
 
 .top-menu::after {
@@ -95,7 +115,6 @@ footer p {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
     bottom: 0;
     left: 0;
     background-color: white;
@@ -107,6 +126,16 @@ footer p {
 .top-menu:focus::after,
 .top-menu.active::after {
     transform: scaleX(1);
+}
+
+.top-menu.active {
+    background: var(--custom-green);
+    color: white;
+    transition: box-shadow .2s ease;
+}
+
+.top-menu.active:hover {
+    box-shadow: 0 0 .3rem var(--custom-green);
 }
 
 .events-and-time-container {
@@ -134,7 +163,6 @@ footer p {
 .event-label-container {
     display: flex;
     flex-direction: row;
-    margin-bottom: -1.4rem;
 }
 
 .form {
@@ -143,15 +171,21 @@ footer p {
     padding: 0 5rem;
     text-align: center;
     font-size: 1rem;
-    color: white;
+    color: var(--text-main-color);
 }
 
 .input-container {
-    padding: 0;
-    margin: 3rem 1rem 2rem 5rem;
     display: flex; 
     flex-direction: column; 
-    margin-right: 1rem; 
+    margin: 9rem 1rem 2rem 5rem;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 .2rem rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .1);
+}
+
+.input-container:hover {
+    box-shadow: 0 0 .4rem rgba(0, 0, 0, .5);
 }
 
 .input {
@@ -159,8 +193,8 @@ footer p {
     padding: 1rem 1rem;
     margin-bottom: 1.5rem;
     font-size: 1rem;
-    font-weight: bold;
-    border: none;
+    font-weight: 500;
+    border: solid 1px rgba(0, 0, 0, 0.5);
     cursor: text;
     border-radius: 17px 0 0 17px;
     transition: 0.25s;
@@ -177,14 +211,14 @@ footer p {
     justify-content: flex-start;
     text-align: left;
     font-size: 1.2rem; 
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .hidden-input {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(100%);
-    transition: all 1s;
+    transition: transform 1s, box-shadow .2s;
 }
 
 .show-input {
@@ -226,7 +260,7 @@ footer p {
 
 .input-label2 {
     display: flex;
-    margin: 0 0 .7rem 15.5rem;
+    margin-left: 15.5rem;
     justify-content: right;
     align-items: last baseline;
     font-size: 1rem;
@@ -238,9 +272,9 @@ footer p {
     padding: 1rem;
     font-size: 1rem;
     font-weight: bold;
-    border: none;
     cursor: text;
     border-radius: 17px;
+    border: solid 1px rgba(0, 0, 0, 0.5);
     transition: 0.25s;
     text-decoration: none;
     align-items: center;
@@ -266,17 +300,17 @@ textarea {
 select {
     width: 8rem;
     height: 2.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #5b7961;
-    background-color: #FFFD9A;
     border-radius: 0 17px 17px 0;
+    background-color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
     overflow-y: auto;
+    user-select: none;
 }
 
 option {
     font-size: 0.8rem;
-    color: #5b7961;
     background-color: white;
 }
 
@@ -305,7 +339,8 @@ option {
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background: #93bf8c;
+    box-shadow: 0 0 .3rem var(--custom-green);
+    background: var(--custom-green);
     color: white;
     --offset: 30px;
     overflow: hidden;
@@ -314,6 +349,7 @@ option {
 }
 
 .add-button:hover {
+    box-shadow: 0 0 .3rem black;
     background: black;
     z-index: 1;
 }
@@ -382,19 +418,21 @@ option {
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background: #93bf8c;
+    box-shadow: 0 0 .3rem var(--custom-green);
+    background: var(--custom-green);
     color: white;
     position: relative;
 }
 
 .clear-all-button:hover {
+    box-shadow: 0 0 .3rem #d71717;
     background-color: #d71717;
     z-index: 1;
 }
 
 .delete-button {
-    width: 1rem; 
-    height: 2.75rem;
+    width: 0; 
+    height: 0;
     border: none;
     cursor: pointer;
     transition: 0.25s;
@@ -403,7 +441,8 @@ option {
     font-weight: bold;
     text-align: center;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    color: white;
+    background: transparent;
+    color: black;
 }
 
 .delete-button:hover {
@@ -416,10 +455,11 @@ option {
     flex-direction: column;
     align-items: center;
     justify-content: top;
-    margin: 6rem 5rem 0 1rem;
+    margin: 10rem 5rem 0 1rem;
     padding: 0;
     width: 15rem;
     text-align: center;
+    user-select: none;
 }
 
 .submit-container p {
@@ -445,27 +485,41 @@ option {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0 20rem 5rem 20rem;
+    padding: 0 20rem 10rem 20rem;
     align-items: left;
-    font-size: 1.2rem;
     color: white;
 }
 
 #result h1 {
     margin-bottom: 1rem;
+    padding: .8rem 0;
+    width: 30rem;
+    align-self: center;
     text-align: center;
     font-size: 1.8rem;
+    font-weight: 500;
+    border-radius: 20px;
+    box-shadow: 0 0 .2rem rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .5);
+    color: var(--bg-main-color);
+    user-select: none;
+    transition: .1s ease;
+}
+
+#result h1:hover {
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .7);
 }
 
 #result p {
     padding: .8rem;
     border: solid 1px white;
-    font-weight: 300;
-    background-color: #415a46;
+    font-weight: 400;
+    font-size: 1.05rem;
+    background-color: var(--schedule-color);
 }
 
 #result strong {
-    background-color: #415a46;
+    background-color: var(--schedule-color);
     font-weight: 600;
 }
 
@@ -473,6 +527,6 @@ option {
     transform: scale(1.25);
 }
 
-.press-me-text {
-    font-weight: bold;
+#press-me-text {
+    font-weight: 500;
 }

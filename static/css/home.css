@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -128,6 +128,7 @@ footer p {
     margin: 0 .4rem;
     padding: .6rem .9rem;
     border-radius: 20px;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-main-color);
     text-decoration: none;

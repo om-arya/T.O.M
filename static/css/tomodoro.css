@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -22,7 +22,7 @@
 }
 
 body {
-    background: linear-gradient(white, var(--bg-gradient-color));
+    background: linear-gradient(var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
     overflow: hidden;
 }
