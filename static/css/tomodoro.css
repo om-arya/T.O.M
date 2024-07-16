@@ -207,6 +207,7 @@ footer p {
 .tom-button:hover {
     box-shadow: 0 0 .3rem black;
     background: black;
+    color: white;
     transform: scale(1.1);
 }
 
