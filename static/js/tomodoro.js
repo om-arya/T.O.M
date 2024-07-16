@@ -138,10 +138,10 @@ function switchToLongBreak() {
 
 async function typingEffect(element, text) {
     setTimeout(() => {
-        element.textContent = "";
+        element.textContent = text[0] + text[1];
     }, 0);
 
-    let ch = 0;
+    let ch = 2;
     typeInterval = setInterval(() => {
         element.textContent += text[ch];
         ch += 1;
