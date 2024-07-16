@@ -120,6 +120,8 @@ if (aiQuoteStack.length < 2 && window.location.pathname === '/quotes+generate_ai
     tomQuoteHead.setAttribute('onclick', "location.href='quotes+generate_ai_quotes+False'");
 }
 
+let typeInterval;
+
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
 if (quoteCount == 0) {
     quoteContent.textContent = "Click me for some pawsitive inspiration!"
@@ -159,6 +161,7 @@ function usePreMadeQuote() {
 
     const currQuote = preMadeQuotes[quoteIndex];
 
+    clearInterval(typeInterval);
     typingEffect(quoteContent, currQuote);
     textToSpeech(currQuote);
 
@@ -171,20 +174,26 @@ function usePreMadeQuote() {
 function useAIQuote() {
     const currQuote = aiQuoteStack.pop();
 
+    clearInterval(typeInterval);
     typingEffect(quoteContent, currQuote);
     textToSpeech(currQuote);
 
     sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
 }
 
-function typingEffect(element, text, i = 0) {
-    if (i === 0) {
+async function typingEffect(element, text) {
+    setTimeout(() => {
         element.textContent = "";
-    }
-    if (i < text.length) {
-        element.textContent += text.charAt(i);
-        setTimeout(() => typingEffect(element, text, i + 1), 50);
-    }
+    }, 0);
+
+    let ch = 0;
+    typeInterval = setInterval(() => {
+        element.textContent += text[ch];
+        ch += 1;
+        if (ch == text.length) {
+            clearInterval(typeInterval);
+        }
+    }, 50);
 }
 
 //one observer to create animations for the quote container to come in from the bottom

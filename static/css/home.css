@@ -41,7 +41,8 @@ nav {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
+    z-index: 100;
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -125,7 +126,7 @@ footer p {
 
 .top-menu {
     position: relative;
-    margin: 0 .4rem;
+    margin: 0 .3rem;
     padding: .6rem .9rem;
     border-radius: 20px;
     font-size: 1rem;
@@ -137,7 +138,7 @@ footer p {
 }
 
 .top-menu:hover {
-    background-color: rgb(229, 228, 228);
+    background-color: rgba(220, 220, 220, 0.5);
 }
 
 .top-menu::after {
