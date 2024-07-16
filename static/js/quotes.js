@@ -124,7 +124,7 @@ let typeInterval;
 
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
 if (quoteCount == 0) {
-    quoteContent.textContent = "Click me for some pawsitive inspiration."
+    quoteContent.textContent = "Click me for some pawsitive inspiration!"
 
 } else if (aiQuoteStack.length === 0) { // pre-made quote
     cancelTTS();

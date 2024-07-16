@@ -18,7 +18,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(white, var(--bg-gradient-color));
+    background: white;
     overflow: hidden;
 }
 
@@ -158,6 +158,7 @@ footer p {
 
 .quote-content {
     font-weight: 700;
+    user-select: none;
 }
 
 .hidden-quotes {
@@ -208,9 +209,8 @@ footer p {
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0rem 2rem;
     color: white;
 }
 

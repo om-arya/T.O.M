@@ -165,6 +165,10 @@ footer p {
     margin: 2rem;
 }
 
+.meet-image {
+    user-select: none;
+}
+
 .meet-description, .contact-us {
     text-align: center;
     color: var(--text-main-color);
@@ -259,6 +263,7 @@ footer p {
 .feature img {
     width: 20rem;
     height: auto;
+    user-select: none;
 }
 
 .form-content {

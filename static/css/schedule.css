@@ -277,7 +277,7 @@ footer p {
     border-radius: 17px;
     border: solid 1px rgba(0, 0, 0, 0.5);
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
     background: #f7f7f7;
     color: #000;
@@ -444,11 +444,11 @@ option {
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     background: transparent;
     color: black;
+    user-select: none;
 }
 
 .delete-button:hover {
    color: #d71717;
-   transform: scale(1.15);
 }
 
 .submit-container {
