@@ -148,7 +148,7 @@ async function typingEffect(element, text) {
         if (ch == text.length) {
             clearInterval(typeInterval);
         }
-    }, 150);
+    }, 200);
 }
 
 //typing effect for whatever number is on screen when it loads
@@ -160,14 +160,9 @@ window.onload = () => {
 //one observer to create animations for the timer and its buttons to come in from the bottom
 const observerInput = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-timer-buttons');
-            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-            observerInput.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('show-timer-buttons');
-            observerInput.unobserve(entry.target);
-        }
+        entry.target.classList.add('show-timer-buttons');
+        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+        observerInput.unobserve(entry.target);
     });
 })
 
@@ -179,14 +174,9 @@ hiddenTimerElements.forEach((el) => observerInput.observe(el));
 //second observer to create animations for Tom which is to come in from the right
 const observerTom = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-tom');
-            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-            observerTom.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('show-tom');
-            observerTom.unobserve(entry.target);
-        }
+        entry.target.classList.add('show-tom');
+        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+        observerTom.unobserve(entry.target);
     });
 })
 
@@ -208,10 +198,6 @@ allLinks.forEach(link => {
     
         //stops link from just sending the user to the next page.
         event.preventDefault();
-  
-        // const tomToHide = document.querySelectorAll('show-tom');
-        // tomToHide.classList.remove('show-tom');
-        // tomToHide.classList.add('hidden-tom');
 
         //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
         const timerElements = document.getElementById('timer-div');

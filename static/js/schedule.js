@@ -63,14 +63,9 @@ window.onload = () => {
 //one observer to create animations for the text boxes to come in from the bottom
 const observerInput = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-input');
-            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-            observerInput.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('show-input');
-            observerInput.unobserve(entry.target);
-        }
+        entry.target.classList.add('show-input');
+        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+        observerInput.unobserve(entry.target);
     });
 })
 
@@ -81,14 +76,9 @@ hiddenElementsInput.forEach((el) => observerInput.observe(el));
 //second observer to create animations for Tom which is to come in from the right
 const observerTom = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-tom');
-            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-            observerTom.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('show-tom');
-            observerTom.unobserve(entry.target);
-        }
+        entry.target.classList.add('show-tom');
+        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+        observerTom.unobserve(entry.target);
     });
 })
 

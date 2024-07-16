@@ -9,18 +9,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
-        }
-    });
-})
 
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach((el) => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        });
+    })
+    
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+    
+      //one observer to create animations for Tom to come in from the right
+    const observerInput = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.add('show-tom');
+            observerInput.unobserve(entry.target);
+        });
+    })
+    
+    const hiddenElementsInput = document.querySelectorAll(".hidden-tom");
+    hiddenElementsInput.forEach((el) => observerInput.observe(el));
+
+
 
 /**
  * EXIT ANIMATION CODE: We first select all the a href tags on the page- these are only used to lead away from the page itself
@@ -47,20 +58,3 @@ allLinks.forEach(link => {
         }, 500);
     });
   });
-
-  //one observer to create animations for Tom to come in from the right
-const observerInput = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-tom');
-            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-            observerInput.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('show-tom');
-            observerInput.unobserve(entry.target);
-        }
-    });
-})
-
-const hiddenElementsInput = document.querySelectorAll(".hidden-tom");
-hiddenElementsInput.forEach((el) => observerInput.observe(el));

@@ -183,7 +183,7 @@ footer p {
 .hidden-input {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(-100%);
+    transform: translateY(100%);
     transition: all 1s;
 }
 

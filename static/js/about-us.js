@@ -1,35 +1,30 @@
-//   The next to sections allow the title and profiles to transition on once the viewer is at their location
+window.onload = () => {
+    //   The next to sections allow the title and profiles to transition on once the viewer is at their location
   
-  //observer for the title text
-  const observerTitle = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+    //observer for the title text
+    const observerTitle = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             entry.target.classList.add('about-us-title-show');
-            //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
             observerTitle.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('about-us-title-show');
-            observerTitle.unobserve(entry.target);
-        }
-    });
-})
+        });
+    })
 
-const hiddenElementsTitle = document.querySelectorAll(".about-us-title");
-hiddenElementsTitle.forEach((el) => observerTitle.observe(el));
+    const hiddenElementsTitle = document.querySelectorAll(".about-us-title");
+    hiddenElementsTitle.forEach((el) => observerTitle.observe(el));
 
-//observer for the profile elements on the page
-const observerProfile = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+    //observer for the profile elements on the page
+    const observerProfile = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
-        }
-    });
-})
+            observerProfile.unobserve(entry.target);
+        });
+    })
 
-const hiddenProfiles = document.querySelectorAll(".hidden");
-hiddenProfiles.forEach((el) => observerProfile.observe(el));
+    const hiddenProfiles = document.querySelectorAll(".hidden");
+    hiddenProfiles.forEach((el) => observerProfile.observe(el));
+}
+
+
 
 /**
  * EXIT ANIMATION CODE: We first select all the a href tags on the page- these are only used to lead away from the page itself

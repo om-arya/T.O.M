@@ -127,14 +127,16 @@ footer p {
 
 /* Make profiles less visible when out of view, and transition them to have a higher opacity once in view */
 .hidden {
-    opacity: 0.25;
-    transform: scale(0.95);
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
     transition: all 1s;
 }
 
 .show {
     opacity: 1;
-    transform: scale(1.01);
+    filter: blur(0);
+    transform: translateY(0);
 }
 
 img {
