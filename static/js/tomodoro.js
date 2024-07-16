@@ -14,7 +14,13 @@ let tomodoroDuration = "25:00";
 let shortBreakDuration = "05:00";
 let longBreakDuration = "15:00";
 
-startButton.addEventListener('click', runTimer);
+let typeInterval;
+
+startButton.addEventListener('click', () => {
+    clearInterval(typeInterval);
+    runTimer();
+});
+
 tomodoroTab.addEventListener('click', switchToTomodoro);
 shortBreakTab.addEventListener('click', switchToShortBreak);
 longBreakTab.addEventListener('click', switchToLongBreak);
@@ -81,8 +87,6 @@ closePop.addEventListener('click', () => {
 
     popUp.classList.remove("open");
 });
-
-let typeInterval;
 
 // Switch to the Tomodoro tab if not already active.
 function switchToTomodoro() {
