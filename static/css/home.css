@@ -1,74 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--bg-main-color);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Inter";
 }
 
 :root {
-    --bg-main-color: #5b7961;
+    --bg-main-color: white;
+    --text-main-color: black;
+    --footer-color: black;
+    --custom-green: #5d9c69;
+    
     --d: 2500ms;
     --angle: 90deg;
     --gradX: 100%;
     --gradY: 50%;
-    --nav-bar-color: #5b7961;
-    --foot-color: rgb(71, 71, 71);
 }
 
 body {
     min-height: 100vh;
+    background: var(--bg-main-color);
+    overflow: hidden;
 }
 
 nav {
-    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
     display: flex;
+    width: 100%;
+    height: 5rem;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem calc((100vw - 1300px) / 2);
-    background: var(--nav-bar-color);
-    top: 0;
-}
-
-#navbar {
-    background: var(--nav-bar-color);
+    padding: 1rem calc((100vw - 1300px) / 2);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    user-select: none;
 }
 
 footer {
-    background-color: transparent;
-    color: white;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .4rem 0 .6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1rem 0;
-}
-
-footer h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    color: white;
-    margin: 0;
-    background: transparent;
+    background-color: var(--footer-color);
+    color: var(--bg-main-color);
+    user-select: none;
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
+    display: flex;
+    margin-bottom: .2rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
-    display: block;
-    background-color: transparent;
+    color: var(--bg-main-color);
+    text-decoration: none;
+}
+
+footer .github {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--bg-main-color);
+    transition: 0.1s;
+}
+
+footer .github:hover {
+    fill: var(--custom-green);
 }
 
 footer p {
     font-size: 0.75rem;
-    margin: 0;
-    background-color: transparent;
-}
-
-.github {
-    width: 2rem;
-    height: 2rem;
-    transition: 0.25s;
-    background: transparent;
 }
 
 .hidden {
@@ -102,20 +112,25 @@ footer p {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    color: white;
-    background: var(--nav-bar-color);
+    font-weight: 500;
+    color: var(--text-main-color);
+    user-select: none;
 }
 
 .top-menu {
     position: relative;
-    display: inline-block;
-    margin: 0 1rem;
-    color: white;
+    margin: 0 .4rem;
+    padding: .6rem .9rem;
+    border-radius: 20px;
+    font-weight: 500;
+    color: var(--text-main-color);
     text-decoration: none;
-    background: var(--nav-bar-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s ease, color 0.3s;
+    user-select: none;
+}
+
+.top-menu:hover {
+    background-color: rgb(229, 228, 228);
 }
 
 .top-menu::after {
@@ -123,10 +138,9 @@ footer p {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: var(--bg-main-color);
     transform-origin: center;
     transition: transform 0.35s ease-out;
 }
@@ -135,6 +149,16 @@ footer p {
 .top-menu:focus::after,
 .top-menu.active::after {
     transform: scaleX(1);
+}
+
+.top-menu.active {
+    background: var(--custom-green);
+    color: var(--bg-main-color);
+    transition: box-shadow .2s ease;
+}
+
+.top-menu.active:hover {
+    box-shadow: 0 0 .3rem var(--custom-green);
 }
 
 .tom-container {
@@ -147,46 +171,59 @@ footer p {
 .column-left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding: 0 5rem;
+    height: 49rem;
     align-items: flex-start;
-    padding: 0rem 2rem;
-    color: white;
+    justify-content: center;
+    background: rgba(0, 0, 0, .05);
 }
 
 .column-left h1 {
+    font-weight: 700;
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    color: var(--custom-green);
 }
 
 .column-left p {
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--text-main-color);
+}
+
+.column-right {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5rem;
+    height: 53rem;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgba(0, 0, 0, .05);
 }
 
 .tom-button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
-    align-items: center;
-    max-width: 450px;
-    max-height: auto;
-    background: white;
-    color: black;
-    --offset: 30px;
-    overflow: hidden;
     position: relative;
     z-index: 1;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 0 .5rem var(--custom-green);
+    background: var(--custom-green);
+    color: var(--bg-main-color);
+    text-decoration: none;
+    --offset: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .2s;
+    user-select: none;
 }
 
 .tom-button:hover {
+    box-shadow: 0 0 .3rem black;
     background: black;
-    color: white;
-    z-index: 1;
 }
 
 .tom-button::before { 
@@ -221,9 +258,10 @@ footer p {
 
 .tom-image {
     margin-left: 8rem;
-    max-width: 450px;
-    max-height: auto;
-    background-color: transparent;
+    width: 27rem;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
 }
 
 @property --angle {

@@ -7,7 +7,6 @@ const shortBreakTab = document.querySelector('.short-break');
 const longBreakTab = document.querySelector('.long-break');
 
 const openPop = document.querySelector('#settings-button');
-const pickColors = document.querySelector('#pick-colors');
 const closePop = document.querySelector('#closePop');
 const popUp = document.querySelector('#popup');
 
@@ -83,6 +82,8 @@ closePop.addEventListener('click', () => {
     popUp.classList.remove("open");
 });
 
+let typeInterval;
+
 // Switch to the Tomodoro tab if not already active.
 function switchToTomodoro() {
     if (!tomodoroTab.classList.contains('selected')) {
@@ -92,11 +93,11 @@ function switchToTomodoro() {
         longBreakTab.classList.remove('selected');
         tomodoroTab.classList.add('selected');
 
-        timer.innerHTML = tomodoroDuration;
         setStartTime(tomodoroDuration);
-    }
 
-    typingEffect(timer, timer.innerHTML);
+        clearInterval(typeInterval);
+        typingEffect(timer, tomodoroDuration);
+    }
 }
 
 // Switch to the Short Break tab if not already active.
@@ -108,10 +109,10 @@ function switchToShortBreak() {
         longBreakTab.classList.remove('selected');
         shortBreakTab.classList.add('selected');
 
-        timer.innerHTML = shortBreakDuration;
         setStartTime(shortBreakDuration);
 
-        typingEffect(timer, timer.innerHTML);
+        clearInterval(typeInterval);
+        typingEffect(timer, shortBreakDuration);
     }
 }
 
@@ -124,21 +125,26 @@ function switchToLongBreak() {
         shortBreakTab.classList.remove('selected');
         longBreakTab.classList.add('selected');
 
-        timer.innerHTML = longBreakDuration;
         setStartTime(longBreakDuration);
 
-        typingEffect(timer, timer.innerHTML);
+        clearInterval(typeInterval);
+        typingEffect(timer, longBreakDuration);
     }
 }
 
-function typingEffect(element, text, i = 0) {
-    if (i === 0) {
+async function typingEffect(element, text) {
+    setTimeout(() => {
         element.textContent = "";
-    }
-    if (i < text.length) {
-        element.textContent += text.charAt(i);
-        setTimeout(() => typingEffect(element, text, i + 1), 200);
-    }
+    }, 0);
+
+    let ch = 0;
+    typeInterval = setInterval(() => {
+        element.textContent += text[ch];
+        ch += 1;
+        if (ch == text.length) {
+            clearInterval(typeInterval);
+        }
+    }, 150);
 }
 
 //typing effect for whatever number is on screen when it loads
