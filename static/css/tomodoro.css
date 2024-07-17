@@ -323,8 +323,8 @@ footer p {
     position: fixed;
     top: 6rem;
     bottom: 6rem;
-    right: 12rem;
-    left: 12rem;
+    right: 16rem;
+    left: 16rem;
     border-radius: 50px;
     display: flex;
     flex-direction: row;
@@ -346,6 +346,7 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .popup h1, h2, h5, label {
@@ -355,20 +356,41 @@ footer p {
 
 .title {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.box-title {
+    padding-left: 1rem;
+}
+
+.bottom-title {
+    padding-left: 1rem;
 }
 
 .top-half{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.timer-boxes {
-    display: block;
+    width: 50%;
 }
 
 .labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.input-1{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-2{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-3{
     display: flex;
     flex-direction: row;
 }
@@ -376,20 +398,34 @@ footer p {
 .input-boxes {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .bottom-half {
     display: flex;
     flex-direction: row;
-    justify-items: space-evenly;
+    width: 75%;
+    justify-content: space-between;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
 }
 
 #mood-prompt {
     background-color: white;
-    border-radius: 50px;
+    border-radius: 30px;
     height: 150px;
     width: 490px;
     resize: none;
+    padding: 1rem;
 }
 
 .time-input {
@@ -413,7 +449,8 @@ footer p {
     font-weight: bold;
     text-align: center;
     background:white;
-    display: flex;
+    display: block;
+    margin: 0 auto;
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
@@ -443,12 +480,6 @@ footer p {
 .dropdown {
     background-color:white;
     font-size: 1.1rem;
-}
-
-.finish {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
 
 /* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
