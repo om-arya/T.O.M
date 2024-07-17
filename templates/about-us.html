@@ -13,24 +13,35 @@
 
 <body>
     <nav>
-        <div class="logo">Tabby Of Motivation | T.O.M.</div>
+        <a href="home" class="logo">T.O.M. | Tabby Of Motivation</a>
         <div class="nav-items" id="navbar">
             <a href="home" class="top-menu">Home</a>
-            <a href="quotes+generate_ai_quotes+True" class="top-menu">T.O.M.'s Inspiration</a>
+            <a href="quotes+generate_ai_quotes+True" class="top-menu">Quotes</a>
             <a href="schedule" class="top-menu">Schedule Builder</a>
-            <a href="tomodoro" class="top-menu">Study with T.O.M.</a>
+            <a href="tomodoro" class="top-menu">Tomodoro Timer</a>
             <a href="about-tom" class="top-menu">About T.O.M.</a>
             <a href="about-us" class="top-menu active">Meet The Team</a>
         </div>
     </nav>
-    <h1 class="about-us-title about-us-title-hidden" id="title">Meet The Team</h1>
-    <section class = "wrapper" id="profiles-section-wrapper">
+    <div class="about-us-title about-us-title-hidden" id="title">
+        <h1>Meet The Team</h1>
+        <p>Get to know the creators behind T.O.M.</p>
+    </div>
+    <section class = "about-wrapper" id="profiles-section-wrapper">
         <div class="profile item1 hidden">
             <img src = '../media/stephen.jpg' alt = "stephen.jpg" width = "200" height = "200" >
             <h1>Stephen Wu</h1>
-            <p>Project Manager, Front End Developer & UI/UX Designer</p><br><br>
-            <a href="https://www.linkedin.com/in/stephen-wu-210a96304/" class="tom-button">LinkedIn</a>
-            <a href = "https://github.com/heavens-potato" class="tom-button">GitHub</a><br><br><br>
+            <p>Project Manager, Front End Developer & UI/UX Designer</p>
+            
+            <div class="button-container">
+                <a href="https://www.linkedin.com/in/stephen-wu-210a96304/" class="tom-button">
+                    <box-icon type='logo' name='linkedin-square' class="button-icon"></box-icon>
+                </a>
+                <a href = "https://github.com/heavens-potato" class="tom-button">
+                    <box-icon type='logo' name='github' class="button-icon"></box-icon>
+                </a>
+            </div>
+
             <div class="profile-p">
                 <p>
                     I'm Stephen, a CS major at UMD. Since early high school, I've thrived in collaborative coding environments, loving the 
@@ -44,9 +55,17 @@
         <div class = "profile item2 hidden">
             <img src = '../media/omarya.jpeg' alt = "omarya.jpeg" width = "200" height = "200">
             <h1>Om Arya</h1>
-            <p>Technical Lead, Front & Back End Developer</p><br><br>
-            <a href = "https://www.linkedin.com/in/om-arya/" class="tom-button">LinkedIn</a>
-            <a href = "https://github.com/om-arya" class="tom-button">GitHub</a><br><br><br>
+            <p>Technical Lead, Front & Back End Developer</p>
+
+            <div class="button-container">
+                <a href = "https://www.linkedin.com/in/om-arya/" class="tom-button">
+                    <box-icon type='logo' name='linkedin-square' class="button-icon"></box-icon>
+                </a>
+                <a href = "https://github.com/om-arya" class="tom-button">
+                    <box-icon type='logo' name='github' class="button-icon"></box-icon>
+                </a>
+            </div>
+
             <div class="profile-p">
                 <p>
                     Hi! I'm Om and I'm a CS major at UMD with a minor in Math/Statistics. I'm passionate about creating usable solutions for real demands, and I aspire
@@ -58,9 +77,17 @@
         <div class = "profile item3 hidden">
             <img src = '../media/claire.jpg' alt = "claire.jpg" width = "200" height = "200">
             <h1>Claire Chen</h1>
-            <p>Front End Developer & UI/UX Designer</p><br><br>
-            <a href = "https://www.linkedin.com/in/claire-s-chen/" class="tom-button">LinkedIn</a>
-            <a href = "https://github.com/cc13985" class="tom-button">GitHub</a><br><br><br>
+            <p>Front End Developer & UI/UX Designer</p>
+
+            <div class="button-container">
+                <a href = "https://www.linkedin.com/in/claire-s-chen/" class="tom-button">
+                    <box-icon type='logo' name='linkedin-square' class="button-icon"></box-icon>
+                </a>
+                <a href = "https://github.com/cc13985" class="tom-button">
+                    <box-icon type='logo' name='github' class="button-icon"></box-icon>
+                </a>
+            </div>
+
             <div class="profile-p">
                 <p>
                     I'm Claire, a CS major at UMD. I love creating, designing, and experimenting with new ideas. As a coder and programmer of 5 years, I enjoy 
@@ -74,9 +101,17 @@
         <div class="profile item4 hidden">
             <img src = '../media/justin.png' alt = "justin.jpg" width = "200" height = "200" > 
             <h1>Justin Glazer</h1>
-            <p>Front & Back End Developer</p><br><br>
-            <a href="https://www.linkedin.com/in/justin-glazer/" class="tom-button">LinkedIn</a>
-            <a href = "https://github.com/justin-glazer" class="tom-button">GitHub</a><br><br><br>
+            <p>Front & Back End Developer</p>
+
+            <div class="button-container">
+                <a href="https://www.linkedin.com/in/justin-glazer/" class="tom-button">
+                    <box-icon type='logo' name='linkedin-square' class="button-icon"></box-icon>
+                </a>
+                <a href = "https://github.com/justin-glazer" class="tom-button">
+                    <box-icon type='logo' name='github' class="button-icon"></box-icon>
+                </a>
+            </div>
+
             <div class="profile-p">
                 <p>
                     Hi!  I'm Justin, and I am a CS major at UMD.  I have been coding since eleventh grade, and I have primarily studied Java and C.  
@@ -87,9 +122,17 @@
         <div class="profile item5 hidden">
             <img src = '../media/hasan.jpg' alt = "hasan.jpg" width = "200" height = "200" > 
             <h1>Hasan Ege</h1>
-            <p>Front End Developer</p><br><br>
-            <a href="https://www.linkedin.com/in/hasan-ege-2aa35921b/" class="tom-button">LinkedIn</a>
-            <a href = "https://github.com/hasane1" class="tom-button">GitHub</a><br><br><br>
+            <p>Front End Developer</p>
+
+            <div class="button-container">
+                <a href="https://www.linkedin.com/in/hasan-ege-2aa35921b/" class="tom-button">
+                    <box-icon type='logo' name='linkedin-square' class="button-icon"></box-icon>
+                </a>
+                <a href = "https://github.com/hasane1" class="tom-button">
+                    <box-icon type='logo' name='github' class="button-icon"></box-icon>
+                </a>
+            </div>
+
             <div class="profile-p">
                 <p>
                     Hello! My name is Hasan and I am a computer science and economics double major at UMD. I found programming from a young age and found a
@@ -99,11 +142,13 @@
         </div>
     </section>
     <footer>
-        <h1>Tabby of Motivation | T.O.M.</h1>
-        <a href="https://github.com/om-arya/T.O.M" target="_blank"><img class="github" src="../media/github-gray.png" onmouseover="this.src='../media/github-black.png'" onmouseout="this.src='../media/github-gray.png'"></a>
-        <p>&copy; 2024 Tabby of Motivation | T.O.M.</p>
+        <a href="https://github.com/om-arya/T.O.M" target="_blank">
+            <box-icon type="logo" name="github" class="github"></box-icon>
+        </a>
+        <p>&copy; 2024 T.O.M. | Tabby Of Motivation</p>
     </footer>
 
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script type="module" src="../static/js/about-us.js"></script>
 </body>
 </html>

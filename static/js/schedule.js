@@ -1,5 +1,7 @@
 import {textToSpeech} from "./text-to-speech.js";
 
+let typeInterval;
+
 window.onload = () => {
     // We maintain these through reloads and session closes (exiting the tab keeps these)
     const storedInputs = JSON.parse(localStorage.getItem("inputs")) || [];
@@ -15,7 +17,7 @@ window.onload = () => {
         // Wait for the DOM to update for the offset to be accurate
         setTimeout(() => { 
             window.scrollTo({
-                top: result.offsetTop - 20,
+                top: result.offsetTop - 90,
                 left: 0,
                 behavior: "smooth",
             });
@@ -34,6 +36,7 @@ window.onload = () => {
         const newTextContent = 'Click me again to make a new schedule!';
 
         //Call typingEffect() on the new text to display it on the page.
+        clearInterval(typeInterval);
         typingEffect(textElement, newTextContent);
     } else {
         addEvent();
@@ -44,6 +47,7 @@ window.onload = () => {
         const newTextContent = textElement.textContent;
 
         //Call typingEffect() on the text to display it on the page.
+        clearInterval(typeInterval);
         typingEffect(textElement, newTextContent);
     }
 
@@ -55,9 +59,6 @@ window.onload = () => {
     if (storedSchedule.includes('Y')) {
         result.innerHTML = storedSchedule;
     }
-
-    typingEffect()
-    
 };
 
 //one observer to create animations for the text boxes to come in from the bottom
@@ -216,7 +217,7 @@ const addEvent = (eventData = {}) => {
         deleteButton.type = 'button';
         deleteButton.id = 'deleteEvent';
         deleteButton.className = 'delete-button';
-        deleteButton.textContent = ' X ';
+        deleteButton.textContent = 'X';
         eventContainer.appendChild(deleteButton);
 
         deleteButton.addEventListener('click', () => {
@@ -256,6 +257,7 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
     const newTextContent = 'Meow! Planning your day out...';
 
     //Call typingEffect() on the new text to display it on the page.
+    clearInterval(typeInterval);
     typingEffect(textElement, newTextContent);
 });
 
@@ -285,12 +287,17 @@ async function speechAndStorage(){
 }
 
 //typing effect function, identical to the one in quotes
-function typingEffect(element, text, i = 0){
-    if (i === 0) {
+async function typingEffect(element, text){
+    setTimeout(() => {
         element.textContent = "";
-    }
-    if (i < text.length) {
-        element.textContent += text.charAt(i);
-        setTimeout(() => typingEffect(element, text, i + 1), 50);
-    }
+    }, 0);
+
+    let ch = 0;
+    typeInterval = setInterval(() => {
+        element.textContent += text[ch];
+        ch += 1;
+        if (ch == text.length) {
+            clearInterval(typeInterval);
+        }
+    }, 50);
 }

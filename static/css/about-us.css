@@ -1,90 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: var(--bg-main-color);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 :root {
-    --bg-profile-color: #3b5140;
-    --nav-bar-color: #5b7961;
-    --foot-color: transparent;
+    --bg-main-color: white;
+    --text-main-color: black;
+    --footer-color: black;
+    --custom-green: #5d9c69;
+    --translucent-black: rgba(0, 0, 0, .17);
+
+    --bg-gradient-color: #e7a170;
 }
 
 body {
-    background: linear-gradient(#5b7961, #d69797);
+    min-height: 100vh;
+    background: linear-gradient(white, var(--bg-gradient-color));
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 nav {
-    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
     display: flex;
+    width: 100%;
+    height: 5rem;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem calc((100vw - 1300px) / 2);
-    background: var(--nav-bar-color);
-    top: 0;
-}
-
-#navbar {
-    background: var(--nav-bar-color);
+    padding: 1rem calc((100vw - 1300px) / 2);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    user-select: none;
 }
 
 footer {
-    background-color: var(--foot-color);
-    color: white;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .4rem 0 .6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1rem 0;
-}
-
-footer h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    color: white;
-    margin: 0;
-    background: var(--foot-color);
+    background-color: var(--footer-color);
+    color: var(--bg-main-color);
+    user-select: none;
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
+    display: flex;
+    margin-bottom: .2rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
-    display: block;
-    background-color: var(--foot-color);
+    color: var(--bg-main-color);
+    text-decoration: none;
+}
+
+footer .github {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--bg-main-color);
+    transition: 0.1s;
+}
+
+footer .github:hover {
+    fill: var(--custom-green);
 }
 
 footer p {
     font-size: 0.75rem;
     margin: 0;
-    background-color: var(--foot-color);
-}
-
-.github {
-    width: 2rem;
-    height: 2rem;
-    transition: 0.25s;
-    border: none;
-    background: var(--foot-color);
+    background-color: transparent;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    padding: 0 2rem;
-    color: white;
-    background: var(--nav-bar-color);
+    font-weight: 500;
+    color: var(--text-main-color);
+    text-decoration: none;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.logo:hover {
+    color: var(--custom-green);
 }
 
 .top-menu {
     position: relative;
-    display: inline-block;
-    margin: 0 1rem;
-    color: white;
+    margin: 0 .3rem;
+    padding: .6rem .9rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-main-color);
     text-decoration: none;
-    background: var(--nav-bar-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s ease, color 0.3s;
+    user-select: none;
+}
+
+.top-menu:hover {
+    background-color: rgba(220, 220, 220, 0.5);
 }
 
 .top-menu::after {
@@ -92,10 +118,9 @@ footer p {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: var(--bg-main-color);
     transform-origin: center;
     transition: transform 0.35s ease-out;
 }
@@ -106,10 +131,31 @@ footer p {
     transform: scaleX(1);
 }
 
-.about-us-title {
-    text-align: center;
-    font-size: 3rem;
+.top-menu.active {
+    background: var(--custom-green);
     color: white;
+    transition: box-shadow .2s ease;
+}
+
+.top-menu.active:hover {
+    box-shadow: 0 0 .3rem var(--custom-green);
+}
+
+.about-us-title {
+    margin-top: 7rem;
+    text-align: center;
+    color: var(--text-main-color);
+}
+
+.about-us-title h1 {
+    margin-bottom: .2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.about-us-title p {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 .about-us-title-hidden {
@@ -130,7 +176,7 @@ footer p {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(100%);
-    transition: all 1s;
+    transition: transform 1s;
 }
 
 .show {
@@ -140,42 +186,65 @@ footer p {
 }
 
 img {
-    border: solid white 2px;
+    border: solid var(--text-main-color) 2px;
     border-radius: 20px;
+    box-shadow: 0 0 .2rem var(--text-main-color);
+    user-select: none;
+    transition: box-shadow .2s ease;
 }
 
-.wrapper {
+img:hover {
+    box-shadow: 0 0 .5rem var(--text-main-color);
+}
+
+.about-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin: 2rem;
+    margin-top: 2rem;
+    padding: 0 3rem 8rem;
 }
 
-.wrapper .profile {
+.about-wrapper .profile {
     padding: 2rem;
     border-radius: 35px;
     text-align: center;
-    background: var(--bg-profile-color);
+    box-shadow: 0 0 .2rem rgba(0, 0, 0, .5);
+    background: var(--translucent-black);
+    transition: transform 1s, box-shadow .2s ease;
+}
+
+.about-wrapper .profile:hover {
+    box-shadow: 0 0 .7rem rgba(0, 0, 0, .5);
 }
 
 .profile h1 {
     margin-top: .5rem;
     font-size: 2rem;
     background: var(--bg-profile-color);
-    color: white;
+    color: var(--text-main-color);
 }
 
 .profile p {
     margin-top: .5rem;
     font-size: 1.5rem;
     background: var(--bg-profile-color);
-    color: white;
+    color: var(--text-main-color);
 }
 
 .profile-p p {
     font-size: 1.2rem;
     background: var(--bg-profile-color);
-    color: white;
+    color: var(--text-main-color);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: .5rem 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile:hover {
@@ -184,27 +253,29 @@ img {
 }
 
 .tom-button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: 0.25s;
-    text-decoration: none;
+    display: flex;
+    width: 3rem;
+    height: 3rem;
     align-items: center;
-    background: white;
+    justify-content: center;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-.tom-button:visited {
-    color: black;
-}
-
-.tom-button:visited:hover,
 .tom-button:hover {
-    background: black;
-    color: white;
-    transform: scale(1.25);
+    .button-icon {
+        fill: white;
+    }
+}
+
+.tom-button .button-icon {
+    width: 3rem;
+    height: 3rem;
+    fill: black;
+    transition: fill .2s ease;
 }
 
 /* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
