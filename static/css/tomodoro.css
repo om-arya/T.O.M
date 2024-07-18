@@ -385,6 +385,13 @@ footer p {
     flex-direction: row;
 }
 
+.min-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.4rem;
+}
+
 .input-2{
     display: flex;
     flex-direction: row;
@@ -404,7 +411,7 @@ footer p {
 .bottom-half {
     display: flex;
     flex-direction: row;
-    width: 75%;
+    width: 90%;
     justify-content: space-between;
 }
 
@@ -412,11 +419,36 @@ footer p {
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
+    justify-content: space-between;
+    height: 70%;
 }
 
 .right-side {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dropdown-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#background {
+    padding-right: 1rem;
+}
+
+.dropdown-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dropdown-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #mood-prompt {
@@ -456,6 +488,11 @@ footer p {
     left: 42rem */
 }
 
+#closePop:hover {
+    transform: scale(1.05);
+    background: gold;
+}
+
 #pick-colors {
     padding: 0.75rem;
     width: 250px;
@@ -471,6 +508,11 @@ footer p {
     /* position: fixed;
     bottom: 5rem;
     left: 42rem */
+}
+
+#pick-colors:hover {
+    transform: scale(1.05);
+    background: gold
 }
 
 .hexcodes {
