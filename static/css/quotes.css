@@ -13,12 +13,12 @@
     --footer-color: black;
     --custom-green: #5d9c69;
 
-    --bg-gradient-color: #df3f30;
+    --bg-gradient-color: linear-gradient(white, #b39aef);
 }
 
 body {
     min-height: 100vh;
-    background: white;
+    background: var(--bg-gradient-color);
     overflow: hidden;
 }
 
