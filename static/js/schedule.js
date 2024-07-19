@@ -98,7 +98,7 @@ document.getElementById('clearEvents').addEventListener('click', () => {
     clearEvents();
 
     //remove all additional notes from the page
-    const additionalNotes = document.querySelectorAll('.notes');
+    const additionalNotes = document.querySelector('.notes');
     additionalNotes.textContent = '';
 
     //remove the old existing schedule from the page

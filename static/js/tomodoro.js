@@ -103,8 +103,10 @@ closePop.addEventListener('click', () => {
         document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
     } else if (bgSelectedValue === "bg-dark-blue") {
         document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-    } else {
+    } else if(bgSelectedValue === "bg-purple") {
         document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+    } else {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
     }
 
     /*Change button color according to what the user has selected in the dropdown.*/
@@ -116,6 +118,7 @@ closePop.addEventListener('click', () => {
     if(btnSelectedValue === "btn-red") {
         for (const button of buttons) {
             if(button.classList.contains('selected')){
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-red)");
             }
@@ -123,6 +126,7 @@ closePop.addEventListener('click', () => {
     } else if (btnSelectedValue === "btn-orange") {
         for (const button of buttons) {
             if(button.classList.contains('selected')){
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-orange)");
             }
@@ -130,6 +134,7 @@ closePop.addEventListener('click', () => {
     } else if (btnSelectedValue === "btn-yellow") {
         for (const button of buttons) {
             if(button.classList.contains('selected')) {
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-yellow)");
             }
@@ -137,6 +142,7 @@ closePop.addEventListener('click', () => {
     } else if (btnSelectedValue === "btn-green") {
         for (const button of buttons) {
             if(button.classList.contains('selected')) {
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-green)");
             }
@@ -144,6 +150,7 @@ closePop.addEventListener('click', () => {
     } else if (btnSelectedValue === "btn-light-blue") {
         for (const button of buttons) {
             if(button.classList.contains('selected')) {
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-light-blue)");
             }
@@ -152,6 +159,7 @@ closePop.addEventListener('click', () => {
     } else if (btnSelectedValue === "btn-dark-blue") {
         for (const button of buttons) {
             if(button.classList.contains('selected')) {
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-dark-blue)");
                 button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
@@ -160,6 +168,7 @@ closePop.addEventListener('click', () => {
     } else {
         for (const button of buttons) {
             if(button.classList.contains('selected')) {
+                button.style.setProperty("background-color", "black");
             } else {
                 button.style.setProperty("background-color", "var(--btn-purple)");
             }
@@ -224,8 +233,10 @@ function switchToTomodoro() {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
         } else if (bgSelectedValue === "bg-dark-blue") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-        } else {
+        } else if(bgSelectedValue === "bg-purple") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+        } else {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
         }
     
         /*Change button color according to what the user has selected in the dropdown.*/
@@ -237,6 +248,7 @@ function switchToTomodoro() {
         if(btnSelectedValue === "btn-red") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-red)");
                 }
@@ -244,6 +256,7 @@ function switchToTomodoro() {
         } else if (btnSelectedValue === "btn-orange") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-orange)");
                 }
@@ -251,6 +264,7 @@ function switchToTomodoro() {
         } else if (btnSelectedValue === "btn-yellow") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-yellow)");
                 }
@@ -258,6 +272,7 @@ function switchToTomodoro() {
         } else if (btnSelectedValue === "btn-green") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-green)");
                 }
@@ -265,6 +280,7 @@ function switchToTomodoro() {
         } else if (btnSelectedValue === "btn-light-blue") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-light-blue)");
                 }
@@ -273,6 +289,7 @@ function switchToTomodoro() {
         } else if (btnSelectedValue === "btn-dark-blue") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-dark-blue)");
                     button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
@@ -281,6 +298,7 @@ function switchToTomodoro() {
         } else {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-purple)");
                 }
@@ -342,8 +360,10 @@ function switchToShortBreak() {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
         } else if (bgSelectedValue === "bg-dark-blue") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-        } else {
+        } else if(bgSelectedValue === "bg-purple") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+        } else {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
         }
     
         /*Change button color according to what the user has selected in the dropdown.*/
@@ -355,6 +375,7 @@ function switchToShortBreak() {
         if(btnSelectedValue === "btn-red") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-red)");
                 }
@@ -362,6 +383,7 @@ function switchToShortBreak() {
         } else if (btnSelectedValue === "btn-orange") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-orange)");
                 }
@@ -369,6 +391,7 @@ function switchToShortBreak() {
         } else if (btnSelectedValue === "btn-yellow") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-yellow)");
                 }
@@ -376,6 +399,7 @@ function switchToShortBreak() {
         } else if (btnSelectedValue === "btn-green") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-green)");
                 }
@@ -383,6 +407,7 @@ function switchToShortBreak() {
         } else if (btnSelectedValue === "btn-light-blue") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-light-blue)");
                 }
@@ -391,6 +416,7 @@ function switchToShortBreak() {
         } else if (btnSelectedValue === "btn-dark-blue") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-dark-blue)");
                     button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
@@ -399,6 +425,7 @@ function switchToShortBreak() {
         } else {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-purple)");
                 }
@@ -460,8 +487,10 @@ function switchToLongBreak() {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
         } else if (bgSelectedValue === "bg-dark-blue") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-        } else {
+        } else if(bgSelectedValue === "bg-purple") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+        } else {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
         }
     
         /*Change button color according to what the user has selected in the dropdown.*/
@@ -473,6 +502,7 @@ function switchToLongBreak() {
         if(btnSelectedValue === "btn-red") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-red)");
                 }
@@ -480,6 +510,7 @@ function switchToLongBreak() {
         } else if (btnSelectedValue === "btn-orange") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-orange)");
                 }
@@ -487,6 +518,7 @@ function switchToLongBreak() {
         } else if (btnSelectedValue === "btn-yellow") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-yellow)");
                 }
@@ -494,6 +526,7 @@ function switchToLongBreak() {
         } else if (btnSelectedValue === "btn-green") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-green)");
                 }
@@ -501,6 +534,7 @@ function switchToLongBreak() {
         } else if (btnSelectedValue === "btn-light-blue") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-light-blue)");
                 }
@@ -509,6 +543,7 @@ function switchToLongBreak() {
         } else if (btnSelectedValue === "btn-dark-blue") {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-dark-blue)");
                     button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
@@ -517,6 +552,7 @@ function switchToLongBreak() {
         } else {
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
                 } else {
                     button.style.setProperty("background-color", "var(--btn-purple)");
                 }
