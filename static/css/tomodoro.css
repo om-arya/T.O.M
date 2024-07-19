@@ -380,6 +380,15 @@ footer p {
     justify-content: space-around;
 }
 
+.input-label {
+    font-size: 1.43rem;
+}
+
+.input-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .input-1{
     display: flex;
     flex-direction: row;
@@ -402,11 +411,6 @@ footer p {
     flex-direction: row;
 }
 
-.input-boxes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
 .bottom-half {
     display: flex;
@@ -458,6 +462,7 @@ footer p {
     width: 490px;
     resize: none;
     padding: 1rem;
+    margin: 1rem 0 1rem 0;
 }
 
 .time-input {
