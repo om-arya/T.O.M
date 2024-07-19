@@ -13,12 +13,34 @@
     --custom-green: #5d9c69;
 
     --bg-gradient-color: #e767b5;
-    --buttons-color: #583b74;
+    --buttons-color: rgb(103, 0, 172);
     --text-color: white;
 
     --bg-profile-color: #3b5140;
     --nav-bar-color: #5b7961;
     --foot-color: transparent;
+
+    --bg-red: rgb(255, 120, 120);
+    --bg-orange: rgb(248, 191, 85);
+    --bg-yellow: rgb(248, 248, 140);
+    --bg-green: rgb(54, 135, 54);
+    --bg-light-blue: rgb(96, 237, 253);
+    --bg-dark-blue: rgb(67, 67, 243);
+    --bg-purple: rgb(143, 53, 203);
+
+    --btn-red: rgb(250, 17, 17);
+    --btn-orange: rgb(254, 165, 0);
+    --btn-yellow: rgb(173, 173, 5);
+    --btn-green: rgb(0, 112, 0);
+    --btn-light-blue: rgb(0, 153, 170);
+    --btn-dark-blue: rgb(0, 0, 178);
+    --btn-purple: rgb(103, 0, 172);
+
+    --txt-white: white;
+    --txt-off-white: #EAEAEA;
+    --txt-beige: rgb(248, 248, 208);
+    --txt-gray: rgb(188, 188, 188);
+    
 }
 
 body {

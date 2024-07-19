@@ -87,6 +87,49 @@ closePop.addEventListener('click', () => {
         switchToTomodoro();
     }
 
+    /*Change background color according to what the user has selected in the background.*/
+    let bgDropDown = document.querySelector('.dropdown-bg');
+    const bgSelectedValue = bgDropDown.value;
+
+    if(bgSelectedValue === "bg-red") {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
+    } else if (bgSelectedValue === "bg-orange") {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-orange))`;
+    } else if (bgSelectedValue === "bg-yellow") {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-yellow))`;
+    } else if (bgSelectedValue === "bg-green") {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-green))`;
+    } else if (bgSelectedValue === "bg-light-blue") {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
+    } else if (bgSelectedValue === "bg-dark-blue") {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
+    } else {
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+    }
+
+    /*Change button color according to what the user has selected in the background.*/
+    let btnDropDown = document.querySelector('.dropdown-btn');
+    const btnSelectedValue = btnDropDown.value;
+
+    const buttonsColorDiv = document.querySelector('#buttons-color');
+
+    if(btnSelectedValue === "btn-red") {
+        // buttonsColorDiv.style.setProperty("background-color", "var(--btn-red)");
+        // const colorValue = buttonsColorDive.textContent;
+        // root.style.setProperty("--button-red", colorValue);
+
+    } else if (btnSelectedValue === "btn-orange") {
+        root.style.setProperty("--btn-yellow", buttonsColorDiv.innerHTML);
+    } else if (btnSelectedValue === "btn-green") {
+        root.style.setProperty("--btn-green", buttonsColorDiv.innerHTML);
+    } else if (btnSelectedValue === "btn-light-blue") {
+        root.style.setProperty("--btn-light-blue", buttonsColorDiv.innerHTML);
+    } else if (btnSelectedValue === "btn-dark-blue") {
+        root.style.setProperty("--btn-dark-blue", buttonsColorDiv.innerHTML);
+    } else {
+        root.style.setProperty("--btn-purple", buttonsColorDiv.innerHTML);
+    }
+
     popUp.classList.remove("open");
 });
 
@@ -104,6 +147,9 @@ function switchToTomodoro() {
         clearInterval(typeInterval);
         typingEffect(timer, tomodoroDuration);
     }
+
+
+
     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
 }
 
