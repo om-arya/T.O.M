@@ -13,6 +13,7 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
         f"Additional notes/preferences: {ADDITIONAL_NOTES}\n"
         "Your output must be in schedule format, starting with the morning, followed by afternoon, followed by evening.  You will end with a positive conclusion starting with the phrase 'Remember these words of advice' "
         "You must include every event. You are talking to just one person who you will refer to as 'my friend', and you will not accompany this person with any tasks. "
+        "You must include breakfast, lunch, and dinner."
         "Use some emojis, but do not use emojis in your positive conclusion."
     )
   
