@@ -49,6 +49,8 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     root.style.setProperty("--bg-gradient-color", backgroundColorDiv.innerHTML);
     root.style.setProperty("--buttons-color", buttonsColorDiv.innerHTML);
     root.style.setProperty("--text-color", textColorDiv.innerHTML);
+
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
 }
 
 // Execute time changes and close the settings pop-up.
@@ -102,6 +104,7 @@ function switchToTomodoro() {
         clearInterval(typeInterval);
         typingEffect(timer, tomodoroDuration);
     }
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
 }
 
 // Switch to the Short Break tab if not already active.
@@ -118,6 +121,7 @@ function switchToShortBreak() {
         clearInterval(typeInterval);
         typingEffect(timer, shortBreakDuration);
     }
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
 }
 
 // Switch to the Long Break tab if not already active.
@@ -134,6 +138,7 @@ function switchToLongBreak() {
         clearInterval(typeInterval);
         typingEffect(timer, longBreakDuration);
     }
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
 }
 
 async function typingEffect(element, text) {
