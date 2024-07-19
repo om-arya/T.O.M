@@ -47,6 +47,7 @@ body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
     overflow: hidden;
+    transition: .25s ease;
 }
 
 nav {

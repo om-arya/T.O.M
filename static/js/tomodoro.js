@@ -111,24 +111,62 @@ closePop.addEventListener('click', () => {
     let btnDropDown = document.querySelector('.dropdown-btn');
     const btnSelectedValue = btnDropDown.value;
 
-    const buttonsColorDiv = document.querySelector('#buttons-color');
+    const buttons = document.querySelectorAll('.tom-button');
 
     if(btnSelectedValue === "btn-red") {
-        // buttonsColorDiv.style.setProperty("background-color", "var(--btn-red)");
-        // const colorValue = buttonsColorDive.textContent;
-        // root.style.setProperty("--button-red", colorValue);
-
+        for (const button of buttons) {
+            if(button.classList.contains('selected')){
+            } else {
+                button.style.setProperty("background-color", "var(--btn-red)");
+            }
+        }
     } else if (btnSelectedValue === "btn-orange") {
-        root.style.setProperty("--btn-yellow", buttonsColorDiv.innerHTML);
+        for (const button of buttons) {
+            if(button.classList.contains('selected')){
+            } else {
+                button.style.setProperty("background-color", "var(--btn-orange)");
+            }
+        }
+    } else if (btnSelectedValue === "btn-yellow") {
+        for (const button of buttons) {
+            if(button.classList.contains('selected')) {
+            } else {
+                button.style.setProperty("background-color", "var(--btn-yellow)");
+            }
+        }
     } else if (btnSelectedValue === "btn-green") {
-        root.style.setProperty("--btn-green", buttonsColorDiv.innerHTML);
+        for (const button of buttons) {
+            if(button.classList.contains('selected')) {
+            } else {
+                button.style.setProperty("background-color", "var(--btn-green)");
+            }
+        }
     } else if (btnSelectedValue === "btn-light-blue") {
-        root.style.setProperty("--btn-light-blue", buttonsColorDiv.innerHTML);
+        for (const button of buttons) {
+            if(button.classList.contains('selected')) {
+            } else {
+                button.style.setProperty("background-color", "var(--btn-light-blue)");
+            }
+            
+        }
     } else if (btnSelectedValue === "btn-dark-blue") {
-        root.style.setProperty("--btn-dark-blue", buttonsColorDiv.innerHTML);
+        for (const button of buttons) {
+            if(button.classList.contains('selected')) {
+            } else {
+                button.style.setProperty("background-color", "var(--btn-dark-blue)");
+                button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
+            }
+        }
     } else {
-        root.style.setProperty("--btn-purple", buttonsColorDiv.innerHTML);
+        for (const button of buttons) {
+            if(button.classList.contains('selected')) {
+            } else {
+                button.style.setProperty("background-color", "var(--btn-purple)");
+            }
+        }
     }
+
+
 
     popUp.classList.remove("open");
 });
@@ -141,6 +179,8 @@ function switchToTomodoro() {
         shortBreakTab.classList.remove('selected');
         longBreakTab.classList.remove('selected');
         tomodoroTab.classList.add('selected');
+
+
 
         setStartTime(tomodoroDuration);
 
