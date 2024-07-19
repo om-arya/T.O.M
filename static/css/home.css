@@ -21,7 +21,7 @@
 
 body {
     min-height: 100vh;
-    background: var(--bg-main-color);
+    background: rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
 
@@ -183,7 +183,6 @@ footer p {
     height: 49rem;
     align-items: flex-start;
     justify-content: center;
-    background: rgba(0, 0, 0, .05);
 }
 
 .column-left h1 {
@@ -206,7 +205,6 @@ footer p {
     height: 53rem;
     align-items: flex-start;
     justify-content: center;
-    background: rgba(0, 0, 0, .05);
 }
 
 .tom-button {
