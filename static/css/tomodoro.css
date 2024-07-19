@@ -12,8 +12,8 @@
     --footer-color: black;
     --custom-green: #5d9c69;
 
-    --bg-gradient-color: #D8BFD8;
-    --buttons-color: #c68b3e;
+    --bg-gradient-color: #e318c8;
+    --buttons-color: #583b74;
     --text-color: white;
 
     --bg-profile-color: #3b5140;
@@ -22,7 +22,7 @@
 }
 
 body {
-    background: linear-gradient(var(--bg-main-color), var(--bg-gradient-color));
+    background-image: linear-gradient(to right bottom, #ffffff, #ffffff, #e767b5);
     min-height: 100vh;
     overflow: hidden;
 }

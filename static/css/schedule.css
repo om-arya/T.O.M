@@ -18,7 +18,7 @@
 }
 
 body {
-    background: linear-gradient(var(--bg-main-color) 0, var(--bg-gradient-color) 60rem);
+    background: linear-gradient(var(--bg-main-color) 0, var(--bg-main-color), var(--bg-gradient-color) 60rem);
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;

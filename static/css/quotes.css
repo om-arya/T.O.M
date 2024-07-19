@@ -18,7 +18,7 @@
 
 body {
     min-height: 100vh;
-    background: var(--bg-gradient-color);
+    background-image: linear-gradient(to left bottom, #ffffff, #ffffff, #b39aef);
     overflow: hidden;
 }
 
