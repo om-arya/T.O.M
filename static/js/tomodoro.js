@@ -71,11 +71,21 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     root.style.setProperty("--text-color", textColorDiv.innerHTML);
 
     // document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
-    
 
+    let bgSelectedValue = backgroundColorDiv.innerHTML;
+    localStorage.setItem("bg-color", bgSelectedValue);
 
-    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    let btnSelectedValue = buttonsColorDiv.innerHTML;
+    localStorage.setItem("btn-color", btnSelectedValue);
 
+    let txtSelectedValue = textColorDiv.innerHTML;
+    localStorage.setItem("txt-color", txtSelectedValue);
+
+    storedBg = localStorage.getItem("bg-color");
+    storedBtn = localStorage.getItem("btn-color");
+    storedTxt = localStorage.getItem("txt-color");
+
+    checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
 }
 
 // Execute time changes and close the settings pop-up.
@@ -284,6 +294,22 @@ allLinks.forEach(link => {
         }, 500);
     });
   });
+
+function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelectedValueAI) {
+
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), ${bgSelectedValueAI})`;
+
+    const buttons = document.querySelectorAll('.tom-button');
+    for (const button of buttons) {
+        button.style.setProperty("color", txtSelectedValueAI);
+
+        if(button.classList.contains('selected')){
+            button.style.setProperty("background-color", "black");
+        } else {
+            button.style.setProperty("background-color", btnSelectedValueAI);
+        }
+    }
+}
 
 // STEPHENS COLOR CHECK
   function checkAndAssignColors(bgSelectedValue, btnSelectedValue, txtSelectedValue) {
