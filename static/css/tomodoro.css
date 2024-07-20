@@ -349,7 +349,7 @@ footer p {
     bottom: 6rem;
     right: 16rem;
     left: 16rem;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     display: flex;
     flex-direction: row;
     /* top: 1;
@@ -481,12 +481,16 @@ footer p {
 
 #mood-prompt {
     background-color: white;
-    border-radius: 30px;
-    height: 150px;
-    width: 490px;
+    /* border-radius: 30px; */
+    border-radius: 1.875rem;
+    height: 9.375rem;
+    width: 30.625rem;
+    /* height: 150px;
+    width: 490px; */
     resize: none;
     padding: 1rem;
     margin: 1rem 0 1rem 0;
+    flex:1;
 }
 
 .time-input {
@@ -500,10 +504,10 @@ footer p {
 
 #closePop {
     padding: 0.75rem;
-    width: 150px;
+    width: 9.375rem;
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     transition: 0.25s;
     text-decoration: none;
     font-size: 1.1rem;
@@ -524,10 +528,10 @@ footer p {
 
 #pick-colors {
     padding: 0.75rem;
-    width: 250px;
+    width: 15.625rem;
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     transition: 0.25s;
     text-decoration: none;
     font-size: 1.1rem;
