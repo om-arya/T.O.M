@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             entry.target.classList.add('show');

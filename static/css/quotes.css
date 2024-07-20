@@ -163,28 +163,20 @@ footer p {
 
 .hidden-quotes {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateY(100%);
     transition: all 1s;
 }
 
 .show-quotes {
     opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
 }
 
 .hidden-tom {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(100%);
     transition: all 1s;
 }
 
 .show-tom {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
 }
 
 /* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
