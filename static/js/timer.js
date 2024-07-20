@@ -139,7 +139,7 @@ function stopTimer() {
     restartButton.removeEventListener('click', stopTimer);
     startButton.removeEventListener('click', stopTimer);
 
-    body.style["background"] = "linear-gradient(white, var(--bg-gradient-color))";
+    // body.style["background"] = "linear-gradient(white, var(--bg-gradient-color))";
 
     startButton.removeEventListener('click', pauseTimer);
     startButton.removeEventListener('click', unpauseTimer);

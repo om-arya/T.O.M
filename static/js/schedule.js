@@ -146,7 +146,10 @@ function clearEvents() {
     const additionalNotes = document.querySelectorAll('.notes');
     additionalNotes.value = '';
 
-    localStorage.clear();
+    localStorage.removeItem('inputs');
+    localStorage.removeItem('times');
+    localStorage.removeItem('schedule');
+    localStorage.removeItem('notes');
 
     addEvent();
 }
@@ -231,7 +234,10 @@ const addEvent = (eventData = {}) => {
 
 // Store inputs, times, and additional notes
 document.getElementById('scheduleForm').addEventListener('submit', function() {
-    localStorage.clear();
+    localStorage.removeItem('inputs');
+    localStorage.removeItem('times');
+    localStorage.removeItem('schedule');
+    localStorage.removeItem('notes');
 
     const eventInputs = document.querySelectorAll('.input');
     const eventTimes = document.querySelectorAll('.input-select');

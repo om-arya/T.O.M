@@ -10,11 +10,31 @@ const openPop = document.querySelector('#settings-button');
 const closePop = document.querySelector('#closePop');
 const popUp = document.querySelector('#popup');
 
+let storedBg;
+let storedBtn;
+let storedTxt;
+
 let tomodoroDuration = "25:00";
 let shortBreakDuration = "05:00";
 let longBreakDuration = "15:00";
 
 let typeInterval;
+
+//typing effect for whatever number is on screen when it loads
+window.onload = () => {
+    const timerElement = document.querySelector('.timer');
+    typingEffect(timerElement, timerElement.innerHTML);
+
+    storedBg = localStorage.getItem("bg-color");
+    storedBtn = localStorage.getItem("btn-color");
+    storedTxt = localStorage.getItem("txt-color");
+
+    console.log(storedBg);
+    console.log(storedBtn);
+    console.log(storedTxt);
+
+    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+}
 
 startButton.addEventListener('click', () => {
     clearInterval(typeInterval);
@@ -50,7 +70,12 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     root.style.setProperty("--buttons-color", buttonsColorDiv.innerHTML);
     root.style.setProperty("--text-color", textColorDiv.innerHTML);
 
-    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
+    // document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
+    
+
+
+    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+
 }
 
 // Execute time changes and close the settings pop-up.
@@ -87,6 +112,32 @@ closePop.addEventListener('click', () => {
         switchToTomodoro();
     }
 
+
+    //get the values from the dropdowns and store them in local storage
+    let bgDropDown = document.querySelector('.dropdown-bg');
+    const bgSelectedValue = bgDropDown.value;
+
+    localStorage.setItem("bg-color", bgSelectedValue);
+
+    let btnDropDown = document.querySelector('.dropdown-btn');
+    const btnSelectedValue = btnDropDown.value;
+
+    localStorage.setItem("btn-color", btnSelectedValue);
+
+    let txtDropDown = document.querySelector('.dropdown-txt');
+    const txtSelectedValue = txtDropDown.value;
+
+    localStorage.setItem("txt-color", txtSelectedValue);
+
+    //Get current element colors from local storage so that the colors remain consistent everywhere
+    const storedBg = localStorage.getItem("bg-color");
+    const storedBtn = localStorage.getItem("btn-color");
+    const storedTxt = localStorage.getItem("txt-color");
+
+    //assign color using function with parameters from above inputted
+    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+
+    //close pop up
     popUp.classList.remove("open");
 });
 
@@ -107,7 +158,13 @@ function switchToTomodoro() {
         typingEffect(timer, tomodoroDuration);
     }
 
-    // document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
+    //Get current element colors from local storage so that the colors remain consistent everywhere
+    const storedBg = localStorage.getItem("bg-color");
+    const storedBtn = localStorage.getItem("btn-color");
+    const storedTxt = localStorage.getItem("txt-color");
+
+    //assign color using function with parameters from above inputted
+    checkAndAssignColors(storedBg, storedBtn, storedTxt);
 }
 
 // Switch to the Short Break tab if not already active.
@@ -125,7 +182,13 @@ function switchToShortBreak() {
         typingEffect(timer, shortBreakDuration);
     }
 
-    //document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
+    //Get current element colors from local storage so that the colors remain consistent everywhere
+    const storedBg = localStorage.getItem("bg-color");
+    const storedBtn = localStorage.getItem("btn-color");
+    const storedTxt = localStorage.getItem("txt-color");
+
+    //assign color using function with parameters from above inputted
+    checkAndAssignColors(storedBg, storedBtn, storedTxt);
 }
 
 // Switch to the Long Break tab if not already active.
@@ -143,7 +206,13 @@ function switchToLongBreak() {
         typingEffect(timer, longBreakDuration);
     }
 
-    //document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color))`;
+    //Get current element colors from local storage so that the colors remain consistent everywhere
+    const storedBg = localStorage.getItem("bg-color");
+    const storedBtn = localStorage.getItem("btn-color");
+    const storedTxt = localStorage.getItem("txt-color");
+
+    //assign color using function with parameters from above inputted
+    checkAndAssignColors(storedBg, storedBtn, storedTxt);
 }
 
 async function typingEffect(element, text) {
@@ -161,11 +230,7 @@ async function typingEffect(element, text) {
     }, 200);
 }
 
-//typing effect for whatever number is on screen when it loads
-window.onload = () => {
-    const timerElement = document.querySelector('.timer');
-    typingEffect(timerElement, timerElement.innerHTML);
-}
+
 
 //one observer to create animations for the timer and its buttons to come in from the bottom
 const observerInput = new IntersectionObserver((entries) => {
@@ -221,114 +286,106 @@ allLinks.forEach(link => {
   });
 
 // STEPHENS COLOR CHECK
-//   function checkColors() {
-//         /*Change background color according to what the user has selected in the background.*/
-//         let bgDropDown = document.querySelector('.dropdown-bg');
-//         const bgSelectedValue = bgDropDown.value;
+  function checkAndAssignColors(bgSelectedValue, btnSelectedValue, txtSelectedValue) {
     
-//         if(bgSelectedValue === "bg-red") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
-//         } else if (bgSelectedValue === "bg-orange") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-orange))`;
-//         } else if (bgSelectedValue === "bg-yellow") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-yellow))`;
-//         } else if (bgSelectedValue === "bg-green") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-green))`;
-//         } else if (bgSelectedValue === "bg-light-blue") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
-//         } else if (bgSelectedValue === "bg-dark-blue") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-//         } else if(bgSelectedValue === "bg-purple") {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
-//         } else {
-//             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
-//         }
+        /*Change background color according to what the user has selected in the background.*/
+        if(bgSelectedValue === "bg-red") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
+        } else if (bgSelectedValue === "bg-orange") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-orange))`;
+        } else if (bgSelectedValue === "bg-yellow") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-yellow))`;
+        } else if (bgSelectedValue === "bg-green") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-green))`;
+        } else if (bgSelectedValue === "bg-light-blue") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
+        } else if (bgSelectedValue === "bg-dark-blue") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
+        } else if(bgSelectedValue === "bg-purple") {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+        } else {
+            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
+        }
     
-//         /*Change button color according to what the user has selected in the dropdown.*/
-//         let btnDropDown = document.querySelector('.dropdown-btn');
-//         const btnSelectedValue = btnDropDown.value;
+        /*Change button color according to what the user has selected in the dropdown.*/
+        const buttons = document.querySelectorAll('.tom-button');
     
-//         const buttons = document.querySelectorAll('.tom-button');
-    
-//         if(btnSelectedValue === "btn-red") {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')){
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-red)");
-//                 }
-//             }
-//         } else if (btnSelectedValue === "btn-orange") {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')){
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-orange)");
-//                 }
-//             }
-//         } else if (btnSelectedValue === "btn-yellow") {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')) {
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-yellow)");
-//                 }
-//             }
-//         } else if (btnSelectedValue === "btn-green") {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')) {
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-green)");
-//                 }
-//             }
-//         } else if (btnSelectedValue === "btn-light-blue") {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')) {
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-light-blue)");
-//                 }
+        if(btnSelectedValue === "btn-red") {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-red)");
+                }
+            }
+        } else if (btnSelectedValue === "btn-orange") {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')){
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-orange)");
+                }
+            }
+        } else if (btnSelectedValue === "btn-yellow") {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-yellow)");
+                }
+            }
+        } else if (btnSelectedValue === "btn-green") {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-green)");
+                }
+            }
+        } else if (btnSelectedValue === "btn-light-blue") {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-light-blue)");
+                }
                 
-//             }
-//         } else if (btnSelectedValue === "btn-dark-blue") {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')) {
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-dark-blue)");
-//                     button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
-//                 }
-//             }
-//         } else {
-//             for (const button of buttons) {
-//                 if(button.classList.contains('selected')) {
-//                     button.style.setProperty("background-color", "black");
-//                 } else {
-//                     button.style.setProperty("background-color", "var(--btn-purple)");
-//                 }
-//             }
-//         }
+            }
+        } else if (btnSelectedValue === "btn-dark-blue") {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-dark-blue)");
+                    button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
+                }
+            }
+        } else {
+            for (const button of buttons) {
+                if(button.classList.contains('selected')) {
+                    button.style.setProperty("background-color", "black");
+                } else {
+                    button.style.setProperty("background-color", "var(--btn-purple)");
+                }
+            }
+        }
     
-//         /*Change text color according to what the uers has selected in the drop down*/
-//         let txtDropDown = document.querySelector('.dropdown-txt');
-//         const txtSelectedValue = txtDropDown.value;
-    
-//         if(txtSelectedValue === "txt-white") {
-//             for(const button of buttons) {
-//                 button.style.setProperty("color", "var(--txt-white)");
-//             }
-//         } else if (txtSelectedValue === "txt-off-white") {
-//             for(const button of buttons) {
-//                 button.style.setProperty("color", "var(--txt-off-white)");
-//             }
-//         } else if (txtSelectedValue === "txt-beige") {
-//             for(const button of buttons) {
-//                 button.style.setProperty("color", "var(--txt-beige)");
-//             }
-//         } else {
-//             for(const button of buttons) {
-//                 button.style.setProperty("color", "var(--txt-gray)");
-//             }
-//         }
-//   }
+        /*Change text color according to what the uers has selected in the drop down*/
+        if(txtSelectedValue === "txt-white") {
+            for(const button of buttons) {
+                button.style.setProperty("color", "var(--txt-white)");
+            }
+        } else if (txtSelectedValue === "txt-off-white") {
+            for(const button of buttons) {
+                button.style.setProperty("color", "var(--txt-off-white)");
+            }
+        } else if (txtSelectedValue === "txt-beige") {
+            for(const button of buttons) {
+                button.style.setProperty("color", "var(--txt-beige)");
+            }
+        } else {
+            for(const button of buttons) {
+                button.style.setProperty("color", "var(--txt-gray)");
+            }
+        }
+} 
