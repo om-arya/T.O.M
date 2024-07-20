@@ -13,6 +13,7 @@ const popUp = document.querySelector('#popup');
 let storedBg;
 let storedBtn;
 let storedTxt;
+let AiFlag;
 
 let tomodoroDuration = "25:00";
 let shortBreakDuration = "05:00";
@@ -28,12 +29,19 @@ window.onload = () => {
     storedBg = localStorage.getItem("bg-color");
     storedBtn = localStorage.getItem("btn-color");
     storedTxt = localStorage.getItem("txt-color");
+    AiFlag = localStorage.getItem("Ai-flag");
 
     console.log(storedBg);
     console.log(storedBtn);
     console.log(storedTxt);
-
-    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    console.log(AiFlag);
+    
+    if(AiFlag === true) {
+        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+    } else {
+        checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    }
+    
 }
 
 startButton.addEventListener('click', () => {
@@ -84,6 +92,8 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     storedBg = localStorage.getItem("bg-color");
     storedBtn = localStorage.getItem("btn-color");
     storedTxt = localStorage.getItem("txt-color");
+
+    localStorage.setItem("Ai-flag", true);
 
     checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
 }
@@ -138,6 +148,8 @@ closePop.addEventListener('click', () => {
     const txtSelectedValue = txtDropDown.value;
 
     localStorage.setItem("txt-color", txtSelectedValue);
+
+    localStorage.setItem("Ai-flag", false);
 
     //Get current element colors from local storage so that the colors remain consistent everywhere
     const storedBg = localStorage.getItem("bg-color");
