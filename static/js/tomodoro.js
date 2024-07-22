@@ -11,6 +11,7 @@ const closePop = document.querySelector('#closePop');
 const popUp = document.querySelector('#popup');
 
 let storedBg;
+let storedMid;
 let storedBtn;
 let storedTxt;
 let AiFlag;
@@ -27,19 +28,21 @@ window.onload = () => {
     typingEffect(timerElement, timerElement.innerHTML);
 
     storedBg = localStorage.getItem("bg-color");
+    storedMid = localStorage.getItem("bg-middle");
     storedBtn = localStorage.getItem("btn-color");
     storedTxt = localStorage.getItem("txt-color");
     AiFlag = localStorage.getItem("Ai-flag");
 
     console.log(storedBg);
+    console.log(storedMid);
     console.log(storedBtn);
     console.log(storedTxt);
     console.log(AiFlag);
     
-    if(AiFlag) {
+    if(AiFlag == "true") {
         checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
     } else {
-        checkAndAssignColors(storedBg, storedBtn, storedTxt);
+        checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
     }
     
 }
