@@ -147,6 +147,10 @@ footer p {
     color: var(--text-main-color);
 }
 
+.title:nth-child(2) {
+    transition-delay: 360ms;
+}
+
 .title h1 {
     font-size: 2.5rem;
     font-weight: 600;
@@ -169,7 +173,7 @@ footer p {
     user-select: none;
 }
 
-.meet-description, .contact-us {
+.meet-description, .contact-us{
     margin: 0.75rem;
     text-align: center;
     color: var(--text-main-color);
@@ -180,9 +184,14 @@ footer p {
 }
 
 .meet-description h1,
-.contact-us h1 {
+.contact-us h1, .creation-description h1, .details-description h1 {
     margin: 0.75rem;
     font-size: 2rem;
+}
+
+.creation-description, .details-description {
+    margin: 3rem;
+    text-align: center;
 }
 
 .meet-description p,
@@ -190,6 +199,30 @@ footer p {
     margin: 0 auto;
     max-width: 35rem;
     font-size: 1.3rem;
+}
+
+.tom-creation, .tom-details {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.7rem;
+}
+
+.creation-description p {
+    margin: 0 auto;
+    max-width: 35rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.details-description p {
+    margin: 0 auto;
+    max-width: 35rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 .meet-description p {
@@ -360,3 +393,12 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
+.exit {
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out
+}
+
