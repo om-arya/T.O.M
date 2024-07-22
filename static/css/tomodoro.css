@@ -28,6 +28,7 @@
     --bg-light-blue: rgb(96, 237, 253);
     --bg-dark-blue: rgb(67, 67, 243);
     --bg-purple: rgb(143, 53, 203);
+    --bg-white: #FFFFFF;
 
     --btn-default: rgb(103, 0, 172);
     --btn-red: rgb(250, 17, 17);
@@ -457,23 +458,30 @@ footer p {
     justify-content: space-evenly;
 }
 
-.dropdown-1{
+.bg-1{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#background {
+.bg-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#background-1 {
     padding-right: 1rem;
 }
 
-.dropdown-2{
+.btn-drop{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.dropdown-3{
+.txt-drop{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
