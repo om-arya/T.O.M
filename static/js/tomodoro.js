@@ -421,7 +421,7 @@ function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelect
             for(const button of buttons) {
                 button.style.setProperty("color", "var(--txt-beige)");
             }
-        } else {
+        } else if (txtSelectedValue === "txt-gray") {
             for(const button of buttons) {
                 button.style.setProperty("color", "var(--txt-gray)");
             }
