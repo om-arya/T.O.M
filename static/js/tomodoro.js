@@ -139,6 +139,11 @@ closePop.addEventListener('click', () => {
 
     localStorage.setItem("bg-color", bgSelectedValue);
 
+    let bgDropDown2 = document.querySelector('.dropdown-bg2');
+    const bgMiddleValue = bgDropDown2.value;
+
+    localStorage.setItem("bg-middle", bgMiddleValue);
+    
     let btnDropDown = document.querySelector('.dropdown-btn');
     const btnSelectedValue = btnDropDown.value;
 
@@ -153,11 +158,12 @@ closePop.addEventListener('click', () => {
 
     //Get current element colors from local storage so that the colors remain consistent everywhere
     const storedBg = localStorage.getItem("bg-color");
+    const storedMid = localStorage.getItem("bg-middle");
     const storedBtn = localStorage.getItem("btn-color");
     const storedTxt = localStorage.getItem("txt-color");
 
     //assign color using function with parameters from above inputted
-    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
 
     //close pop up
     popUp.classList.remove("open");
@@ -324,26 +330,33 @@ function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelect
 }
 
 // STEPHENS COLOR CHECK
-  function checkAndAssignColors(bgSelectedValue, btnSelectedValue, txtSelectedValue) {
-        console.log("heloooooo");
+  function checkAndAssignColors(bgSelectedValue, bgMidValue, btnSelectedValue, txtSelectedValue) {
         /*Change background color according to what the user has selected in the background.*/
-        if(bgSelectedValue === "bg-red") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
-        } else if (bgSelectedValue === "bg-orange") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-orange))`;
-        } else if (bgSelectedValue === "bg-yellow") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-yellow))`;
-        } else if (bgSelectedValue === "bg-green") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-green))`;
-        } else if (bgSelectedValue === "bg-light-blue") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
-        } else if (bgSelectedValue === "bg-dark-blue") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-        } else if(bgSelectedValue === "bg-purple") {
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
-        } else if(bgSelectedValue == "bg-default"){
-            document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
-        }
+        const root = document.querySelector(':root');
+        const bgFormatted = "--" + bgSelectedValue;
+        const midFormatted = "--" + bgMidValue;
+        const bgColor = getComputedStyle(root).getPropertyValue(bgFormatted);
+        const midColor = getComputedStyle(root).getPropertyValue(midFormatted);
+        root.style.setProperty('--bg-gradient-color', bgColor);
+        root.style.setProperty('--bg-mid-color', midColor);
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
+        // if(bgSelectedValue === "bg-red") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
+        // } else if (bgSelectedValue === "bg-orange") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-orange))`;
+        // } else if (bgSelectedValue === "bg-yellow") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-yellow))`;
+        // } else if (bgSelectedValue === "bg-green") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-green))`;
+        // } else if (bgSelectedValue === "bg-light-blue") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
+        // } else if (bgSelectedValue === "bg-dark-blue") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
+        // } else if(bgSelectedValue === "bg-purple") {
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
+        // } else if(bgSelectedValue == "bg-default"){
+        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
+        // }
     
         /*Change button color according to what the user has selected in the dropdown.*/
         const buttons = document.querySelectorAll('.tom-button');
