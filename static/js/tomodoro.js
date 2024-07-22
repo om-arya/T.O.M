@@ -36,7 +36,7 @@ window.onload = () => {
     console.log(storedTxt);
     console.log(AiFlag);
     
-    if(AiFlag === true) {
+    if(AiFlag) {
         checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedBtn, storedTxt);
@@ -325,7 +325,7 @@ function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelect
 
 // STEPHENS COLOR CHECK
   function checkAndAssignColors(bgSelectedValue, btnSelectedValue, txtSelectedValue) {
-    
+        console.log("heloooooo");
         /*Change background color according to what the user has selected in the background.*/
         if(bgSelectedValue === "bg-red") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
@@ -341,7 +341,7 @@ function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelect
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
         } else if(bgSelectedValue === "bg-purple") {
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
-        } else {
+        } else if(bgSelectedValue == "bg-default"){
             document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
         }
     
@@ -398,7 +398,7 @@ function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelect
                     button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
                 }
             }
-        } else {
+        } else if (btnSelectedValue == "btn-default"){
             for (const button of buttons) {
                 if(button.classList.contains('selected')) {
                     button.style.setProperty("background-color", "black");
