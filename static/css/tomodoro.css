@@ -543,7 +543,7 @@ footer p {
     border-radius: 1.875rem;
     transition: 0.25s;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     /* display: block; */
@@ -559,7 +559,7 @@ footer p {
     box-shadow: 0 0 0.5rem black;
 }
 
-#pick-colors {
+.form-button {
     padding: 0.75rem;
     width: 15rem;
     border: none;
@@ -567,7 +567,7 @@ footer p {
     border-radius: 3.125rem;
     transition: 0.25s;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     box-shadow: 0 0 .5rem var(--custom-green);
@@ -576,7 +576,7 @@ footer p {
     color: white;
 }
 
-#pick-colors:hover {
+.form-button:hover {
     background-color: black;
     box-shadow: 0 0 0.5rem black;
 }
