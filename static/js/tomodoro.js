@@ -41,7 +41,7 @@ window.onload = () => {
     console.log(AiFlag);
     
     if(AiFlag == "true") {
-        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+        checkAndAssignColorsAI(storedBg, storedMid, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
     }
@@ -83,10 +83,12 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     // Set the background, buttons, and text colors to the AI-generated hexcodes.
     const root = document.querySelector(':root');
     
+    const middleColorDiv = document.querySelector('#middle-color');
     const buttonsColorDiv = document.querySelector('#buttons-color');
     const textColorDiv = document.querySelector('#text-color');
 
     root.style.setProperty("--bg-gradient-color", backgroundColorDiv.innerHTML);
+    root.style.setProperty("--bg-mid-color", middleColorDiv.innerHTML);
     root.style.setProperty("--buttons-color", buttonsColorDiv.innerHTML);
     root.style.setProperty("--text-color", textColorDiv.innerHTML);
 
@@ -95,6 +97,9 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     let bgSelectedValue = backgroundColorDiv.innerHTML;
     localStorage.setItem("bg-color", bgSelectedValue);
 
+    let bgMidValue = backgroundColorDiv.innerHTML;
+    localStorage.setItem("bg-middle", bgMidValue);
+
     let btnSelectedValue = buttonsColorDiv.innerHTML;
     localStorage.setItem("btn-color", btnSelectedValue);
 
@@ -102,12 +107,13 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     localStorage.setItem("txt-color", txtSelectedValue);
 
     storedBg = localStorage.getItem("bg-color");
+    storedMid = localStorage.getItem("bg-middle");
     storedBtn = localStorage.getItem("btn-color");
     storedTxt = localStorage.getItem("txt-color");
 
     localStorage.setItem("Ai-flag", true);
 
-    checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+    checkAndAssignColorsAI(storedBg, storedMid, storedBtn, storedTxt);
 }
 
 // Execute time changes and close the settings pop-up.
@@ -212,7 +218,7 @@ function switchToTomodoro() {
 
     //assign color using function with parameters from above inputted
     if(AiFlag == "true") {
-        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+        checkAndAssignColorsAI(storedBg, storedMid, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
     }
@@ -243,7 +249,7 @@ function switchToShortBreak() {
 
     //assign color using function with parameters from above inputted
     if(AiFlag == "true") {
-        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+        checkAndAssignColorsAI(storedBg, storedMid, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
     }
@@ -273,7 +279,7 @@ function switchToLongBreak() {
 
     //assign color using function with parameters from above inputted
     if(AiFlag == "true") {
-        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+        checkAndAssignColorsAI(storedBg, storedMid, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
     }
@@ -349,9 +355,9 @@ allLinks.forEach(link => {
     });
   });
 
-function checkAndAssignColorsAI(bgSelectedValueAI, btnSelectedValueAI, txtSelectedValueAI) {
+function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedValueAI, txtSelectedValueAI) {
 
-    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), ${bgSelectedValueAI})`;
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), ${bgSelectedMidAI}, ${bgSelectedValueAI})`;
 
     const buttons = document.querySelectorAll('.tom-button');
     for (const button of buttons) {

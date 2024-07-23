@@ -44,9 +44,10 @@ def generate_ai_colors(request):
     mood = request.GET.get('mood-prompt')
 
     hexcodes = generate_colors(mood)
-    if len(hexcodes) != 3:
-        hexcodes = ["#ffffff", "#cfcfcf", "#000000"]
+    if len(hexcodes) != 4:
+        hexcodes = ["#0000ff", "#000000" "#cfcfcf", "#ffffff"]
 
     return render(request, 'tomodoro.html', {'background_color' : hexcodes[0],
-                                             'buttons_color' : hexcodes[1],
-                                             'text_color' : hexcodes[2]})
+                                             'middle_color' : hexcodes[1],
+                                             'buttons_color' : hexcodes[2],
+                                             'text_color' : hexcodes[3],})
