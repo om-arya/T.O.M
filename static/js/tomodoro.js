@@ -164,9 +164,10 @@ closePop.addEventListener('click', () => {
     const storedMid = localStorage.getItem("bg-middle");
     const storedBtn = localStorage.getItem("btn-color");
     const storedTxt = localStorage.getItem("txt-color");
-
+    
     //assign color using function with parameters from above inputted
     checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
+
 
     //close pop up
     popUp.classList.remove("open");
@@ -191,11 +192,17 @@ function switchToTomodoro() {
 
     //Get current element colors from local storage so that the colors remain consistent everywhere
     const storedBg = localStorage.getItem("bg-color");
+    const storedMid = localStorage.getItem("bg-middle");
     const storedBtn = localStorage.getItem("btn-color");
     const storedTxt = localStorage.getItem("txt-color");
+    AiFlag = localStorage.getItem("Ai-flag");
 
     //assign color using function with parameters from above inputted
-    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    if(AiFlag == "true") {
+        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+    } else {
+        checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
+    }
 }
 
 // Switch to the Short Break tab if not already active.
@@ -215,11 +222,18 @@ function switchToShortBreak() {
 
     //Get current element colors from local storage so that the colors remain consistent everywhere
     const storedBg = localStorage.getItem("bg-color");
+    const storedMid = localStorage.getItem("bg-middle");
     const storedBtn = localStorage.getItem("btn-color");
     const storedTxt = localStorage.getItem("txt-color");
+    AiFlag = localStorage.getItem("Ai-flag");
+
 
     //assign color using function with parameters from above inputted
-    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    if(AiFlag == "true") {
+        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+    } else {
+        checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
+    }
 }
 
 // Switch to the Long Break tab if not already active.
@@ -239,11 +253,17 @@ function switchToLongBreak() {
 
     //Get current element colors from local storage so that the colors remain consistent everywhere
     const storedBg = localStorage.getItem("bg-color");
+    const storedMid = localStorage.getItem("bg-middle");
     const storedBtn = localStorage.getItem("btn-color");
     const storedTxt = localStorage.getItem("txt-color");
+    AiFlag = localStorage.getItem("Ai-flag");
 
     //assign color using function with parameters from above inputted
-    checkAndAssignColors(storedBg, storedBtn, storedTxt);
+    if(AiFlag == "true") {
+        checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
+    } else {
+        checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
+    }
 }
 
 async function typingEffect(element, text) {
