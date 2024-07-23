@@ -359,6 +359,10 @@ footer p {
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
     filter: blur(5px);
+    max-height: 36rem;
+    overflow-y: auto;
+    min-width: 20rem;
+    min-height: 15rem;
 }
 
 .popup.open {
