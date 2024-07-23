@@ -16,9 +16,10 @@ let storedBtn;
 let storedTxt;
 let AiFlag;
 
-let tomodoroDuration = "25:00";
-let shortBreakDuration = "05:00";
-let longBreakDuration = "15:00";
+// Initialize timer duration from local storage or use default timer values
+let tomodoroDuration = localStorage.getItem("tomodoroDuration") || "25:00";
+let shortBreakDuration = localStorage.getItem("shortBreakDuration") || "05:00";
+let longBreakDuration = localStorage.getItem("longBreakDuration") || "15:00";
 
 let typeInterval;
 
@@ -43,6 +44,14 @@ window.onload = () => {
         checkAndAssignColorsAI(storedBg, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
+    }
+
+    if (tomodoroTab.classList.contains('selected')) {
+        timer.innerHTML = tomodoroDuration;
+    } else if (shortBreakTab.classList.contains('selected')) {
+        timer.innerHTML = shortBreakDuration;
+    } else if (longBreakTab.classList.contains('selected')) {
+        timer.innerHTML = longBreakDuration;
     }
     
 }
@@ -127,6 +136,10 @@ closePop.addEventListener('click', () => {
                          + (shortBreakMinutes < 10 ? "0" : "") + shortBreakMinutes + ":00";
     longBreakDuration = (longBreakHours > 0 ? ((longBreakHours < 10 ? "0" : "") + longBreakHours + ":") : "")
                         + (longBreakMinutes < 10 ? "0" : "") + longBreakMinutes + ":00";
+
+    localStorage.setItem("tomodoroDuration", tomodoroDuration);
+    localStorage.setItem("shortBreakDuration", shortBreakDuration);
+    localStorage.setItem("longBreakDuration", longBreakDuration);
 
     if (tomodoroTab.classList.contains('selected')) {                    
         timer.innerHTML = tomodoroDuration;
