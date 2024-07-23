@@ -367,6 +367,7 @@ footer p {
     border: 2px solid var(--custom-green);
     box-shadow: 0 0 1rem black;
     transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
     filter: blur(0);
 }
 
