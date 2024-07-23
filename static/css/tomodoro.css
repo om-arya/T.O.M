@@ -511,17 +511,20 @@ footer p {
 
 #mood-prompt {
     background-color: white;
-    /* border-radius: 30px; */
     border-radius: 1.875rem;
     height: 9.375rem;
     width: 30.625rem;
-    /* height: 150px;
-    width: 490px; */
     resize: none;
     padding: 1rem;
     margin: 1rem 0 1rem 0;
     flex:1;
+    border: 2px solid black; 
+    transition: 0.1s ease-in-out;
+}
+
+#mood-prompt:hover {
     border: 2px solid var(--custom-green); 
+    transition: 0.1s ease-in-out;
 }
 
 .time-input {
@@ -531,8 +534,14 @@ footer p {
     font-size: 1.3rem;
     font-weight: 600;
     background: white;
-    border: 2px solid var(--custom-green); 
+    border: 2px solid black; 
     border-radius: 1.875rem;
+    transition: 0.1s ease-in-out;
+}
+
+.time-input:hover {
+    border: 2px solid var(--custom-green); 
+    transition: 0.1s ease-in-out;
 }
 
 #closePop {
@@ -596,10 +605,16 @@ select {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     color: black;
-    border: 2px solid var(--custom-green);
+    border: 2px solid black;
     border-radius: 1.875rem;
     width: 6rem;
     text-align: center;
+    transition: 0.1s ease-in-out;
+}
+
+select:hover {
+    border: 2px solid var(--custom-green);
+    transition: 0.1s ease-in-out;
 }
 
 textarea {
