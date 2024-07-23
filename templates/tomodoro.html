@@ -53,99 +53,100 @@
                     <h2>Time Lengths</h2>
                 </div>
                 <div class="timer-boxes">
-                    <div class="labels">
-                        <label for="study" class="input-label">Study Time</label>
-                        <label for="short" class="input-label">Short Break</label>
-                        <label for="long" class="input-label" id="long-break">Long Break</label>
-                    </div>
                     <div class="input-boxes">
-                        <div class="input-1">
+                        <div class="input">
+                            <label for="study" class="input-label">Study Time</label>
                             <input type="number" min="0" max="9999" name="study" value="25" class="time-input tomodoro-time-input" />
                             <h5 class="min-label">Min</h5>
                         </div>
-                        <div class="input-2">
+                        <div class="input">
+                            <label for="short" class="input-label">Short Break</label>
                             <input type="number" min="0" max="9999" name="short" value="5" class="time-input short-break-time-input" />
                             <h5 class="min-label">Min</h5>
                         </div>
-                        <div class="input-3">
+                        <div class="input">
+                            <label for="long" class="input-label" id="long-break">Long Break</label>
                             <input type="number" min="0" max="9999" name="long" value="15" class="time-input long-break-time-input" />
                             <h5 class="min-label">Min</h5>
                         </div>
                     </div>
-
                 </div>
             </div>                    
-            <div class="bottom-title">
-                <h2> Page Theme</h2>
-            </div>
             <div class="bottom-half">
-                <div class="left-side">
-                    <h5 id="message">Pick Your Favorite Colors!</h5>
-                    <div class="bg-1">
-                        <label for="background" id="background-1">Bottom Color</label>
-                        <select name="colors" class="dropdown-bg">
-                            <option value="bg-red">Red</option>
-                            <option value="bg-orange">Orange</option>
-                            <option value="bg-yellow">Yellow</option>
-                            <option value="bg-green">Green</option>
-                            <option value="bg-light-blue">Light Blue</option>
-                            <option value="bg-dark-blue">Dark Blue</option>
-                            <option value="bg-purple">Purple</option>
-                            <option value="bg-pink">Pink</option>
-                        </select>
+                <div class="bottom-title">
+                    <h2> Page Theme</h2>
+                </div>
+                <div class="options">
+                    <div class="left-side">
+                        <h5 id="message">Pick Your Own Theme</h5>
+                        <div class="bg-1">
+                            <label for="background" id="background-1">Bottom Color</label>
+                            <select name="colors" class="dropdown-bg">
+                                <option value="bg-red">Red</option>
+                                <option value="bg-orange">Orange</option>
+                                <option value="bg-yellow">Yellow</option>
+                                <option value="bg-green">Green</option>
+                                <option value="bg-light-blue">Light Blue</option>
+                                <option value="bg-dark-blue">Dark Blue</option>
+                                <option value="bg-purple">Purple</option>
+                                <option value="bg-pink">Pink</option>
+                            </select>
+                        </div>
+                        <div class="bg-2">
+                            <label for="background" id="background-2">Middle Color</label>
+                            <select name="colors" class="dropdown-bg2">
+                                <option value="bg-white">None</option>                                               
+                                <option value="bg-red">Red</option>
+                                <option value="bg-orange">Orange</option>
+                                <option value="bg-yellow">Yellow</option>
+                                <option value="bg-green">Green</option>
+                                <option value="bg-light-blue">Light Blue</option>
+                                <option value="bg-dark-blue">Dark Blue</option>
+                                <option value="bg-purple">Purple</option>
+                                <option value="bg-pink">Pink</option> 
+                            </select>
+                        </div>
+                        <div class="btn-drop">
+                            <label for="buttons" id="buttons">Buttons</label>
+                            <select name="colors" class="dropdown-btn">
+                                <option value="btn-red">Red</option>
+                                <option value="btn-orange">Orange</option>
+                                <option value="btn-yellow">Yellow</option>
+                                <option value="btn-green">Green</option>
+                                <option value="btn-light-blue">Light Blue</option>
+                                <option value="btn-dark-blue">Dark Blue</option>
+                                <option value="btn-purple">Purple</option>
+                            </select>
+                        </div>
+                        <div class="txt-drop">
+                            <label for="Text" id="text">Text</label>
+                            <select name="colors" class="dropdown-txt">
+                                <option value="txt-white">White</option>
+                                <option value="txt-off-white">Off White</option>
+                                <option value="txt-beige">Beige</option>
+                                <option value="txt-gray">Gray</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-done">
+                            <input value="Apply" type="button" id="closePop" class="form-button">
+                        </div>
                     </div>
-                    <div class="bg-2">
-                        <label for="background" id="background-2">Middle Color</label>
-                        <select name="colors" class="dropdown-bg2">
-                            <option value="bg-white">None</option>                                               
-                            <option value="bg-red">Red</option>
-                            <option value="bg-orange">Orange</option>
-                            <option value="bg-yellow">Yellow</option>
-                            <option value="bg-green">Green</option>
-                            <option value="bg-light-blue">Light Blue</option>
-                            <option value="bg-dark-blue">Dark Blue</option>
-                            <option value="bg-purple">Purple</option>
-                            <option value="bg-pink">Pink</option> 
-                        </select>
-                    </div>
-                    <div class="btn-drop">
-                        <label for="buttons" id="buttons">Buttons</label>
-                        <select name="colors" class="dropdown-btn">
-                            <option value="btn-default">Default</option>
-                            <option value="btn-red">Red</option>
-                            <option value="btn-orange">Orange</option>
-                            <option value="btn-yellow">Yellow</option>
-                            <option value="btn-green">Green</option>
-                            <option value="btn-light-blue">Light Blue</option>
-                            <option value="btn-dark-blue">Dark Blue</option>
-                            <option value="btn-purple">Purple</option>
-                        </select>
-                    </div>
-                    <div class="txt-drop">
-                        <label for="Text" id="text">Text</label>
-                        <select name="colors" class="dropdown-txt">
-                            <option value="txt-white">White</option>
-                            <option value="txt-off-white">Off White</option>
-                            <option value="txt-beige">Beige</option>
-                            <option value="txt-gray">Gray</option>
-                        </select>
+                    
+                    <div class="right-side">
+                        <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
+                            <h5 id="message">Ask T.O.M. To Make You a Theme</h5>
+                            <div class="textbox">
+                                <textarea id="mood-prompt" name="mood-prompt" placeholder="What's the mood?"></textarea>
+                            </div>
+                            <div class="send">
+                                <input value="Send to T.O.M." type="submit" id="pick-colors" class="form-button">
+                            </div>
+                        </form>
                     </div>
                 </div>
-
-                <div class="right-side">
-                    <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
-                        <h5 id="ai-message">Choose Your Colors With AI!</h5>
-                        <div class="textbox">
-                            <textarea id="mood-prompt" name="mood-prompt" placeholder="What's the mood?"></textarea>
-                        </div>
-                        <div class="send">
-                            <input value="Pick Colors" type="submit" id = "pick-colors">
-                        </div>
-                    </form>
-                </div>
+                
             </div>
             
-            <input value="Done" type="button" id = "closePop">
         </div>
     </div>
 

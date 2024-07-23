@@ -31,7 +31,6 @@
     --bg-purple: rgb(155, 83, 203);
     --bg-white: #FFFFFF;
 
-    --btn-default: rgb(103, 0, 172);
     --btn-red: rgb(250, 17, 17);
     --btn-orange: rgb(228, 149, 3);
     --btn-yellow: rgb(173, 173, 5);
@@ -344,7 +343,7 @@ footer p {
 }
 
 .popup {
-    background:#3a4f40;
+    background:white;
     opacity: 0;
     position: fixed;
     top: 6rem;
@@ -354,18 +353,21 @@ footer p {
     border-radius: 3.125rem;
     display: flex;
     flex-direction: row;
-    /* top: 1;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    height: 10rem; */
     z-index: -1;
-
+    border: none;
+    box-shadow: none;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    filter: blur(5px);
 }
 
 .popup.open {
     opacity: 1;
     z-index: 999;
+    border: 2px solid var(--custom-green);
+    box-shadow: 0 0 1rem black;
+    transform: translateY(0);
+    filter: blur(0);
 }
 
 .main-area { 
@@ -373,17 +375,29 @@ footer p {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
+    margin: 0.5rem;
 }
 
-.popup h1, h2, h5, label {
-    color: white;
-    background-color:#3a4f40;
-} 
+.popup h1, h2 {
+    color: var(--custom-green);
+    background-color:white;
+    font-size: 1.5rem;
+}
+
+.popup label, h5 {
+    color: black;
+    background-color:white;
+    font-size: 1rem;
+}
 
 .title {
     display: flex;
     justify-content: flex-start;
     padding-left: 1rem;
+}
+
+.title h1 {
+    font-size: 2rem;
 }
 
 .box-title {
@@ -398,51 +412,58 @@ footer p {
     display: flex;
     flex-direction: column;
     width: 50%;
+    margin-top: 1rem;
 }
 
 .labels {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-right: 1rem;
 }
 
 .input-label {
-    font-size: 1.43rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
 }
 
 .input-boxes {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
     flex-direction: row;
-    justify-content: space-around;
 }
-.input-1{
+
+.input{
     display: flex;
     flex-direction: row;
+    padding-top: 1rem;
+    padding-right: 2.5rem;
 }
 
 .min-label {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-left: 0.4rem;
+    font-size: 1rem;
+    font-weight: normal;
 }
-
-.input-2{
-    display: flex;
-    flex-direction: row;
-}
-
-.input-3{
-    display: flex;
-    flex-direction: row;
-}
-
 
 .bottom-half {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
     display: flex;
     flex-direction: row;
     width: 90%;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .left-side {
@@ -450,7 +471,7 @@ footer p {
     flex-direction: column;
     padding-left: 1rem;
     justify-content: space-between;
-    height: 70%;
+    /* height: 70%; */
 }
 
 .right-side {
@@ -500,6 +521,7 @@ footer p {
     padding: 1rem;
     margin: 1rem 0 1rem 0;
     flex:1;
+    border: 2px solid var(--custom-green); 
 }
 
 .time-input {
@@ -509,6 +531,8 @@ footer p {
     font-size: 1.3rem;
     font-weight: 600;
     background: white;
+    border: 2px solid var(--custom-green); 
+    border-radius: 1.875rem;
 }
 
 #closePop {
@@ -516,28 +540,28 @@ footer p {
     width: 9.375rem;
     border: none;
     cursor: pointer;
-    border-radius: 3.125rem;
+    border-radius: 1.875rem;
     transition: 0.25s;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background:white;
-    display: block;
+    /* display: block; */
     margin: 0 auto;
-    /* position: fixed;
-    bottom: 5rem;
-    left: 42rem */
+    box-shadow: 0 0 .5rem var(--custom-green);
+    background-color: var(--custom-green);
+    border-radius: 1.875rem;
+    color: white;
 }
 
 #closePop:hover {
-    transform: scale(1.05);
-    background: gold;
+    background-color: black;
+    box-shadow: 0 0 0.5rem black;
 }
 
 #pick-colors {
     padding: 0.75rem;
-    width: 15.625rem;
+    width: 15rem;
     border: none;
     cursor: pointer;
     border-radius: 3.125rem;
@@ -546,15 +570,15 @@ footer p {
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
-    background:white;
-    /* position: fixed;
-    bottom: 5rem;
-    left: 42rem */
+    box-shadow: 0 0 .5rem var(--custom-green);
+    background-color: var(--custom-green);
+    border-radius: 1.875rem;
+    color: white;
 }
 
 #pick-colors:hover {
-    transform: scale(1.05);
-    background: gold
+    background-color: black;
+    box-shadow: 0 0 0.5rem black;
 }
 
 .hexcodes {
@@ -564,6 +588,18 @@ footer p {
 .dropdown {
     background-color:white;
     font-size: 1.1rem;
+    border: 2px solid var(--custom-green);
+    border-radius: 1.875rem;
+}
+
+select {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: black;
+    border: 2px solid var(--custom-green);
+    border-radius: 1.875rem;
+    width: 6rem;
+    text-align: center;
 }
 
 /* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
@@ -573,3 +609,4 @@ footer p {
     transform: translateY(100%);
     transition: all 1s ease-in-out
 }
+
