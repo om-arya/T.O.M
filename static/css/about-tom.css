@@ -183,15 +183,15 @@ footer p {
     margin: 2.5rem;
 }
 
-.meet-description h1,
-.contact-us h1, .creation-description h1, .details-description h1 {
-    margin: 0.75rem;
-    font-size: 2rem;
-}
-
-.creation-description, .details-description {
+.creation-description, .details-description, .features-description {
     margin: 3rem;
     text-align: center;
+}
+
+.meet-description h1,
+.contact-us h1, .creation-description h1, .details-description h1, .features-description h1 {
+    margin: 0.75rem;
+    font-size: 2rem;
 }
 
 .meet-description p,
@@ -201,7 +201,7 @@ footer p {
     font-size: 1.3rem;
 }
 
-.tom-creation, .tom-details {
+.tom-creation, .tom-details, .tom-features-title {
     margin: 1rem;
     display: flex;
     flex-direction: row;
@@ -211,7 +211,7 @@ footer p {
     margin: 1.7rem;
 }
 
-.creation-description p {
+.creation-description p, .features-description p {
     margin: 0 auto;
     max-width: 35rem;
     font-size: 1.3rem;
@@ -220,7 +220,7 @@ footer p {
 
 .details-description p {
     margin: 0 auto;
-    max-width: 35rem;
+    max-width: 45rem;
     font-size: 1.3rem;
     text-align: center;
 }
