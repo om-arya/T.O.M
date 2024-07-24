@@ -382,103 +382,25 @@ function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedV
         root.style.setProperty('--bg-gradient-color', bgColor);
         root.style.setProperty('--bg-mid-color', midColor);
         document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
-        // if(bgSelectedValue === "bg-red") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-red))`;
-        // } else if (bgSelectedValue === "bg-orange") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-orange))`;
-        // } else if (bgSelectedValue === "bg-yellow") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-yellow))`;
-        // } else if (bgSelectedValue === "bg-green") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-green))`;
-        // } else if (bgSelectedValue === "bg-light-blue") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-light-blue))`;
-        // } else if (bgSelectedValue === "bg-dark-blue") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-dark-blue))`;
-        // } else if(bgSelectedValue === "bg-purple") {
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-purple))`;
-        // } else if(bgSelectedValue == "bg-default"){
-        //     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-default))`;
-        // }
+       
     
-        /*Change button color according to what the user has selected in the dropdown.*/
+        /*Change button/text color according to what the user has selected in the dropdown.*/
         const buttons = document.querySelectorAll('.tom-button');
-    
-        if(btnSelectedValue === "btn-red") {
-            for (const button of buttons) {
-                if(button.classList.contains('selected')){
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-red)");
-                }
+        const btnFormatted = "--" + btnSelectedValue;
+        const txtFormatted = "--" + txtSelectedValue;
+
+        const btnColor = getComputedStyle(root).getPropertyValue(btnFormatted);
+        const txtColor = getComputedStyle(root).getPropertyValue(txtFormatted);
+
+        root.style.setProperty('--buttons-color', btnColor);
+        root.style.setProperty('--text-color', txtColor);
+
+        for (const button of buttons) {
+            if(button.classList.contains('selected')){
+                button.style.setProperty("background-color", "black");
+            } else {
+                button.style.setProperty("background-color", "var(--buttons-color)");
             }
-        } else if (btnSelectedValue === "btn-orange") {
-            for (const button of buttons) {
-                if(button.classList.contains('selected')){
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-orange)");
-                }
-            }
-        } else if (btnSelectedValue === "btn-yellow") {
-            for (const button of buttons) {
-                if(button.classList.contains('selected')) {
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-yellow)");
-                }
-            }
-        } else if (btnSelectedValue === "btn-green") {
-            for (const button of buttons) {
-                if(button.classList.contains('selected')) {
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-green)");
-                }
-            }
-        } else if (btnSelectedValue === "btn-light-blue") {
-            for (const button of buttons) {
-                if(button.classList.contains('selected')) {
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-light-blue)");
-                }
-                
-            }
-        } else if (btnSelectedValue === "btn-dark-blue") {
-            for (const button of buttons) {
-                if(button.classList.contains('selected')) {
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-dark-blue)");
-                    button.style.setProperty("box-shadow", "0 0 .3rem" + "var(--btn-dark-blue)");
-                }
-            }
-        } else if (btnSelectedValue == "btn-default"){
-            for (const button of buttons) {
-                if(button.classList.contains('selected')) {
-                    button.style.setProperty("background-color", "black");
-                } else {
-                    button.style.setProperty("background-color", "var(--btn-purple)");
-                }
-            }
+            button.style.setProperty("color", "var(--text-color)");
         }
-    
-        /*Change text color according to what the uers has selected in the drop down*/
-        if(txtSelectedValue === "txt-white") {
-            for(const button of buttons) {
-                button.style.setProperty("color", "var(--txt-white)");
-            }
-        } else if (txtSelectedValue === "txt-off-white") {
-            for(const button of buttons) {
-                button.style.setProperty("color", "var(--txt-off-white)");
-            }
-        } else if (txtSelectedValue === "txt-beige") {
-            for(const button of buttons) {
-                button.style.setProperty("color", "var(--txt-beige)");
-            }
-        } else if (txtSelectedValue === "txt-gray") {
-            for(const button of buttons) {
-                button.style.setProperty("color", "var(--txt-gray)");
-            }
-        }
-} 
+    } 
