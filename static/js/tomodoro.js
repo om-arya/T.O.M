@@ -97,7 +97,7 @@ if (backgroundColorDiv && backgroundColorDiv.innerHTML.includes("#")) {
     let bgSelectedValue = backgroundColorDiv.innerHTML;
     localStorage.setItem("bg-color", bgSelectedValue);
 
-    let bgMidValue = backgroundColorDiv.innerHTML;
+    let bgMidValue = middleColorDiv.innerHTML;
     localStorage.setItem("bg-middle", bgMidValue);
 
     let btnSelectedValue = buttonsColorDiv.innerHTML;
@@ -357,6 +357,11 @@ allLinks.forEach(link => {
 
 function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedValueAI, txtSelectedValueAI) {
 
+    console.log("wi");
+    console.log(bgSelectedValueAI);
+    console.log(bgSelectedMidAI);
+    console.log(btnSelectedValueAI);
+    console.log(txtSelectedValueAI);
     document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), ${bgSelectedMidAI}, ${bgSelectedValueAI})`;
 
     const buttons = document.querySelectorAll('.tom-button');
