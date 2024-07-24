@@ -248,9 +248,6 @@ footer p {
 }
 
 .top-buttons > *.selected {
-    text-shadow: 0 0 .2rem white,
-                 0 0 .3rem white,
-                 0 0 .4rem white;
     box-shadow: 0 0 .3rem black;
     background: black;
     color: white;
