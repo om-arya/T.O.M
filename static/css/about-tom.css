@@ -201,10 +201,20 @@ footer p {
     font-size: 1.3rem;
 }
 
-.tom-creation, .tom-details, .tom-features-title {
+.tom-creation, .tom-features-title {
     margin: 1rem;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.7rem;
+}
+
+.tom-details {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -419,7 +429,7 @@ button:hover {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(100%);
-    transition: all 1.5s;
+    transition: all 1s;
 }
 
 .show-tom {
