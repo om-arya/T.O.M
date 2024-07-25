@@ -163,7 +163,7 @@ footer p {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(100%);
-    transition: all 1s;
+    transition: all 1.5s;
 }
 
 .about-us-title-show {
@@ -177,7 +177,7 @@ footer p {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(100%);
-    transition: transform 1s;
+    transition: all 1.5s;
 }
 
 .show {
@@ -284,5 +284,5 @@ img:hover {
     filter: blur(5px);
     opacity: 0;
     transform: translateY(100%);
-    transition: all 1s ease-in-out
+    transition: all 1s ease-in-out;
 }
