@@ -335,18 +335,24 @@ footer p {
         float: right;
         padding: 14px 16px;
         background: var(--nav-bar-color);
+        border-radius: 50%;
+        color: black;
+    }
+
+    .icon:hover {
+        background: rgb(186, 186, 186);
     }
 
     .nav-items.responsive .top-menu {
         display: block;
-        background-color: hsl(56, 82%, 57%);
+        background-color: var(--bg-main-color);
         margin: 1rem;
     }
 
     .nav-items.responsive {
         position: relative;
-        background-color: hsl(56, 82%, 57%);
-        color: white;
+        background-color: white;
+        color: black;
         z-index: 1;
         border-radius: 15px;
         box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
@@ -354,6 +360,7 @@ footer p {
         right: 0; 
         top: 60px; 
         width: auto;
+        border: 2px solid var(--custom-green);
     }
 
     .nav-items.responsive a {
@@ -363,10 +370,11 @@ footer p {
         text-decoration: none;
         display: block;
         text-align: left;
+        background-color: var(--bg-main-color);
     }
 
     .nav-items.responsive a:hover {
-        background-color: #8d9115;
+        background-color: var(--custom-green);
         color: white;
     }
 

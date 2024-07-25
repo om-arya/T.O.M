@@ -353,7 +353,7 @@ const allLinks = document.querySelectorAll('a');
 
 allLinks.forEach(link => {
     link.addEventListener('click', (event) => {
-    
+        
         //stops link from just sending the user to the next page.
         event.preventDefault();
 

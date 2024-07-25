@@ -48,7 +48,9 @@
 body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
-    overflow: hidden;
+    min-width: 100vh;
+    overflow-y: auto;
+    overflow-x: auto;
     transition: .25s ease;
 }
 
@@ -211,6 +213,15 @@ footer p {
 @media screen and (max-width: 768px) {
     .tom-container {
         grid-template-columns: 1fr;
+    }   
+
+    .timer-boxes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .options {
+        margin: 1rem;
+        flex-direction: column;
     }
 }
 
@@ -411,6 +422,7 @@ footer p {
 
 .bottom-title {
     padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 
 .top-half{
@@ -436,10 +448,11 @@ footer p {
 }
 
 .input-boxes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .input{
@@ -461,6 +474,7 @@ footer p {
 .bottom-half {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .options {
@@ -468,15 +482,16 @@ footer p {
     flex-direction: row;
     width: 90%;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .left-side {
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
+    padding-right: 3rem;
     justify-content: space-between;
-    /* height: 70%; */
 }
 
 .right-side {
@@ -489,6 +504,7 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 }
 
 .bg-2 {

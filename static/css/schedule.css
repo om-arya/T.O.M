@@ -20,8 +20,7 @@
 body {
     background: linear-gradient(var(--bg-main-color) 0, var(--bg-main-color), var(--bg-gradient-color) 60rem);
     min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 nav {
@@ -544,11 +543,13 @@ option {
     font-weight: 400;
     font-size: 1.05rem;
     background-color: var(--schedule-color);
+    min-width: 30rem;
 }
 
 #result strong {
     background-color: var(--schedule-color);
     font-weight: 600;
+    min-width: 30rem;
 }
 
 .schedule-button:hover {
