@@ -53,7 +53,20 @@ window.onload = () => {
     } else if (longBreakTab.classList.contains('selected')) {
         timer.innerHTML = longBreakDuration;
     }
-    
+
+    /*Set dropdown values to be the ones stored in local storage. First get the dropdown using querySelector, 
+    then set the value of the dropdown to be the one stored in local storage.*/
+    const bgBottomDropDown = document.querySelector('.dropdown-bg');
+    bgBottomDropDown.value = storedBg;
+
+    const bgMidDropDown = document.querySelector('.dropdown-bg2');
+    bgMidDropDown.value = storedMid;
+
+    const btnDropDown = document.querySelector('.dropdown-btn');
+    btnDropDown.value = storedBtn;
+
+    const txtDropDown = document.querySelector('.dropdown-txt');
+    txtDropDown.value = storedTxt;
 }
 
 startButton.addEventListener('click', () => {
