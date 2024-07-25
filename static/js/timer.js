@@ -23,16 +23,20 @@ function setStartTime(time) {
  * restart button, and decrement the timer every second.
  */
 function runTimer() {
+    if (startButton.getAttribute('value') === "Pause") {
+        pauseTimer();
+        return;
+    }
+
     startButton.removeEventListener('click', runTimer);
     startButton.addEventListener('click', pauseTimer);
-
     restartButton.addEventListener('click', stopTimer);
 
     startButton.classList.add('pause-mode');
     startButton.classList.remove('start-mode');
     startButton.setAttribute('value', "Pause");
 
-    timer.innerHTML = startTime;
+    // timer.innerHTML = startTime;
 
     interval = setInterval(decrementSecond, 1000);
 }
@@ -97,35 +101,34 @@ function decrementSecond() {
  * an unpause button.
  */
 function pauseTimer() {
-    if (startButton.getAttribute('value') === "Pause") {
+    // if (startButton.getAttribute('value') === "Pause") {
         startButton.removeEventListener('click', pauseTimer);
-        startButton.addEventListener('click', unpauseTimer);
-
+        startButton.addEventListener('click', runTimer);
         clearInterval(interval);
-
+        
         startButton.classList.add('start-mode');
         startButton.classList.remove('pause-mode');
         startButton.setAttribute('value', "Start Timer");
-    }
+    // }
 }
 
 /**
  * Unpause the timer and turn the unpause button into
  * a pause button.
  */
-function unpauseTimer() {
-    if (startButton.getAttribute('value') === "Start Timer") {
-        startButton.removeEventListener('click', unpauseTimer);
-        startButton.addEventListener('click', pauseTimer);
+// function unpauseTimer() {
+//     if (startButton.getAttribute('value') === "Start Timer") {
+//         startButton.removeEventListener('click', unpauseTimer);
+//         startButton.addEventListener('click', pauseTimer);
 
-        clearInterval(interval);
-        interval = setInterval(decrementSecond, 1000);
+//         clearInterval(interval);
+//         interval = setInterval(decrementSecond, 1000);
 
-        startButton.classList.add('pause-mode');
-        startButton.classList.remove('start-mode');
-        startButton.setAttribute('value', "Pause");
-    }
-}
+//         startButton.classList.add('pause-mode');
+//         startButton.classList.remove('start-mode');
+//         startButton.setAttribute('value', "Pause");
+//     }
+// }
 
 /**
  * Stop the timer completely, resetting the time to what it
@@ -142,7 +145,7 @@ function stopTimer() {
     // body.style["background"] = "linear-gradient(white, var(--bg-gradient-color))";
 
     startButton.removeEventListener('click', pauseTimer);
-    startButton.removeEventListener('click', unpauseTimer);
+    // startButton.removeEventListener('click', unpauseTimer);
     startButton.addEventListener('click', runTimer);
 
     startButton.classList.add('start-mode');
