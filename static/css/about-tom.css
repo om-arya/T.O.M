@@ -428,6 +428,14 @@ button:hover {
     transform: translateX(0);
 }
 
+.hidden-type {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
+
 @keyframes slideInFromLeft {
     from {
         opacity: 0;
