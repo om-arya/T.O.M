@@ -402,3 +402,60 @@ button:hover {
     transition: all 1s ease-in-out
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hidden-tom {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1.5s;
+}
+
+.show-tom {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
