@@ -6,10 +6,10 @@ model = genai.GenerativeModel('gemini-1.5-flash')
 
 def generate_colors(mood: str):
   prompt = (
-    "Generate 4 complimentary but contrasting color hex codes for page colors, with two different colors for the background, buttons, and the text on the buttons. "
+    "Generate 4 complimentary but contrasting color hex codes for page colors, with two different pastel colors for the background, one deep and saturated color for buttons, and a whiteish color for text on the buttons. "
     "The buttons must stand out on the background, and the text must stand out on the button.  The text cannot be black.  The two background colors must be two different colors."
     "(Your response must be formatted exactly as '#xyzabc,#xyzabc,#xyzabc,#xyzabc' in the order of 'background, background, buttons, text')  "
-    f"based on the following 'mood': { mood }"
+    f"based on the following 'theme': { mood }"
   ) 
   
   # String list formatted ['#xyzabc', '#xyzabc', '#xyzabc'].
