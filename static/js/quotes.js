@@ -70,6 +70,7 @@ const preMadeQuotes = ["Contentment is the greatest wealth.",
                                     "Even the fiercest lions need a catnap sometimes — remember to take care of yourself.",
                                     "Meow is the time to invest in your future!"];
 
+//create variables for the containers and buttons
 const tomQuoteHead = document.querySelector('.tom-quote-head');
 const quoteContainer = document.querySelector('.quote-container');
 const quoteContent = quoteContainer.querySelector('.quote-content');

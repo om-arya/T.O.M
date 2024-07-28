@@ -173,6 +173,7 @@ const addEvent = (eventData = {}) => {
     timeSelect.className = 'input-select';
     timeSelect.required = true;
 
+    //initialize options for dropdown times
     const options = [
         { value: "15 minutes", text: "15 min" },
         { value: "30 minutes", text: "30 min" },
@@ -189,6 +190,7 @@ const addEvent = (eventData = {}) => {
         { value: "8 hours or more", text: "8+ hr" }
     ];
 
+    //set initial settings for the time dropdown
     options.forEach((option) => {
         const newOption = document.createElement('option');
         newOption.value = option.value;
@@ -215,6 +217,7 @@ const addEvent = (eventData = {}) => {
             eventContainer.classList.add('visible');
           });
 
+        //add a delete button for the new event
         const deleteButton = document.createElement('button');
         deleteButton.name = 'delete';
         deleteButton.type = 'button';
@@ -232,7 +235,7 @@ const addEvent = (eventData = {}) => {
     inputContainer.insertBefore(eventContainer, document.getElementsByClassName('add-delete-container')[0]);
 }
 
-// Store inputs, times, and additional notes
+// Store inputs, times, and additional notes in local storage
 document.getElementById('scheduleForm').addEventListener('submit', function() {
     localStorage.removeItem('inputs');
     localStorage.removeItem('times');
