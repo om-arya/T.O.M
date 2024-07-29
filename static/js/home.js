@@ -61,7 +61,7 @@ allLinks.forEach(link => {
         });
     }
     
-  });
+});
 
 const menuToggle = document.querySelector('.menu-toggle');
 const menuContent = document.querySelector('.menu-content');

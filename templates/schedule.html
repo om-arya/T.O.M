@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href='../media/TOM.png'>
     <link rel="stylesheet" href={% static 'css/schedule.css' %} type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Schedule Builder</title>
 </head>
 <body>
@@ -21,6 +22,9 @@
             <a href="about-tom" class="top-menu">About T.O.M.</a>
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
+        <a href="javascript:void(0);" class="icon small-menu-link" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
     <form id="scheduleForm" class="form" method="get" action="{% url 'submit_form' %}">
         <div class="input-container hidden-input">
