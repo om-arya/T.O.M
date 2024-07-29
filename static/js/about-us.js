@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});
+
 window.onload = () => {
     //   The next to sections allow the title and profiles to transition on once the viewer is at their location
   
@@ -36,20 +47,24 @@ window.onload = () => {
 const allLinks = document.querySelectorAll('a');
 
 allLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
+    //filter out the a href that is the menu icon when the page is smaller to avoid having elements transition before the user has selected another page
+    if(!link.classList.contains('small-menu-link')) {
+        link.addEventListener('click', (event) => {
     
-        //stops link from just sending the user to the next page.
-        event.preventDefault();
-
-        //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
-        const formElements = document.getElementById('profiles-section-wrapper');
-        formElements.classList.add('exit');
-        const title = document.getElementById('title');
-        title.classList.add('exit');
-  
-        //delay after animation and send the user to the link
-        setTimeout(() => {
-            window.location.href = link.href;
-        }, 500);
-    });
+            //stops link from just sending the user to the next page.
+            event.preventDefault();
+    
+            //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
+            const formElements = document.getElementById('profiles-section-wrapper');
+            formElements.classList.add('exit');
+            const title = document.getElementById('title');
+            title.classList.add('exit');
+      
+            //delay after animation and send the user to the link
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 500);
+        });
+    }
+    
   });

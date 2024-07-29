@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});
+
 import {setStartTime, runTimer, stopTimer} from "./timer.js";
 
 /* initialize variables for the timer and buttons*/
@@ -359,21 +370,30 @@ hiddenElementsTom.forEach((el) => observerTom.observe(el));
 const allLinks = document.querySelectorAll('a');
 
 allLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-        
-        //stops link from just sending the user to the next page.
-        event.preventDefault();
-
-        //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
-        const timerElements = document.getElementById('timer-div');
-        timerElements.classList.add('exit');
-  
-        //delay after animation and send the user to the link
-        setTimeout(() => {
-            window.location.href = link.href;
-        }, 500);
-    });
+    if(!link.classList.contains('small-menu-link')) {
+        link.addEventListener('click', (event) => {
+    
+            //stops link from just sending the user to the next page.
+            event.preventDefault();
+    
+            //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
+            const formElements = document.getElementById('timer-div');
+            formElements.classList.add('exit');
+      
+            //delay after animation and send the user to the link
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 500);
+        });
+    }
   });
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuContent = document.querySelector('.menu-content');
+  
+  menuToggle.addEventListener('click', () => {
+    menuContent.classList.toggle('show-menu');
+  });  
 
 /* AI color function*/
 function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedValueAI, txtSelectedValueAI) {

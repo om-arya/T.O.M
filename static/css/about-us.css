@@ -142,6 +142,86 @@ footer p {
     box-shadow: 0 0 .3rem var(--custom-green);
 }
 
+.icon {
+    display: none;
+    color: white;
+    transition: 0.25s;
+    background: var(--nav-bar-color);
+}
+
+.icon:hover {
+    color: black;
+    background: var(--nav-bar-color);
+}
+
+@media screen and (max-width: 1182px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+        background: var(--nav-bar-color);
+    }
+
+    .logo {
+        margin: 1.5rem 0rem 0rem 1rem;
+    }
+
+    .top-menu {
+        display: none; 
+    }
+
+    .icon {
+        display: block;
+        float: right;
+        padding: 14px 16px;
+        background: var(--nav-bar-color);
+        border-radius: 50%;
+        color: black;
+    }
+
+    .icon:hover {
+        background: rgb(186, 186, 186);
+    }
+
+    .nav-items.responsive .top-menu {
+        display: block;
+        background-color: var(--bg-main-color);
+        margin: 1rem;
+    }
+
+    .nav-items.responsive {
+        position: relative;
+        background-color: white;
+        color: black;
+        z-index: 1;
+        border-radius: 15px;
+        box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
+        position: absolute;
+        right: 0; 
+        top: 60px; 
+        width: auto;
+        border: 2px solid var(--custom-green);
+    }
+
+    .nav-items.responsive a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        background-color: var(--bg-main-color);
+    }
+
+    .nav-items.responsive a:hover {
+        background-color: var(--custom-green);
+        color: white;
+    }
+
+    .nav-items.responsive {
+        display: block;
+    }
+}
+
 .about-us-title {
     margin-top: 7rem;
     text-align: center;
