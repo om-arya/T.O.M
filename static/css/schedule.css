@@ -452,7 +452,7 @@ option {
     }
 
     .logo {
-        margin: 1.5rem 0rem 0rem 1rem;
+        margin: 0.75rem 0rem 0rem 1rem;
     }
 
     .top-menu {
@@ -509,6 +509,10 @@ option {
 
     .nav-items.responsive {
         display: block;
+    }
+
+    .form {
+        padding: 0;
     }
 }
 
