@@ -1,5 +1,7 @@
+/* Import Inter font family from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Overall Styling */
 * {
     margin: 0;
     padding: 0;
@@ -7,24 +9,26 @@
     font-family: "Inter", sans-serif;
 }
 
+/* Custom CSS Variables */
 :root {
     --bg-main-color: white;
     --text-main-color: black;
     --footer-color: black;
     --custom-green: #5d9c69;
-    
     --d: 2500ms;
     --angle: 90deg;
     --gradX: 100%;
     --gradY: 50%;
 }
 
+/* Body Styling */
 body {
     min-height: 100vh;
     background: rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
 
+/* Start Navigation Bar Styling */
 nav {
     position: fixed;
     top: 0;
@@ -40,79 +44,7 @@ nav {
     user-select: none;
 }
 
-footer {
-    position: fixed;
-    z-index: 100;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    padding: .4rem 0 .6rem;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--footer-color);
-    color: var(--bg-main-color);
-    user-select: none;
-}
-
-footer a {
-    display: flex;
-    margin-bottom: .2rem;
-    width: 3rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: var(--bg-main-color);
-    text-decoration: none;
-}
-
-footer .github {
-    width: 3rem;
-    height: 3rem;
-    fill: var(--bg-main-color);
-    transition: 0.1s;
-}
-
-footer .github:hover {
-    fill: var(--custom-green);
-}
-
-footer p {
-    font-size: 0.75rem;
-}
-
-/*Hidden class for page text on the left*/
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
-}
-
-/*Show class for page text on the left*/
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
-
-.effect:nth-child(2) {
-    transition-delay: 360ms;
-}
-
-.icon {
-    display: none;
-    color: white;
-    transition: 0.25s;
-    background: var(--nav-bar-color);
-}
-
-.icon:hover {
-    color: black;
-    background: var(--nav-bar-color);
-}
-
+/* TOM Text Styling */
 .logo {
     font-size: 1.5rem;
     font-weight: 500;
@@ -123,9 +55,10 @@ footer p {
 }
 
 .logo:hover {
-    color: var(--custom-green);
+    color: var(--custom-green); /* Title text turns green on hover */
 }
 
+/* Menu Styling */
 .top-menu {
     position: relative;
     margin: 0 .3rem;
@@ -143,32 +76,110 @@ footer p {
     background-color: rgba(220, 220, 220, 0.5);
 }
 
-.top-menu::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    bottom: 0;
-    left: 0;
-    background-color: var(--bg-main-color);
-    transform-origin: center;
-    transition: transform 0.35s ease-out;
-}
-
-.top-menu:hover::after, 
-.top-menu:focus::after,
-.top-menu.active::after {
-    transform: scaleX(1);
-}
-
 .top-menu.active {
-    background: var(--custom-green);
-    color: var(--bg-main-color);
-    transition: box-shadow .2s ease;
+    background: var(--custom-green); /* Active green button */
+    color: var(--bg-main-color); /* White text */
+    transition: box-shadow .2s ease; 
 }
 
 .top-menu.active:hover {
-    box-shadow: 0 0 .3rem var(--custom-green);
+    box-shadow: 0 0 .3rem var(--custom-green); /* Green box shadow on button of active page when active */
+}
+
+.icon {
+    display: none; /* Keep icon hidden when wide screen */
+    color: white;
+    transition: 0.25s;
+    background: var(--nav-bar-color);
+}
+
+.icon:hover {
+    color: black;
+    background: var(--nav-bar-color);
+}
+/* End Navigation Bar Styling */
+
+/* Start Footer Styling */
+footer {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .4rem 0 .6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--footer-color);
+    color: var(--bg-main-color);
+    user-select: none;
+}
+
+/* Footer Link Styling */
+footer a {
+    display: flex;
+    margin-bottom: .2rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--bg-main-color);
+    text-decoration: none;
+}
+
+/* Footer Github Icon Styling */
+footer .github {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--bg-main-color);
+    transition: 0.1s;
+}
+
+footer .github:hover {
+    fill: var(--custom-green);
+}
+
+footer p {
+    font-size: 0.75rem;
+    margin: 0;
+    background-color: transparent;
+}
+/* End Footer Styling */
+
+/* Start Home Styling */
+/* Left hidden */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+/* Left shown */
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* Right hidden */
+.hidden-tom {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+/* Right shown */
+.show-tom {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.effect:nth-child(2) {
+    transition-delay: 360ms; /* Transition delay */
 }
 
 .tom-container {
@@ -235,36 +246,6 @@ footer p {
     background: black;
 }
 
-.tom-button::before { 
-    content: '';
-    background: conic-gradient(transparent 270deg, #6de3a6, transparent);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.5); 
-    width: 200%;
-    height: 200%; 
-    border-radius: 50%;
-    animation: rotate 2s linear infinite;
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 0.25s;
-}
-
-.tom-button:hover::before {
-    opacity: 1;
-}
-
-
-.tom-button::after {
-    content: '';
-    background: inherit;
-    border-radius: inherit;
-    position: absolute;
-    inset: 3px;
-    z-index: -2;
-}
-
 .tom-button-icon {
     position: absolute;
     left: 1rem;
@@ -288,6 +269,15 @@ footer p {
     pointer-events: none;
     user-select: none;
 }
+/* End Home Styling */
+
+/* Start Animation Styling */
+.exit {
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out
+}
 
 @property --angle {
     syntax: '<angle>';
@@ -310,16 +300,17 @@ footer p {
         transition: none;
     }
 }
+/*  End Animation Styling */
 
+/* Start Responsiveness Styling */
 @media screen and (max-width: 768px) {
     .tom-container {
         grid-template-columns: 1fr;
     }
 }
 
-/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
-loads in responsive menu bar when clicked on*/
-@media screen and (max-width: 1182px) {
+/* Collapsed menu visible once screen width under 1182px */
+@media screen and (max-width: 1182px) { 
     nav {
         flex-direction: row;
         align-items: flex-start;
@@ -386,26 +377,4 @@ loads in responsive menu bar when clicked on*/
         display: block;
     }
 }
-
-/*Hidden class for TOM on the right*/
-.hidden-tom {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(100%);
-    transition: all 1s;
-}
-
-/*Show class for TOM on the right*/
-.show-tom {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
-
-/* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
-.exit {
-    filter: blur(5px);
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 1s ease-in-out
-}
+/* End Responsiveness Styling */

@@ -1,5 +1,7 @@
+/* Import Inter font family from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Overall Styling */
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +9,23 @@
     font-family: "Inter", sans-serif;
 }
 
+/* Custom CSS Variables */
 :root {
     --bg-main-color: white;
     --text-main-color: black;
     --footer-color: black;
     --custom-green: #5d9c69;
-
     --bg-gradient-color: linear-gradient(white, #b39aef);
 }
 
+/* Body Styling */
 body {
     min-height: 100vh;
     background-image: linear-gradient(to left bottom, #ffffff, #ffffff, #b39aef);
     overflow: scroll;
 }
 
+/* Start Navigation Bar Styling */
 nav {
     position: fixed;
     top: 0;
@@ -37,50 +41,7 @@ nav {
     user-select: none;
 }
 
-footer {
-    position: fixed;
-    z-index: 100;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    padding: .4rem 0 .6rem;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--footer-color);
-    color: var(--bg-main-color);
-    user-select: none;
-}
-
-footer a {
-    display: flex;
-    margin-bottom: .2rem;
-    width: 3rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: var(--bg-main-color);
-    text-decoration: none;
-}
-
-footer .github {
-    width: 3rem;
-    height: 3rem;
-    fill: var(--bg-main-color);
-    transition: 0.1s;
-}
-
-footer .github:hover {
-    fill: var(--custom-green);
-}
-
-footer p {
-    font-size: 0.75rem;
-    margin: 0;
-    background-color: transparent;
-}
-
+/* TOM Text Styling */
 .logo {
     font-size: 1.5rem;
     font-weight: 500;
@@ -91,9 +52,10 @@ footer p {
 }
 
 .logo:hover {
-    color: var(--custom-green);
+    color: var(--custom-green); /* Title text turns green on hover */
 }
 
+/* Menu Styling */
 .top-menu {
     position: relative;
     margin: 0 .3rem;
@@ -111,36 +73,18 @@ footer p {
     background-color: rgba(220, 220, 220, 0.5);
 }
 
-.top-menu::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    bottom: 0;
-    left: 0;
-    background-color: var(--bg-main-color);
-    transform-origin: center;
-    transition: transform 0.35s ease-out;
-}
-
-.top-menu:hover::after, 
-.top-menu:focus::after,
-.top-menu.active::after {
-    transform: scaleX(1);
-}
-
 .top-menu.active {
-    background: var(--custom-green);
-    color: white;
-    transition: box-shadow .2s ease;
+    background: var(--custom-green); /* Active green button */
+    color: var(--bg-main-color); /* White text */
+    transition: box-shadow .2s ease; 
 }
 
 .top-menu.active:hover {
-    box-shadow: 0 0 .3rem var(--custom-green);
+    box-shadow: 0 0 .3rem var(--custom-green); /* Green box shadow on button of active page when active */
 }
 
 .icon {
-    display: none;
+    display: none; /* Keep icon hidden when wide screen */
     color: white;
     transition: 0.25s;
     background: var(--nav-bar-color);
@@ -150,7 +94,57 @@ footer p {
     color: black;
     background: var(--nav-bar-color);
 }
+/* End Navigation Bar Styling */
 
+/* Start Footer Styling */
+footer {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .4rem 0 .6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--footer-color);
+    color: var(--bg-main-color);
+    user-select: none;
+}
+
+/* Footer Link Styling */
+footer a {
+    display: flex;
+    margin-bottom: .2rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--bg-main-color);
+    text-decoration: none;
+}
+
+/* Footer Github Icon Styling */
+footer .github {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--bg-main-color);
+    transition: 0.1s;
+}
+
+footer .github:hover {
+    fill: var(--custom-green);
+}
+
+footer p {
+    font-size: 0.75rem;
+    margin: 0;
+    background-color: transparent;
+}
+/* End Footer Styling */
+
+/* Start Quotes Styling */
 .tom-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -174,45 +168,26 @@ footer p {
     text-align: center;
 }
 
-/*Hidden class for quotes on the left*/
+/* Left hidden */
 .hidden-quotes {
     opacity: 0;
     transition: all 1s;
 }
 
-/*Shown class for quotes on the left*/
+/* Left shown */
 .show-quotes {
     opacity: 1;
 }
 
-/*Hidden class for TOM on the right*/
+/* Right hidden */
 .hidden-tom {
     opacity: 0;
     transition: all 1s;
 }
 
-/*Shown class for TOM on the right*/
+/* Right hidden */
 .show-tom {
     opacity: 1;
-}
-
-/* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
-.exit {
-    filter: blur(5px);
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 1s ease-in-out
-}
-
-/*Don't play page transitions if prefers-reduced-motion is detected*/
-@media(prefers-reduced-motion) {
-    .hidden {
-        transition: none;
-    }
-
-    .hidden2 {
-        transition: none;
-    }
 }
 
 .column-right {
@@ -243,9 +218,28 @@ footer p {
  .get-quote-button:hover {
     transform: scale(1.1);
 }
+/* End Quotes Styling */
 
-/*Resize the columns containing TOM and the quote text when the screen becomes narrow. 
-Stack on top of each other instead of right and left*/
+/* Start Animation Styling */
+.exit {
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+
+    .hidden2 {
+        transition: none;
+    }
+}
+/* End Animation Styling */
+
+/* Start Responsiveness Styling */
 @media screen and (max-width: 768px) {
     .tom-container {
         grid-template-columns: 1fr;
@@ -253,9 +247,8 @@ Stack on top of each other instead of right and left*/
     }
 }
 
-/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
-loads in responsive menu bar when clicked on*/
-@media screen and (max-width: 1182px) {
+/* Collapsed menu visible once screen width under 1182px */
+@media screen and (max-width: 1182px) { 
     nav {
         flex-direction: row;
         align-items: flex-start;
@@ -322,3 +315,4 @@ loads in responsive menu bar when clicked on*/
         display: block;
     }
 }
+/* End Responsiveness Styling */

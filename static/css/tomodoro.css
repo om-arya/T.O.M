@@ -1,5 +1,7 @@
+/* Import Inter font family from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Overall Styling */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +9,7 @@
     font-family: "Inter", sans-serif;
 }
 
+/* Custom CSS Variables */
 :root {
     --bg-main-color: white;
     --footer-color: black;
@@ -44,6 +47,7 @@
     --txt-gray: rgb(213, 213, 213);
 }
 
+/* Body Styling */
 body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
@@ -53,6 +57,7 @@ body {
     transition: .25s ease;
 }
 
+/* Start Navigation Bar Styling */
 nav {
     position: fixed;
     top: 0;
@@ -68,6 +73,62 @@ nav {
     user-select: none;
 }
 
+/* TOM Text Styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-main-color);
+    text-decoration: none;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.logo:hover {
+    color: var(--custom-green); /* Title text turns green on hover */
+}
+
+/* Menu Styling */
+.top-menu {
+    position: relative;
+    margin: 0 .3rem;
+    padding: .6rem .9rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-main-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.3s;
+    user-select: none;
+}
+
+.top-menu:hover {
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+.top-menu.active {
+    background: var(--custom-green); /* Active green button */
+    color: var(--bg-main-color); /* White text */
+    transition: box-shadow .2s ease; 
+}
+
+.top-menu.active:hover {
+    box-shadow: 0 0 .3rem var(--custom-green); /* Green box shadow on button of active page when active */
+}
+
+.icon {
+    display: none; /* Keep icon hidden when wide screen */
+    color: white;
+    transition: 0.25s;
+    background: var(--nav-bar-color);
+}
+
+.icon:hover {
+    color: black;
+    background: var(--nav-bar-color);
+}
+/* End Navigation Bar Styling */
+
+/* Start Footer Styling */
 footer {
     position: fixed;
     z-index: 100;
@@ -84,6 +145,7 @@ footer {
     user-select: none;
 }
 
+/* Footer Link Styling */
 footer a {
     display: flex;
     margin-bottom: .2rem;
@@ -95,10 +157,11 @@ footer a {
     text-decoration: none;
 }
 
+/* Footer Github Icon Styling */
 footer .github {
     width: 3rem;
     height: 3rem;
-    fill: white;
+    fill: var(--bg-main-color);
     transition: 0.1s;
 }
 
@@ -108,66 +171,12 @@ footer .github:hover {
 
 footer p {
     font-size: 0.75rem;
-    color: white;
+    margin: 0;
+    background-color: transparent;
 }
+/* End Footer Styling */
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--text-main-color);
-    text-decoration: none;
-    transition: .2s ease;
-    user-select: none;
-}
-
-.logo:hover {
-    color: var(--custom-green);
-}
-
-.top-menu {
-    position: relative;
-    margin: 0 .3rem;
-    padding: .6rem .9rem;
-    border-radius: 20px;
-    font-weight: 500;
-    color: black;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.3s;
-    user-select: none;
-}
-
-.top-menu:hover {
-    background-color: rgba(220, 220, 220, 0.5);
-}
-
-.top-menu::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transform-origin: center;
-    transition: transform 0.35s ease-out;
-}
-
-.top-menu:hover::after, 
-.top-menu:focus::after,
-.top-menu.active::after {
-    transform: scaleX(1);
-}
-
-.top-menu.active {
-    background: var(--custom-green);
-    color: white;
-    transition: box-shadow .2s ease;
-}
-
-.top-menu.active:hover {
-    box-shadow: 0 0 .3rem var(--custom-green);
-}
-
+/* Start Tomodoro Styling */
 .tom-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -207,101 +216,6 @@ footer p {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
-}
-
-@media screen and (max-width: 768px) {
-    .tom-container {
-        grid-template-columns: 1fr;
-    }   
-
-    .timer-boxes {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .options {
-        margin: 1rem;
-        flex-direction: column;
-    }
-}
-
-.icon {
-    display: none;
-    color: white;
-    transition: 0.25s;
-    background: none;
-}
-
-.icon:hover {
-    color: black;
-    background: none;
-}
-
-@media screen and (max-width: 1182px) {
-    nav {
-        flex-direction: row;
-        align-items: flex-start;
-        background: var(--nav-bar-color);
-    }
-
-    .logo {
-        margin: 1.5rem 0rem 0rem 1rem;
-    }
-
-    .top-menu {
-        display: none; 
-    }
-
-    .icon {
-        display: block;
-        float: right;
-        padding: 14px 16px;
-        background: var(--nav-bar-color);
-        border-radius: 50%;
-        color: black;
-    }
-
-    .icon:hover {
-        background: rgb(186, 186, 186);
-    }
-
-    .nav-items.responsive .top-menu {
-        display: block;
-        background-color: var(--bg-main-color);
-        margin: 1rem;
-    }
-
-    .nav-items.responsive {
-        position: relative;
-        background-color: white;
-        color: black;
-        z-index: 1;
-        border-radius: 15px;
-        box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
-        position: absolute;
-        right: 0; 
-        top: 60px; 
-        width: auto;
-        border: 2px solid var(--custom-green);
-    }
-
-    .nav-items.responsive a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        background-color: var(--bg-main-color);
-    }
-
-    .nav-items.responsive a:hover {
-        background-color: var(--custom-green);
-        color: white;
-    }
-
-    .nav-items.responsive {
-        display: block;
-    }
 }
 
 .tom-button {
@@ -431,7 +345,9 @@ footer p {
     cursor: pointer;
     margin: 1rem;
 }
+/* End Tomodoro Styling */
 
+/* Start Popup Styling */
 .popup {
     background:white;
     opacity: 0;
@@ -723,8 +639,9 @@ textarea {
     color: black;
     text-align: left;
 }
+/* End Popup Styling */
 
-/* CSS container for exit animation. triggers when any a href (which are only present on the top menu bar) is clicked. */
+/* Animation Styling */
 .exit {
     filter: blur(5px);
     opacity: 0;
@@ -732,3 +649,88 @@ textarea {
     transition: all 1s ease-in-out
 }
 
+/* Start Responsiveness Styling */
+@media screen and (max-width: 768px) {
+    .tom-container {
+        grid-template-columns: 1fr;
+    }   
+
+    .timer-boxes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .options {
+        margin: 1rem;
+        flex-direction: column;
+    }
+}
+
+/* Collapsed menu visible once screen width under 1182px */
+@media screen and (max-width: 1182px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+        background: var(--nav-bar-color);
+    }
+
+    .logo {
+        margin: 1.5rem 0rem 0rem 1rem;
+    }
+
+    .top-menu {
+        display: none; 
+    }
+
+    .icon {
+        display: block;
+        float: right;
+        padding: 14px 16px;
+        background: var(--nav-bar-color);
+        border-radius: 50%;
+        color: black;
+    }
+
+    .icon:hover {
+        background: rgb(186, 186, 186);
+    }
+
+    .nav-items.responsive .top-menu {
+        display: block;
+        background-color: var(--bg-main-color);
+        margin: 1rem;
+    }
+
+    .nav-items.responsive {
+        position: relative;
+        background-color: white;
+        color: black;
+        z-index: 1;
+        border-radius: 15px;
+        box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
+        position: absolute;
+        right: 0; 
+        top: 60px; 
+        width: auto;
+        border: 2px solid var(--custom-green);
+    }
+
+    .nav-items.responsive a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        background-color: var(--bg-main-color);
+    }
+
+    .nav-items.responsive a:hover {
+        background-color: var(--custom-green);
+        color: white;
+    }
+
+    .nav-items.responsive {
+        display: block;
+    }
+}
+/* End Responsiveness Styling */
