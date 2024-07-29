@@ -227,6 +227,7 @@ footer p {
     font-weight: 500;
 }
 
+/*Hidden class for input boxes on the left of the page*/
 .hidden-input {
     opacity: 0;
     filter: blur(5px);
@@ -234,12 +235,14 @@ footer p {
     transition: transform 1s, box-shadow .2s;
 }
 
+/*Shown class for input boxes on the left of the page*/
 .show-input {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
 }
 
+/*Hidden class for TOM on the right*/
 .hidden-tom {
     opacity: 0;
     filter: blur(5px);
@@ -247,6 +250,7 @@ footer p {
     transition: all 1s;
 }
 
+/*Shown class for TOM on the right*/
 .show-tom {
     opacity: 1;
     filter: blur(0);
@@ -381,35 +385,6 @@ option {
     z-index: 1;
 }
 
-.add-button::before { 
-    content: '';
-    background: conic-gradient(transparent 270deg, #6de3a6, transparent);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.5); 
-    width: 200%;
-    height: 200%; 
-    border-radius: 50%;
-    animation: rotate 2s linear infinite;
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 0.25s;
-}  
-
-.add-button:hover::before {
-    opacity: 1;
-} 
- 
-.add-button::after {
-    content: '';
-    background: inherit;
-    border-radius: inherit;
-    position: absolute;
-    inset: 3px;
-    z-index: -2;
-}
-
 @keyframes rotate {
     from {
         transform: translate(-50%, -50%) scale(1.9) rotate(0turn);
@@ -420,11 +395,13 @@ option {
     }
 }
 
+/*Don't play page transitions if prefers-reduced-motion is detected*/
 @media(prefers-reduced-motion) {
     .hidden {
         transition: none;
     }
 }
+
 
 @media screen and (max-width: 768px) {
     .tom-container {
@@ -444,6 +421,8 @@ option {
     background: var(--nav-bar-color);
 }
 
+/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
+loads in responsive menu bar when clicked on*/
 @media screen and (max-width: 1182px) {
     nav {
         flex-direction: row;

@@ -171,22 +171,27 @@ footer p {
 .quote-content {
     font-weight: 700;
     user-select: none;
+    text-align: center;
 }
 
+/*Hidden class for quotes on the left*/
 .hidden-quotes {
     opacity: 0;
     transition: all 1s;
 }
 
+/*Shown class for quotes on the left*/
 .show-quotes {
     opacity: 1;
 }
 
+/*Hidden class for TOM on the right*/
 .hidden-tom {
     opacity: 0;
     transition: all 1s;
 }
 
+/*Shown class for TOM on the right*/
 .show-tom {
     opacity: 1;
 }
@@ -199,6 +204,7 @@ footer p {
     transition: all 1s ease-in-out
 }
 
+/*Don't play page transitions if prefers-reduced-motion is detected*/
 @media(prefers-reduced-motion) {
     .hidden {
         transition: none;
@@ -238,6 +244,8 @@ footer p {
     transform: scale(1.1);
 }
 
+/*Resize the columns containing TOM and the quote text when the screen becomes narrow. 
+Stack on top of each other instead of right and left*/
 @media screen and (max-width: 768px) {
     .tom-container {
         grid-template-columns: 1fr;
@@ -245,6 +253,8 @@ footer p {
     }
 }
 
+/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
+loads in responsive menu bar when clicked on*/
 @media screen and (max-width: 1182px) {
     nav {
         flex-direction: row;

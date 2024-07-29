@@ -113,7 +113,7 @@ footer p {
     background-color: rgba(220, 220, 220, 0.5);
 }
 
-.top-menu::after {
+/* .top-menu::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -129,14 +129,16 @@ footer p {
 .top-menu:focus::after,
 .top-menu.active::after {
     transform: scaleX(1);
-}
+} */
 
+/*Make active button green with white text*/
 .top-menu.active {
     background: var(--custom-green);
     color: var(--bg-main-color);
     transition: box-shadow .2s ease;
 }
 
+/*Add green box shadow to the button of the active page in the menu bar when hovered over and active*/
 .top-menu.active:hover {
     box-shadow: 0 0 .3rem var(--custom-green);
 }
@@ -153,6 +155,8 @@ footer p {
     background: var(--nav-bar-color);
 }
 
+/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
+loads in responsive menu bar when clicked on*/
 @media screen and (max-width: 1182px) {
     nav {
         flex-direction: row;

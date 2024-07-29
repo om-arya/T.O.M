@@ -82,6 +82,7 @@ footer p {
     font-size: 0.75rem;
 }
 
+/*Hidden class for page text on the left*/
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -89,6 +90,7 @@ footer p {
     transition: all 1s;
 }
 
+/*Show class for page text on the left*/
 .show {
     opacity: 1;
     filter: blur(0);
@@ -315,6 +317,8 @@ footer p {
     }
 }
 
+/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
+loads in responsive menu bar when clicked on*/
 @media screen and (max-width: 1182px) {
     nav {
         flex-direction: row;
@@ -383,6 +387,7 @@ footer p {
     }
 }
 
+/*Hidden class for TOM on the right*/
 .hidden-tom {
     opacity: 0;
     filter: blur(5px);
@@ -390,6 +395,7 @@ footer p {
     transition: all 1s;
 }
 
+/*Show class for TOM on the right*/
 .show-tom {
     opacity: 1;
     filter: blur(0);

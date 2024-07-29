@@ -154,6 +154,8 @@ footer p {
     background: var(--nav-bar-color);
 }
 
+/*Styling for responsive menu bar. Menu bar icon is only visible if screen width is below 1182px, 
+loads in responsive menu bar when clicked on*/
 @media screen and (max-width: 1182px) {
     nav {
         flex-direction: row;
@@ -239,6 +241,7 @@ footer p {
     font-weight: 400;
 }
 
+/*Hidden class for the title of the About Us page*/
 .about-us-title-hidden {
     opacity: 0;
     filter: blur(5px);
@@ -246,6 +249,7 @@ footer p {
     transition: all 1.5s;
 }
 
+/*Shown class for the title of the About Us page*/
 .about-us-title-show {
     opacity: 1;
     filter: blur(0);
@@ -260,6 +264,7 @@ footer p {
     transition: all 1.5s;
 }
 
+/*Shown class for profiles*/
 .show {
     opacity: 1;
     filter: blur(0);
@@ -286,6 +291,7 @@ img:hover {
     padding: 0 3rem 8rem;
 }
 
+/*Wrapper boxes for individual profiles*/
 .about-wrapper .profile {
     padding: 2rem;
     border-radius: 35px;
