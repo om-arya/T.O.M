@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <a href="home" class="logo">T.O.M. | Tabby Of Motivation</a>
         <div class="nav-items" id="navbar">
@@ -23,21 +24,28 @@
             <a href="about-tom" class="top-menu">About T.O.M.</a>
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
+        <!-- Responsive Navigation Bar -->
         <a href="javascript:void(0);" class="icon small-menu-link" onclick="toggleMenu()">
             <i class="fa fa-bars"></i>
         </a>
     </nav>
+
+    <!-- Timer Content -->
     <div class="timer-div" id="timer-div">
+        <!-- Coder TOM Image -->
         <div class="tom-image hidden-tom">
             <img src="../media/coder-tom.PNG" alt="Coding T.O.M.">
         </div>
+        <!-- Timer Selection Buttons -->
         <div class="buttons hidden-timer-buttons">
             <div class="top-buttons">
                 <input value="Tomodoro" type="button" class="tom-button tomodoro selected">
                 <input value="Short Break" type="button" class="tom-button short-break">
                 <input value="Long Break" type="button" class="tom-button long-break">
             </div>
+            <!-- Timer Clock -->
             <div class="timer">25:00</div>
+            <!-- Start & Settings -->
             <div class="bottom-buttons">
                 <input type="button" class="no-button" id="restart-button">
                 <input value="Start Timer" type="button" class="tom-button start-mode" id="start-timer">
@@ -46,16 +54,19 @@
         </div>
     </div>
 
+    <!-- Popup Content-->
     <div class="popup" id="popup">
-                    
         <div class="main-area">
+            <!-- Popup Title -->
             <div class="title">
                 <h1>Make This Study Timer Your Own!</h1>
             </div>
+            <!-- Time Length Inputs -->
             <div class="top-half">
                 <div class="box-title">
                     <h2>Time Lengths</h2>
                 </div>
+                <!-- Individual Boxes for Time Inputs-->
                 <div class="timer-boxes">
                     <div class="input-boxes">
                         <div class="input">
@@ -75,15 +86,18 @@
                         </div>
                     </div>
                 </div>
-            </div>                    
+            </div>
+            <!-- Theme Selection -->                    
             <div class="bottom-half">
                 <div class="bottom-title">
                     <h2> Page Theme</h2>
                 </div>
                 <div class="options">
+                    <!-- Dropdown Selections -->
                     <div class="left-side">
                         <h5 id="message">Pick Your Own Theme</h5>
                         <div class="bg-1">
+                            <!-- Backgruond Color Selection -->
                             <label for="background" id="background-1">Bottom Color</label>
                             <select name="colors" class="dropdown-bg">
                                 <option value="bg-red">Red</option>
@@ -97,6 +111,7 @@
                             </select>
                         </div>
                         <div class="bg-2">
+                            <!-- Middle Color Selection -->
                             <label for="background" id="background-2">Middle Color</label>
                             <select name="colors" class="dropdown-bg2">
                                 <option value="bg-white">White</option>                                               
@@ -111,6 +126,7 @@
                             </select>
                         </div>
                         <div class="btn-drop">
+                            <!-- Button Color Selection -->
                             <label for="buttons" id="buttons">Buttons</label>
                             <select name="colors" class="dropdown-btn">
                                 <option value="btn-red">Red</option>
@@ -123,6 +139,7 @@
                             </select>
                         </div>
                         <div class="txt-drop">
+                            <!-- Text Color Selection -->
                             <label for="Text" id="text">Text</label>
                             <select name="colors" class="dropdown-txt">
                                 <option value="txt-white">White</option>
@@ -131,17 +148,21 @@
                                 <option value="txt-gray">Gray</option>
                             </select>
                         </div>
+                        <!-- Dropdown Submit Button -->
                         <div class="dropdown-done">
                             <input value="Apply" type="button" id="closePop" class="form-button">
                         </div>
                     </div>
                     
+                    <!-- AI Color Generation -->
                     <div class="right-side">
                         <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
                             <h5 id="message">Ask T.O.M. To Make You a Theme</h5>
+                            <!-- Input Text -->
                             <div class="textbox">
                                 <textarea id="mood-prompt" name="mood-prompt" placeholder="What's the mood?"></textarea>
                             </div>
+                            <!-- Submit Button -->
                             <div class="send">
                                 <input value="Send to T.O.M." type="submit" id="pick-colors" class="form-button">
                             </div>
@@ -154,6 +175,7 @@
         </div>
     </div>
 
+    <!-- Display Results -->
     <div class="hexcodes">
         <div id="background-color">
             {{ background_color }}
@@ -169,6 +191,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <a href="https://github.com/om-arya/T.O.M" target="_blank">
             <box-icon type="logo" name="github" class="github"></box-icon>

@@ -12,6 +12,7 @@
     <title>Quotes</title>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <a href="home" class="logo">T.O.M. | Tabby Of Motivation</a>
         <div class="nav-items" id="navbar">
@@ -22,12 +23,16 @@
             <a href="about-tom" class="top-menu">About T.O.M.</a>
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
+        <!-- Responsive Navigation Bar -->
         <a href="javascript:void(0);" class="icon small-menu-link" onclick="toggleMenu()">
             <i class="fa fa-bars"></i>
         </a>
     </nav>
+    
+    <!-- Quotes Generation -->
     <section class="tom">
         <div class="tom-container" id="tom-container">
+            <!-- Quote Content -->
             <h1 class="quote-container hidden-quotes">
                 <div class="quote-content">
                     
@@ -36,6 +41,7 @@
                     {{ ai_quotes }}
                 </div>
             </h1>
+            <!-- TOM Button to Generate Quotes -->
             <div class="column-right hidden-tom">
                 <button class='tom-quote-head' type="submit" onclick="location.href='quotes+generate_ai_quotes+False'">
                     <img class="get-quote-button" src='../media/TOM.png' name="submit">
@@ -43,6 +49,8 @@
             </div> 
         </div>
     </section>
+
+    <!-- Footer -->
     <footer>
         <a href="https://github.com/om-arya/T.O.M" target="_blank">
             <box-icon type="logo" name="github" class="github"></box-icon>

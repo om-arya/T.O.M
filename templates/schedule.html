@@ -12,6 +12,7 @@
     <title>Schedule Builder</title>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <a href="home" class="logo">T.O.M. | Tabby Of Motivation</a>
         <div class="nav-items" id="navbar">
@@ -22,35 +23,45 @@
             <a href="about-tom" class="top-menu">About T.O.M.</a>
             <a href="about-us" class="top-menu">Meet The Team</a>
         </div>
+        <!-- Responsive Navigation Bar -->
         <a href="javascript:void(0);" class="icon small-menu-link" onclick="toggleMenu()">
             <i class="fa fa-bars"></i>
         </a>
     </nav>
+    
+    <!-- Schedule Form -->
     <form id="scheduleForm" class="form" method="get" action="{% url 'submit_form' %}">
+        <!-- Input Container -->
         <div class="input-container hidden-input">
             <div class="event-label-container">
                 <label for="events" class="input-label">Add your tasks and events for the day here:</label>
                 <label for="time" class="input-label2">Est. time taken:</label>
                 <label value="" type="button" id="deleteEvent" class="delete-button"></label>
             </div><br>
+            <!-- Add & Delete Buttons -->
             <div class="add-delete-container">
                 <input value="+ Add more" type="button" id="addEvent" class="add-button">
                 <input value="Clear all" type="button" id="clearEvents" class="clear-all-button">
             </div>
+            <!-- Additional Notes Section -->
             <label for="additionalNotes" class="input-label">Enter any additional notes or preferences here:</label><br>
             <textarea name="additionalNotes" rows="10" cols="30" class="notes" id="notes" placeholder="Ex, I'd like to wake up at 9am...">
             </textarea>
             <p>Done? Click T.O.M.</p>
         </div>
+        <!-- TOM Button to Submit Schedule -->
         <div class="submit-container hidden-tom">
             <input type="image" class="schedule-button" src='../media/TOM.png' name="submit">
             <p id="press-me-text">Click me to make your schedule!</p> 
         </div>
     </form>
 
+    <!-- AI-Generated Schedule Result -->
     <div id="result">
         {{ result|safe }}
     </div>
+
+    <!-- Footer -->
     <footer>
         <a href="https://github.com/om-arya/T.O.M" target="_blank">
             <box-icon type="logo" name="github" class="github"></box-icon>
