@@ -218,6 +218,86 @@ footer p {
     transform: translateY(0);
 }
 
+.icon {
+    display: none;
+    color: white;
+    transition: 0.25s;
+    background: none;
+}
+
+.icon:hover {
+    color: black;
+    background: none;
+}
+
+@media screen and (max-width: 1182px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+        background: var(--nav-bar-color);
+    }
+
+    .logo {
+        margin: 0.75rem 0rem 0rem 1rem;
+    }
+
+    .top-menu {
+        display: none; 
+    }
+
+    .icon {
+        display: block;
+        float: right;
+        padding: 14px 16px;
+        background: var(--nav-bar-color);
+        border-radius: 50%;
+        color: black;
+    }
+
+    .icon:hover {
+        background: rgb(186, 186, 186);
+    }
+
+    .nav-items.responsive .top-menu {
+        display: block;
+        background-color: var(--bg-main-color);
+        margin: 1rem;
+    }
+
+    .nav-items.responsive {
+        position: relative;
+        background-color: white;
+        color: black;
+        z-index: 1;
+        border-radius: 15px;
+        box-shadow: 0px 8px 16px rgba(28, 28, 28, 0.288);
+        position: absolute;
+        right: 0; 
+        top: 60px; 
+        width: auto;
+        border: 2px solid var(--custom-green);
+    }
+
+    .nav-items.responsive a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        background-color: var(--bg-main-color);
+    }
+
+    .nav-items.responsive a:hover {
+        background-color: var(--custom-green);
+        color: white;
+    }
+
+    .nav-items.responsive {
+        display: block;
+    }
+}
+
 .tom-button {
     padding: 0.75rem;
     width: 10rem;
@@ -365,10 +445,9 @@ footer p {
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
     filter: blur(5px);
-    max-height: 36rem;
     overflow-y: auto;
-    min-width: 20rem;
-    min-height: 15rem;
+    max-width: 70rem;
+    max-height: 35rem;
 }
 
 .popup.open {
@@ -387,6 +466,7 @@ footer p {
     justify-content: space-evenly;
     width: 100%;
     margin: 0.5rem;
+    overflow-y: auto;
 }
 
 .popup h1, h2 {
@@ -469,7 +549,6 @@ footer p {
 .bottom-half {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 
 .options {
@@ -489,28 +568,24 @@ footer p {
     justify-content: space-between;
 }
 
+
 .right-side {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.bg-1{
+/*Styling for the four drop downs below*/
+.bg-1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
 .bg-2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-}
-
-#background-1 {
-    padding-right: 1rem;
 }
 
 .btn-drop{
@@ -525,6 +600,11 @@ footer p {
     justify-content: space-between;
 }
 
+#background-1 {
+    padding-right: 1rem;
+}
+
+/*Styling for the text area for the user to send their desired mood to TOM*/
 #mood-prompt {
     background-color: white;
     border-radius: 1.875rem;
@@ -543,6 +623,7 @@ footer p {
     transition: 0.1s ease-in-out;
 }
 
+/*Styling for the input boxes that the user uses to change the study timer times*/
 .time-input {
     padding: .3rem;
     width: 6rem;
@@ -560,6 +641,7 @@ footer p {
     transition: 0.1s ease-in-out;
 }
 
+/*Styling for button that closes the pop up (the Select button)*/
 #closePop {
     padding: 0.75rem;
     width: 9.375rem;
@@ -584,6 +666,7 @@ footer p {
     box-shadow: 0 0 0.5rem black;
 }
 
+/*Styling for the button that sends the user mood to Gemini API (the Send to TOM button)*/
 .form-button {
     padding: 0.75rem;
     width: 15rem;
@@ -610,13 +693,6 @@ footer p {
     display: none;
 }
 
-.dropdown {
-    background-color:white;
-    font-size: 1.1rem;
-    border: 2px solid var(--custom-green);
-    border-radius: 1.875rem;
-}
-
 select {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
@@ -639,7 +715,61 @@ textarea {
     color: black;
     text-align: left;
 }
-/* End Popup Styling */
+
+/*Narrow page version of the pop up UI. Adjusts placement and width of key elements.*/
+@media screen and (max-width: 1400px) {
+    .popup {
+        width: 40rem;
+        overflow-x: auto;
+    }
+
+    .input-boxes {
+        flex-direction: column;
+    }
+
+    .options {
+        margin: 1rem;
+        flex-direction: column;
+    }
+
+    #message {
+        margin-bottom: 1rem;
+    }
+
+    .input-label {
+        width: 5rem;
+    }
+
+    .left-side {
+        padding-left: 0rem;
+        width: 30.625rem;
+        margin-bottom: 2rem;
+    }
+
+    .bottom-title {
+        padding-bottom: 0rem;
+    }
+
+    .bg-1 {
+        width: 15rem;
+        padding-bottom: 1rem;
+    }
+
+    .bg-2 {
+        width: 15rem;
+        padding-bottom: 1rem;
+    }
+
+    .btn-drop {
+        width: 15rem;
+        padding-bottom: 1rem;
+    }
+
+    .txt-drop {
+        width: 15rem;
+        padding-bottom: 1rem;
+    }
+}
 
 /* Animation Styling */
 .exit {

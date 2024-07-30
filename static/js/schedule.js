@@ -301,6 +301,8 @@ allLinks.forEach(link => {
             //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
             const formElements = document.getElementById('scheduleForm');
             formElements.classList.add('exit');
+            const result = document.getElementById('result');
+            result.classList.add('exit');
       
             //delay after animation and send the user to the link
             setTimeout(() => {
