@@ -6,7 +6,13 @@
 </p>
 <div align="center">
 
-<h1 align="center" font-size=36px>T.O.M.</h1>
+<div align="center">
+  <p style="font-size: 40px;">
+    <strong>T.O.M.</strong>
+  </p>
+  <p style="font-size: 30px;">An AI-Powered Academic Ally</p>
+  <p style="font-size: 20px;">Created by college students, for college students.</p>
+</div>
 
   <p align="center">
     Stressed about studies? This cat's got your back (and purrs encouragement)!
