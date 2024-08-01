@@ -6,18 +6,17 @@
 </p>
 <div align="center">
 
-<div align="center">
-  <p style="font-size: 40px;">
-    <strong>T.O.M.</strong>
-  </p>
-  <p style="font-size: 30px;">An AI-Powered Academic Ally</p>
-  <p style="font-size: 20px;">Created by college students, for college students.</p>
+  <h3 align="center">
+    Stressed about studies? This cat's got your back (and purrs encouragement)!
+    <br/>
+    <br/>
+  </h3>
 </div>
 
-  <p align="center">
-    Stressed about studies? This cat's got your back (and purrs encouragement)!
-    <br />
-  </p>
+<div align="center">
+  <h1><strong>T.O.M.</strong></h1>
+  <h3>An AI-Powered Academic Ally</h3>
+  <h4>Created by college students, for college students.</h4>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -46,8 +45,10 @@
 ## About T.O.M. 🐱
 As college students, it sometimes feels as if we are endlessly running around to complete our various assignments. We came up with T.O.M. for a hackathon at our university, with the goal of giving students like us an opportunity to boost their moods during their long days with randomized motivational phrases. After the hackathon, though, we realized that T.O.M. could be so much more. What started out as a simple talking tabby will soon be a capable companion built to elevate students' productivity.
 
+Powered by <strong>Google’s Gemini API</strong> through the Google AI Studio, the <strong>Tabby of Motivation</strong> or <strong>T.O.M.</strong> is an AI-powered web app that provides helpful support and encouragement to college students as they navigate the stressful ins and outs of managing their academic lives.
+
 <a id="built-with"></a>
-### Built With ⚒️
+## Built With ⚒️
 * [![Django][Django.com]][Django-url]
 * [![Python][Python.com]][Python-url]
 * [![JavaScript][JS.js]][JS-url]
@@ -59,18 +60,30 @@ As college students, it sometimes feels as if we are endlessly running around to
 ## Roadmap 🗺️
 - Brainstormed idea and potential features.
 - Implemented during the [Bitcamp 2024 hackathon](https://devpost.com/software/t-o-m-tabby-of-motivation) with JS/HTML/CSS.
-- Continued project afterwards with Django, and currently adding additional features!
+- Continued project after hackathon with 2 additional members on the team.
+- Transferred to Django framework and implemented Google Gemini AI features.
+- Developed AI-generated quotes, schedule builder, and timer functions.
+- Cleaned up code and added cool animations!
+- Continuously gauging user feedback for future improvements.
 
 <!-- FEATURES -->
 <a id="features"></a>
 ## Features 🏆
-- Click T.O.M. for motivational phrases.
-- Text-to-speech.
-- And more coming soon!
+- AI-generated content using Google Gemini AI API.
+- Text-to-speech to create a talking cat.
+- AI-generated <strong>quotes</strong> with motivational and cat themed phrases.
+- Personalized <strong>schedule builder</strong> based on user input.
+- Customizable <strong>Pomodoro</strong> timer and study space.
+
+<p align="center" width="100%">
+  <img src="media/philosopher-tom.PNG" alt="philosopher-tom.png" width="32%">
+  <img src="media/construction-tom.PNG" alt="construction-tom.png" width="32%">
+  <img src="media/coder-tom.PNG" alt="coder-tom.png" width="32%">
+</p>
 
 <a id="suggestions"></a>
-### Suggestions? 💡
-If you have a suggestion that would make T.O.M. better, please feel free to contact us with ideas! We'd love to hear your feedback.
+## Suggestions? 💡
+If you have a suggestion that would make T.O.M. better, please feel free to check our site and look around! If you have something to say, go to the "About Tom" page and scroll down to the feedback form and send us a message &mdash; we'd love to hear your suggestions.
 
 Or, you can directly submit a request for your own feature by doing the following:
 1. Fork the Project
