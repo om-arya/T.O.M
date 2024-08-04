@@ -40,6 +40,7 @@ nav {
     padding: 1rem calc((100vw - 1300px) / 2);
     box-shadow: 0 0 .3rem rgba(0, 0, 0, .2);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     user-select: none;
 }
 
