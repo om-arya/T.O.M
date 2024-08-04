@@ -19,6 +19,16 @@ COPY . /app/
 
 RUN python3 manage.py collectstatic --noinput
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8080"]
+
+# BUILD IMAGE AND RUN CONTAINER:
+# docker build -t "tom" .
+# docker run -p 8080:8080 tom
+
+# DEPLOY ON GOOGLE CLOUD RUN
+# docker buildx build -t tom --platform linux/amd64 .
+# docker tag tom gcr.io/tabbyofmotivation/tom
+# docker push gcr.io/tabbyofmotivation/tom
+# gcloud run deploy tom-service --image gcr.io/tabbyofmotivation/tom --platform managed --region us-east4 --allow-unauthenticated
