@@ -15,7 +15,7 @@
     --text-main-color: black;
     --footer-color: black;
     --custom-green: #5d9c69;
-    --schedule-color: #3b5440;
+    --schedule-color: white;
     --bg-gradient-color: #87d3ec;
 }
 
@@ -450,7 +450,6 @@ option {
     gap: 0;
     padding: 0 20rem 10rem 20rem;
     align-items: left;
-    color: white;
 }
 
 #result h1 {
@@ -462,24 +461,34 @@ option {
     font-size: 1.8rem;
     font-weight: 500;
     border-radius: 20px;
-    box-shadow: 0 0 .2rem rgba(0, 0, 0, .7);
-    background: rgba(0, 0, 0, .5);
-    color: var(--bg-main-color);
+    border: solid 3px var(--custom-green);
+    background: white;
+    color: black;
     user-select: none;
     transition: .1s ease;
 }
 
-#result h1:hover {
-    box-shadow: 0 0 .5rem rgba(0, 0, 0, .7);
-}
-
 #result p {
     padding: .8rem;
-    border: solid 1px white;
+    min-width: 30rem;
+    border-top: solid 1.5px var(--custom-green);
+    border-right: solid 3px var(--custom-green);
+    border-bottom: solid 1.5px var(--custom-green);
+    border-left: solid 3px var(--custom-green);
     font-weight: 400;
     font-size: 1.05rem;
     background-color: var(--schedule-color);
-    min-width: 30rem;
+    color: black;
+}
+
+#result p:nth-of-type(1) {
+    border-radius: 10px 10px 0 0;
+    border-top: solid 3px var(--custom-green);
+}
+
+#result p:nth-last-of-type(1) {
+    border-radius: 0 0 10px 10px;
+    border-bottom: solid 3px var(--custom-green);
 }
 
 #result strong {
