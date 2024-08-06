@@ -316,7 +316,7 @@ footer p {
 }
 
 .tom-button:hover {
-    box-shadow: 0 0 .3rem black;
+    box-shadow: 0 0 .3rem var(--buttons-color);
     background: black;
     color: white;
     transform: scale(1.1);

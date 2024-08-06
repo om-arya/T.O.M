@@ -15,13 +15,13 @@
     --text-main-color: black;
     --footer-color: black;
     --custom-green: #5d9c69;
-    --bg-gradient-color: linear-gradient(white, #b39aef);
+    --bg-gradient-color: #b39aef;
 }
 
 /* Body Styling */
 body {
     min-height: 100vh;
-    background-image: linear-gradient(to left bottom, #ffffff, #ffffff, #b39aef);
+    background-image: linear-gradient(to left bottom, #ffffff, #ffffff, var(--bg-gradient-color));
     overflow: scroll;
 }
 
