@@ -30,7 +30,7 @@ def submit_form(request):
     event_names = request.GET.getlist('event')
     event_times = request.GET.getlist('time')
 
-    EVENTS = dict(zip(event_names, event_times)) # map each event to its corresponding time
+    EVENTS = str(dict(zip(event_names, event_times)))[1:] # map each event to its corresponding time
     ADDITIONAL_NOTES = request.GET.get('additionalNotes')
 
     # Return the result of the Google AI call with EVENTS and ADDITIONAL_NOTES
