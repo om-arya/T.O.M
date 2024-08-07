@@ -42,7 +42,8 @@ def tomodoro_view(request):
 
 def generate_ai_colors(request):
     mood = request.GET.get('mood-prompt')
-
+    if mood == "" :
+        mood = "random"
     hexcodes = generate_colors(mood)
     if len(hexcodes) != 4:
         hexcodes = ["#0000ff", "#000000" "#cfcfcf", "#ffffff"]
