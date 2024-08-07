@@ -55,7 +55,6 @@ function decrementSecond() {
     if (currTime === "00:00") {
         // Change screen color and play alarm until either
         // the restart button or the start button is clicked.
-        body.style["background"] = "linear-gradient(white, red)";
         playAlarm();
 
         startButton.addEventListener('click', stopTimer);
