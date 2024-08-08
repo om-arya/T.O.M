@@ -307,8 +307,8 @@ textarea {
 }
 
 select option {
-    background-color: white;
-    color: black;
+    background-color: var(--custom-green);
+    color: white;
 }
 
 .input-select:hover {
