@@ -498,6 +498,28 @@ footer p {
     padding-bottom: 0.5rem;
 }
 
+.title-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cancel-icon {
+    margin-right: 0.4rem;
+    margin-top: 0.25rem;
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    filter:invert(40%);
+    transition: ease-in-out .25s;
+}
+
+.cancel-icon:hover {
+    filter:invert(0%);
+}
+
 .box-title {
     padding-left: 1rem;
 }

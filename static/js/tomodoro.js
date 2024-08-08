@@ -21,6 +21,7 @@ const longBreakTab = document.querySelector('.long-break');
 /* initialize variable for the popup buttons*/
 const openPop = document.querySelector('#settings-button');
 const closePop = document.querySelector('#closePop');
+const cancel = document.querySelector('#cancel');
 const popUp = document.querySelector('#popup');
 
 /* temp variables for local storage values*/
@@ -219,6 +220,11 @@ closePop.addEventListener('click', () => {
 
 
     //close pop up
+    popUp.classList.remove("open");
+});
+
+//close pop up if user presses the close button on the top right
+cancel.addEventListener('click', () => {
     popUp.classList.remove("open");
 });
 
