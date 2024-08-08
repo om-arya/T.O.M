@@ -447,8 +447,8 @@ footer p {
     transition: transform 0.3s ease-in-out;
     filter: blur(5px);
     overflow-y: auto;
-    max-width: 70rem;
-    max-height: 35rem;
+    max-width: 75rem;
+    max-height: 40rem;
 }
 
 .popup.open {
@@ -533,7 +533,6 @@ footer p {
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin-top: 1rem;
 }
 
 .labels {
