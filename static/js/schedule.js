@@ -161,7 +161,11 @@ const addEvent = (eventData = {}) => {
 
     //initialize options for dropdown times
     const options = [
+        { value: "5 minutes", text: "5 min" },
+        { value: "10 minutes", text: "10 min" },
         { value: "15 minutes", text: "15 min" },
+        { value: "20 minutes", text: "20 min" },
+        { value: "25 minutes", text: "25 min" },
         { value: "30 minutes", text: "30 min" },
         { value: "45 minutes", text: "45 min" },
         { value: "1 hour", text: "1 hr" },

@@ -466,7 +466,7 @@ footer p {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    margin: 0.5rem;
+    margin: 1rem;
     overflow-y: auto;
 }
 
@@ -485,11 +485,17 @@ footer p {
 .title {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
     padding-left: 1rem;
 }
 
 .title h1 {
     font-size: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.title h4 {
+    padding-bottom: 0.5rem;
 }
 
 .box-title {
