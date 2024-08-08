@@ -240,6 +240,7 @@ footer p {
     cursor: pointer;
     transition: .2s;
     user-select: none;
+    margin-top: 0.4rem;
 }
 
 .tom-button:hover {
