@@ -213,7 +213,9 @@ const addEvent = (eventData = {}) => {
         deleteButton.type = 'button';
         deleteButton.id = 'deleteEvent';
         deleteButton.className = 'delete-button';
-        deleteButton.textContent = 'X';
+        // deleteButton.textContent = 'X';
+        deleteButton.style.backgroundImage = "url('../../media/trash-black.png')";
+
         eventContainer.appendChild(deleteButton);
 
         deleteButton.addEventListener('click', () => {

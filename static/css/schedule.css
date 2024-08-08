@@ -399,23 +399,24 @@ option {
 }
 
 .delete-button {
-    width: 0; 
-    height: 0;
+    width: 2.5rem; 
+    height: 2.5rem;
     border: none;
     cursor: pointer;
-    transition: 0.25s;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     background: transparent;
     color: black;
     user-select: none;
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    filter: invert(40%);
+    transition: 0.25s;
 }
 
 .delete-button:hover {
-   color: #d71717;
+   filter: invert(0%);
 }
 
 .submit-container {
