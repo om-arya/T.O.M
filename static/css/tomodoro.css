@@ -52,7 +52,7 @@ body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
     min-width: 100vh;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: auto;
     transition: .25s ease;
 }
@@ -557,6 +557,7 @@ footer p {
     padding-left: 1rem;
     display: flex;
     align-items: center;
+    text-align: left;
     font-weight: bold;
 }
 
@@ -634,7 +635,7 @@ footer p {
 #mood-prompt {
     background-color: white;
     border-radius: 20px;
-    height: 6rem;
+    height: 8rem;
     width: 32rem;
     resize: none;
     padding: 1rem;
@@ -741,6 +742,7 @@ select {
     border: 2px solid black;
     border-radius: 1.875rem;
     width: 6rem;
+    height: 2rem;
     text-align: center;
     transition: 0.1s ease-in-out;
 }
@@ -764,21 +766,22 @@ textarea {
         overflow-x: auto;
     }
 
+    .input {
+        gap: 1.2rem;
+    }
+
     .input-boxes {
         flex-direction: column;
     }
 
     .options {
-        margin: 1rem;
         flex-direction: column;
+        gap: 0;
+        margin: 1rem;
     }
 
     #message {
         margin-bottom: 1rem;
-    }
-
-    .input-label {
-        width: 5rem;
     }
 
     .left-side {
@@ -831,8 +834,9 @@ textarea {
     }
 
     .options {
-        margin: 1rem;
         flex-direction: column;
+        gap: 0rem;
+        margin: 1rem;
     }
 }
 
