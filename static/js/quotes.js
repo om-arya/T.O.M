@@ -205,7 +205,7 @@ async function typingEffect(element, text) {
         if (ch == text.length) {
             clearInterval(typeInterval);
         }
-    }, 50);
+    }, 35);
 }
 
 //one observer to create animations for the quote container to come in from the bottom
