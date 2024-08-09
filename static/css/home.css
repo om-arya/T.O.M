@@ -169,7 +169,7 @@ footer p {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(100%);
-    transition: all 1s;
+    transition: transform 1s;
 }
 
 /* Right shown */
@@ -264,13 +264,22 @@ footer p {
     color: var(--bg-main-color);
 }
 
-.tom-image {
+.column-right a {
     margin-left: 8rem;
     width: 27rem;
-    height: auto;
-    pointer-events: none;
-    user-select: none;
 }
+
+.column-right .tom-image {
+    width: 100%;
+    height: auto;
+    user-select: none;
+    transition: scale .3s ease;
+}
+
+.column-right .tom-image:hover {
+    scale: 1.1;
+}
+
 /* End Home Styling */
 
 /* Start Animation Styling */
