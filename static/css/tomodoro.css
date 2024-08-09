@@ -470,13 +470,23 @@ footer p {
     overflow-y: auto;
 }
 
-.popup h1, h2 {
+.popup h1,
+.popup h2 {
     color: var(--custom-green);
-    background-color:white;
     font-size: 1.5rem;
 }
 
-.popup label, h5 {
+.popup h4 {
+    font-weight: 500;
+}
+
+.popup span {
+    font-weight: 600;
+    color: var(--custom-green);
+}
+
+.popup label,
+.popup h5 {
     color: black;
     background-color:white;
     font-size: 1rem;
@@ -558,11 +568,11 @@ footer p {
     margin-bottom: 1rem;
 }
 
-.input{
+.input {
     display: flex;
     flex-direction: row;
-    padding-top: 1rem;
-    padding-right: 2.5rem;
+    gap: .5rem;
+    padding: 1rem 2.5rem 0 0;
 }
 
 .min-label {
@@ -582,47 +592,35 @@ footer p {
 .options {
     display: flex;
     flex-direction: row;
-    width: 90%;
-    justify-content: space-between;
+    gap: 7rem;
     margin-bottom: 1rem;
-    flex-wrap: wrap;
+    width: 100%;
+    justify-content: left;
 }
 
 .left-side {
     display: flex;
     flex-direction: column;
-    padding-left: 1rem;
-    padding-right: 3rem;
-    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1rem 0 3rem;
 }
-
 
 .right-side {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: left;
+}
+
+.right-side .send {
+    align-self: center;
 }
 
 /*Styling for the four drop downs below*/
-.bg-1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.bg-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.btn-drop{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.txt-drop{
+.bg-1,
+.bg-2,
+.btn-drop,
+.txt-drop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -635,14 +633,14 @@ footer p {
 /*Styling for the text area for the user to send their desired mood to TOM*/
 #mood-prompt {
     background-color: white;
-    border-radius: 1.875rem;
-    height: 9.375rem;
-    width: 30.625rem;
+    border-radius: 20px;
+    height: 6rem;
+    width: 32rem;
     resize: none;
     padding: 1rem;
     margin: 1rem 0 1rem 0;
-    flex:1;
-    border: 2px solid black; 
+    flex: 1;
+    border: 1.5px solid black; 
     transition: 0.1s ease-in-out;
 }
 
@@ -653,7 +651,7 @@ footer p {
 
 /*Styling for the input boxes that the user uses to change the study timer times*/
 .time-input {
-    padding: .3rem;
+    padding: .3rem .6rem;
     width: 6rem;
     text-align: left;
     font-size: 1.3rem;
@@ -669,19 +667,22 @@ footer p {
     transition: 0.1s ease-in-out;
 }
 
+.dropdown-done {
+    align-self: center;
+}
+
 /*Styling for button that closes the pop up (the Select button)*/
 #closePop {
-    padding: 0.75rem;
-    width: 9.375rem;
+    padding: 1rem;
+    width: 15rem;
     border: none;
     cursor: pointer;
     border-radius: 1.875rem;
     transition: 0.25s;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    /* display: block; */
     margin: 0 auto;
     box-shadow: 0 0 .5rem var(--custom-green);
     background-color: var(--custom-green);
@@ -696,8 +697,7 @@ footer p {
 
 /*Styling for the button that sends the user mood to Gemini API (the Send to TOM button)*/
 .form-button {
-    padding: 0.75rem;
-    width: 15rem;
+    padding: 0.75rem 2rem;
     border: none;
     cursor: pointer;
     border-radius: 3.125rem;
@@ -706,15 +706,28 @@ footer p {
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0 0 .5rem var(--custom-green);
-    background-color: var(--custom-green);
+    
     border-radius: 1.875rem;
     color: white;
 }
 
-.form-button:hover {
+#closePop {
+    background: var(--custom-green);
+    box-shadow: 0 0 .5rem var(--custom-green);
+}
+
+#closePop:hover {
     background-color: black;
-    box-shadow: 0 0 0.5rem black;
+    box-shadow: 0 0 .5rem black;
+}
+
+#pick-colors {
+    background: black;
+    box-shadow: 0 0 .3rem black;
+}
+
+#pick-colors:hover {
+    box-shadow: 0 0 .5rem black;
 }
 
 .hexcodes {

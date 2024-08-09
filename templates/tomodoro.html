@@ -64,8 +64,8 @@
                     <!-- <input value="X" type="button" id="cancel" class="cancel"> -->
                     <box-icon type='solid' name='x-circle' class="cancel-icon" id="cancel"></box-icon>
                 </div>
-                <h4>Adjust time lengths and page theme using dropdowns, and press <span style="color: #5d9c69">Apply</span> to save changes.</h4>
-                <h4>To have T.O.M. pick a page theme, enter the desired mood and press <span style="color: #5d9c69">Send to T.O.M.</span></h4>
+                <h4>Adjust the time lengths and page theme using the dropdowns, and press <span>Apply</span> to save your changes.</h4>
+                <h4>To have T.O.M. create a page theme for you, enter your mood and press <span>Generate</span>.</h4>
             </div>
             <!-- Time Length Inputs -->
             <div class="top-half">
@@ -76,7 +76,7 @@
                 <div class="timer-boxes">
                     <div class="input-boxes">
                         <div class="input">
-                            <label for="study" class="input-label">Study Time</label>
+                            <label for="study" class="input-label">Tomodoro</label>
                             <input type="number" min="0" max="9999" name="study" value="25" class="time-input tomodoro-time-input" />
                             <h5 class="min-label">Min</h5>
                         </div>
@@ -96,14 +96,14 @@
             <!-- Theme Selection -->                    
             <div class="bottom-half">
                 <div class="bottom-title">
-                    <h2> Page Theme</h2>
+                    <h2>Page Theme</h2>
                 </div>
                 <div class="options">
                     <!-- Dropdown Selections -->
                     <div class="left-side">
-                        <h5 id="message">Pick Your Own Theme</h5>
+                        <h5 id="message">Pick your own colors:</h5>
                         <div class="bg-1">
-                            <!-- Backgruond Color Selection -->
+                            <!-- Background Color Selection -->
                             <label for="background" id="background-1">Bottom Color</label>
                             <select name="colors" class="dropdown-bg">
                                 <option value="bg-red">Red</option>
@@ -154,30 +154,30 @@
                                 <option value="txt-gray">Gray</option>
                             </select>
                         </div>
-                        <!-- Dropdown Submit Button -->
-                        <div class="dropdown-done">
-                            <input value="Apply" type="button" id="closePop" class="form-button">
-                        </div>
                     </div>
                     
                     <!-- AI Color Generation -->
                     <div class="right-side">
                         <form id="choose-colors-form" class="right-side" method="get" action="{% url 'generate_ai_colors' %}">
-                            <h5 id="message">Ask T.O.M. To Make You a Theme</h5>
+                            <h5 id="message">Generate colors with AI:</h5>
                             <!-- Input Text -->
                             <div class="textbox">
                                 <textarea id="mood-prompt" name="mood-prompt" placeholder="What's the mood?"></textarea>
                             </div>
                             <!-- Submit Button -->
                             <div class="send">
-                                <input value="Send to T.O.M." type="submit" id="pick-colors" class="form-button">
+                                <input value="Generate" type="submit" id="pick-colors" class="form-button">
                             </div>
                         </form>
                     </div>
                 </div>
-                
             </div>
-            
+
+        <!-- Dropdown Submit Button -->
+        <div class="dropdown-done">
+            <input value="Apply" type="button" id="closePop" class="form-button">
+        </div>
+
         </div>
     </div>
 
