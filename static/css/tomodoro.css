@@ -606,7 +606,7 @@ footer p {
 }
 
 .right-side .send {
-    align-self: center;
+    align-self: flex-start;
 }
 
 /*Styling for the four drop downs below*/
