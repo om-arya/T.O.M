@@ -13,6 +13,9 @@ import {textToSpeech} from "./text-to-speech.js";
 
 let typeInterval;
 
+const submitContainer = document.getElementsByClassName('submit-container')[0];
+submitContainer.style["pointer-events"] = "all"; // re-enable clicking submit when the page loads
+
 window.onload = () => {
     // We maintain these through reloads and session closes (exiting the tab keeps these)
     const storedInputs = JSON.parse(localStorage.getItem("inputs")) || [];
@@ -84,8 +87,6 @@ const observerInput = new IntersectionObserver((entries) => {
 const hiddenElementsInput = document.querySelectorAll(".hidden-input");
 hiddenElementsInput.forEach((el) => observerInput.observe(el));
 
-
-
 //second observer to create animations for Tom which is to come in from the right
 const observerTom = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -97,7 +98,6 @@ const observerTom = new IntersectionObserver((entries) => {
 
 const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
 hiddenElementsTom.forEach((el) => observerTom.observe(el));
-
 
 // Add additional events when the 'add event' button is clicked
 document.getElementById('addEvent').addEventListener('click', () => {
@@ -264,8 +264,10 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
 
 const sleep = ms => new Promise(res => setTimeout(res, ms)); // pause the program for 'ms' milliseconds
 
-const submitContainer = document.getElementsByClassName('submit-container')[0];
-submitContainer.addEventListener("click", speechAndStorage()); 
+submitContainer.addEventListener("click", () => {
+    submitContainer.style["pointer-events"] = "none";
+    speechAndStorage();
+}); 
 
 // Store the full schedule in local storage and speak just the 'words of advice'
 async function speechAndStorage(){
