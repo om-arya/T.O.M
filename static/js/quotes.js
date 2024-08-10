@@ -100,6 +100,7 @@ navLinks.forEach((link) => {
  */
 
 tomQuoteHead.addEventListener('click', () => {
+    tomQuoteHead.style["pointer-events"] = "none";
     quoteCount++;
     sessionStorage.setItem('quoteCount', quoteCount);
 })
@@ -195,6 +196,7 @@ function useAIQuote() {
 
 async function typingEffect(element, text) {
     setTimeout(() => {
+        tomQuoteHead.style["pointer-events"] = "none";
         element.textContent = "";
     }, 0);
 
@@ -204,6 +206,7 @@ async function typingEffect(element, text) {
         ch += 1;
         if (ch == text.length) {
             clearInterval(typeInterval);
+            tomQuoteHead.style["pointer-events"] = "all";
         }
     }, 35);
 }
