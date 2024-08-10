@@ -23,6 +23,7 @@ const openPop = document.querySelector('#settings-button');
 const closePop = document.querySelector('#closePop');
 const cancel = document.querySelector('#cancel');
 const popUp = document.querySelector('#popup');
+const pickColors = document.querySelector('#pick-colors');
 
 /* temp variables for local storage values*/
 let storedBg;
@@ -185,7 +186,6 @@ closePop.addEventListener('click', () => {
         switchToTomodoro();
     }
 
-
     //get the values from the dropdowns and store them in local storage
     let bgDropDown = document.querySelector('.dropdown-bg');
     const bgSelectedValue = bgDropDown.value;
@@ -218,7 +218,6 @@ closePop.addEventListener('click', () => {
     //assign color using function with parameters from above inputted
     checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
 
-
     //close pop up
     popUp.classList.remove("open");
 });
@@ -228,6 +227,10 @@ cancel.addEventListener('click', () => {
     popUp.classList.remove("open");
 });
 
+pickColors.addEventListener('click', () => {
+    pickColors.style["pointer-events"] = "none";
+})
+
 // Switch to the Tomodoro tab if not already active.
 function switchToTomodoro() {
     if (!tomodoroTab.classList.contains('selected')) {
@@ -236,8 +239,6 @@ function switchToTomodoro() {
         shortBreakTab.classList.remove('selected');
         longBreakTab.classList.remove('selected');
         tomodoroTab.classList.add('selected');
-
-
 
         setStartTime(tomodoroDuration);
 
@@ -281,7 +282,6 @@ function switchToShortBreak() {
     const storedBtn = localStorage.getItem("btn-color");
     const storedTxt = localStorage.getItem("txt-color");
     AiFlag = localStorage.getItem("Ai-flag");
-
 
     //assign color using function with parameters from above inputted
     if(AiFlag == "true") {
@@ -337,8 +337,6 @@ async function typingEffect(element, text) {
     }, 200);
 }
 
-
-
 //one observer to create animations for the timer and its buttons to come in from the bottom
 const observerInput = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -351,7 +349,6 @@ const observerInput = new IntersectionObserver((entries) => {
 //observer for tom
 const hiddenTimerElements = document.querySelectorAll(".hidden-timer-buttons");
 hiddenTimerElements.forEach((el) => observerInput.observe(el));
-
 
 //second observer to create animations for Tom which is to come in from the right
 const observerTom = new IntersectionObserver((entries) => {
@@ -394,62 +391,36 @@ allLinks.forEach(link => {
     }
   });
 
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menuContent = document.querySelector('.menu-content');
-  
-  menuToggle.addEventListener('click', () => {
-    menuContent.classList.toggle('show-menu');
-  });  
-
-/* AI color function*/
+/* AI color function */
 function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedValueAI, txtSelectedValueAI) {
-    //set background gradient with color parameters
-    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), ${bgSelectedMidAI}, ${bgSelectedValueAI})`;
+    const root = document.querySelector(':root');
 
-    //loops through all buttons and text and sets them to the correct colors
-    const buttons = document.querySelectorAll('.tom-button');
-    for (const button of buttons) {
-        button.style.setProperty("color", txtSelectedValueAI);
+    root.style.setProperty('--bg-gradient-color', bgSelectedValueAI);
+    root.style.setProperty('--bg-mid-color', bgSelectedMidAI);
+    root.style.setProperty('--buttons-color', btnSelectedValueAI);
+    root.style.setProperty('--text-color', txtSelectedValueAI);
 
-        if(button.classList.contains('selected')){
-            button.style.setProperty("background-color", "black");
-        } else {
-            button.style.setProperty("background-color", btnSelectedValueAI);
-        }
-    }
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
 }
 
-/* Dropdown Color Function*/  
+/* Dropdown Color Function */  
 function checkAndAssignColors(bgSelectedValue, bgMidValue, btnSelectedValue, txtSelectedValue) {
-        /*Change background color according to what the user has selected in the background.*/
         const root = document.querySelector(':root');
+
         const bgFormatted = "--" + bgSelectedValue;
         const midFormatted = "--" + bgMidValue;
-        const bgColor = getComputedStyle(root).getPropertyValue(bgFormatted);
-        const midColor = getComputedStyle(root).getPropertyValue(midFormatted);
-        root.style.setProperty('--bg-gradient-color', bgColor);
-        root.style.setProperty('--bg-mid-color', midColor);
-        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
-       
-    
-        /*Change button/text color according to what the user has selected in the dropdown.*/
-        const buttons = document.querySelectorAll('.tom-button');
         const btnFormatted = "--" + btnSelectedValue;
         const txtFormatted = "--" + txtSelectedValue;
 
+        const bgColor = getComputedStyle(root).getPropertyValue(bgFormatted);
+        const midColor = getComputedStyle(root).getPropertyValue(midFormatted);
         const btnColor = getComputedStyle(root).getPropertyValue(btnFormatted);
         const txtColor = getComputedStyle(root).getPropertyValue(txtFormatted);
 
+        root.style.setProperty('--bg-gradient-color', bgColor);
+        root.style.setProperty('--bg-mid-color', midColor);
         root.style.setProperty('--buttons-color', btnColor);
         root.style.setProperty('--text-color', txtColor);
 
-        //loops through all buttons and text and sets them to the correct colors
-        for (const button of buttons) {
-            if(button.classList.contains('selected')){
-                button.style.setProperty("background-color", "black");
-            } else {
-                button.style.setProperty("background-color", "var(--buttons-color)");
-            }
-            button.style.setProperty("color", "var(--text-color)");
-        }
+        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
     } 
