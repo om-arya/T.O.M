@@ -12,12 +12,15 @@ def generate_colors(mood: str):
     f"based on the following 'theme': { mood }"
   ) 
   
-  # String list formatted ['#xyzabc', '#xyzabc', '#xyzabc'].
-  hexcodes = model.generate_content(prompt).text.replace("\n", "").replace(" ", "").replace(" ", "").split(",")
+  try:
+    # String list formatted ['#xyzabc', '#xyzabc', '#xyzabc'].
+    hexcodes = model.generate_content(prompt).text.replace("\n", "").replace(" ", "").replace(" ", "").split(",")
+  except:
+    return ["ERROR"]
+  
   if len(hexcodes) != 4:
     return ["ERROR"]
   for hex in hexcodes:
     if not (hex[0] == "#" and len(hex) == 7):
       return ["ERROR"]
-  print(hexcodes)
   return hexcodes

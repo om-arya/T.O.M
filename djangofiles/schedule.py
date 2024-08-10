@@ -16,8 +16,12 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
         "You are talking to just one person who you will refer to as 'my friend', and you will not accompany this person with any tasks. "
         "Use some emojis, but DO NOT use emojis in your positive conclusion or you will die."
     )
-  schedule = format(model.generate_content(schedule_prompt).text)
-  return schedule
+  
+  try:
+    schedule = format(model.generate_content(schedule_prompt).text)
+    return schedule
+  except:
+    return "ERROR"
 
 def format(text):
   new_text = "<h1>Your Purr-fect Schedule!</h1><p>"
