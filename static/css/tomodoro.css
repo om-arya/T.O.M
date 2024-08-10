@@ -52,7 +52,7 @@ body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
     min-width: 100vh;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: auto;
     transition: .25s ease;
 }
@@ -473,16 +473,8 @@ footer p {
 .popup h1,
 .popup h2 {
     color: var(--custom-green);
+    background-color: white;
     font-size: 1.5rem;
-}
-
-.popup h4 {
-    font-weight: 500;
-}
-
-.popup span {
-    font-weight: 600;
-    color: var(--custom-green);
 }
 
 .popup label,
@@ -557,7 +549,6 @@ footer p {
     padding-left: 1rem;
     display: flex;
     align-items: center;
-    text-align: left;
     font-weight: bold;
 }
 
@@ -572,8 +563,8 @@ footer p {
 .input {
     display: flex;
     flex-direction: row;
-    gap: .5rem;
-    padding: 1rem 2.5rem 0 0;
+    padding-top: 1rem;
+    padding-right: 2.5rem;
 }
 
 .min-label {
@@ -593,17 +584,18 @@ footer p {
 .options {
     display: flex;
     flex-direction: row;
-    gap: 7rem;
+    width: 90%;
+    justify-content: space-between;
     margin-bottom: 1rem;
-    width: 100%;
-    justify-content: left;
+    flex-wrap: wrap;
 }
 
 .left-side {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 0 1rem 0 3rem;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    justify-content: space-between;
 }
 
 .right-side {
@@ -634,14 +626,14 @@ footer p {
 /*Styling for the text area for the user to send their desired mood to TOM*/
 #mood-prompt {
     background-color: white;
-    border-radius: 20px;
-    height: 8rem;
-    width: 32rem;
+    border-radius: 1.875rem;
+    height: 9.375rem;
+    width: 30.625rem;
     resize: none;
     padding: 1rem;
     margin: 1rem 0 1rem 0;
-    flex: 1;
-    border: 1.5px solid black; 
+    flex:1;
+    border: 2px solid black; 
     transition: 0.1s ease-in-out;
 }
 
@@ -652,7 +644,7 @@ footer p {
 
 /*Styling for the input boxes that the user uses to change the study timer times*/
 .time-input {
-    padding: .3rem .6rem;
+    padding: .3rem;
     width: 6rem;
     text-align: left;
     font-size: 1.3rem;
@@ -668,20 +660,17 @@ footer p {
     transition: 0.1s ease-in-out;
 }
 
-.dropdown-done {
-    align-self: center;
-}
 
 /*Styling for button that closes the pop up (the Select button)*/
 #closePop {
-    padding: 1rem;
-    width: 15rem;
+    padding: 0.75rem;
+    width: 9.375rem;
     border: none;
     cursor: pointer;
     border-radius: 1.875rem;
     transition: 0.25s;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     margin: 0 auto;
@@ -698,37 +687,25 @@ footer p {
 
 /*Styling for the button that sends the user mood to Gemini API (the Send to TOM button)*/
 .form-button {
-    padding: 0.75rem 2rem;
+    padding: 0.75rem;
+    width: 15rem;
     border: none;
     cursor: pointer;
-    border-radius: 3.125rem;
+    border-radius: 1.875rem;
     transition: 0.25s;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
-    
-    border-radius: 1.875rem;
+    margin: 0 auto;
+    box-shadow: 0 0 .5rem var(--custom-green);
+    background-color: var(--custom-green);
     color: white;
 }
 
-#closePop {
-    background: var(--custom-green);
-    box-shadow: 0 0 .5rem var(--custom-green);
-}
-
-#closePop:hover {
+.form-button:hover {
     background-color: black;
-    box-shadow: 0 0 .5rem black;
-}
-
-#pick-colors {
-    background: black;
-    box-shadow: 0 0 .3rem black;
-}
-
-#pick-colors:hover {
-    box-shadow: 0 0 .5rem black;
+    box-shadow: 0 0 0.5rem black;
 }
 
 .hexcodes {
@@ -742,7 +719,6 @@ select {
     border: 2px solid black;
     border-radius: 1.875rem;
     width: 6rem;
-    height: 2rem;
     text-align: center;
     transition: 0.1s ease-in-out;
 }
@@ -766,22 +742,21 @@ textarea {
         overflow-x: auto;
     }
 
-    .input {
-        gap: 1.2rem;
-    }
-
     .input-boxes {
         flex-direction: column;
     }
 
     .options {
         flex-direction: column;
-        gap: 0;
         margin: 1rem;
     }
 
     #message {
         margin-bottom: 1rem;
+    }
+
+    .input-label {
+        width: 5rem;
     }
 
     .left-side {
