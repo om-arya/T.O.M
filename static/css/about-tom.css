@@ -353,12 +353,17 @@ footer p {
     font-size: 1.5rem;
 }
 
-.left label, .left input, .right label, .right input {
+.left label,
+.left input,
+.right label,
+.right input {
     display: block;
 }
 
 .left input,
-.right input {
+.right input,
+.left textarea,
+.right textarea {
     margin-bottom: 1rem;
     padding: 1rem;
     width: 100%;
@@ -369,13 +374,15 @@ footer p {
     color: black;
 }
 
-.left, .right {
+.left,
+.right {
     flex: 1;
     max-width: 70%;
 }
 
 #message {
     padding: 1.2rem 1rem 12rem;
+    height: 10rem;
     font-size: 1rem;
 }
 

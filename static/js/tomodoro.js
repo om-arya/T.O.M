@@ -423,3 +423,10 @@ allLinks.forEach(link => {
         });
     }
   });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const menuContent = document.querySelector('.menu-content');
+
+menuToggle.addEventListener('click', () => {
+menuContent.classList.toggle('show-menu');
+});
