@@ -25,6 +25,7 @@ window.onload = () => {
                 left: 0,
                 behavior: "smooth",
             });
+            speechAndStorage();
         }, 0);
     }
 
@@ -64,30 +65,6 @@ window.onload = () => {
         result.innerHTML = storedSchedule;
     }
 };
-
-//one observer to create animations for the text boxes to come in from the bottom
-const observerInput = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        entry.target.classList.add('show-input');
-        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-        observerInput.unobserve(entry.target);
-    });
-})
-
-const hiddenElementsInput = document.querySelectorAll(".hidden-input");
-hiddenElementsInput.forEach((el) => observerInput.observe(el));
-
-//second observer to create animations for Tom which is to come in from the right
-const observerTom = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        entry.target.classList.add('show-tom');
-        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
-        observerTom.unobserve(entry.target);
-    });
-})
-
-const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
-hiddenElementsTom.forEach((el) => observerTom.observe(el));
 
 // Add additional events when the 'add event' button is clicked
 document.getElementById('addEvent').addEventListener('click', () => {
@@ -187,8 +164,7 @@ const addEvent = (eventData = {}) => {
 
     const size = document.querySelectorAll('.events-and-time-container').length;
     // Start adding delete buttons after the first event
-    if(size > 0) {
-
+    if (size > 0) {
         //code for event container animation
         setTimeout(() => {
             /*add the eventContainer to the class list named visible after removing it from the class list named hidden. 
@@ -259,7 +235,6 @@ submitContainer.addEventListener("click", () => {
     setTimeout(() => {
         submitContainer.style["pointer-events"] = "all";
     }, 5000);
-    speechAndStorage();
 }); 
 
 // Store the full schedule in local storage and speak just the 'words of advice'
@@ -283,6 +258,30 @@ async function speechAndStorage(){
 }
 
 /* ANIMATIONS */
+
+//one observer to create animations for the text boxes to come in from the bottom
+const observerInput = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        entry.target.classList.add('show-input');
+        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+        observerInput.unobserve(entry.target);
+    });
+})
+
+const hiddenElementsInput = document.querySelectorAll(".hidden-input");
+hiddenElementsInput.forEach((el) => observerInput.observe(el));
+
+//second observer to create animations for Tom which is to come in from the right
+const observerTom = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        entry.target.classList.add('show-tom');
+        //stop observing after the animation plays once so that it doesn't replay everytime the user scrolls up
+        observerTom.unobserve(entry.target);
+    });
+})
+
+const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
+hiddenElementsTom.forEach((el) => observerTom.observe(el));
 
 async function typingEffect(element, text){
     setTimeout(() => {

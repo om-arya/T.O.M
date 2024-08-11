@@ -11,7 +11,6 @@ const preMadeQuotes = ["Contentment is the greatest wealth.",
                                     "Like a cat with nine lives, you have countless opportunities for success!",
                                     "Resilience is your armor against the arrows of doubt.",
                                     "In the garden of meowledge, purr-sistence is the water that makes flowers bloom.",
-                                    "Even in darkness, there is always a glimmer of hope!",
                                     "Success favors the purr-sistent.",
                                     "No matter how furstrating it gets, keep scratching at your goals.",
                                     "Believe in meowself, even when no one else does!",
@@ -29,35 +28,30 @@ const preMadeQuotes = ["Contentment is the greatest wealth.",
                                     "Every meowment is a chance to start anew.",
                                     "Don't let fear leash your potential; unleash it!",
                                     "Cherish progress, no meowter how small.",
-                                    "Even the mightiest lion relies on its pride; don't be afraid to ask for help.",
                                     "Success isn't a sprint; it's a meowrathon.",
                                     "Your purr-tential is limitless, like the expanse of the meowcean.",
                                     "Luck is where hard work meets meow-portunity.",
                                     "Every setback is like a hairball; unpleasant, but it will pass.",
                                     "Strive for progress, not purrfection.",
-                                    "Even on the darkest nights, the stars still shine!",
                                     "Stay focused, stay determined, and success will be yours.",
                                     "Seize the day like the cat seizes the mouse — swiftly and decisively!",
                                     "Curiosity didn't kill the cat; it made me wiser.",
                                     "The best view comes after the hardest climb.",
-                                    "Success is not meow-sured by wealth, but by the state of one’s heart and actions.",
+                                    "Be a cat who chases its dreams, not its tail.",
                                     "Nap when you must, but never sleep on your dreams.",
                                     "Comparison is the thief of purr-sonal growth.",
-                                    "Even the fiercest tiger started out as a tiny kitten.",
                                     "Your potential meows no bounds; let your aspurrations soar.",
                                     "Opportunities are like yarn; grab them and weave your destiny.",
                                     "Failure is the purr-tilizer for success.",
                                     "Let hope be your compass; it will guide you through the darkest alleys.",
                                     "I may have nine lives, but you only need one to make a difference.",
                                     "Pounce on opportunities like they're catnip.",
-                                    "Even the smallest feline is a masterpiece.",
                                     "Life's litter box may be messy, but you've got this.",
                                     "In the game of life, always land on your feet.",
                                     "Meowmentum is key; keep moving forward.",
                                     "When life gives you lemons, sharpen your claws and make lemeownade.",
                                     "Keep your tail high and your spirits higher!",
                                     "Take challenges as meow-portunities.",
-                                    "Even the fiercest lions need a catnap sometimes — remember to take care of yourself.",
                                     "Meow is the time to invest in your future!"];
 
 //create variables for the containers and buttons
@@ -127,7 +121,10 @@ let typeInterval;
 
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
 if (quoteCount == 0) {
-    quoteContent.textContent = "Click me for some pawsitive inspiration!"
+    quoteContent.textContent = "Click me for some pawsitive inspiration!";
+
+    textToSpeech("Click me for some pawsitive inspiration!");
+
     typingEffect(quoteContent, quoteContent.textContent);
 
 } else if (aiQuoteStack.length === 0) { // pre-made quote
@@ -164,9 +161,10 @@ function usePreMadeQuote() {
 
     const currQuote = preMadeQuotes[quoteIndex];
 
+    textToSpeech(currQuote);
+
     clearInterval(typeInterval);
     typingEffect(quoteContent, currQuote);
-    textToSpeech(currQuote);
 
     sessionStorage.setItem('quoteIndex', quoteIndex);
 }
@@ -177,9 +175,10 @@ function usePreMadeQuote() {
 function useAIQuote() {
     const currQuote = aiQuoteStack.pop();
 
+    textToSpeech(currQuote);
+
     clearInterval(typeInterval);
     typingEffect(quoteContent, currQuote);
-    textToSpeech(currQuote);
 
     sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
 }
