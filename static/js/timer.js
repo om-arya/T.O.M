@@ -15,6 +15,18 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
  * @param {str} time 
  */
 function setStartTime(time) {
+    const timeParts = time.split(':');
+    if (timeParts.length >= 3) {
+        const hours = timeParts[0];
+        if (hours >= 100) {
+            timer.style["font-size"] = "12rem";
+        } else {
+            timer.style["font-size"] = "13rem";
+        }
+    } else {
+        timer.style["font-size"] = "15rem";
+    }
+    
     startTime = time;
 }
 
@@ -36,7 +48,7 @@ function runTimer() {
     startButton.classList.remove('start-mode');
     startButton.setAttribute('value', "Pause");
 
-    // timer.innerHTML = startTime;
+    resetTime();
 
     interval = setInterval(decrementSecond, 1000);
 }
@@ -47,6 +59,7 @@ function runTimer() {
  * 
  * Stop decrementing when the time reaches 00:00.
  * 
+ * If there are hours, shrink the font size of the timer.
  * If the hours are 0, we do not display them, but we always
  * display the minutes and seconds.
  */
@@ -83,10 +96,19 @@ function decrementSecond() {
         if (minutes > 0) {
             seconds = 59;
             minutes -= 1;
-        } else if (minutes === 0 && hours > 0) {
+        } else if (hours > 0) {
                 minutes = 59;
+                seconds = 59;
                 hours -= 1;
         }
+    }
+
+    if (hours >= 100) {
+        timer.style["font-size"] = "12rem";
+    } else if (hours > 0) {
+        timer.style["font-size"] = "13rem";
+    } else {
+        timer.style["font-size"] = "15rem";
     }
 
     let hours_str = hours > 0 ? (hours < 10 ? `0${hours}:` : `${hours}:`) : '';
@@ -132,6 +154,24 @@ function stopTimer() {
     startButton.setAttribute('value', "Start Timer");
 
     clearInterval(interval);
+    resetTime();
+}
+
+/**
+ * Reset the time of the timer to startTime.
+ */
+function resetTime() {
+    const timeParts = startTime.split(':');
+    if (timeParts.length >= 3) {
+        const hours = timeParts[0];
+        if (hours >= 100) {
+            timer.style["font-size"] = "12rem";
+        } else if (hours > 0) {
+            timer.style["font-size"] = "13rem";
+        } else {
+            timer.style["font-size"] = "15rem";
+        }
+    }
 
     timer.innerHTML = startTime;
 }

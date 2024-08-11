@@ -37,12 +37,12 @@ let tomodoroDuration = localStorage.getItem("tomodoroDuration") || "25:00";
 let shortBreakDuration = localStorage.getItem("shortBreakDuration") || "05:00";
 let longBreakDuration = localStorage.getItem("longBreakDuration") || "15:00";
 
+setStartTime(tomodoroDuration);
+
 let typeInterval;
 
 window.onload = () => {
-    //typing effect for whatever number is on screen when it loads
-    const timerElement = document.querySelector('.timer');
-    typingEffect(timerElement, timerElement.innerHTML);
+    typingEffect(timer, tomodoroDuration);
 
     //retrieve values from local storage
     storedBg = localStorage.getItem("bg-color");
@@ -56,15 +56,6 @@ window.onload = () => {
         checkAndAssignColorsAI(storedBg, storedMid, storedBtn, storedTxt);
     } else {
         checkAndAssignColors(storedBg, storedMid, storedBtn, storedTxt);
-    }
-
-    /* sets value for timer based on which button is selected */
-    if (tomodoroTab.classList.contains('selected')) {
-        timer.innerHTML = tomodoroDuration;
-    } else if (shortBreakTab.classList.contains('selected')) {
-        timer.innerHTML = shortBreakDuration;
-    } else if (longBreakTab.classList.contains('selected')) {
-        timer.innerHTML = longBreakDuration;
     }
 
     /*Set dropdown values to be the ones stored in local storage. First get the dropdown using querySelector, 

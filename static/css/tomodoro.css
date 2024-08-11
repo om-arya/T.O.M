@@ -360,8 +360,11 @@ footer p {
 }
 
 .timer {
+    display: flex;
     margin-bottom: 2rem;
     height: 17rem;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-size: 15rem;
     font-weight: 500;
@@ -659,7 +662,6 @@ footer p {
     border: 2px solid var(--custom-green); 
     transition: 0.1s ease-in-out;
 }
-
 
 /*Styling for button that closes the pop up (the Select button)*/
 #closePop {
