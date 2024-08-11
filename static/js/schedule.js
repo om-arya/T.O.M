@@ -266,6 +266,9 @@ const sleep = ms => new Promise(res => setTimeout(res, ms)); // pause the progra
 
 submitContainer.addEventListener("click", () => {
     submitContainer.style["pointer-events"] = "none";
+    setTimeout(() => {
+        submitContainer.style["pointer-events"] = "all";
+    }, 5000);
     speechAndStorage();
 }); 
 
