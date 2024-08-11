@@ -1,5 +1,3 @@
-import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
-
 document.addEventListener("DOMContentLoaded", () => {
     function typingEffect(element, text) {
         return new Promise((resolve) => {
@@ -86,6 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    addResponsiveClassToNavbar();
-    addMenuToggle();
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
 });

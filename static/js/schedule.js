@@ -1,5 +1,4 @@
 import { textToSpeech } from "./text-to-speech.js";
-import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
 
 let typeInterval;
 
@@ -61,7 +60,7 @@ window.onload = () => {
     notes.innerHTML = storedNotes;
 
     // Load stored schedule if non-empty
-    if (storedSchedule.includes('Y')) {
+    if (storedSchedule && storedSchedule.includes('Y')) {
         result.innerHTML = storedSchedule;
     }
 };
@@ -329,5 +328,13 @@ allLinks.forEach(link => {
     }
 });
 
-addResponsiveClassToNavbar();
-addMenuToggle();
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});

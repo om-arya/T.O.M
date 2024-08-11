@@ -1,5 +1,3 @@
-import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         entry.target.classList.add('show');
@@ -51,5 +49,13 @@ allLinks.forEach(link => {
 
 });
 
-addResponsiveClassToNavbar();
-addMenuToggle();
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});

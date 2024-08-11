@@ -1,5 +1,3 @@
-import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
-
 window.onload = () => {
     //The next to sections allow the title and profiles to transition on once the viewer is at their location
   
@@ -57,5 +55,13 @@ allLinks.forEach(link => {
     }
   });
 
-addResponsiveClassToNavbar();
-addMenuToggle();
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});

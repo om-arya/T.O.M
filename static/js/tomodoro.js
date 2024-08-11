@@ -1,5 +1,4 @@
 import { setStartTime, runTimer, stopTimer } from "./timer.js";
-import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
 
 const timer = document.querySelector('.timer');
 const startButtons = document.querySelectorAll('#start-timer, .tom-image img');
@@ -277,8 +276,6 @@ function saveColors(bgColor, midColor, btnColor, txtColor) {
     localStorage.setItem("bg-middle", midColor.replaceAll(' ', '').replaceAll('\n', ''));
     localStorage.setItem("btn-color", btnColor.replaceAll(' ', '').replaceAll('\n', ''));
     localStorage.setItem("txt-color", txtColor.replaceAll(' ', '').replaceAll('\n', ''));
-
-    console.log(localStorage);
 }
 
 /**
@@ -403,5 +400,13 @@ allLinks.forEach(link => {
    }
  });
 
-addResponsiveClassToNavbar();
-addMenuToggle();
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});

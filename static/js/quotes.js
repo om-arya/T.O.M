@@ -1,5 +1,4 @@
 import { textToSpeech, cancelTTS } from "./text-to-speech.js";
-import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
 
 const preMadeQuotes = ["Contentment is the greatest wealth.",
                                     "Paws for thought; reflection brings clarity.",
@@ -256,5 +255,13 @@ allLinks.forEach(link => {
     }
   });
 
-addResponsiveClassToNavbar();
-addMenuToggle();
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.icon').addEventListener('click', function () {
+        var x = document.getElementById('navbar');
+        if (x.className === 'nav-items') {
+            x.className += ' responsive';
+        } else {
+            x.className = 'nav-items';
+        }
+    });
+});
