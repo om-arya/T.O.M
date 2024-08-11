@@ -48,6 +48,8 @@ timeInputs.forEach((timeInput) => {
 // Execute settings changes and close the pop up.
 const closePop = document.querySelector('#closePop');
 closePop.addEventListener('click', () => {
+    stopTimer();
+    
     checkAndSetTimes();
 
     checkAndSetColors();
