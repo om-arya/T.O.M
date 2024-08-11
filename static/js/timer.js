@@ -55,7 +55,7 @@ function decrementSecond() {
     if (currTime === "00:00") {
         // Change screen color and play alarm until either
         // the restart button or the start button is clicked.
-        body.style["background"] = "linear-gradient(white, red)";
+        body.style["background"] = "linear-gradient(to right bottom, white, red, red)";
         playAlarm();
 
         startButton.addEventListener('click', stopTimer);
@@ -122,10 +122,9 @@ function stopTimer() {
     restartButton.removeEventListener('click', stopTimer);
     startButton.removeEventListener('click', stopTimer);
 
-    // body.style["background"] = "linear-gradient(white, var(--bg-gradient-color))";
+    body.style["background-image"] = "linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))";
 
     startButton.removeEventListener('click', pauseTimer);
-    // startButton.removeEventListener('click', unpauseTimer);
     startButton.addEventListener('click', runTimer);
 
     startButton.classList.add('start-mode');
