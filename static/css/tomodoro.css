@@ -52,8 +52,8 @@ body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
     min-height: 100vh;
     min-width: 100vh;
-    overflow-y: auto;
-    overflow-x: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
     transition: .25s ease;
 }
 
@@ -446,9 +446,9 @@ footer p {
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
     filter: blur(5px);
-    overflow-y: auto;
     max-width: 75rem;
     max-height: 40rem;
+    overflow: scroll;
 }
 
 .popup.open {
@@ -467,7 +467,6 @@ footer p {
     justify-content: space-evenly;
     width: 100%;
     margin: 1rem;
-    overflow-y: auto;
 }
 
 .popup h1,
@@ -739,7 +738,6 @@ textarea {
 @media screen and (max-width: 1400px) {
     .popup {
         width: 40rem;
-        overflow-x: auto;
     }
 
     .input-boxes {
@@ -817,6 +815,10 @@ textarea {
 
 /* Collapsed menu visible once screen width under 1182px */
 @media screen and (max-width: 1182px) {
+    body {
+        overflow-x: scroll;
+    }
+
     nav {
         flex-direction: row;
         align-items: flex-start;

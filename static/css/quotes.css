@@ -22,7 +22,7 @@
 body {
     min-height: 100vh;
     background-image: linear-gradient(to left bottom, #ffffff, #ffffff, var(--bg-gradient-color));
-    overflow: scroll;
+    overflow: hidden;
 }
 
 /* Start Navigation Bar Styling */
@@ -192,6 +192,7 @@ footer p {
 }
 
 .column-right {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
@@ -242,9 +243,18 @@ footer p {
 
 /* Start Responsiveness Styling */
 @media screen and (max-width: 768px) {
+    body {
+        overflow-y: scroll;
+    }
+
     .tom-container {
         grid-template-columns: 1fr;
         margin-top: 5rem;
+    }
+
+    .tom-quote-head {
+        position: absolute;
+        bottom: -11rem;
     }
 }
 

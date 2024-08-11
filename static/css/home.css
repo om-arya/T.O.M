@@ -322,6 +322,10 @@ footer p {
 
 /* Collapsed menu visible once screen width under 1182px */
 @media screen and (max-width: 1182px) { 
+    body {
+        overflow: scroll;
+    }
+    
     nav {
         flex-direction: row;
         align-items: flex-start;
