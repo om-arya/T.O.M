@@ -46,7 +46,6 @@
     --txt-gray: rgb(213, 213, 213);
 }
 
-/* Body Styling */
 body {
     min-height: 100vh;
     overflow-y: hidden;
@@ -57,7 +56,8 @@ body {
     background-attachment: fixed;
 }
 
-/* Start Navigation Bar Styling */
+/* NAVBAR */
+
 nav {
     position: fixed;
     top: 0;
@@ -85,7 +85,7 @@ nav {
 }
 
 .logo:hover {
-    color: var(--custom-green); /* Title text turns green on hover */
+    color: var(--custom-green);
 }
 
 /* Menu Styling */
@@ -127,9 +127,9 @@ nav {
     color: black;
     background: var(--nav-bar-color);
 }
-/* End Navigation Bar Styling */
 
-/* Start Footer Styling */
+/* FOOTER */
+
 footer {
     position: fixed;
     z-index: 100;
@@ -175,9 +175,9 @@ footer p {
     margin: 0;
     background-color: transparent;
 }
-/* End Footer Styling */
 
-/* Start Tomodoro Styling */
+/* TOMODORO */
+
 .tom-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -189,15 +189,23 @@ footer p {
     margin-left: 8rem;
     width: 24rem;
     height: auto;
-    pointer-events: none;
     user-select: none;
+}
+
+.tom-image img {
+    cursor: pointer;
+    transition: scale .3s ease;
+}
+
+.tom-image img:hover {
+    scale: 1.1;
 }
 
 .hidden-tom {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
-    transition: all 1s;
+    transition: transform 1s;
 }
 
 .show-tom {
@@ -383,6 +391,7 @@ footer p {
 }
 
 #start-timer.pause-mode {
+    box-shadow: 0 0 .3rem black;
     background: black;
 }
 

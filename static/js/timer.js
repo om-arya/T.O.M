@@ -1,7 +1,7 @@
 const timer = document.querySelector('.timer');
-const startButton = document.querySelector('#start-timer');
+const mainStartButton = document.querySelector('#start-timer');
+const startButtons = document.querySelectorAll('#start-timer, .tom-image img');
 const restartButton = document.querySelector('#restart-button');
-const root = document.querySelector(':root');
 const body = document.querySelector('body');
 const catSound = new Audio("media/cat-sound.mp3");
 
@@ -35,20 +35,20 @@ function setStartTime(time) {
  * restart button, and decrement the timer every second.
  */
 function runTimer() {
-    if (startButton.getAttribute('value') === "Pause") {
+    if (mainStartButton.getAttribute('value') === "Pause") {
         pauseTimer();
         return;
     }
 
-    startButton.removeEventListener('click', runTimer);
-    startButton.addEventListener('click', pauseTimer);
+    startButtons.forEach((startButton) => {
+        startButton.removeEventListener('click', runTimer);
+        startButton.addEventListener('click', pauseTimer);
+    });
     restartButton.addEventListener('click', stopTimer);
 
-    startButton.classList.add('pause-mode');
-    startButton.classList.remove('start-mode');
-    startButton.setAttribute('value', "Pause");
-
-    resetTime();
+    mainStartButton.classList.add('pause-mode');
+    mainStartButton.classList.remove('start-mode');
+    mainStartButton.setAttribute('value', "Pause");
 
     interval = setInterval(decrementSecond, 1000);
 }
@@ -71,8 +71,10 @@ function decrementSecond() {
         body.style["background"] = "linear-gradient(to right bottom, white, red, red)";
         playAlarm();
 
-        startButton.addEventListener('click', stopTimer);
-        startButton.setAttribute('value', "Restart");
+        startButtons.forEach((startButton) => {
+            startButton.addEventListener('click', stopTimer);
+        });
+        mainStartButton.setAttribute('value', "Restart");
 
         clearInterval(interval);
         return;
@@ -120,16 +122,18 @@ function decrementSecond() {
 
 /**
  * Temporarily stop the timer and turn the pause button into
- * an start button.
+ * an unpause button.
  */
 function pauseTimer() {
-        startButton.removeEventListener('click', pauseTimer);
-        startButton.addEventListener('click', runTimer);
+        startButtons.forEach((startButton) => {
+            startButton.removeEventListener('click', pauseTimer);
+            startButton.addEventListener('click', runTimer);
+        });
         clearInterval(interval);
         
-        startButton.classList.add('start-mode');
-        startButton.classList.remove('pause-mode');
-        startButton.setAttribute('value', "Start Timer");
+        mainStartButton.classList.add('start-mode');
+        mainStartButton.classList.remove('pause-mode');
+        mainStartButton.setAttribute('value', "Continue");
 }
 
 /**
@@ -141,17 +145,18 @@ function pauseTimer() {
  * when the time is at 00:00.
  */
 function stopTimer() {
-    restartButton.removeEventListener('click', stopTimer);
-    startButton.removeEventListener('click', stopTimer);
-
     body.style["background-image"] = "linear-gradient(to right bottom, white, var(--bg-mid-color), var(--bg-gradient-color))";
 
-    startButton.removeEventListener('click', pauseTimer);
-    startButton.addEventListener('click', runTimer);
+    restartButton.removeEventListener('click', stopTimer);
+    startButtons.forEach((startButton) => {
+        startButton.removeEventListener('click', stopTimer);
+        startButton.removeEventListener('click', pauseTimer);
+        startButton.addEventListener('click', runTimer);
+    });
 
-    startButton.classList.add('start-mode');
-    startButton.classList.remove('pause-mode');
-    startButton.setAttribute('value', "Start Timer");
+    mainStartButton.classList.add('start-mode');
+    mainStartButton.classList.remove('pause-mode');
+    mainStartButton.setAttribute('value', "Start Timer");
 
     clearInterval(interval);
     resetTime();

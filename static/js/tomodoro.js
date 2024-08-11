@@ -2,7 +2,7 @@ import { setStartTime, runTimer, stopTimer } from "./timer.js";
 import { addResponsiveClassToNavbar, addMenuToggle } from "./animations.js";
 
 const timer = document.querySelector('.timer');
-const startButton = document.querySelector('#start-timer');
+const startButtons = document.querySelectorAll('#start-timer, .tom-image img');
 const tomodoroTab = document.querySelector('.tomodoro');
 const shortBreakTab = document.querySelector('.short-break');
 const longBreakTab = document.querySelector('.long-break');
@@ -25,9 +25,11 @@ window.onload = () => {
 }
 
 // Start the timer.
-startButton.addEventListener('click', () => {
-    clearInterval(typeInterval);
-    runTimer();
+startButtons.forEach((startButton) => {
+    startButton.addEventListener('click', () => {
+        clearInterval(typeInterval);
+        runTimer();
+    });
 });
 
 const openPop = document.querySelector('#settings-button');
@@ -229,8 +231,12 @@ function checkAndSetTimes() {
     if (tomodoroTab.classList.contains('selected')) {                    
         timer.innerHTML = tomodoroDuration;
         setStartTime(tomodoroDuration);
+    } else if (shortBreakTab.classList.contains('selected')) {
+        timer.innerHTML = shortBreakDuration;
+        setStartTime(shortBreakDuration);
     } else {
-        switchToTomodoro();
+        timer.innerHTML = longBreakDuration;
+        setStartTime(longBreakDuration);
     }
 }
 
