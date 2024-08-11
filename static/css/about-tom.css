@@ -330,7 +330,7 @@ footer p {
     gap: 2rem;
 }
 
-.form-content label {
+label p {
     margin-bottom: .5rem;
 }
 
@@ -353,13 +353,6 @@ footer p {
     font-size: 1.5rem;
 }
 
-.left label,
-.left input,
-.right label,
-.right input {
-    display: block;
-}
-
 .left input,
 .right input,
 .left textarea,
@@ -372,6 +365,7 @@ footer p {
     font-size: 1.1rem;
     background: #F4F3EA;
     color: black;
+    resize: none;
 }
 
 .left,
@@ -392,23 +386,22 @@ footer p {
     justify-content: space-between;
 }
 
-button {
-    z-index: 1;
-    width: 8rem;
+#send-button {
+    display: flex;
+    padding: 0;
     height: 2.5rem;
-    align-self: flex-end;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     border: none;
     border-radius: 20px;
     box-shadow: 0 0 .2rem var(--bg-main-color);
     background: var(--bg-main-color);
     color: black;
-    transition: 0.3s;
+    transition: .2s ease;
     cursor: pointer;
 }
 
-button:hover {
+#send-button:hover {
     box-shadow: 0 0 .2rem black;
     background: black;
     color: var(--bg-main-color);
