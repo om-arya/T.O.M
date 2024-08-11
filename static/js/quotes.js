@@ -1,15 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.icon').addEventListener('click', function () {
-        var x = document.getElementById('navbar');
-        if (x.className === 'nav-items') {
-            x.className += ' responsive';
-        } else {
-            x.className = 'nav-items';
-        }
-    });
-});
-
-import {textToSpeech, cancelTTS} from "./text-to-speech.js";
+import { textToSpeech, cancelTTS } from "./text-to-speech.js";
+import { addResponsiveClassToNavbar, addExitAnimation, addMenuToggle } from "./animations.js";
 
 const preMadeQuotes = ["Contentment is the greatest wealth.",
                                     "Paws for thought; reflection brings clarity.",
@@ -194,22 +184,7 @@ function useAIQuote() {
     sessionStorage.setItem('aiQuoteStack', JSON.stringify(aiQuoteStack));
 }
 
-async function typingEffect(element, text) {
-    setTimeout(() => {
-        tomQuoteHead.style["pointer-events"] = "none";
-        element.textContent = "";
-    }, 0);
-
-    let ch = 0;
-    typeInterval = setInterval(() => {
-        element.textContent += text[ch];
-        ch += 1;
-        if (ch == text.length) {
-            clearInterval(typeInterval);
-            tomQuoteHead.style["pointer-events"] = "all";
-        }
-    }, 35);
-}
+/* ANIMATIONS */
 
 //one observer to create animations for the quote container to come in from the bottom
 const observerInput = new IntersectionObserver((entries) => {
@@ -236,37 +211,23 @@ const observerTom = new IntersectionObserver((entries) => {
 const hiddenElementsTom = document.querySelectorAll(".hidden-tom");
 hiddenElementsTom.forEach((el) => observerTom.observe(el));
 
-/**
- * EXIT ANIMATION CODE: We first select all the a href tags on the page- these are only used to lead away from the page itself
- * so page functionality isn't impacted. We then add an event listener for these links, and if any of them is clicked, we call 
- * preventDefault() to prevent them from directly sending the user to the next page. We then put all the elements we want to have disappear 
- * (in this case everything but the menu bar and footer) on the exit-animation classlist, which makes them fade into opacity 0. After that, 
- * the link directs the user to the page containing the link.
- */
-const allLinks = document.querySelectorAll('.nav-items a');
+async function typingEffect(element, text) {
+    setTimeout(() => {
+        tomQuoteHead.style["pointer-events"] = "none";
+        element.textContent = "";
+    }, 0);
 
-allLinks.forEach(link => {
-    if(!link.classList.contains('small-menu-link')) {
-        link.addEventListener('click', (event) => {
-    
-            //stops link from just sending the user to the next page.
-            event.preventDefault();
-    
-            //add everything below the menu bar and above the footer to the exit animation class list so the animation plays.
-            const formElements = document.getElementById('tom-container');
-            formElements.classList.add('exit');
-      
-            //delay after animation and send the user to the link
-            setTimeout(() => {
-                window.location.href = link.href;
-            }, 500);
-        });
-    }
-  });
+    let ch = 0;
+    typeInterval = setInterval(() => {
+        element.textContent += text[ch];
+        ch += 1;
+        if (ch == text.length) {
+            clearInterval(typeInterval);
+            tomQuoteHead.style["pointer-events"] = "all";
+        }
+    }, 35);
+}
 
-const menuToggle = document.querySelector('.menu-toggle');
-const menuContent = document.querySelector('.menu-content');
-
-menuToggle.addEventListener('click', () => {
-menuContent.classList.toggle('show-menu');
-});
+addResponsiveClassToNavbar();
+addExitAnimation();
+addMenuToggle();
