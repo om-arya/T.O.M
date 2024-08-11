@@ -17,7 +17,7 @@
     --bg-gradient-color: var(--bg-pink);
     --bg-mid-color: var(--bg-pink);
     --buttons-color: var(--bg-purple);
-    --text-color: white;
+    --text-color: var(--bg-white);
 
     --bg-profile-color: #3b5140;
     --foot-color: transparent;
