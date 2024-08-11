@@ -110,9 +110,9 @@ function switchToLongBreak() {
 }
 
 function initializeColors() {
-    const storedBg = localStorage.getItem("bg-color") || "bg-pink";
-    const storedMid = localStorage.getItem("bg-middle") || "bg-pink";
-    const storedBtn = localStorage.getItem("btn-color") || "btn-purple";
+    const storedBg = localStorage.getItem("bg-color") || "bg-green";
+    const storedMid = localStorage.getItem("bg-middle") || "bg-white";
+    const storedBtn = localStorage.getItem("btn-color") || "btn-green";
     const storedTxt = localStorage.getItem("txt-color") || "txt-white";
 
     setColors(storedBg, storedMid, storedBtn, storedTxt);
