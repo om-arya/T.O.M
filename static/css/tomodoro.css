@@ -14,9 +14,9 @@
     --footer-color: black;
     --custom-green: #5d9c69;
 
-    --bg-gradient-color: var(--bg-pink);
-    --bg-mid-color: var(--bg-pink);
-    --buttons-color: var(--bg-purple);
+    --bg-gradient-color: green;
+    --bg-mid-color: var(--bg-white);
+    --buttons-color: var(--bg-green);
     --text-color: var(--bg-white);
 
     --bg-profile-color: #3b5140;

@@ -18,9 +18,8 @@ setStartTime(tomodoroDuration);
 
 let typeInterval;
 
+initializeColors();
 window.onload = () => {
-    initializeColors();
-    
     typingEffect(timer, tomodoroDuration);
 }
 
