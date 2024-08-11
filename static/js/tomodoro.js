@@ -321,7 +321,6 @@ function switchToLongBreak() {
     }
 }
 
-/* function for typing effect*/
 async function typingEffect(element, text) {
     setTimeout(() => {
         element.textContent = text[0] + text[1];
@@ -335,6 +334,40 @@ async function typingEffect(element, text) {
             clearInterval(typeInterval);
         }
     }, 200);
+}
+
+/* AI color function */
+function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedValueAI, txtSelectedValueAI) {
+    const root = document.querySelector(':root');
+
+    root.style.setProperty('--bg-gradient-color', bgSelectedValueAI);
+    root.style.setProperty('--bg-mid-color', bgSelectedMidAI);
+    root.style.setProperty('--buttons-color', btnSelectedValueAI);
+    root.style.setProperty('--text-color', txtSelectedValueAI);
+
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
+}
+
+/* Dropdown Color Function */  
+function checkAndAssignColors(bgSelectedValue, bgMidValue, btnSelectedValue, txtSelectedValue) {
+    const root = document.querySelector(':root');
+
+    const bgFormatted = "--" + bgSelectedValue;
+    const midFormatted = "--" + bgMidValue;
+    const btnFormatted = "--" + btnSelectedValue;
+    const txtFormatted = "--" + txtSelectedValue;
+
+    const bgColor = getComputedStyle(root).getPropertyValue(bgFormatted);
+    const midColor = getComputedStyle(root).getPropertyValue(midFormatted);
+    const btnColor = getComputedStyle(root).getPropertyValue(btnFormatted);
+    const txtColor = getComputedStyle(root).getPropertyValue(txtFormatted);
+
+    root.style.setProperty('--bg-gradient-color', bgColor);
+    root.style.setProperty('--bg-mid-color', midColor);
+    root.style.setProperty('--buttons-color', btnColor);
+    root.style.setProperty('--text-color', txtColor);
+
+    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
 }
 
 //one observer to create animations for the timer and its buttons to come in from the bottom
@@ -370,7 +403,7 @@ hiddenElementsTom.forEach((el) => observerTom.observe(el));
  * (in this case everything but the menu bar and footer) on the exit-animation classlist, which makes them fade into opacity 0. After that, 
  * the link directs the user to the page containing the link.
  */
-const allLinks = document.querySelectorAll('a');
+const allLinks = document.querySelectorAll('.nav-items a');
 
 allLinks.forEach(link => {
     if(!link.classList.contains('small-menu-link')) {
@@ -390,37 +423,3 @@ allLinks.forEach(link => {
         });
     }
   });
-
-/* AI color function */
-function checkAndAssignColorsAI(bgSelectedValueAI, bgSelectedMidAI, btnSelectedValueAI, txtSelectedValueAI) {
-    const root = document.querySelector(':root');
-
-    root.style.setProperty('--bg-gradient-color', bgSelectedValueAI);
-    root.style.setProperty('--bg-mid-color', bgSelectedMidAI);
-    root.style.setProperty('--buttons-color', btnSelectedValueAI);
-    root.style.setProperty('--text-color', txtSelectedValueAI);
-
-    document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
-}
-
-/* Dropdown Color Function */  
-function checkAndAssignColors(bgSelectedValue, bgMidValue, btnSelectedValue, txtSelectedValue) {
-        const root = document.querySelector(':root');
-
-        const bgFormatted = "--" + bgSelectedValue;
-        const midFormatted = "--" + bgMidValue;
-        const btnFormatted = "--" + btnSelectedValue;
-        const txtFormatted = "--" + txtSelectedValue;
-
-        const bgColor = getComputedStyle(root).getPropertyValue(bgFormatted);
-        const midColor = getComputedStyle(root).getPropertyValue(midFormatted);
-        const btnColor = getComputedStyle(root).getPropertyValue(btnFormatted);
-        const txtColor = getComputedStyle(root).getPropertyValue(txtFormatted);
-
-        root.style.setProperty('--bg-gradient-color', bgColor);
-        root.style.setProperty('--bg-mid-color', midColor);
-        root.style.setProperty('--buttons-color', btnColor);
-        root.style.setProperty('--text-color', txtColor);
-
-        document.body.style.backgroundImage = `linear-gradient(to right bottom, var(--bg-main-color), var(--bg-mid-color), var(--bg-gradient-color))`;
-    } 

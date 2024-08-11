@@ -296,7 +296,7 @@ async function speechAndStorage(){
  * (in this case everything but the menu bar and footer) on the exit-animation classlist, which makes them fade into opacity 0. After that, 
  * the link directs the user to the page containing the link.
  */
-const allLinks = document.querySelectorAll('a');
+const allLinks = document.querySelectorAll('.nav-items a');
 
 allLinks.forEach(link => {
     //filter out the a href that is the menu icon when the page is smaller to avoid having elements transition before the user has selected another page

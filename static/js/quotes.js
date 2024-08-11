@@ -243,7 +243,7 @@ hiddenElementsTom.forEach((el) => observerTom.observe(el));
  * (in this case everything but the menu bar and footer) on the exit-animation classlist, which makes them fade into opacity 0. After that, 
  * the link directs the user to the page containing the link.
  */
-const allLinks = document.querySelectorAll('a');
+const allLinks = document.querySelectorAll('.nav-items a');
 
 allLinks.forEach(link => {
     if(!link.classList.contains('small-menu-link')) {
@@ -263,10 +263,3 @@ allLinks.forEach(link => {
         });
     }
   });
-
-const menuToggle = document.querySelector('.menu-toggle');
-const menuContent = document.querySelector('.menu-content');
-
-menuToggle.addEventListener('click', () => {
-  menuContent.classList.toggle('show-menu');
-});

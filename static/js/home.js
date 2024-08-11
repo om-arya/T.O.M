@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * the link directs the user to the page containing the link. If the responsive version of the nav bar is visible, the transitions 
  * do not play to prevent the page contents from transitioning away before the user has gone to a new page. 
  */
-const allLinks = document.querySelectorAll('a');
+const allLinks = document.querySelectorAll('.nav-items a');
 
 allLinks.forEach(link => {
     //filter out the a href that is the menu icon when the page is smaller to avoid having elements transition before the user has selected another page
@@ -61,11 +61,4 @@ allLinks.forEach(link => {
         });
     }
     
-});
-
-const menuToggle = document.querySelector('.menu-toggle');
-const menuContent = document.querySelector('.menu-content');
-
-menuToggle.addEventListener('click', () => {
-  menuContent.classList.toggle('show-menu');
 });
