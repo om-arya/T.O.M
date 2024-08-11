@@ -22,6 +22,8 @@
 /* Body Styling */
 body {
     background: linear-gradient(var(--bg-main-color) 0, var(--bg-main-color), var(--bg-gradient-color) 60rem);
+    background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
     overflow: scroll;
 }

@@ -50,8 +50,9 @@
 /* Body Styling */
 body {
     background-image: linear-gradient(to right bottom, var(--bg-main-color), var(--bg-main-color), var(--bg-gradient-color));
+    background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
-    min-width: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
     transition: .25s ease;

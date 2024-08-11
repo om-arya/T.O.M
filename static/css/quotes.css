@@ -22,6 +22,8 @@
 body {
     min-height: 100vh;
     background-image: linear-gradient(to left bottom, #ffffff, #ffffff, var(--bg-gradient-color));
+    background-size: cover;
+    background-attachment: fixed;
     overflow: hidden;
 }
 

@@ -23,6 +23,8 @@
 body {
     min-height: 100vh;
     background: linear-gradient(white, var(--bg-gradient-color));
+    background-size: cover;
+    background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
 }
