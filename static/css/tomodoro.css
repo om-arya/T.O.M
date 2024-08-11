@@ -436,7 +436,7 @@ footer p {
 .popup {
     background:white;
     opacity: 0;
-    position: fixed;
+    position: absolute;
     top: 6rem;
     bottom: 6rem;
     right: 16rem;
