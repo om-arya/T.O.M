@@ -354,6 +354,9 @@ hiddenElementsTom.forEach((el) => observerTom.observe(el));
 
 async function typingEffect(element, text) {
     setTimeout(() => {
+        startButtons.forEach((startButton) => {
+            startButton.style["pointer-events"] = "none"; // disable starting the timer until the animation finishes.
+        })
         element.textContent = text[0] + text[1];
     }, 0);
 
@@ -363,6 +366,9 @@ async function typingEffect(element, text) {
         ch += 1;
         if (ch == text.length) {
             clearInterval(typeInterval);
+            startButtons.forEach((startButton) => {
+                startButton.style["pointer-events"] = "all";
+            })
         }
     }, 200);
 }
