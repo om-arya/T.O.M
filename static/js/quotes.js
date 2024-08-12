@@ -120,9 +120,11 @@ let typeInterval;
 
 // Use a pre-made quote, or a 50% chance for an AI-generated quote if we have any stored
 if (quoteCount == 0) {
-    quoteContent.textContent = "Click me for some pawsitive inspiration!";
+    const clickMeMessage = "Click me for some pawsitive inspiration!";
+    quoteContent.textContent = clickMeMessage;
 
-    textToSpeech("Click me for some pawsitive inspiration!");
+    cancelTTS();
+    textToSpeech(clickMeMessage);
 
     typingEffect(quoteContent, quoteContent.textContent);
 

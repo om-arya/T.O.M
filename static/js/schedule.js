@@ -1,4 +1,4 @@
-import { textToSpeech } from "./text-to-speech.js";
+import { textToSpeech, cancelTTS } from "./text-to-speech.js";
 
 let typeInterval;
 
@@ -229,8 +229,15 @@ document.getElementById('scheduleForm').addEventListener('submit', function() {
 
 const sleep = ms => new Promise(res => setTimeout(res, ms)); // pause the program for 'ms' milliseconds
 
+const catSound = new Audio("media/cat-sound.mp3");
+
 submitContainer.addEventListener("click", () => {
     submitContainer.style["pointer-events"] = "none";
+
+    catSound.volume = .7;
+    catSound.currentTime = 0;
+    catSound.play();
+
     setTimeout(() => {
         submitContainer.style["pointer-events"] = "all";
     }, 5000);
@@ -252,6 +259,8 @@ async function speechAndStorage(){
         // Read just the 'words of advice' substring with no tags
         schedule = schedule.substring(index);
         schedule = schedule.replaceAll("<p>", "").replaceAll("</p>", "").replaceAll("<strong>", "").replaceAll("</strong>", "");
+
+        cancelTTS();
         textToSpeech(schedule);
     }
 }

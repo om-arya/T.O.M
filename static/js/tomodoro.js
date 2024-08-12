@@ -61,8 +61,14 @@ cancel.addEventListener('click', () => {
     popUp.classList.remove("open");
 });
 
+const catSound = new Audio("media/cat-sound.mp3");
+
 const pickColors = document.querySelector('#pick-colors');
 pickColors.addEventListener('click', () => {
+    catSound.volume = .7;
+    catSound.currentTime = 0;
+    catSound.play();
+
     // Disable the pickColors button when clicked to prevent server overload.
     pickColors.style["pointer-events"] = "none";
 

@@ -3,7 +3,6 @@ const mainStartButton = document.querySelector('#start-timer');
 const startButtons = document.querySelectorAll('#start-timer, .tom-image img');
 const restartButton = document.querySelector('#restart-button');
 const body = document.querySelector('body');
-const catSound = new Audio("media/cat-sound.mp3");
 
 let startTime = timer.innerHTML; // when the timer is stopped, we set it back to this
 let interval; // stores the reference to our 'setInterval()' function for use in 'clearInterval()' call
@@ -180,6 +179,8 @@ function resetTime() {
 
     timer.innerHTML = startTime;
 }
+
+const catSound = new Audio("media/cat-sound.mp3");
 
 /**
  * Meow meow, meow, meow, meow, meow
