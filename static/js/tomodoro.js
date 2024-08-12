@@ -39,8 +39,13 @@ openPop.addEventListener('click', () => {
 const timeInputs = document.querySelectorAll('.time-input');
 timeInputs.forEach((timeInput) => {
     timeInput.addEventListener('keyup', () => {
-        // Auto-delete time input characters past 4 digits.
-        timeInput.value = timeInput.value.slice(0, 4);
+        if (timeInput.value[0] === "0") {
+            // Auto-delete leading 0's in time inputs.
+            timeInput.value = timeInput.value.slice(1, timeInput.value.length);
+        } else {
+            // Auto-delete time input characters past 4 digits.
+            timeInput.value = timeInput.value.slice(0, 4);
+        }
     })
 })
 
