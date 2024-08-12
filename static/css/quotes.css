@@ -207,6 +207,7 @@ footer p {
     border: none;
     background: transparent;
     user-select: none;
+    cursor: pointer;
 }
 
 .ai-quotes-content {

@@ -318,6 +318,10 @@ footer p {
     .tom-container {
         grid-template-columns: 1fr;
     }
+
+    .column-right {
+        height: 12rem;
+    }
 }
 
 /* Collapsed menu visible once screen width under 1182px */
