@@ -52,9 +52,11 @@ timeInputs.forEach((timeInput) => {
 // Execute settings changes and close the pop up.
 const closePop = document.querySelector('#closePop');
 closePop.addEventListener('click', () => {
+    if (!checkAndSetTimes()) {
+        return;
+    }
+
     stopTimer();
-    
-    checkAndSetTimes();
 
     checkAndSetColors();
 
@@ -209,15 +211,23 @@ if (localStorage.getItem("ai-flag") && localStorage.getItem("ai-flag") === "true
 /**
  * Set the times to the given inputs and save
  * them to local storage.
+ * @returns false if there was an issue updating
+ *          times, and true if times were updated
+ *          successfully.
  */
 function checkAndSetTimes() {
     let tomodoroTimeInput = document.querySelector(".tomodoro-time-input").value;
     let shortBreakTimeInput = document.querySelector(".short-break-time-input").value;
     let longBreakTimeInput = document.querySelector(".long-break-time-input").value;
 
+    if (!(tomodoroTimeInput && shortBreakTimeInput && longBreakTimeInput)) {
+        alert("You cannot leave any time lengths blank!")
+        return false;
+    }
+
     if (parseInt(shortBreakTimeInput) > parseInt(longBreakTimeInput)) {
         alert("Your short break cannot be longer than your long break!");
-        return;
+        return false;
     }
 
     let tomodoroHours = Math.floor(tomodoroTimeInput / 60);
@@ -250,6 +260,8 @@ function checkAndSetTimes() {
         timer.innerHTML = longBreakDuration;
         setStartTime(longBreakDuration);
     }
+
+    return true;
 }
 
 /**
