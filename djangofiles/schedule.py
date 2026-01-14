@@ -2,7 +2,7 @@ import google.generativeai as genai
 from djangofiles.googleapikey import GOOGLE_API_KEY
 
 genai.configure(api_key=GOOGLE_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 def generate_schedule(EVENTS, ADDITIONAL_NOTES):
   schedule_prompt = (
@@ -16,6 +16,8 @@ def generate_schedule(EVENTS, ADDITIONAL_NOTES):
         "You are talking to just one person who you will refer to as 'my friend', and you will not accompany this person with any tasks. "
         "Use some emojis, but DO NOT use emojis in your positive conclusion or you will die."
     )
+  
+  print(model.generate_content("hello").text)
   
   try:
     schedule = format(model.generate_content(schedule_prompt).text)

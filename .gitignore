@@ -14,3 +14,5 @@ db.sqlite3-journal
 googleapikey.py
 
 .vscode/
+
+.DS_Store
