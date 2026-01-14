@@ -21,7 +21,7 @@ RUN python3 manage.py collectstatic --noinput
 
 EXPOSE 8080
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8080"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "djangofiles.wsgi:application"]
 
 ## BUILD IMAGE AND RUN CONTAINER:
 # docker build -t "tom" .

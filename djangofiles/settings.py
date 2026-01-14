@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hmxo1oxp+03*s96+n2vcdouice^doa4in2+$47--lm&_n#&)_m
 
 DEBUG = True # Set to False in production; we set to True locally for CSS files to be served properly.
 
-ALLOWED_HOSTS = ['tom-tfqal7zj2a-uk.a.run.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
